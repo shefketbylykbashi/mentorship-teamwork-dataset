@@ -1,0 +1,57 @@
+{
+  "family": "type2",
+  "count": 100,
+  "root_seed": 2026,
+  "alpha_range": [0.2, 0.8],
+  "fillable_fraction": 0.30,
+  "distance_group_weights": {
+    "size": 1,
+    "supply_demand": 1,
+    "levels": 1,
+    "mentorship": 1,
+    "time": 1,
+    "scores": 1
+  },
+  "parameter_search": {
+    "anchor_margin": 0.35,
+    "max_profiles": 4,
+    "fillable_fraction": 0.30,
+    "hard_bounds": {
+      "n_skills": [5, 2000],
+      "skill_skew": [0.0, 2.0],
+      "n_contributors": [5, 12000],
+      "skills_per_contributor_min": [1, 20],
+      "skills_per_contributor_max": [1, 20],
+      "level_mean": [1.0, 10.0],
+      "level_sd": [0.2, 4.0],
+      "level_max": [10, 10],
+      "n_profiles": [1, 4],
+      "n_projects": [5, 22000],
+      "duration_min": [1, 100000],
+      "duration_max": [1, 100000],
+      "roles_min": [1, 50],
+      "roles_max": [1, 50],
+      "score_base": [0.1, 10.0],
+      "score_perturbation": [1.0, 5.0],
+      "tightness_min": [0.0, 10.0],
+      "tightness_max": [0.0, 10.0],
+      "role_skill_alignment": [0.0, 1.0],
+      "supply_quantile": [0.5, 0.9],
+      "role_level_max": [100, 100],
+      "future_offset_min": [2, 4],
+      "future_offset_max": [2, 8],
+      "profile_bias": [1.0, 6.0]
+    }
+  },
+  "search": {
+    "population_size": 48,
+    "iterations": 4,
+    "elite_fraction": 0.25,
+    "novelty_penalty": 0.20,
+    "duplicate_penalty": 10.0,
+    "minimum_accepted_distance": 0.02,
+    "initial_perturbation_scale": 0.35,
+    "random_restart_rate": 0.20,
+    "max_generation_attempts": 30
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "families": {
+    "type4": {
+      "config_hash": "532b555122d0559bc147c5329631f0a2767f89ac48d540fe4982e63f4b2a9dc9",
+      "count": 100,
+      "metadata_csv": "benchmark_metadata\\type4_metadata.csv",
+      "output_dir": "generated_instances\\type4",
+      "seed": 2026,
+      "statistical_report": "benchmark_metadata\\type4_statistical_report.json"
+    }
+  }
+}

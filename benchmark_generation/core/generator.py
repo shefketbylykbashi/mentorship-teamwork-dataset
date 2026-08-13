@@ -1,0 +1,350 @@
+"""Single parameterized forward generator for all synthetic MTP families."""
+
+from __future__ import annotations
+
+import math
+import random
+from dataclasses import asdict, dataclass, field
+from typing import Dict, List, Sequence, Tuple
+
+from benchmark_generation import __version__
+
+from .features import build_supply_counts, build_supply_index
+from .models import Contributor, MTPInstance, Project, Role
+from .validator import ValidationResult, validate_instance
+
+
+@dataclass
+class GenerationParameters:
+    n_skills: int
+    skill_skew: float
+    n_contributors: int
+    skills_per_contributor_min: int
+    skills_per_contributor_max: int
+    level_mean: float
+    level_sd: float
+    level_max: int
+    n_profiles: int
+    n_projects: int
+    duration_min: int
+    duration_max: int
+    roles_min: int
+    roles_max: int
+    score_base: float
+    score_perturbation: float
+    tightness_min: float
+    tightness_max: float
+    role_skill_alignment: float
+    supply_quantile: float
+    p_over: float
+    p_match: float
+    p_mentor: float
+    p_future: float
+    fillable_fraction: float = 0.30
+    role_level_max: int = 100
+    future_offset_min: int = 2
+    future_offset_max: int = 4
+    profile_bias: float = 4.0
+
+    def normalized(self) -> "GenerationParameters":
+        data = asdict(self)
+        data["n_skills"] = max(1, int(data["n_skills"]))
+        data["n_contributors"] = max(1, int(data["n_contributors"]))
+        data["n_projects"] = max(1, int(data["n_projects"]))
+        data["skills_per_contributor_min"] = max(1, int(data["skills_per_contributor_min"]))
+        data["skills_per_contributor_max"] = max(
+            data["skills_per_contributor_min"], int(data["skills_per_contributor_max"])
+        )
+        data["skills_per_contributor_max"] = min(
+            data["skills_per_contributor_max"], data["n_skills"]
+        )
+        data["level_max"] = max(1, min(10, int(data["level_max"])))
+        data["level_sd"] = max(1e-6, float(data["level_sd"]))
+        data["n_profiles"] = max(1, int(data["n_profiles"]))
+        data["duration_min"] = max(1, int(data["duration_min"]))
+        data["duration_max"] = max(data["duration_min"], int(data["duration_max"]))
+        data["roles_min"] = max(1, int(data["roles_min"]))
+        data["roles_max"] = max(data["roles_min"], int(data["roles_max"]))
+        data["score_base"] = max(1e-6, float(data["score_base"]))
+        data["score_perturbation"] = max(1.0, float(data["score_perturbation"]))
+        data["tightness_min"] = max(0.0, float(data["tightness_min"]))
+        data["tightness_max"] = max(data["tightness_min"], float(data["tightness_max"]))
+        data["role_skill_alignment"] = min(1.0, max(0.0, float(data["role_skill_alignment"])))
+        data["supply_quantile"] = min(1.0, max(0.0, float(data["supply_quantile"])))
+        data["fillable_fraction"] = min(1.0, max(0.0, float(data["fillable_fraction"])))
+        data["role_level_max"] = max(1, min(100, int(data["role_level_max"])))
+        data["future_offset_min"] = max(2, int(data["future_offset_min"]))
+        data["future_offset_max"] = max(data["future_offset_min"], int(data["future_offset_max"]))
+        probs = [float(data[key]) for key in ("p_over", "p_match", "p_mentor", "p_future")]
+        total = sum(max(0.0, prob) for prob in probs)
+        if total <= 0:
+            probs = [0.25, 0.25, 0.25, 0.25]
+            total = 1.0
+        for key, prob in zip(("p_over", "p_match", "p_mentor", "p_future"), probs):
+            data[key] = max(0.0, prob) / total
+        return GenerationParameters(**data)
+
+    def to_dict(self) -> Dict[str, float | int]:
+        return asdict(self.normalized())
+
+
+@dataclass
+class GenerationOutcome:
+    instance: MTPInstance
+    parameters: GenerationParameters
+    seed: int
+    attempts: int
+    validation: ValidationResult
+    rejection_reasons: List[str] = field(default_factory=list)
+    generator_version: str = __version__
+
+
+def generate_valid_instance(
+    params: GenerationParameters,
+    seed: int,
+    max_attempts: int = 50,
+    source_name: str | None = None,
+) -> GenerationOutcome:
+    """Generate and validate an instance, retrying only by fresh child seed."""
+
+    params = params.normalized()
+    rejection_reasons: List[str] = []
+    for attempt in range(1, max_attempts + 1):
+        child_seed = derive_seed(seed, attempt)
+        instance = generate_instance(params, child_seed, source_name=source_name)
+        validation = validate_instance(
+            instance,
+            fillable_fraction=params.fillable_fraction,
+            require_positive_project=True,
+        )
+        if validation.ok:
+            return GenerationOutcome(
+                instance=instance,
+                parameters=params,
+                seed=child_seed,
+                attempts=attempt,
+                validation=validation,
+                rejection_reasons=rejection_reasons,
+            )
+        rejection_reasons.append(";".join(validation.issues))
+    raise RuntimeError(
+        f"Failed to generate valid instance after {max_attempts} attempts. "
+        f"Last rejection: {rejection_reasons[-1] if rejection_reasons else 'none'}"
+    )
+
+
+def generate_instance(
+    params: GenerationParameters,
+    seed: int,
+    source_name: str | None = None,
+) -> MTPInstance:
+    """Generate one complete instance forward from a parameter configuration."""
+
+    params = params.normalized()
+    rng = random.Random(seed)
+
+    skills = [f"s{i:04d}" for i in range(params.n_skills)]
+    base_skill_weights = zipf_weights(params.n_skills, params.skill_skew)
+
+    profile_skill_sets = _make_profiles(skills, base_skill_weights, params.n_profiles, rng)
+    contributors = _generate_contributors(params, skills, base_skill_weights, profile_skill_sets, rng)
+    supply_index = build_supply_index(
+        MTPInstance(contributors=tuple(contributors), projects=tuple())
+    )
+    supply_counts = build_supply_counts(
+        MTPInstance(contributors=tuple(contributors), projects=tuple())
+    )
+    role_weights = _role_skill_weights(skills, base_skill_weights, supply_counts, params)
+
+    projects = []
+    for project_idx in range(params.n_projects):
+        duration = rng.randint(params.duration_min, params.duration_max)
+        n_roles = rng.randint(params.roles_min, params.roles_max)
+        perturb = rng.uniform(1.0, params.score_perturbation)
+        score = max(1, int(round(params.score_base * duration * n_roles * perturb)))
+        tightness = rng.uniform(params.tightness_min, params.tightness_max)
+        best_before = max(0, int(round(duration * tightness)))
+        roles = []
+        for _role_idx in range(n_roles):
+            skill = weighted_choice(skills, role_weights, rng)
+            level = _required_level(skill, supply_index, params, rng)
+            roles.append(Role(skill=skill, level=level))
+        projects.append(
+            Project(
+                name=f"p{project_idx:05d}",
+                duration=duration,
+                score=score,
+                best_before=best_before,
+                roles=tuple(roles),
+            )
+        )
+
+    return MTPInstance(
+        contributors=tuple(contributors),
+        projects=tuple(projects),
+        source_name=source_name,
+        metadata={"seed": seed, "generator_version": __version__},
+    )
+
+
+def derive_seed(root_seed: int, child_index: int, salt: int = 1_000_003) -> int:
+    return int((root_seed * salt + child_index * 97_409 + 17) % (2**31 - 1))
+
+
+def zipf_weights(n_items: int, skew: float) -> List[float]:
+    if n_items <= 0:
+        return []
+    skew = max(0.0, float(skew))
+    weights = [1.0 / ((idx + 1) ** skew) for idx in range(n_items)]
+    total = sum(weights)
+    return [weight / total for weight in weights]
+
+
+def weighted_choice(items: Sequence[str], weights: Sequence[float], rng: random.Random) -> str:
+    threshold = rng.random()
+    cumulative = 0.0
+    for item, weight in zip(items, weights):
+        cumulative += weight
+        if threshold <= cumulative:
+            return item
+    return items[-1]
+
+
+def _make_profiles(
+    skills: Sequence[str],
+    weights: Sequence[float],
+    n_profiles: int,
+    rng: random.Random,
+) -> List[set[str]]:
+    if n_profiles <= 1:
+        return [set(skills)]
+    profile_size = max(1, int(round(len(skills) / math.sqrt(n_profiles))))
+    profiles = []
+    for _profile_idx in range(n_profiles):
+        chosen = set()
+        while len(chosen) < min(profile_size, len(skills)):
+            chosen.add(weighted_choice(skills, weights, rng))
+        profiles.append(chosen)
+    return profiles
+
+
+def _generate_contributors(
+    params: GenerationParameters,
+    skills: Sequence[str],
+    base_weights: Sequence[float],
+    profile_skill_sets: Sequence[set[str]],
+    rng: random.Random,
+) -> List[Contributor]:
+    contributors = []
+    for contributor_idx in range(params.n_contributors):
+        n_skills = rng.randint(
+            params.skills_per_contributor_min, params.skills_per_contributor_max
+        )
+        profile = profile_skill_sets[contributor_idx % len(profile_skill_sets)]
+        skill_weights = _profile_adjusted_weights(
+            skills, base_weights, profile, params.profile_bias if params.n_profiles > 1 else 1.0
+        )
+        chosen = set()
+        while len(chosen) < n_skills:
+            chosen.add(weighted_choice(skills, skill_weights, rng))
+        levels = {
+            skill: _truncated_normal_level(
+                params.level_mean, params.level_sd, params.level_max, rng
+            )
+            for skill in sorted(chosen)
+        }
+        contributors.append(Contributor(name=f"c{contributor_idx:05d}", skills=levels))
+    return contributors
+
+
+def _profile_adjusted_weights(
+    skills: Sequence[str],
+    base_weights: Sequence[float],
+    preferred: set[str],
+    profile_bias: float,
+) -> List[float]:
+    weights = [
+        weight * (profile_bias if skill in preferred else 1.0)
+        for skill, weight in zip(skills, base_weights)
+    ]
+    total = sum(weights)
+    return [weight / total for weight in weights]
+
+
+def _truncated_normal_level(
+    level_mean: float, level_sd: float, level_max: int, rng: random.Random
+) -> int:
+    for _ in range(200):
+        value = int(round(rng.gauss(level_mean, level_sd)))
+        if 1 <= value <= level_max:
+            return value
+    return min(level_max, max(1, int(round(level_mean))))
+
+
+def _role_skill_weights(
+    skills: Sequence[str],
+    base_weights: Sequence[float],
+    supply_counts: Dict[str, int],
+    params: GenerationParameters,
+) -> List[float]:
+    if not skills:
+        return []
+    total_supply = sum(supply_counts.values())
+    if total_supply <= 0:
+        supply_probs = {skill: 1.0 / len(skills) for skill in skills}
+    else:
+        supply_probs = {skill: supply_counts.get(skill, 0) / total_supply for skill in skills}
+    uniform = 1.0 / len(skills)
+    weights = []
+    for skill, base in zip(skills, base_weights):
+        aligned = supply_probs.get(skill, 0.0)
+        unaligned = 0.5 * uniform + 0.5 * base
+        weights.append(
+            params.role_skill_alignment * aligned
+            + (1.0 - params.role_skill_alignment) * unaligned
+        )
+    total = sum(weights)
+    return [weight / total for weight in weights]
+
+
+def _required_level(
+    skill: str,
+    supply_index: Dict[str, List[int]],
+    params: GenerationParameters,
+    rng: random.Random,
+) -> int:
+    levels = supply_index.get(skill, [])
+    if levels:
+        reference = _quantile(levels, params.supply_quantile)
+    else:
+        reference = max(1, min(params.level_max, int(round(params.level_mean))))
+    category = weighted_choice(
+        ["over", "match", "mentor", "future"],
+        [params.p_over, params.p_match, params.p_mentor, params.p_future],
+        rng,
+    )
+    if category == "over":
+        level = rng.randint(1, max(1, reference - 1))
+    elif category == "match":
+        level = reference
+    elif category == "mentor":
+        level = reference + 1
+    else:
+        level = reference + rng.randint(params.future_offset_min, params.future_offset_max)
+    return max(1, min(params.role_level_max, int(level)))
+
+
+def _quantile(sorted_values: Sequence[int], quantile: float) -> int:
+    if not sorted_values:
+        return 1
+    if len(sorted_values) == 1:
+        return int(sorted_values[0])
+    position = min(1.0, max(0.0, quantile)) * (len(sorted_values) - 1)
+    lower = int(math.floor(position))
+    upper = int(math.ceil(position))
+    if lower == upper:
+        return int(sorted_values[lower])
+    value = sorted_values[lower] + (sorted_values[upper] - sorted_values[lower]) * (
+        position - lower
+    )
+    return max(1, int(round(value)))

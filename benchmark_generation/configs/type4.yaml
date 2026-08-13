@@ -1,0 +1,44 @@
+{
+  "family": "type4",
+  "count": 100,
+  "root_seed": 2026,
+  "fillable_fraction": 0.30,
+  "max_parameter_attempts": 100,
+  "max_generation_attempts": 50,
+  "role_level_max": 100,
+  "scale_band_allocation": {"small": 34, "medium": 33, "large": 33},
+  "scale_bands": {
+    "small": {"contributors": [5, 50], "projects": [5, 50]},
+    "medium": {"contributors": [50, 500], "projects": [50, 500]},
+    "large": {"contributors": [500, 10000], "projects": [500, 10000]}
+  },
+  "project_contributor_ratio": [0.25, 4.0],
+  "difficulty_simplex": {
+    "distribution": "symmetric_dirichlet",
+    "alpha": [1.0, 1.0, 1.0, 1.0]
+  },
+  "parameter_ranges": {
+    "n_skills": [5, 200],
+    "skill_skew": [0.0, 1.5],
+    "skills_per_contributor": [1, 20],
+    "level_mean": [2.0, 7.0],
+    "level_sd": [0.5, 3.0],
+    "level_max": 10,
+    "n_profiles": 1,
+    "duration": [1, 500],
+    "roles_per_project": [1, 20],
+    "score_base": [0.5, 5.0],
+    "score_perturbation": [1.0, 3.0],
+    "tightness": [0.5, 6.0],
+    "role_skill_alignment": [0.0, 1.0],
+    "supply_quantile": [0.5, 0.9]
+  },
+  "distance_group_weights": {
+    "size": 1,
+    "supply_demand": 1,
+    "levels": 1,
+    "mentorship": 1,
+    "time": 1,
+    "scores": 1
+  }
+}
