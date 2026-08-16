@@ -49,15 +49,16 @@
     }
   },
   "search": {
-    "population_size": 48,
-    "iterations": 4,
+    "population_size": 10,
+    "iterations": 2,
     "elite_fraction": 0.25,
     "novelty_penalty": 0.20,
     "duplicate_penalty": 10.0,
     "minimum_accepted_distance": 0.015,
     "radius_penalty": 1.5,
-    "initial_perturbation_scale": 0.30,
-    "random_restart_rate": 0.20,
-    "max_generation_attempts": 30
+    "initial_perturbation_scale": 0.25,
+    "random_restart_rate": 0.15,
+    "max_generation_attempts": 10,
+    "centered_initial_samples": 6
   }
 }

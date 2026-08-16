@@ -29,6 +29,7 @@ from benchmark_generation.core.metadata import (
 from benchmark_generation.core.parameter_sampling import (
     bounds_from_anchor_estimates,
     estimate_parameters_from_instance,
+    perturb_parameters,
 )
 from benchmark_generation.core.parser import write_instance
 from benchmark_generation.core.search import adaptive_parameter_search
@@ -86,16 +87,17 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "fillable_fraction": 0.30,
     },
     "search": {
-        "population_size": 48,
-        "iterations": 4,
+        "population_size": 10,
+        "iterations": 2,
         "elite_fraction": 0.25,
         "novelty_penalty": 0.20,
         "duplicate_penalty": 10.0,
         "minimum_accepted_distance": 0.015,
         "radius_penalty": 1.5,
-        "initial_perturbation_scale": 0.30,
-        "random_restart_rate": 0.20,
-        "max_generation_attempts": 30,
+        "initial_perturbation_scale": 0.25,
+        "random_restart_rate": 0.15,
+        "max_generation_attempts": 10,
+        "centered_initial_samples": 6,
     },
 }
 
@@ -209,6 +211,12 @@ def generate_type3(
             target["radius_band"],
             target["desired_radius"],
         )
+        initial_population = _type3_initial_population(
+            center=anchor_params[anchor_idx],
+            bounds=per_anchor_bounds[anchor_idx],
+            config=config["search"],
+            seed=derive_seed(seed, idx, salt=314_159),
+        )
         result = adaptive_parameter_search(
             target_vector=target["target_vector"],
             scaler=scaler,
@@ -221,6 +229,7 @@ def generate_type3(
             radius_min=target["radius_min"],
             radius_max=target["radius_max"],
             source_name=filename,
+            initial_population=initial_population,
         )
         candidate = result.candidate
         existing_hashes.add(candidate.structural_hash)
@@ -348,6 +357,21 @@ def _within_anchor_diversity(
                 distances.append(weighted_distance(anchor_vectors[i], anchor_vectors[j], group_weights))
         result[anchor] = summarize_numeric(distances)
     return result
+
+
+def _type3_initial_population(
+    center,
+    bounds: Mapping[str, tuple[float, float]],
+    config: Mapping[str, Any],
+    seed: int,
+):
+    rng = random.Random(seed)
+    count = max(1, int(config.get("centered_initial_samples", 1)))
+    population = [center]
+    scale = float(config.get("initial_perturbation_scale", 0.25))
+    while len(population) < count:
+        population.append(perturb_parameters(center, bounds, rng, scale=scale))
+    return population
 
 
 def parse_args() -> argparse.Namespace:

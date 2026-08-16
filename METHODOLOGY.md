@@ -258,6 +258,12 @@ J = d(candidate, target)
 The optimizer is a transparent derivative-free elite perturbation strategy:
 sample an initial population, generate candidates forward, retain elites,
 perturb parameters with decaying scale, and restart a configurable fraction.
+For computational efficiency, each Type 2 target searches within the bounds
+defined by its own anchor pair rather than the union of all five anchors. The
+initial population is seeded with an interpolated anchor-estimated parameter
+vector and perturbations around it. This interpolation is only a search prior:
+the accepted instance is still generated forward and selected by its measured
+feature distance to the target plus novelty and duplicate penalties.
 
 ## Type 3: Neighborhoods Around Anchors
 
@@ -273,7 +279,10 @@ outer [0.18, 0.35], wide [0.35, 0.55].
 
 The search objective includes target distance, novelty, duplicate penalty, and
 a radius penalty if the measured candidate is outside its configured radius
-band. This prevents collapse onto the anchor and uncontrolled drift.
+band. This prevents collapse onto the anchor and uncontrolled drift. As with
+Type 2, the initial search population is seeded near the anchor-estimated
+parameter vector only as a computational prior; all candidates remain forward
+generated and feature-measured before acceptance.
 
 ## Reproducibility
 

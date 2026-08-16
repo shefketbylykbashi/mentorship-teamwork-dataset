@@ -1,5 +1,13 @@
 {
   "families": {
+    "type2": {
+      "config_hash": "e6dc861ec01d856fffc6cfcfbd44e384b2724a655b8d6471977feebd483d64fc",
+      "count": 100,
+      "metadata_csv": "benchmark_metadata\\type2_metadata.csv",
+      "output_dir": "generated_instances\\type2",
+      "seed": 2026,
+      "statistical_report": "benchmark_metadata\\type2_statistical_report.json"
+    },
     "type4": {
       "config_hash": "532b555122d0559bc147c5329631f0a2767f89ac48d540fe4982e63f4b2a9dc9",
       "count": 100,

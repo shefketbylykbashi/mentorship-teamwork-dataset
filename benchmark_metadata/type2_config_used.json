@@ -1,0 +1,133 @@
+{
+  "alpha_range": [
+    0.2,
+    0.8
+  ],
+  "count": 100,
+  "distance_group_weights": {
+    "levels": 1,
+    "mentorship": 1,
+    "scores": 1,
+    "size": 1,
+    "supply_demand": 1,
+    "time": 1
+  },
+  "family": "type2",
+  "fillable_fraction": 0.3,
+  "parameter_search": {
+    "anchor_margin": 0.2,
+    "fillable_fraction": 0.3,
+    "hard_bounds": {
+      "duration_max": [
+        1,
+        100000
+      ],
+      "duration_min": [
+        1,
+        100000
+      ],
+      "future_offset_max": [
+        2,
+        8
+      ],
+      "future_offset_min": [
+        2,
+        4
+      ],
+      "level_max": [
+        10,
+        10
+      ],
+      "level_mean": [
+        1.0,
+        10.0
+      ],
+      "level_sd": [
+        0.2,
+        4.0
+      ],
+      "n_contributors": [
+        5,
+        12000
+      ],
+      "n_profiles": [
+        1,
+        4
+      ],
+      "n_projects": [
+        5,
+        22000
+      ],
+      "n_skills": [
+        5,
+        2000
+      ],
+      "profile_bias": [
+        1.0,
+        6.0
+      ],
+      "role_level_max": [
+        100,
+        100
+      ],
+      "role_skill_alignment": [
+        0.0,
+        1.0
+      ],
+      "roles_max": [
+        1,
+        50
+      ],
+      "roles_min": [
+        1,
+        50
+      ],
+      "score_base": [
+        0.1,
+        10.0
+      ],
+      "score_perturbation": [
+        1.0,
+        5.0
+      ],
+      "skill_skew": [
+        0.0,
+        2.0
+      ],
+      "skills_per_contributor_max": [
+        1,
+        20
+      ],
+      "skills_per_contributor_min": [
+        1,
+        20
+      ],
+      "supply_quantile": [
+        0.5,
+        0.9
+      ],
+      "tightness_max": [
+        0.0,
+        10.0
+      ],
+      "tightness_min": [
+        0.0,
+        10.0
+      ]
+    },
+    "max_profiles": 4
+  },
+  "root_seed": 2026,
+  "search": {
+    "centered_initial_samples": 6,
+    "duplicate_penalty": 10.0,
+    "elite_fraction": 0.25,
+    "initial_perturbation_scale": 0.25,
+    "iterations": 2,
+    "max_generation_attempts": 10,
+    "minimum_accepted_distance": 0.02,
+    "novelty_penalty": 0.2,
+    "population_size": 10,
+    "random_restart_rate": 0.15
+  }
+}

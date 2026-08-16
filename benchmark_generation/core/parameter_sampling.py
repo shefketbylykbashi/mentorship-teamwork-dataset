@@ -298,6 +298,46 @@ def perturb_parameters(
     return GenerationParameters(**data).normalized()
 
 
+def interpolate_parameters(
+    a: GenerationParameters,
+    b: GenerationParameters,
+    alpha: float,
+    bounds: Mapping[str, Tuple[float, float]],
+) -> GenerationParameters:
+    """Interpolate anchor-estimated parameters as a search prior.
+
+    This does not create or accept an instance directly. It only seeds the
+    derivative-free search with plausible parameters; candidates are still
+    generated forward and judged by measured feature distance.
+    """
+
+    alpha = max(0.0, min(1.0, float(alpha)))
+    a_data = a.to_dict()
+    b_data = b.to_dict()
+    data: Dict[str, float | int] = {}
+    for key, a_value in a_data.items():
+        b_value = b_data[key]
+        value = (1.0 - alpha) * float(a_value) + alpha * float(b_value)
+        low, high = bounds.get(key, (value, value))
+        value = max(float(low), min(float(high), value))
+        data[key] = int(round(value)) if key in INT_PARAMETERS else value
+    total = sum(float(data[key]) for key in PROBABILITY_PARAMETERS)
+    if total <= 0:
+        for key in PROBABILITY_PARAMETERS:
+            data[key] = 0.25
+    else:
+        for key in PROBABILITY_PARAMETERS:
+            data[key] = float(data[key]) / total
+    data["skills_per_contributor_max"] = max(
+        int(data["skills_per_contributor_min"]),
+        min(int(data["skills_per_contributor_max"]), int(data["n_skills"])),
+    )
+    data["duration_max"] = max(int(data["duration_min"]), int(data["duration_max"]))
+    data["roles_max"] = max(int(data["roles_min"]), int(data["roles_max"]))
+    data["tightness_max"] = max(float(data["tightness_min"]), float(data["tightness_max"]))
+    return GenerationParameters(**data).normalized()
+
+
 def sample_simplex(config: Mapping[str, Any], rng: random.Random) -> Tuple[float, float, float, float]:
     alpha = config.get("alpha", [1.0, 1.0, 1.0, 1.0])
     if isinstance(alpha, (int, float)):

@@ -44,6 +44,7 @@ def adaptive_parameter_search(
     radius_min: float | None = None,
     radius_max: float | None = None,
     source_name: str | None = None,
+    initial_population: Sequence[GenerationParameters] | None = None,
 ) -> SearchResult:
     """Search over generator parameters while generating every candidate forward."""
 
@@ -58,7 +59,9 @@ def adaptive_parameter_search(
     radius_penalty = float(config.get("radius_penalty", 1.0))
     max_generation_attempts = int(config.get("max_generation_attempts", 30))
 
-    population = [sample_from_bounds(bounds, rng) for _ in range(population_size)]
+    population: List[GenerationParameters] = list(initial_population or [])[:population_size]
+    while len(population) < population_size:
+        population.append(sample_from_bounds(bounds, rng))
     best: SearchCandidate | None = None
     evaluations = 0
     search_log: List[Dict[str, Any]] = []

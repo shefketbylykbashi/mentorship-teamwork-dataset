@@ -29,6 +29,8 @@ from benchmark_generation.core.metadata import (
 from benchmark_generation.core.parameter_sampling import (
     bounds_from_anchor_estimates,
     estimate_parameters_from_instance,
+    interpolate_parameters,
+    perturb_parameters,
 )
 from benchmark_generation.core.parser import write_instance
 from benchmark_generation.core.search import adaptive_parameter_search
@@ -50,7 +52,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "scores": 1,
     },
     "parameter_search": {
-        "anchor_margin": 0.35,
+        "anchor_margin": 0.20,
         "max_profiles": 4,
         "hard_bounds": {
             "n_skills": [5, 2000],
@@ -81,15 +83,16 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "fillable_fraction": 0.30,
     },
     "search": {
-        "population_size": 48,
-        "iterations": 4,
+        "population_size": 10,
+        "iterations": 2,
         "elite_fraction": 0.25,
         "novelty_penalty": 0.20,
         "duplicate_penalty": 10.0,
         "minimum_accepted_distance": 0.02,
-        "initial_perturbation_scale": 0.35,
-        "random_restart_rate": 0.20,
-        "max_generation_attempts": 30,
+        "initial_perturbation_scale": 0.25,
+        "random_restart_rate": 0.15,
+        "max_generation_attempts": 10,
+        "centered_initial_samples": 6,
     },
 }
 
@@ -190,7 +193,13 @@ def generate_type2(
     scaler = FeatureScaler.fit(anchor_features, group_weights=config.get("distance_group_weights"))
     anchor_vectors = [scaler.normalize(features) for features in anchor_features]
     anchor_params = [estimate_parameters_from_instance(anchor) for anchor in anchors]
-    bounds = bounds_from_anchor_estimates(anchor_params, config["parameter_search"])
+    pair_bounds = {
+        pair: bounds_from_anchor_estimates(
+            [anchor_params[pair[0]], anchor_params[pair[1]]],
+            config["parameter_search"],
+        )
+        for pair in itertools.combinations(range(len(anchor_params)), 2)
+    }
     targets = make_type2_targets(
         anchor_names,
         anchor_vectors,
@@ -218,6 +227,20 @@ def generate_type2(
             target["anchor_b"],
             target["alpha"],
         )
+        pair = (int(target["anchor_a_index"]), int(target["anchor_b_index"]))
+        bounds = pair_bounds[pair]
+        center = interpolate_parameters(
+            anchor_params[pair[0]],
+            anchor_params[pair[1]],
+            float(target["alpha"]),
+            bounds,
+        )
+        initial_population = _type2_initial_population(
+            center=center,
+            bounds=bounds,
+            config=config["search"],
+            seed=derive_seed(seed, idx, salt=271_828),
+        )
         result = adaptive_parameter_search(
             target_vector=target["target_vector"],
             scaler=scaler,
@@ -227,6 +250,7 @@ def generate_type2(
             accepted_vectors=accepted_vectors,
             existing_hashes=existing_hashes,
             source_name=filename,
+            initial_population=initial_population,
         )
         candidate = result.candidate
         existing_hashes.add(candidate.structural_hash)
@@ -335,6 +359,21 @@ def generate_type2(
 
 def derive_target_seed(seed: int) -> int:
     return seed * 104_729 + 53
+
+
+def _type2_initial_population(
+    center,
+    bounds: Mapping[str, Tuple[float, float]],
+    config: Mapping[str, Any],
+    seed: int,
+):
+    rng = random.Random(seed)
+    count = max(1, int(config.get("centered_initial_samples", 1)))
+    population = [center]
+    scale = float(config.get("initial_perturbation_scale", 0.25))
+    while len(population) < count:
+        population.append(perturb_parameters(center, bounds, rng, scale=scale))
+    return population
 
 
 def parse_args() -> argparse.Namespace:
