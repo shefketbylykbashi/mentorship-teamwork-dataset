@@ -1,0 +1,14 @@
+{
+  "status": "invalidated",
+  "family": "type3",
+  "reason": "The provisional Type 3 run accepted candidates using a soft radius penalty, allowing actual anchor distances far outside the requested neighborhood bands.",
+  "invalidated_files_observed": [
+    "generated_instances/type3/type3_002.txt",
+    "generated_instances/type3/type3_003.txt",
+    "generated_instances/type3/type3_004.txt",
+    "generated_instances/type3/type3_005.txt",
+    "generated_instances/type3/type3_006.txt"
+  ],
+  "google_instances_modified": false,
+  "required_action": "Regenerate Type 3 only after reachability calibration and hard radius acceptance pass."
+}

@@ -17,6 +17,8 @@
     {"name": "outer", "min": 0.18, "max": 0.35},
     {"name": "wide", "min": 0.35, "max": 0.55}
   ],
+  "radius_bands_path": "benchmark_metadata/type3_calibrated_radii.json",
+  "allow_uncalibrated_radius_bands": false,
   "parameter_search": {
     "anchor_margin": 0.50,
     "max_profiles": 4,
@@ -59,6 +61,15 @@
     "initial_perturbation_scale": 0.25,
     "random_restart_rate": 0.15,
     "max_generation_attempts": 10,
-    "centered_initial_samples": 6
+    "centered_initial_samples": 6,
+    "initial_perturbation_scales": [0.0, 0.02, 0.05, 0.10, 0.20],
+    "hard_radius": true,
+    "hard_radius_violation_penalty": 100.0,
+    "radius_tolerance_absolute": 1e-9,
+    "radius_tolerance_relative": 1e-9,
+    "max_target_retries": 5,
+    "max_failed_targets": 500,
+    "viability_difficulty_prior": [0.35, 0.35, 0.20, 0.10],
+    "viability_blends": [1.0, 0.75, 0.50, 0.25, 0.0]
   }
 }

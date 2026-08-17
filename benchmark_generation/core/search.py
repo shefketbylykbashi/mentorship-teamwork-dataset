@@ -23,6 +23,7 @@ class SearchCandidate:
     target_distance: float
     nearest_existing_distance: float
     radius_distance: float | None = None
+    radius_constraint_pass: bool = True
 
 
 @dataclass
@@ -30,6 +31,8 @@ class SearchResult:
     candidate: SearchCandidate
     evaluations: int
     log: List[Dict[str, Any]]
+    best_candidate_found: SearchCandidate | None = None
+    generation_failures: int = 0
 
 
 def adaptive_parameter_search(
@@ -45,6 +48,9 @@ def adaptive_parameter_search(
     radius_max: float | None = None,
     source_name: str | None = None,
     initial_population: Sequence[GenerationParameters] | None = None,
+    hard_radius: bool = False,
+    radius_tolerance_absolute: float = 1e-9,
+    radius_tolerance_relative: float = 0.0,
 ) -> SearchResult:
     """Search over generator parameters while generating every candidate forward."""
 
@@ -63,7 +69,9 @@ def adaptive_parameter_search(
     while len(population) < population_size:
         population.append(sample_from_bounds(bounds, rng))
     best: SearchCandidate | None = None
+    best_any: SearchCandidate | None = None
     evaluations = 0
+    generation_failures = 0
     search_log: List[Dict[str, Any]] = []
 
     for iteration in range(iterations):
@@ -79,6 +87,7 @@ def adaptive_parameter_search(
                     source_name=source_name,
                 )
             except RuntimeError as exc:
+                generation_failures += 1
                 search_log.append(
                     {
                         "iteration": iteration,
@@ -100,12 +109,22 @@ def adaptive_parameter_search(
             if nearest_existing < min_distance:
                 objective += novelty_lambda * (min_distance - nearest_existing)
             radius_distance = None
+            radius_constraint_pass = True
             if anchor_vector is not None:
                 radius_distance = weighted_distance(normalized, anchor_vector, scaler.group_weights)
+                radius_constraint_pass = radius_in_bounds(
+                    radius_distance,
+                    radius_min,
+                    radius_max,
+                    radius_tolerance_absolute=radius_tolerance_absolute,
+                    radius_tolerance_relative=radius_tolerance_relative,
+                )
                 if radius_min is not None and radius_distance < radius_min:
                     objective += radius_penalty * (radius_min - radius_distance)
                 if radius_max is not None and radius_distance > radius_max:
                     objective += radius_penalty * (radius_distance - radius_max)
+                if hard_radius and not radius_constraint_pass:
+                    objective += float(config.get("hard_radius_violation_penalty", 100.0))
 
             candidate = SearchCandidate(
                 outcome=outcome,
@@ -116,9 +135,17 @@ def adaptive_parameter_search(
                 target_distance=target_distance,
                 nearest_existing_distance=nearest_existing,
                 radius_distance=radius_distance,
+                radius_constraint_pass=radius_constraint_pass,
             )
             candidates.append(candidate)
-            if h not in existing_hashes and (best is None or candidate.objective < best.objective):
+            if h not in existing_hashes and (
+                best_any is None or candidate.objective < best_any.objective
+            ):
+                best_any = candidate
+            can_accept = h not in existing_hashes and (
+                not hard_radius or candidate.radius_constraint_pass
+            )
+            if can_accept and (best is None or candidate.objective < best.objective):
                 best = candidate
 
         if not candidates:
@@ -132,6 +159,8 @@ def adaptive_parameter_search(
                 "status": "evaluated",
                 "best_objective": candidates[0].objective,
                 "best_target_distance": candidates[0].target_distance,
+                "best_radius_distance": candidates[0].radius_distance,
+                "best_radius_constraint_pass": candidates[0].radius_constraint_pass,
                 "evaluated": len(candidates),
             }
         )
@@ -147,8 +176,21 @@ def adaptive_parameter_search(
         population = next_population
 
     if best is None:
-        raise RuntimeError("Search failed to produce any non-duplicate valid candidate")
-    return SearchResult(candidate=best, evaluations=evaluations, log=search_log)
+        if best_any is None:
+            raise RuntimeError("Search failed to produce any non-duplicate valid candidate")
+        raise RuntimeError(
+            "Search produced candidates but none satisfied the hard radius constraint. "
+            f"Closest accepted-style radius={best_any.radius_distance}, "
+            f"target_distance={best_any.target_distance}, evaluations={evaluations}, "
+            f"generation_failures={generation_failures}"
+        )
+    return SearchResult(
+        candidate=best,
+        evaluations=evaluations,
+        log=search_log,
+        best_candidate_found=best_any,
+        generation_failures=generation_failures,
+    )
 
 
 def _nearest_distance(
@@ -159,3 +201,21 @@ def _nearest_distance(
     if not accepted_vectors:
         return float("inf")
     return min(weighted_distance(vector, other, group_weights) for other in accepted_vectors)
+
+
+def radius_in_bounds(
+    radius: float,
+    radius_min: float | None,
+    radius_max: float | None,
+    radius_tolerance_absolute: float = 1e-9,
+    radius_tolerance_relative: float = 0.0,
+) -> bool:
+    tolerance = max(
+        float(radius_tolerance_absolute),
+        abs(float(radius)) * float(radius_tolerance_relative),
+    )
+    if radius_min is not None and radius + tolerance < radius_min:
+        return False
+    if radius_max is not None and radius - tolerance > radius_max:
+        return False
+    return True

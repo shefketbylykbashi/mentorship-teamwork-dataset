@@ -269,13 +269,23 @@ feature distance to the target plus novelty and duplicate penalties.
 
 Type 3 constructs local target clouds around each Google anchor. The default
 allocation is balanced over the five anchors. Target directions are random
-normalized directions in the same group-balanced feature metric, and radii are
-stratified into configurable bands:
+normalized directions in the same group-balanced feature metric. Final Type 3
+generation requires an empirical calibration file,
+`benchmark_metadata/type3_calibrated_radii.json`, produced by the reachability
+diagnostic. The generator fails rather than silently falling back to nominal
+bands if that file is missing, malformed, or incomplete. Nominal uncalibrated
+bands are available only through an explicit development option.
+
+Earlier nominal bands were:
 
 ```text
 small [0.03, 0.08], medium [0.08, 0.18],
 outer [0.18, 0.35], wide [0.35, 0.55].
 ```
+
+These are not treated as final methodology; calibrated anchor-specific bands
+replace them when the forward generator's empirical local resolution shows that
+the nominal values are not reachable.
 
 The search objective includes target distance, novelty, duplicate penalty, and
 a radius penalty if the measured candidate is outside its configured radius
@@ -283,6 +293,12 @@ band. This prevents collapse onto the anchor and uncontrolled drift. As with
 Type 2, the initial search population is seeded near the anchor-estimated
 parameter vector only as a computational prior; all candidates remain forward
 generated and feature-measured before acceptance.
+
+The Type 3 manifest is written only after an executable quality gate passes:
+the accepted count is exact, structural hashes are unique, all structural and
+radius validations pass, all five anchors are represented, every calibrated band
+expected for every anchor is represented, and required metadata fields are
+present.
 
 ## Reproducibility
 

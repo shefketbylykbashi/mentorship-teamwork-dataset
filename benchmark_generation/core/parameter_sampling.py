@@ -338,6 +338,30 @@ def interpolate_parameters(
     return GenerationParameters(**data).normalized()
 
 
+def blend_difficulty_mix(
+    params: GenerationParameters,
+    target_mix: Sequence[float],
+    blend: float,
+) -> GenerationParameters:
+    """Blend only p_over/p_match/p_mentor/p_future toward a target mixture."""
+
+    if len(target_mix) != 4:
+        raise ValueError("target_mix must contain four probabilities")
+    blend = max(0.0, min(1.0, float(blend)))
+    target_total = sum(max(0.0, float(value)) for value in target_mix)
+    if target_total <= 0:
+        target = [0.25, 0.25, 0.25, 0.25]
+    else:
+        target = [max(0.0, float(value)) / target_total for value in target_mix]
+    data = params.to_dict()
+    for key, target_value in zip(PROBABILITY_PARAMETERS, target):
+        data[key] = (1.0 - blend) * float(data[key]) + blend * target_value
+    total = sum(float(data[key]) for key in PROBABILITY_PARAMETERS)
+    for key in PROBABILITY_PARAMETERS:
+        data[key] = float(data[key]) / total
+    return GenerationParameters(**data).normalized()
+
+
 def sample_simplex(config: Mapping[str, Any], rng: random.Random) -> Tuple[float, float, float, float]:
     alpha = config.get("alpha", [1.0, 1.0, 1.0, 1.0])
     if isinstance(alpha, (int, float)):
