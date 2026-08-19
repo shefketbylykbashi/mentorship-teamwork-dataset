@@ -271,6 +271,7 @@ def finalize_source_profile(
     config: Mapping[str, Any],
     seed: int,
     family_instance_id: int,
+    source_slot_id: int | None = None,
     source_replacement: bool = False,
     original_source: Mapping[str, Any] | None = None,
     replacement_reason: str = "",
@@ -292,6 +293,7 @@ def finalize_source_profile(
         "demand_weights": list(measurement["skill_demand_weights"]),
         "profile_centroids": measurement["profile_centroids"],
         "profile_sizes": measurement["profile_sizes"],
+        "duration_values": [int(value) for value in measurement.get("duration_values", [])],
     }
     source_metrics = {
         "source_merged_pr_count": int(measurement["merged_pr_count"]),
@@ -317,6 +319,7 @@ def finalize_source_profile(
     }
     return {
         "family_instance_id": family_instance_id,
+        "source_slot_id": int(source_slot_id if source_slot_id is not None else family_instance_id),
         "source_owner": source["owner"],
         "source_repo": source["repo"],
         "source_url": source["url"],
@@ -359,6 +362,7 @@ def empirical_profile_from_record(record: Mapping[str, Any]) -> EmpiricalSourceP
             for row in profile.get("profile_centroids", [])
         ),
         profile_sizes=tuple(int(value) for value in profile.get("profile_sizes", [])),
+        duration_values=tuple(int(value) for value in profile.get("duration_values", [])),
     )
 
 

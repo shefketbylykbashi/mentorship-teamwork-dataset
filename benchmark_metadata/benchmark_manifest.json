@@ -15,6 +15,15 @@
       "output_dir": "generated_instances\\type4",
       "seed": 2026,
       "statistical_report": "benchmark_metadata\\type4_statistical_report.json"
+    },
+    "type5": {
+      "config_hash": "41bd36c24b0c311d6897ac6cb4651234b7c50f06d7673020acd24f04b9544e02",
+      "count": 91,
+      "empirical_corpus": "benchmark_metadata\\type5_empirical_corpus.json",
+      "metadata_csv": "benchmark_metadata\\type5_metadata.csv",
+      "output_dir": "generated_instances\\type5",
+      "seed": 2026,
+      "statistical_report": "benchmark_metadata\\type5_statistical_report.json"
     }
   }
 }

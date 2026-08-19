@@ -52,7 +52,10 @@ python -m benchmark_generation.type3.generate_type3 \
 
 Generate Type 5 in four stages. Bulk collection requires authenticated public
 GitHub access through `GITHUB_TOKEN` or `gh auth login`; the token is never
-written to config or metadata.
+written to config or metadata. The empirical build evaluates the 100 primary
+repository-window slots, applies the fixed source-quality gates and deterministic
+reserve replacement, then records the retained final family size in
+`benchmark_metadata/type5_empirical_corpus.json`.
 
 ```bash
 python -m benchmark_generation.type5.collect_github_corpus \
@@ -89,11 +92,15 @@ python -m benchmark_generation.type5.generate_type5 \
   --output-dir generated_instances/type5 \
   --metadata-dir benchmark_metadata \
   --config benchmark_generation/configs/type5.yaml \
-  --count 100 \
   --seed 2026 \
   --overwrite \
   --verbose
 ```
+
+For the current collected corpus, the empirical build retained 91 valid source
+configurations, so the final command writes `type5_001.txt` through
+`type5_091.txt`. You may pass `--count 91` explicitly, but any other non-pilot
+count is rejected.
 
 Use `--overwrite` only when intentionally replacing generated files. The
 generators never overwrite existing instance files silently.
@@ -120,7 +127,7 @@ Generated instances use deterministic sortable names:
 generated_instances/type2/type2_001.txt ... type2_100.txt
 generated_instances/type3/type3_001.txt ... type3_100.txt
 generated_instances/type4/type4_001.txt ... type4_100.txt
-generated_instances/type5/type5_001.txt ... type5_100.txt
+generated_instances/type5/type5_001.txt ... type5_091.txt
 ```
 
 Metadata and reports are written under `benchmark_metadata/`, including:

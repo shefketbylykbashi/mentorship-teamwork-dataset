@@ -1,0 +1,114 @@
+{
+  "deadline_min_observations": 10,
+  "default_tightness_bounds": [
+    0.8,
+    4.0
+  ],
+  "detailed_pr_sample_size": 60,
+  "difficulty_prior": {
+    "dirichlet_alpha": [
+      25,
+      45,
+      20,
+      10
+    ],
+    "future_bounds": [
+      0.05,
+      0.15
+    ],
+    "mean": [
+      0.25,
+      0.45,
+      0.2,
+      0.1
+    ],
+    "mentor_bounds": [
+      0.15,
+      0.3
+    ]
+  },
+  "distance_group_weights": {
+    "levels": 1,
+    "mentorship": 1,
+    "scores": 1,
+    "size": 1,
+    "supply_demand": 1,
+    "time": 1
+  },
+  "duration_range": [
+    1,
+    500
+  ],
+  "empirical_corpus_path": "benchmark_metadata/type5_empirical_corpus.json",
+  "family": "type5",
+  "fillable_fraction": 0.3,
+  "final_count_policy": "derived_from_retained_valid_empirical_source_configurations",
+  "future_offset_max": 4,
+  "future_offset_min": 2,
+  "initial_candidate_source_slots": 100,
+  "max_author_sample_share": 0.2,
+  "max_generation_attempts_per_source": 30,
+  "max_release_deadline_days": 180,
+  "min_human_contributors": 5,
+  "min_merged_prs": 5,
+  "min_retained_skills": 5,
+  "monthly_pr_sample_target": 10,
+  "profile_count_range": [
+    3,
+    8
+  ],
+  "quality_gates": {
+    "alignment_min": 0.55,
+    "alignment_tolerance": 0.15,
+    "distribution_tolerances": {
+      "contributor_level_mean": 1.25,
+      "deadline_tightness_mean": 1.25,
+      "duration_median_relative": 0.6,
+      "future_share": 0.1,
+      "mentor_share": 0.15,
+      "required_level_mean": 2.0,
+      "role_skill_alignment": 0.15,
+      "roles_per_project_mean": 2.0,
+      "skill_skew": 0.2,
+      "skills_per_contributor_mean": 2.0
+    },
+    "future_share_bounds": [
+      0.03,
+      0.18
+    ],
+    "largest_profile_share_max": 0.7,
+    "mentor_share_bounds": [
+      0.1,
+      0.3
+    ],
+    "realistic_initial_feasibility_min": 0.7,
+    "skill_skew_tolerance": 0.2
+  },
+  "role_level_max": 100,
+  "roles_per_project_range": [
+    1,
+    20
+  ],
+  "root_seed": 2026,
+  "scale_compression": {
+    "max_contributors": 10000,
+    "max_projects": 10000
+  },
+  "score_base_range": [
+    0.5,
+    5.0
+  ],
+  "score_density_target": 2.0,
+  "score_perturbation_range": [
+    1.0,
+    3.0
+  ],
+  "skill_count_range": [
+    5,
+    200
+  ],
+  "tightness_range": [
+    0.5,
+    6.0
+  ]
+}

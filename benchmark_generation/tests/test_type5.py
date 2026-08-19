@@ -1,6 +1,8 @@
 import http.client
 import json
 
+import pytest
+
 from benchmark_generation.core.generator import (
     EmpiricalSourceProfile,
     GenerationParameters,
@@ -8,6 +10,7 @@ from benchmark_generation.core.generator import (
 )
 from benchmark_generation.core.parser import instance_to_text, write_instance
 from benchmark_generation.type5 import collect_github_corpus
+from benchmark_generation.type5.build_empirical_profiles import assign_contiguous_family_ids
 from benchmark_generation.type5.collect_github_corpus import GitHubClient, collect_repository
 from benchmark_generation.type5.empirical import (
     activity_score,
@@ -17,6 +20,7 @@ from benchmark_generation.type5.empirical import (
     sample_type5_difficulty_prior,
 )
 from benchmark_generation.type5.quality import final_instance_names_are_anonymized
+from benchmark_generation.type5.generate_type5 import generate_type5, select_pilot_records
 from benchmark_generation.type5.sampling import deterministic_pr_sample
 from benchmark_generation.type5.sources import ObservationWindow, SourceRepo, load_type5_sources
 from benchmark_generation.type5.taxonomy import (
@@ -123,6 +127,81 @@ def test_type5_parameter_conversion_from_measurement():
     assert params["n_skills"] == 5
     assert 3 <= params["n_profiles"] <= 8
     assert params["role_skill_alignment"] >= 0.60
+    assert record["source_slot_id"] == 1
+    assert record["source_profile"]["duration_values"] == [1, 2, 3, 4, 5, 6]
+
+
+def test_type5_filtered_records_get_contiguous_family_ids():
+    records = [
+        {"family_instance_id": 1, "source_slot_id": 1},
+        {"family_instance_id": 7, "source_slot_id": 7},
+        {"family_instance_id": 10, "source_slot_id": 10},
+    ]
+    replacements = [{"source_slot_id": 7, "replacement_source": "reserve/repo"}]
+
+    result = assign_contiguous_family_ids(records, replacements)
+
+    assert [record["source_slot_id"] for record in result] == [1, 7, 10]
+    assert [record["family_instance_id"] for record in result] == [1, 2, 3]
+    assert replacements[0]["family_instance_id"] == 2
+
+
+def test_type5_final_generation_rejects_count_mismatch_before_work(tmp_path):
+    corpus_path = tmp_path / "type5_empirical_corpus.json"
+    corpus_path.write_text(
+        json.dumps(
+            {
+                "family": "type5",
+                "records": [{}],
+                "retained_valid_source_configurations": 1,
+                "final_expected_type5_count": 1,
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(RuntimeError, match="must use all 1 retained"):
+        generate_type5(
+            output_dir=tmp_path / "instances",
+            metadata_dir=tmp_path / "metadata",
+            count=2,
+            seed=2026,
+            config={"root_seed": 2026, "empirical_corpus_path": str(corpus_path)},
+            dry_run=True,
+            pilot=False,
+        )
+
+
+def test_type5_pilot_selection_does_not_repeat_exact_source_records():
+    records = []
+    for idx, window in enumerate(["W1", "W2", "W3", "W4"], start=1):
+        records.append(
+            {
+                "family_instance_id": idx,
+                "source_slot_id": idx,
+                "source_owner": f"repo{idx}",
+                "source_repo": "main",
+                "source_domain": f"domain{idx}",
+                "source_window_name": window,
+            }
+        )
+    for idx in range(5, 13):
+        records.append(
+            {
+                "family_instance_id": idx,
+                "source_slot_id": idx,
+                "source_owner": f"repo{idx}",
+                "source_repo": "main",
+                "source_domain": f"domain{idx}",
+                "source_window_name": "W1",
+            }
+        )
+
+    selected = select_pilot_records(records, 10)
+
+    assert len(selected) == 10
+    assert len({record["source_slot_id"] for record in selected}) == 10
+    assert {record["source_window_name"] for record in selected} == {"W1", "W2", "W3", "W4"}
 
 
 def test_type5_empirical_profile_never_leaks_semantic_tokens_to_txt(tmp_path):
@@ -167,6 +246,46 @@ def test_type5_empirical_profile_never_leaks_semantic_tokens_to_txt(tmp_path):
     path = tmp_path / "type5_001.txt"
     write_instance(instance, path)
     assert final_instance_names_are_anonymized(path)
+
+
+def test_type5_empirical_duration_profile_drives_project_durations():
+    params = GenerationParameters(
+        n_skills=5,
+        skill_skew=1.0,
+        n_contributors=8,
+        skills_per_contributor_min=2,
+        skills_per_contributor_max=3,
+        level_mean=4.0,
+        level_sd=1.0,
+        level_max=10,
+        n_profiles=3,
+        n_projects=8,
+        duration_min=1,
+        duration_max=20,
+        roles_min=1,
+        roles_max=2,
+        score_base=1.0,
+        score_perturbation=1.2,
+        tightness_min=1.0,
+        tightness_max=3.0,
+        role_skill_alignment=0.8,
+        supply_quantile=0.7,
+        p_over=0.25,
+        p_match=0.45,
+        p_mentor=0.20,
+        p_future=0.10,
+        fillable_fraction=0.0,
+    )
+    profile = EmpiricalSourceProfile(
+        skill_weights=(0.2, 0.2, 0.2, 0.2, 0.2),
+        demand_weights=(0.2, 0.2, 0.2, 0.2, 0.2),
+        profile_centroids=((1, 0, 0, 0, 0), (0, 1, 1, 0, 0), (0, 0, 0, 1, 1)),
+        profile_sizes=(3, 3, 2),
+        duration_values=(2, 2, 2),
+    )
+    instance = generate_instance(params, 456, empirical_profile=profile)
+
+    assert {project.duration for project in instance.projects} == {2}
 
 
 def test_type5_github_client_retries_remote_disconnected(monkeypatch, tmp_path):
@@ -325,7 +444,8 @@ def fake_measurement():
 
 def fake_type5_config():
     return {
-        "count": 100,
+        "initial_candidate_source_slots": 100,
+        "final_count_policy": "derived_from_retained_valid_empirical_source_configurations",
         "fillable_fraction": 0.30,
         "skill_count_range": [5, 200],
         "profile_count_range": [3, 8],

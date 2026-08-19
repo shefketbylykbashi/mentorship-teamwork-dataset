@@ -1,6 +1,7 @@
 {
   "family": "type5",
-  "count": 100,
+  "initial_candidate_source_slots": 100,
+  "final_count_policy": "derived_from_retained_valid_empirical_source_configurations",
   "root_seed": 2026,
   "empirical_corpus_path": "benchmark_metadata/type5_empirical_corpus.json",
   "fillable_fraction": 0.30,

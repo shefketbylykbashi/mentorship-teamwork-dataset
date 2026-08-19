@@ -1,0 +1,1011 @@
+{
+  "contention": {
+    "max": 514.75,
+    "mean": 107.02431365183766,
+    "median": 58.08,
+    "min": 8.416666666666666
+  },
+  "contributor_level_mean": {
+    "max": 6.32258064516129,
+    "mean": 5.4607417243978995,
+    "median": 5.424778761061947,
+    "min": 4.575757575757576
+  },
+  "contributor_level_sd": {
+    "max": 2.841699333504658,
+    "mean": 2.4197830369300077,
+    "median": 2.431462422593682,
+    "min": 1.9454362549881254
+  },
+  "contributor_realism": {
+    "generated_skill_skew": {
+      "max": 2.0,
+      "mean": 1.1441166974780528,
+      "median": 1.1175375679063781,
+      "min": 0.5175499951227676
+    },
+    "profile_count": {
+      "max": 8.0,
+      "mean": 6.549450549450549,
+      "median": 7.0,
+      "min": 3.0
+    },
+    "source_skill_skew": {
+      "max": 2.0,
+      "mean": 1.1444258193469568,
+      "median": 1.1129892085484607,
+      "min": 0.4735641451196786
+    }
+  },
+  "count": 91,
+  "deadline_tightness_mean": {
+    "max": 5.453245574216977,
+    "mean": 3.338144573090036,
+    "median": 3.286879107191607,
+    "min": 1.3472549371936362
+  },
+  "deadline_tightness_sd": {
+    "max": 1.6845062552861112,
+    "mean": 1.4751566105498017,
+    "median": 1.5763283672877182,
+    "min": 0.49752369860728946
+  },
+  "degeneracy_flags": [],
+  "demand_concentration": {
+    "max": 0.40373000527115044,
+    "mean": 0.14424297124168245,
+    "median": 0.14080394086784997,
+    "min": 0.024953461136152044
+  },
+  "demand_supply": {
+    "generated_alignment": {
+      "max": 0.9999456723403004,
+      "mean": 0.9970125948855902,
+      "median": 0.9982716361824543,
+      "min": 0.9850828883111946
+    },
+    "source_alignment": {
+      "max": 1.0000000000000002,
+      "mean": 0.9819760059023113,
+      "median": 0.9908442005469056,
+      "min": 0.8932524194902589
+    }
+  },
+  "demand_supply_alignment": {
+    "max": 0.9999456723403004,
+    "mean": 0.9970125948855902,
+    "median": 0.9982716361824543,
+    "min": 0.9850828883111946
+  },
+  "difficulty_prior": "Dirichlet concentration proportional to [25,45,20,10], with mentor/future bounds and renormalization.",
+  "direct_fillability": {
+    "max": 0.9551630434782609,
+    "mean": 0.8617474849496356,
+    "median": 0.8646453708716838,
+    "min": 0.7433954536145811
+  },
+  "duplicate_count": 0,
+  "duration_mean": {
+    "max": 109.67680608365019,
+    "mean": 12.758458809904088,
+    "median": 7.043743641912513,
+    "min": 1.0
+  },
+  "duration_sd": {
+    "max": 178.34884354646553,
+    "mean": 18.354348470535516,
+    "median": 8.458669288224222,
+    "min": 0.0
+  },
+  "empirical_family_size_explanation": "One hundred primary repository-window configurations were evaluated. Only configurations passing predefined source-quality criteria were retained; deterministic reserve replacements were used where possible. No thresholds were weakened to force a target count.",
+  "evaluated_primary_slots": 100,
+  "failed_attempt_samples": [
+    {
+      "attempt": 1,
+      "family_instance_id": 1,
+      "filename": "type5_001.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 1,
+      "filename": "type5_001.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": false,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": true,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 4,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 5,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 6,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 7,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 8,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 9,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 10,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": true,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 11,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": true,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 12,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 13,
+      "family_instance_id": 2,
+      "filename": "type5_002.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 3,
+      "filename": "type5_003.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 5,
+      "filename": "type5_005.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 5,
+      "filename": "type5_005.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 5,
+      "filename": "type5_005.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 4,
+      "family_instance_id": 5,
+      "filename": "type5_005.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 6,
+      "filename": "type5_006.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 7,
+      "filename": "type5_007.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 10,
+      "filename": "type5_010.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 10,
+      "filename": "type5_010.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 10,
+      "filename": "type5_010.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_quality_gate_failed"
+    }
+  ],
+  "failed_attempts": 129,
+  "final_empirical_source_configurations": 91,
+  "final_quality_gate": {
+    "accepted_count": 91,
+    "accepted_count_exact": true,
+    "all_duplicate_checks_pass": true,
+    "all_four_windows_represented": true,
+    "all_metadata_complete": true,
+    "all_overall_type5_quality_pass": true,
+    "all_seeds_recorded": true,
+    "all_source_provenance_complete": true,
+    "all_structurally_valid": true,
+    "failed_source_windows": 9,
+    "family_instance_ids_contiguous": true,
+    "methodology_documented": true,
+    "missing_metadata_rows": [],
+    "no_real_usernames_in_final_instances": true,
+    "output_filenames_contiguous": true,
+    "passed": true,
+    "provenance_report_exists": true,
+    "replacement_count": 11,
+    "retained_empirical_sources": 91,
+    "retained_empirical_sources_exact": true,
+    "source_repository_coverage": 26,
+    "source_slot_ids_unique": true,
+    "statistical_report_exists": true,
+    "unique_structural_hashes": 91,
+    "unique_structural_hashes_exact": true
+  },
+  "final_type5_instances": 91,
+  "infeasible_deadline_share": {
+    "max": 0.26229508196721313,
+    "mean": 0.038449258934734866,
+    "median": 0.03909465020576132,
+    "min": 0.0
+  },
+  "initial_candidate_source_slots": 100,
+  "invalid_primary_windows": 20,
+  "learning_reachable_demand": {
+    "max": 0.20233122875182127,
+    "mean": 0.10965300041084579,
+    "median": 0.10927152317880795,
+    "min": 0.03736413043478261
+  },
+  "level_gap_mean": {
+    "max": 2.2637446706299165,
+    "mean": 1.4183810539165853,
+    "median": 1.3994776688772819,
+    "min": 0.44628662605163916
+  },
+  "level_gap_sd": {
+    "max": 1.362476541888342,
+    "mean": 0.7246866287462131,
+    "median": 0.7225382371475094,
+    "min": 0.32870624583045105
+  },
+  "mentor_availability": {
+    "max": 0.8197754039989044,
+    "mean": 0.5190480505173832,
+    "median": 0.5274949083503055,
+    "min": 0.20509470934030047
+  },
+  "mentorship": {
+    "directly_fillable_share": {
+      "max": 0.9551630434782609,
+      "mean": 0.8617474849496356,
+      "median": 0.8646453708716838,
+      "min": 0.7433954536145811
+    },
+    "future_share": {
+      "max": 0.16358463726884778,
+      "mean": 0.10335948621336431,
+      "median": 0.09908536585365854,
+      "min": 0.045804195804195806
+    },
+    "mentor_share": {
+      "max": 0.2971830985915493,
+      "mean": 0.21031294894399832,
+      "median": 0.20812685827552033,
+      "min": 0.11666666666666667
+    },
+    "truly_mentorship_feasible_share": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    }
+  },
+  "mentorship_fillability": {
+    "max": 0.8197754039989044,
+    "mean": 0.5190480505173832,
+    "median": 0.5274949083503055,
+    "min": 0.20509470934030047
+  },
+  "n_contributors": {
+    "max": 52.0,
+    "mean": 24.912087912087912,
+    "median": 24.0,
+    "min": 8.0
+  },
+  "n_projects": {
+    "max": 9755.0,
+    "mean": 1683.0879120879122,
+    "median": 671.0,
+    "min": 83.0
+  },
+  "n_skills": {
+    "max": 28.0,
+    "mean": 11.505494505494505,
+    "median": 11.0,
+    "min": 5.0
+  },
+  "penalty_exposure": {
+    "max": 0.07302377717130129,
+    "mean": 0.011253572451891495,
+    "median": 0.011394529368937867,
+    "min": 0.0
+  },
+  "pilot": false,
+  "replacements": [
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "pallets/flask",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 1,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "ansible/ansible",
+      "source_slot_id": 1,
+      "window": "W1"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "pallets/flask",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 2,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "ansible/ansible",
+      "source_slot_id": 2,
+      "window": "W2"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "pallets/flask",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 3,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "ansible/ansible",
+      "source_slot_id": 3,
+      "window": "W3"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "pallets/flask",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 4,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "ansible/ansible",
+      "source_slot_id": 4,
+      "window": "W4"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "fastapi/fastapi",
+      "failure_reason": "profile_clustering_empty_profile",
+      "family_instance_id": 5,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "redis/redis",
+      "source_slot_id": 5,
+      "window": "W1"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "fastapi/fastapi",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 6,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "apache/flink",
+      "source_slot_id": 6,
+      "window": "W2"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "psf/requests",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 9,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "apache/flink",
+      "source_slot_id": 9,
+      "window": "W1"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "psf/requests",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 10,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "redis/redis",
+      "source_slot_id": 11,
+      "window": "W3"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "spring-projects/spring-boot",
+      "failure_reason": "no_technical_file_activity",
+      "family_instance_id": 31,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "apache/flink",
+      "source_slot_id": 35,
+      "window": "W3"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "apache/spark",
+      "failure_reason": "no_technical_file_activity",
+      "family_instance_id": 37,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "redis/redis",
+      "source_slot_id": 44,
+      "window": "W4"
+    },
+    {
+      "deterministic_replacement_order": [
+        "encode/httpx",
+        "ansible/ansible",
+        "redis/redis",
+        "apache/flink"
+      ],
+      "failed_primary_source": "tensorflow/tensorflow",
+      "failure_reason": "fewer_than_five_retained_skills",
+      "family_instance_id": 51,
+      "replacement_date": "2026-08-19T10:21:01Z",
+      "replacement_source": "apache/flink",
+      "source_slot_id": 60,
+      "window": "W4"
+    }
+  ],
+  "required_level_mean": {
+    "max": 7.604288499025341,
+    "mean": 6.873920100656735,
+    "median": 6.891891891891892,
+    "min": 5.86928662964545
+  },
+  "required_level_sd": {
+    "max": 3.238157672306115,
+    "mean": 2.5942000265343084,
+    "median": 2.6027826262349105,
+    "min": 2.103521479931549
+  },
+  "roles_per_project_mean": {
+    "max": 2.991501416430595,
+    "mean": 1.7802984060709588,
+    "median": 1.5183688464364438,
+    "min": 1.0
+  },
+  "roles_per_project_sd": {
+    "max": 1.4390098345120357,
+    "mean": 0.6697717809960009,
+    "median": 0.49998314794953885,
+    "min": 0.0
+  },
+  "schedule_pressure": {
+    "max": 1.8481669255340973,
+    "mean": 0.5555124876472349,
+    "median": 0.4697132266874756,
+    "min": 0.2736920963915595
+  },
+  "score_concentration": {
+    "max": 0.27451135127742243,
+    "mean": 0.11370333222175755,
+    "median": 0.10822303037040015,
+    "min": 0.01093704815401808
+  },
+  "score_density": {
+    "max": 10.01107124551512,
+    "mean": 4.291568525254215,
+    "median": 3.9709627329192547,
+    "min": 0.9949186662372841
+  },
+  "score_effort_correlation": {
+    "max": 0.9685146499056022,
+    "mean": 0.9348603355311739,
+    "median": 0.9411933729502636,
+    "min": 0.7311506207846362
+  },
+  "score_mean": {
+    "max": 822.1935483870968,
+    "mean": 65.59243382189955,
+    "median": 47.53318077803203,
+    "min": 10.515009683666882
+  },
+  "score_proxy_methodology": "Score is an effort-conditioned synthetic proxy; GitHub popularity or comments are not used as value.",
+  "score_sd": {
+    "max": 1971.070327971034,
+    "mean": 111.92274381144325,
+    "median": 70.68644961232492,
+    "min": 6.221204855989998
+  },
+  "skills_per_contributor_mean": {
+    "max": 6.083333333333333,
+    "mean": 2.5157656291548824,
+    "median": 2.25,
+    "min": 1.4285714285714286
+  },
+  "skills_per_contributor_sd": {
+    "max": 2.7937810615772016,
+    "mean": 1.0683657549541874,
+    "median": 1.019803902718557,
+    "min": 0.45452967144315476
+  },
+  "source_coverage": {
+    "count_per_repository": {
+      "ansible/ansible": 4,
+      "apache/airflow": 4,
+      "apache/flink": 4,
+      "apache/kafka": 4,
+      "django/django": 4,
+      "dotnet/runtime": 4,
+      "elastic/elasticsearch": 4,
+      "fastapi/fastapi": 2,
+      "hashicorp/terraform": 4,
+      "kubernetes/kubernetes": 4,
+      "microsoft/vscode": 4,
+      "nodejs/node": 4,
+      "numpy/numpy": 4,
+      "pandas-dev/pandas": 4,
+      "prometheus/prometheus": 4,
+      "psf/requests": 1,
+      "pydantic/pydantic": 3,
+      "pytorch/pytorch": 4,
+      "react/react": 4,
+      "redis/redis": 3,
+      "rust-lang/rust": 4,
+      "scikit-learn/scikit-learn": 4,
+      "spring-projects/spring-boot": 1,
+      "tensorflow/tensorflow": 1,
+      "vitejs/vite": 4,
+      "vuejs/core": 4
+    },
+    "count_per_window": {
+      "W1": 22,
+      "W2": 21,
+      "W3": 23,
+      "W4": 25
+    },
+    "domain_count": 24,
+    "replacements_by_reason": {
+      "fewer_than_five_retained_skills": 8,
+      "no_technical_file_activity": 2,
+      "profile_clustering_empty_profile": 1
+    },
+    "repository_count": 26
+  },
+  "source_match": {
+    "alignment_delta": {
+      "max": 0.10139147372335666,
+      "mean": 0.04932409628377717,
+      "median": 0.04851624610862382,
+      "min": 0.03508288831119466
+    },
+    "skill_skew_delta": {
+      "max": 0.19160309727088953,
+      "mean": 0.0914774528418575,
+      "median": 0.09059508971788788,
+      "min": 0.0
+    }
+  },
+  "successful_reserve_replacements": 11,
+  "supply_concentration": {
+    "max": 0.369385937072359,
+    "mean": 0.1413442973227104,
+    "median": 0.13563260987210424,
+    "min": 0.031224277778181597
+  },
+  "total_roles": {
+    "max": 15003.0,
+    "mean": 2972.7582417582416,
+    "median": 1094.0,
+    "min": 115.0
+  },
+  "unfilled_rejected_source_slots": 9,
+  "unmet_skill_share": {
+    "max": 0.0,
+    "mean": 0.0,
+    "median": 0.0,
+    "min": 0.0
+  },
+  "valid_primary_windows": 80,
+  "validation_failures": 0,
+  "within_family_min_pairwise_distance": 0.4324721761356264,
+  "within_family_pairwise_distance": {
+    "max": 3.0354404193179443,
+    "mean": 1.3440559617566243,
+    "median": 1.2867142161286416,
+    "min": 0.4324721761356264
+  },
+  "within_project_mentorship_feasibility": {
+    "max": 0.717736369910283,
+    "mean": 0.44233599208330576,
+    "median": 0.43543543543543545,
+    "min": 0.0
+  },
+  "workload_contention": {
+    "max": 6760.1,
+    "mean": 845.513955218,
+    "median": 488.3,
+    "min": 12.846153846153847
+  }
+}

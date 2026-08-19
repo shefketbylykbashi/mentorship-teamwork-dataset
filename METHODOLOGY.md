@@ -325,9 +325,17 @@ W4 [2026-02-17T00:00:00Z, 2026-08-17T00:00:00Z)
 ```
 
 These windows are an implementation design choice, not part of the original
-Hash Code MTP definition. The deterministic slot mapping is repository-major
-and window-minor, so repository 1 W1 maps to `type5_001`, repository 1 W2 to
-`type5_002`, and so on through `type5_100`.
+Hash Code MTP definition. The 25 x 4 design gives 100 deterministic primary
+repository-window source slots. Each empirical record keeps this original
+`source_slot_id` using repository-major, window-minor order. After the fixed
+source-quality gates and deterministic reserve replacement are applied, the
+final Type 5 family size is derived from the retained valid empirical source
+configurations rather than forced to 100. For the current collected corpus,
+100 primary slots were evaluated, 91 valid configurations were retained, 9
+source slots remained rejected, and 11 successful reserve replacements were
+used. Final `family_instance_id` values are reassigned contiguously over the
+retained records, so the current final files are `type5_001.txt` through
+`type5_091.txt` while `source_slot_id` preserves the original 100-slot design.
 
 ### Empirically Observed
 
@@ -433,9 +441,10 @@ measurement.
 ### Type 5 Acceptance
 
 Type 5 is origin-driven and does not use Type 2/3 target-vector search. For each
-source window, the source-derived `GenerationParameters` and empirical profile
-are held fixed. If an attempt fails structural validation, duplicate detection,
-or a realism gate, only the deterministic seed changes.
+retained empirical source configuration, the source-derived
+`GenerationParameters` and empirical profile are held fixed. If an attempt
+fails structural validation, duplicate detection, or a realism gate, only the
+deterministic seed changes.
 
 The Type 5 realism gate requires structural validity, no duplicate structural
 hash against Google and generated families, 3 to 8 non-empty generated profiles,
@@ -454,10 +463,13 @@ mentorship rule: a one-below contributor is counted only when a distinct
 qualified mentor can also be assigned to the same project.
 
 Before final manifest update, the executable Type 5 final gate checks exact
-accepted count, 100 unique hashes, structural validity, duplicate status,
-overall realism pass, complete source provenance and metadata, all four windows,
-at least 25 source repositories, anonymized final IDs, recorded seeds,
-statistical report, provenance report, and methodology documentation.
+accepted count against `final_expected_type5_count`, unique structural hashes,
+contiguous final `family_instance_id` values, unique retained `source_slot_id`
+values, exact final filenames, structural validity, duplicate status, overall
+realism pass, complete source provenance and metadata, all four windows,
+anonymized final IDs, recorded seeds, statistical report, provenance report,
+and methodology documentation. The gate does not accept a partial non-pilot
+final run.
 
 This source corpus is purposively selected from mature public open-source
 software repositories. It is not statistically representative of all software

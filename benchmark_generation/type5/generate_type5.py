@@ -34,7 +34,6 @@ from benchmark_generation.type5.quality import (
 
 DEFAULT_CONFIG: Dict[str, Any] = {
     "family": "type5",
-    "count": 100,
     "root_seed": 2026,
     "empirical_corpus_path": "benchmark_metadata/type5_empirical_corpus.json",
     "fillable_fraction": 0.30,
@@ -53,7 +52,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
 def generate_type5(
     output_dir: str | Path,
     metadata_dir: str | Path,
-    count: int,
+    count: int | None,
     seed: int,
     config: Dict[str, Any],
     overwrite: bool = False,
@@ -65,6 +64,20 @@ def generate_type5(
     corpus_path = Path(str(config.get("empirical_corpus_path", "benchmark_metadata/type5_empirical_corpus.json")))
     corpus = load_empirical_corpus(corpus_path)
     records = list(corpus.get("records", []))
+    retained_count = int(corpus.get("final_expected_type5_count") or len(records))
+    if retained_count != len(records):
+        raise RuntimeError(
+            f"Type 5 empirical corpus count mismatch: final_expected_type5_count={retained_count}, "
+            f"records={len(records)}"
+        )
+    if count is None:
+        count = 10 if pilot else retained_count
+    if not pilot and count != retained_count:
+        raise RuntimeError(
+            f"Final Type 5 generation must use all {retained_count} retained empirical source "
+            f"configurations. Omit --count or pass --count {retained_count}; use --pilot for a "
+            "smaller smoke test."
+        )
     if pilot:
         selected_records = select_pilot_records(records, count)
     else:
@@ -282,6 +295,8 @@ def select_pilot_records(records: Sequence[Mapping[str, Any]], count: int) -> Li
     for record in ordered:
         if len(selected) >= count:
             break
+        if record in selected:
+            continue
         repo_key = f"{record['source_owner']}/{record['source_repo']}"
         if repo_key in seen_repos and len(seen_repos) >= 5:
             continue
@@ -333,6 +348,7 @@ def build_type5_metadata_row(
         "root_seed": root_seed,
         "instance_seed": outcome_seed,
         "structural_hash": structural_hash,
+        "source_slot_id": record["source_slot_id"],
         "source_owner": record["source_owner"],
         "source_repo": record["source_repo"],
         "source_url": record["source_url"],
@@ -408,6 +424,18 @@ def type5_statistical_report(
     report.update(
         {
             "pilot": pilot,
+            "initial_candidate_source_slots": int(corpus.get("initial_candidate_source_slots", 0) or 0),
+            "evaluated_primary_slots": int(corpus.get("evaluated_primary_slots", 0) or 0),
+            "valid_primary_windows": int(corpus.get("valid_primary_windows", 0) or 0),
+            "invalid_primary_windows": int(corpus.get("invalid_primary_windows", 0) or 0),
+            "successful_reserve_replacements": int(corpus.get("successful_reserve_replacements", 0) or 0),
+            "unfilled_rejected_source_slots": int(corpus.get("unfilled_rejected_source_slots", 0) or 0),
+            "final_empirical_source_configurations": int(corpus.get("retained_valid_source_configurations", len(corpus.get("records", []))) or 0),
+            "final_type5_instances": len(rows),
+            "empirical_family_size_explanation": corpus.get(
+                "empirical_family_size_note",
+                "Final Type 5 size is derived from retained empirical source configurations after quality filtering.",
+            ),
             "failed_attempts": len(failed_attempts),
             "failed_attempt_samples": list(failed_attempts[:25]),
             "replacements": corpus.get("replacements", []),
@@ -450,27 +478,47 @@ def type5_statistical_report(
 
 def write_pilot_table(rows: Sequence[Mapping[str, Any]], path: str | Path) -> None:
     fields = [
-        "filename",
+        "family_instance_id",
+        "source_slot_id",
         "source_repo",
-        "source_window_name",
-        "feature.n_contributors",
-        "feature.n_projects",
-        "feature.n_skills",
-        "source_profile_count",
-        "source_skill_skew",
-        "source_alignment",
-        "type5.quality_metrics.directly_fillable_share",
-        "type5.quality_metrics.truly_valid_initial_mentorship_feasible_share",
-        "type5.quality_metrics.measured_p_future",
-        "type5.structural_validation_pass",
-        "type5.duplicate_pass",
-        "type5.overall_type5_quality_pass",
+        "window",
+        "contributors",
+        "projects",
+        "skills",
+        "profiles",
+        "skill_skew",
+        "alignment",
+        "direct_fillability",
+        "mentorship_feasibility",
+        "future_share",
+        "structural_valid",
+        "duplicate_pass",
+        "overall_type5_quality_pass",
     ]
     with Path(path).open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=fields)
         writer.writeheader()
         for row in rows:
-            writer.writerow({field: row.get(field, "") for field in fields})
+            writer.writerow(
+                {
+                    "family_instance_id": row.get("family_instance_id", ""),
+                    "source_slot_id": row.get("source_slot_id", ""),
+                    "source_repo": f"{row.get('source_owner', '')}/{row.get('source_repo', '')}",
+                    "window": row.get("source_window_name", ""),
+                    "contributors": row.get("feature.n_contributors", ""),
+                    "projects": row.get("feature.n_projects", ""),
+                    "skills": row.get("feature.n_skills", ""),
+                    "profiles": row.get("type5.quality_metrics.generated_profile_count", ""),
+                    "skill_skew": row.get("type5.quality_metrics.generated_skill_skew", ""),
+                    "alignment": row.get("type5.quality_metrics.generated_alignment", ""),
+                    "direct_fillability": row.get("type5.quality_metrics.directly_fillable_share", ""),
+                    "mentorship_feasibility": row.get("type5.quality_metrics.truly_valid_initial_mentorship_feasible_share", ""),
+                    "future_share": row.get("type5.quality_metrics.measured_p_future", ""),
+                    "structural_valid": row.get("type5.structural_validation_pass", ""),
+                    "duplicate_pass": row.get("type5.duplicate_pass", ""),
+                    "overall_type5_quality_pass": row.get("type5.overall_type5_quality_pass", ""),
+                }
+            )
 
 
 def pilot_quality_gate(rows: Sequence[Mapping[str, Any]]) -> Dict[str, Any]:
@@ -544,7 +592,7 @@ def main() -> None:
         format="%(asctime)s %(levelname)s %(message)s",
     )
     config = load_config(args.config, DEFAULT_CONFIG)
-    count = args.count if args.count is not None else int(config["count"])
+    count = args.count
     seed = args.seed if args.seed is not None else int(config["root_seed"])
     if args.max_attempts is not None:
         config["max_generation_attempts_per_source"] = args.max_attempts

@@ -1,0 +1,11 @@
+{
+  "accepted_count": 10,
+  "accepted_count_exact": true,
+  "all_duplicate_pass": true,
+  "all_four_windows_where_possible": true,
+  "all_realism_pass": true,
+  "all_structural_valid": true,
+  "domain_coverage_at_least_3": true,
+  "passed": true,
+  "repository_coverage_at_least_5": true
+}

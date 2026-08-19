@@ -29,7 +29,6 @@ from benchmark_generation.type5.sources import (
 
 DEFAULT_CONFIG: Dict[str, Any] = {
     "root_seed": 2026,
-    "count": 100,
     "default_tightness_bounds": [0.8, 4.0],
     "score_density_target": 2.0,
 }
@@ -42,7 +41,6 @@ def build_empirical_profiles(
     config: Dict[str, Any],
     bot_config: Mapping[str, Any],
     seed: int,
-    allow_partial: bool = False,
 ) -> Dict[str, Any]:
     sources = load_type5_sources(sources_path)
     metadata_dir = Path(metadata_dir)
@@ -89,6 +87,9 @@ def build_empirical_profiles(
     failures: List[Dict[str, Any]] = []
     used_reserve_windows: set[Tuple[str, str]] = set()
     reserves: List[SourceRepo] = list(sources.get("reserve", []))
+    initial_candidate_source_slots = len(list(iter_primary_slots(sources)))
+    valid_primary_windows = 0
+    invalid_primary_windows = 0
 
     for slot_id, primary, window, window_idx in iter_primary_slots(sources):
         primary_measurement = measurements.get(("primary", primary.full_name, window.name))
@@ -96,7 +97,10 @@ def build_empirical_profiles(
         source_replacement = False
         original_source = None
         replacement_reason = ""
-        if not chosen or not chosen.get("valid"):
+        if chosen and chosen.get("valid"):
+            valid_primary_windows += 1
+        else:
+            invalid_primary_windows += 1
             original_source = asdict(primary)
             replacement_reason = str((chosen or {}).get("failure_reason") or "primary_source_window_unavailable")
             chosen = None
@@ -111,7 +115,7 @@ def build_empirical_profiles(
                     used_reserve_windows.add(reserve_key)
                     replacements.append(
                         {
-                            "family_instance_id": slot_id,
+                            "source_slot_id": slot_id,
                             "failed_primary_source": primary.full_name,
                             "failure_reason": replacement_reason,
                             "replacement_source": reserve.full_name,
@@ -124,10 +128,11 @@ def build_empirical_profiles(
         if not chosen or not chosen.get("valid"):
             failures.append(
                 {
-                    "family_instance_id": slot_id,
+                    "source_slot_id": slot_id,
                     "source": primary.full_name,
                     "window": window.name,
                     "failure_reason": replacement_reason or "no_valid_replacement_available",
+                    "reserve_status": "no_valid_unused_reserve_available_for_window",
                 }
             )
             continue
@@ -139,6 +144,7 @@ def build_empirical_profiles(
                 config,
                 seed=profile_seed,
                 family_instance_id=slot_id,
+                source_slot_id=slot_id,
                 source_replacement=source_replacement,
                 original_source=original_source,
                 replacement_reason=replacement_reason,
@@ -146,6 +152,10 @@ def build_empirical_profiles(
                 global_score_k=global_score_k,
             )
         )
+    records = assign_contiguous_family_ids(records, replacements)
+    retained_count = len(records)
+    for failure in failures:
+        failure["family_instance_id"] = ""
 
     corpus = {
         "family": "type5",
@@ -159,6 +169,20 @@ def build_empirical_profiles(
         "records": sorted(records, key=lambda item: int(item["family_instance_id"])),
         "replacements": replacements,
         "failed_source_windows": failures,
+        "initial_candidate_source_slots": initial_candidate_source_slots,
+        "evaluated_primary_slots": initial_candidate_source_slots,
+        "valid_primary_windows": valid_primary_windows,
+        "invalid_primary_windows": invalid_primary_windows,
+        "successful_reserve_replacements": len(replacements),
+        "unfilled_rejected_source_slots": len(failures),
+        "retained_valid_source_configurations": retained_count,
+        "final_expected_type5_count": retained_count,
+        "empirical_family_size_note": (
+            "One hundred primary repository-window configurations were evaluated. "
+            "Only configurations passing predefined source-quality criteria were retained; "
+            "deterministic reserve replacements were used where possible. No thresholds were "
+            "weakened to force a target count."
+        ),
         "global_calibration": {
             "deadline_tightness_p10": corpus_deadline_bounds[0],
             "deadline_tightness_p90": corpus_deadline_bounds[1],
@@ -169,13 +193,35 @@ def build_empirical_profiles(
     }
 
     write_empirical_outputs(corpus, all_measurements, sources, metadata_dir)
-    expected_count = int(config.get("count", 100))
-    if len(records) != expected_count and not allow_partial:
+    if not records:
         raise RuntimeError(
-            f"Type 5 empirical profile build produced {len(records)} valid source configurations; "
-            f"expected {expected_count}. See type5_source_windows.csv for failed windows."
+            "Type 5 empirical profile build produced no valid source configurations. "
+            "See type5_source_windows.csv for failed windows."
         )
     return corpus
+
+
+def assign_contiguous_family_ids(
+    records: List[Dict[str, Any]],
+    replacements: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    """Assign final Type 5 IDs after empirical quality filtering.
+
+    ``source_slot_id`` preserves the original 25 x 4 design slot. The final
+    ``family_instance_id`` is contiguous over retained records only, so gaps in
+    invalid source slots do not create missing output filenames.
+    """
+
+    sorted_records = sorted(records, key=lambda item: int(item["source_slot_id"]))
+    slot_to_family: Dict[int, int] = {}
+    for final_id, record in enumerate(sorted_records, start=1):
+        source_slot = int(record["source_slot_id"])
+        record["family_instance_id"] = final_id
+        slot_to_family[source_slot] = final_id
+    for replacement in replacements:
+        source_slot = int(replacement["source_slot_id"])
+        replacement["family_instance_id"] = slot_to_family.get(source_slot, "")
+    return sorted_records
 
 
 def write_empirical_outputs(
@@ -199,6 +245,7 @@ def write_empirical_outputs(
 def _write_records_csv(records: List[Mapping[str, Any]], path: Path) -> None:
     fieldnames = [
         "family_instance_id",
+        "source_slot_id",
         "source_owner",
         "source_repo",
         "source_domain",
@@ -223,6 +270,7 @@ def _write_records_csv(records: List[Mapping[str, Any]], path: Path) -> None:
         for record in records:
             row = {
                 "family_instance_id": record["family_instance_id"],
+                "source_slot_id": record["source_slot_id"],
                 "source_owner": record["source_owner"],
                 "source_repo": record["source_repo"],
                 "source_domain": record["source_domain"],
@@ -300,6 +348,15 @@ def _write_provenance_json(
         "source_configuration_count": len(corpus["records"]),
         "replacement_count": len(corpus["replacements"]),
         "failed_source_window_count": len(corpus["failed_source_windows"]),
+        "initial_candidate_source_slots": corpus["initial_candidate_source_slots"],
+        "evaluated_primary_slots": corpus["evaluated_primary_slots"],
+        "valid_primary_windows": corpus["valid_primary_windows"],
+        "invalid_primary_windows": corpus["invalid_primary_windows"],
+        "successful_reserve_replacements": corpus["successful_reserve_replacements"],
+        "unfilled_rejected_source_slots": corpus["unfilled_rejected_source_slots"],
+        "retained_valid_source_configurations": corpus["retained_valid_source_configurations"],
+        "final_expected_type5_count": corpus["final_expected_type5_count"],
+        "empirical_family_size_note": corpus["empirical_family_size_note"],
         "api_records_collected": {
             "merged_prs": sum(int(item.get("merged_pr_count", 0) or 0) for item in measurements),
             "sampled_prs": sum(int(item.get("sampled_pr_count", 0) or 0) for item in measurements),
@@ -319,6 +376,11 @@ def _write_sources_markdown(corpus: Mapping[str, Any], path: Path) -> None:
         "",
         f"Built at: {corpus['built_at']}",
         f"API version: {corpus['api_version']}",
+        f"Initial candidate source slots: {corpus['initial_candidate_source_slots']}",
+        f"Retained valid source configurations: {corpus['retained_valid_source_configurations']}",
+        f"Final expected Type 5 count: {corpus['final_expected_type5_count']}",
+        "",
+        corpus["empirical_family_size_note"],
         "",
     ]
     for record in corpus["records"]:
@@ -327,6 +389,7 @@ def _write_sources_markdown(corpus: Mapping[str, Any], path: Path) -> None:
             [
                 f"## type5_{int(record['family_instance_id']):03d}: {record['source_owner']}/{record['source_repo']}",
                 "",
+                f"- Source slot ID: {record['source_slot_id']}",
                 f"- URL: {record['source_url']}",
                 f"- Domain: {record['source_domain']}",
                 f"- Observation window: {record['source_window_name']} [{record['source_window_start']}, {record['source_window_end']})",
@@ -345,7 +408,9 @@ def _write_methodology_draft(corpus: Mapping[str, Any], path: Path) -> None:
         "# Type 5 Methodology Draft",
         "",
         "Type 5 grounds the synthetic benchmark in empirically observed software-development configurations.",
-        "Public GitHub activity is collected from mature open-source repositories, split into four fixed six-month UTC observation windows.",
+        "One hundred primary repository-window configurations were initially evaluated from mature open-source repositories split into four fixed six-month UTC observation windows.",
+        f"After predefined source-quality filtering and deterministic reserve replacement, {corpus['retained_valid_source_configurations']} empirical source configurations were retained.",
+        "No quality thresholds were weakened to force an arbitrary target count.",
         "Merged pull requests are treated as empirical work-package proxies, not literal MTP projects.",
         "",
         "## Empirically Observed",
@@ -409,7 +474,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", default="benchmark_generation/configs/type5.yaml")
     parser.add_argument("--bot-config", default="benchmark_generation/configs/type5_bot_patterns.yaml")
     parser.add_argument("--seed", type=int, default=None)
-    parser.add_argument("--allow-partial", action="store_true")
     parser.add_argument("--verbose", action="store_true")
     return parser.parse_args()
 
@@ -430,7 +494,6 @@ def main() -> None:
         config,
         bot_config,
         seed=seed,
-        allow_partial=args.allow_partial,
     )
 
 

@@ -103,6 +103,7 @@ class EmpiricalSourceProfile:
     demand_weights: Tuple[float, ...] = tuple()
     profile_centroids: Tuple[Tuple[float, ...], ...] = tuple()
     profile_sizes: Tuple[int, ...] = tuple()
+    duration_values: Tuple[int, ...] = tuple()
 
 
 @dataclass
@@ -195,6 +196,7 @@ def generate_instance(
         profile_assignments,
         rng,
     )
+    contributors = _ensure_skill_supply_coverage(contributors, skills, params, rng)
     supply_index = build_supply_index(
         MTPInstance(contributors=tuple(contributors), projects=tuple())
     )
@@ -211,7 +213,7 @@ def generate_instance(
 
     projects = []
     for project_idx in range(params.n_projects):
-        duration = rng.randint(params.duration_min, params.duration_max)
+        duration = _project_duration(params, rng, empirical_profile)
         n_roles = rng.randint(params.roles_min, params.roles_max)
         perturb = rng.uniform(1.0, params.score_perturbation)
         score = max(1, int(round(params.score_base * duration * n_roles * perturb)))
@@ -408,6 +410,67 @@ def _generate_contributors(
     return contributors
 
 
+def _ensure_skill_supply_coverage(
+    contributors: Sequence[Contributor],
+    skills: Sequence[str],
+    params: GenerationParameters,
+    rng: random.Random,
+) -> List[Contributor]:
+    """Ensure the synthetic skill universe is observable in the text instance."""
+
+    if not skills:
+        return list(contributors)
+    mutable = [dict(contributor.skills) for contributor in contributors]
+    counts: Dict[str, int] = {skill: 0 for skill in skills}
+    for skill_map in mutable:
+        for skill in skill_map:
+            counts[skill] = counts.get(skill, 0) + 1
+
+    for missing in [skill for skill in skills if counts.get(skill, 0) <= 0]:
+        placed = False
+        under_capacity = [
+            idx
+            for idx, skill_map in enumerate(mutable)
+            if len(skill_map) < params.skills_per_contributor_max
+        ]
+        if under_capacity:
+            contributor_idx = rng.choice(under_capacity)
+            mutable[contributor_idx][missing] = _truncated_normal_level(
+                params.level_mean,
+                params.level_sd,
+                params.level_max,
+                rng,
+            )
+            counts[missing] = 1
+            placed = True
+        else:
+            replacement_options = [
+                (idx, skill)
+                for idx, skill_map in enumerate(mutable)
+                for skill in skill_map
+                if counts.get(skill, 0) > 1
+            ]
+            if replacement_options:
+                contributor_idx, replaced = rng.choice(replacement_options)
+                del mutable[contributor_idx][replaced]
+                counts[replaced] -= 1
+                mutable[contributor_idx][missing] = _truncated_normal_level(
+                    params.level_mean,
+                    params.level_sd,
+                    params.level_max,
+                    rng,
+                )
+                counts[missing] = 1
+                placed = True
+        if not placed:
+            break
+
+    return [
+        Contributor(name=contributor.name, skills=dict(sorted(skill_map.items())))
+        for contributor, skill_map in zip(contributors, mutable)
+    ]
+
+
 def _profile_adjusted_weights(
     skills: Sequence[str],
     base_weights: Sequence[float],
@@ -463,6 +526,17 @@ def _role_skill_weights(
         )
     total = sum(weights)
     return [weight / total for weight in weights]
+
+
+def _project_duration(
+    params: GenerationParameters,
+    rng: random.Random,
+    empirical_profile: EmpiricalSourceProfile | None = None,
+) -> int:
+    if empirical_profile and empirical_profile.duration_values:
+        value = int(round(rng.choice(empirical_profile.duration_values)))
+        return max(params.duration_min, min(params.duration_max, max(1, value)))
+    return rng.randint(params.duration_min, params.duration_max)
 
 
 def _required_level(

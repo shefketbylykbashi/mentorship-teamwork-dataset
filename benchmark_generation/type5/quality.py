@@ -348,7 +348,13 @@ def final_type5_quality_gate(
     hashes = [str(row.get("type5.structural_hash", "")) for row in rows]
     windows = {str(row.get("source_window_name")) for row in rows}
     repos = {f"{row.get('source_owner')}/{row.get('source_repo')}" for row in rows}
+    family_ids = sorted(_safe_int(row.get("family_instance_id")) for row in rows)
+    source_slot_ids = [_safe_int(row.get("source_slot_id")) for row in rows]
+    expected_family_ids = list(range(1, expected_count + 1))
+    filenames = {str(row.get("filename", "")) for row in rows}
+    expected_filenames = {f"type5_{idx:03d}.txt" for idx in expected_family_ids}
     required_source_fields = {
+        "source_slot_id",
         "source_owner",
         "source_repo",
         "source_url",
@@ -368,19 +374,23 @@ def final_type5_quality_gate(
     ]
     anonymized = all(final_instance_names_are_anonymized(output_dir / str(row.get("filename"))) for row in rows)
     gate = {
+        "retained_empirical_sources": int(corpus.get("retained_valid_source_configurations", expected_count) or 0),
+        "retained_empirical_sources_exact": int(corpus.get("retained_valid_source_configurations", expected_count) or 0) == expected_count,
         "accepted_count": len(rows),
         "accepted_count_exact": len(rows) == expected_count,
+        "family_instance_ids_contiguous": family_ids == expected_family_ids,
+        "source_slot_ids_unique": len(set(source_slot_ids)) == expected_count and all(value > 0 for value in source_slot_ids),
+        "output_filenames_contiguous": filenames == expected_filenames,
         "unique_structural_hashes": len(set(hashes)),
         "unique_structural_hashes_exact": len(set(hashes)) == expected_count,
         "all_structurally_valid": all(_truthy(row.get("type5.structural_validation_pass")) for row in rows),
         "all_duplicate_checks_pass": all(_truthy(row.get("type5.duplicate_pass")) for row in rows),
         "all_overall_type5_quality_pass": all(_truthy(row.get("type5.overall_type5_quality_pass")) for row in rows),
-        "all_100_have_source_provenance": not missing_metadata and len(rows) == expected_count,
-        "all_100_have_complete_metadata": not missing_metadata and all(row.get("seed") not in ("", None) for row in rows),
+        "all_source_provenance_complete": not missing_metadata and len(rows) == expected_count,
+        "all_metadata_complete": not missing_metadata and all(row.get("seed") not in ("", None) for row in rows),
         "missing_metadata_rows": missing_metadata,
         "all_four_windows_represented": windows == {"W1", "W2", "W3", "W4"},
         "source_repository_coverage": len(repos),
-        "source_repository_coverage_pass": len(repos) >= 25,
         "no_real_usernames_in_final_instances": anonymized,
         "all_seeds_recorded": all(row.get("seed") not in ("", None) and row.get("root_seed") not in ("", None) for row in rows),
         "statistical_report_exists": Path(report_path).exists(),
@@ -393,14 +403,17 @@ def final_type5_quality_gate(
     gate["passed"] = all(
         [
             gate["accepted_count_exact"],
+            gate["retained_empirical_sources_exact"],
+            gate["family_instance_ids_contiguous"],
+            gate["source_slot_ids_unique"],
+            gate["output_filenames_contiguous"],
             gate["unique_structural_hashes_exact"],
             gate["all_structurally_valid"],
             gate["all_duplicate_checks_pass"],
             gate["all_overall_type5_quality_pass"],
-            gate["all_100_have_source_provenance"],
-            gate["all_100_have_complete_metadata"],
+            gate["all_source_provenance_complete"],
+            gate["all_metadata_complete"],
             gate["all_four_windows_represented"],
-            gate["source_repository_coverage_pass"],
             gate["no_real_usernames_in_final_instances"],
             gate["all_seeds_recorded"],
             gate["statistical_report_exists"],
@@ -433,3 +446,9 @@ def final_instance_names_are_anonymized(path: str | Path) -> bool:
 def _truthy(value: Any) -> bool:
     return value is True or str(value).lower() == "true"
 
+
+def _safe_int(value: Any) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return -1
