@@ -1,0 +1,58 @@
+{
+  "api_version": "2026-03-10",
+  "windows": [
+    {
+      "name": "W1",
+      "start": "2024-08-17T00:00:00Z",
+      "end": "2025-02-17T00:00:00Z"
+    },
+    {
+      "name": "W2",
+      "start": "2025-02-17T00:00:00Z",
+      "end": "2025-08-17T00:00:00Z"
+    },
+    {
+      "name": "W3",
+      "start": "2025-08-17T00:00:00Z",
+      "end": "2026-02-17T00:00:00Z"
+    },
+    {
+      "name": "W4",
+      "start": "2026-02-17T00:00:00Z",
+      "end": "2026-08-17T00:00:00Z"
+    }
+  ],
+  "primary": [
+    {"owner": "pallets", "repo": "flask", "url": "https://github.com/pallets/flask", "domain": "python_web"},
+    {"owner": "fastapi", "repo": "fastapi", "url": "https://github.com/fastapi/fastapi", "domain": "python_web_api"},
+    {"owner": "psf", "repo": "requests", "url": "https://github.com/psf/requests", "domain": "python_library"},
+    {"owner": "pydantic", "repo": "pydantic", "url": "https://github.com/pydantic/pydantic", "domain": "python_validation"},
+    {"owner": "django", "repo": "django", "url": "https://github.com/django/django", "domain": "python_web_framework"},
+    {"owner": "numpy", "repo": "numpy", "url": "https://github.com/numpy/numpy", "domain": "scientific_computing"},
+    {"owner": "pandas-dev", "repo": "pandas", "url": "https://github.com/pandas-dev/pandas", "domain": "data_analysis"},
+    {"owner": "scikit-learn", "repo": "scikit-learn", "url": "https://github.com/scikit-learn/scikit-learn", "domain": "machine_learning"},
+    {"owner": "spring-projects", "repo": "spring-boot", "url": "https://github.com/spring-projects/spring-boot", "domain": "java_framework"},
+    {"owner": "apache", "repo": "kafka", "url": "https://github.com/apache/kafka", "domain": "event_streaming"},
+    {"owner": "apache", "repo": "spark", "url": "https://github.com/apache/spark", "domain": "big_data"},
+    {"owner": "apache", "repo": "airflow", "url": "https://github.com/apache/airflow", "domain": "data_orchestration"},
+    {"owner": "elastic", "repo": "elasticsearch", "url": "https://github.com/elastic/elasticsearch", "domain": "distributed_search"},
+    {"owner": "pytorch", "repo": "pytorch", "url": "https://github.com/pytorch/pytorch", "domain": "deep_learning"},
+    {"owner": "tensorflow", "repo": "tensorflow", "url": "https://github.com/tensorflow/tensorflow", "domain": "deep_learning"},
+    {"owner": "react", "repo": "react", "url": "https://github.com/react/react", "domain": "frontend_framework"},
+    {"owner": "vitejs", "repo": "vite", "url": "https://github.com/vitejs/vite", "domain": "frontend_tooling"},
+    {"owner": "vuejs", "repo": "core", "url": "https://github.com/vuejs/core", "domain": "frontend_framework"},
+    {"owner": "nodejs", "repo": "node", "url": "https://github.com/nodejs/node", "domain": "javascript_runtime"},
+    {"owner": "microsoft", "repo": "vscode", "url": "https://github.com/microsoft/vscode", "domain": "developer_tooling"},
+    {"owner": "kubernetes", "repo": "kubernetes", "url": "https://github.com/kubernetes/kubernetes", "domain": "cloud_orchestration"},
+    {"owner": "prometheus", "repo": "prometheus", "url": "https://github.com/prometheus/prometheus", "domain": "monitoring"},
+    {"owner": "hashicorp", "repo": "terraform", "url": "https://github.com/hashicorp/terraform", "domain": "infrastructure_as_code"},
+    {"owner": "dotnet", "repo": "runtime", "url": "https://github.com/dotnet/runtime", "domain": "systems_runtime"},
+    {"owner": "rust-lang", "repo": "rust", "url": "https://github.com/rust-lang/rust", "domain": "programming_language"}
+  ],
+  "reserve": [
+    {"owner": "encode", "repo": "httpx", "url": "https://github.com/encode/httpx", "domain": "python_web_api"},
+    {"owner": "ansible", "repo": "ansible", "url": "https://github.com/ansible/ansible", "domain": "automation"},
+    {"owner": "redis", "repo": "redis", "url": "https://github.com/redis/redis", "domain": "database_systems"},
+    {"owner": "apache", "repo": "flink", "url": "https://github.com/apache/flink", "domain": "big_data"}
+  ]
+}

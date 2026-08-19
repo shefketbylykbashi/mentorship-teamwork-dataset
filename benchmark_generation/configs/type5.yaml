@@ -1,0 +1,67 @@
+{
+  "family": "type5",
+  "count": 100,
+  "root_seed": 2026,
+  "empirical_corpus_path": "benchmark_metadata/type5_empirical_corpus.json",
+  "fillable_fraction": 0.30,
+  "max_generation_attempts_per_source": 30,
+  "role_level_max": 100,
+  "future_offset_min": 2,
+  "future_offset_max": 4,
+  "detailed_pr_sample_size": 60,
+  "monthly_pr_sample_target": 10,
+  "max_author_sample_share": 0.20,
+  "min_human_contributors": 5,
+  "min_merged_prs": 5,
+  "min_retained_skills": 5,
+  "skill_count_range": [5, 200],
+  "profile_count_range": [3, 8],
+  "score_density_target": 2.0,
+  "score_base_range": [0.5, 5.0],
+  "score_perturbation_range": [1.0, 3.0],
+  "duration_range": [1, 500],
+  "roles_per_project_range": [1, 20],
+  "tightness_range": [0.5, 6.0],
+  "default_tightness_bounds": [0.8, 4.0],
+  "deadline_min_observations": 10,
+  "max_release_deadline_days": 180,
+  "scale_compression": {
+    "max_contributors": 10000,
+    "max_projects": 10000
+  },
+  "difficulty_prior": {
+    "mean": [0.25, 0.45, 0.20, 0.10],
+    "dirichlet_alpha": [25, 45, 20, 10],
+    "mentor_bounds": [0.15, 0.30],
+    "future_bounds": [0.05, 0.15]
+  },
+  "quality_gates": {
+    "skill_skew_tolerance": 0.20,
+    "alignment_min": 0.55,
+    "alignment_tolerance": 0.15,
+    "mentor_share_bounds": [0.10, 0.30],
+    "future_share_bounds": [0.03, 0.18],
+    "realistic_initial_feasibility_min": 0.70,
+    "largest_profile_share_max": 0.70,
+    "distribution_tolerances": {
+      "skills_per_contributor_mean": 2.0,
+      "roles_per_project_mean": 2.0,
+      "contributor_level_mean": 1.25,
+      "required_level_mean": 2.0,
+      "skill_skew": 0.20,
+      "role_skill_alignment": 0.15,
+      "duration_median_relative": 0.60,
+      "deadline_tightness_mean": 1.25,
+      "mentor_share": 0.15,
+      "future_share": 0.10
+    }
+  },
+  "distance_group_weights": {
+    "size": 1,
+    "supply_demand": 1,
+    "levels": 1,
+    "mentorship": 1,
+    "time": 1,
+    "scores": 1
+  }
+}

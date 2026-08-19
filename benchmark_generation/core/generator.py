@@ -88,6 +88,23 @@ class GenerationParameters:
         return asdict(self.normalized())
 
 
+@dataclass(frozen=True)
+class EmpiricalSourceProfile:
+    """Optional empirical distributions for the shared forward generator.
+
+    Type 5 uses this hook to ground contributor specialization and skill demand
+    in measured repository/window activity. The generated Hash Code file still
+    uses anonymized ``sXXXX`` skill names; semantic skill tokens are stored only
+    in Type 5 metadata.
+    """
+
+    skill_tokens: Tuple[str, ...] = tuple()
+    skill_weights: Tuple[float, ...] = tuple()
+    demand_weights: Tuple[float, ...] = tuple()
+    profile_centroids: Tuple[Tuple[float, ...], ...] = tuple()
+    profile_sizes: Tuple[int, ...] = tuple()
+
+
 @dataclass
 class GenerationOutcome:
     instance: MTPInstance
@@ -104,6 +121,7 @@ def generate_valid_instance(
     seed: int,
     max_attempts: int = 50,
     source_name: str | None = None,
+    empirical_profile: EmpiricalSourceProfile | None = None,
 ) -> GenerationOutcome:
     """Generate and validate an instance, retrying only by fresh child seed."""
 
@@ -111,7 +129,12 @@ def generate_valid_instance(
     rejection_reasons: List[str] = []
     for attempt in range(1, max_attempts + 1):
         child_seed = derive_seed(seed, attempt)
-        instance = generate_instance(params, child_seed, source_name=source_name)
+        instance = generate_instance(
+            params,
+            child_seed,
+            source_name=source_name,
+            empirical_profile=empirical_profile,
+        )
         validation = validate_instance(
             instance,
             fillable_fraction=params.fillable_fraction,
@@ -137,6 +160,7 @@ def generate_instance(
     params: GenerationParameters,
     seed: int,
     source_name: str | None = None,
+    empirical_profile: EmpiricalSourceProfile | None = None,
 ) -> MTPInstance:
     """Generate one complete instance forward from a parameter configuration."""
 
@@ -144,17 +168,46 @@ def generate_instance(
     rng = random.Random(seed)
 
     skills = [f"s{i:04d}" for i in range(params.n_skills)]
-    base_skill_weights = zipf_weights(params.n_skills, params.skill_skew)
+    base_skill_weights = _empirical_or_zipf_skill_weights(
+        params.n_skills,
+        params.skill_skew,
+        empirical_profile,
+    )
 
-    profile_skill_sets = _make_profiles(skills, base_skill_weights, params.n_profiles, rng)
-    contributors = _generate_contributors(params, skills, base_skill_weights, profile_skill_sets, rng)
+    profile_skill_weights = _make_profile_skill_weights(
+        skills,
+        base_skill_weights,
+        params.n_profiles,
+        params.profile_bias,
+        rng,
+        empirical_profile,
+    )
+    profile_assignments = _profile_assignments(
+        params.n_contributors,
+        len(profile_skill_weights),
+        empirical_profile,
+    )
+    contributors = _generate_contributors(
+        params,
+        skills,
+        base_skill_weights,
+        profile_skill_weights,
+        profile_assignments,
+        rng,
+    )
     supply_index = build_supply_index(
         MTPInstance(contributors=tuple(contributors), projects=tuple())
     )
     supply_counts = build_supply_counts(
         MTPInstance(contributors=tuple(contributors), projects=tuple())
     )
-    role_weights = _role_skill_weights(skills, base_skill_weights, supply_counts, params)
+    role_weights = _role_skill_weights(
+        skills,
+        base_skill_weights,
+        supply_counts,
+        params,
+        empirical_profile,
+    )
 
     projects = []
     for project_idx in range(params.n_projects):
@@ -183,7 +236,11 @@ def generate_instance(
         contributors=tuple(contributors),
         projects=tuple(projects),
         source_name=source_name,
-        metadata={"seed": seed, "generator_version": __version__},
+        metadata={
+            "seed": seed,
+            "generator_version": __version__,
+            "profile_assignments": tuple(profile_assignments),
+        },
     )
 
 
@@ -200,6 +257,27 @@ def zipf_weights(n_items: int, skew: float) -> List[float]:
     return [weight / total for weight in weights]
 
 
+def normalize_weights(weights: Sequence[float], n_items: int | None = None) -> List[float]:
+    """Return non-negative weights normalized to sum to one.
+
+    If the supplied sequence is empty, the wrong length, or all non-positive,
+    a uniform distribution is returned. This is deliberately small and lives in
+    the core generator so Type 5 can reuse it without adding dependencies.
+    """
+
+    if n_items is None:
+        n_items = len(weights)
+    values = [max(0.0, float(value)) for value in weights[:n_items]]
+    if len(values) != n_items:
+        values = []
+    total = sum(values)
+    if n_items <= 0:
+        return []
+    if total <= 0.0:
+        return [1.0 / n_items for _ in range(n_items)]
+    return [value / total for value in values]
+
+
 def weighted_choice(items: Sequence[str], weights: Sequence[float], rng: random.Random) -> str:
     threshold = rng.random()
     cumulative = 0.0
@@ -210,7 +288,17 @@ def weighted_choice(items: Sequence[str], weights: Sequence[float], rng: random.
     return items[-1]
 
 
-def _make_profiles(
+def _empirical_or_zipf_skill_weights(
+    n_skills: int,
+    skill_skew: float,
+    empirical_profile: EmpiricalSourceProfile | None,
+) -> List[float]:
+    if empirical_profile and len(empirical_profile.skill_weights) == n_skills:
+        return normalize_weights(empirical_profile.skill_weights, n_skills)
+    return zipf_weights(n_skills, skill_skew)
+
+
+def _make_profile_skill_sets(
     skills: Sequence[str],
     weights: Sequence[float],
     n_profiles: int,
@@ -228,11 +316,76 @@ def _make_profiles(
     return profiles
 
 
+def _make_profile_skill_weights(
+    skills: Sequence[str],
+    base_weights: Sequence[float],
+    n_profiles: int,
+    profile_bias: float,
+    rng: random.Random,
+    empirical_profile: EmpiricalSourceProfile | None,
+) -> List[List[float]]:
+    if (
+        empirical_profile
+        and empirical_profile.profile_centroids
+        and all(len(row) == len(skills) for row in empirical_profile.profile_centroids)
+    ):
+        rows = [
+            normalize_weights(
+                [
+                    0.15 * base + 0.85 * max(0.0, float(value))
+                    for base, value in zip(base_weights, row)
+                ],
+                len(skills),
+            )
+            for row in empirical_profile.profile_centroids
+        ]
+        return rows[: max(1, n_profiles)]
+
+    profile_skill_sets = _make_profile_skill_sets(skills, base_weights, n_profiles, rng)
+    return [
+        _profile_adjusted_weights(
+            skills,
+            base_weights,
+            profile,
+            profile_bias if n_profiles > 1 else 1.0,
+        )
+        for profile in profile_skill_sets
+    ]
+
+
+def _profile_assignments(
+    n_contributors: int,
+    n_profiles: int,
+    empirical_profile: EmpiricalSourceProfile | None,
+) -> List[int]:
+    n_profiles = max(1, n_profiles)
+    if empirical_profile and empirical_profile.profile_sizes:
+        weights = normalize_weights(empirical_profile.profile_sizes, len(empirical_profile.profile_sizes))
+        raw = [weight * n_contributors for weight in weights]
+        counts = [int(math.floor(value)) for value in raw]
+        while sum(counts) < n_contributors:
+            idx = max(range(len(counts)), key=lambda item: raw[item] - counts[item])
+            counts[idx] += 1
+        while sum(counts) > n_contributors:
+            idx = max(range(len(counts)), key=lambda item: counts[item] - raw[item])
+            if counts[idx] > 0:
+                counts[idx] -= 1
+            else:
+                break
+        assignments: List[int] = []
+        for idx, count in enumerate(counts):
+            assignments.extend([idx] * count)
+        if assignments:
+            return assignments[:n_contributors]
+    return [idx % n_profiles for idx in range(n_contributors)]
+
+
 def _generate_contributors(
     params: GenerationParameters,
     skills: Sequence[str],
     base_weights: Sequence[float],
-    profile_skill_sets: Sequence[set[str]],
+    profile_skill_weights: Sequence[Sequence[float]],
+    profile_assignments: Sequence[int],
     rng: random.Random,
 ) -> List[Contributor]:
     contributors = []
@@ -240,10 +393,8 @@ def _generate_contributors(
         n_skills = rng.randint(
             params.skills_per_contributor_min, params.skills_per_contributor_max
         )
-        profile = profile_skill_sets[contributor_idx % len(profile_skill_sets)]
-        skill_weights = _profile_adjusted_weights(
-            skills, base_weights, profile, params.profile_bias if params.n_profiles > 1 else 1.0
-        )
+        profile_idx = profile_assignments[contributor_idx] % len(profile_skill_weights)
+        skill_weights = profile_skill_weights[profile_idx]
         chosen = set()
         while len(chosen) < n_skills:
             chosen.add(weighted_choice(skills, skill_weights, rng))
@@ -286,6 +437,7 @@ def _role_skill_weights(
     base_weights: Sequence[float],
     supply_counts: Dict[str, int],
     params: GenerationParameters,
+    empirical_profile: EmpiricalSourceProfile | None = None,
 ) -> List[float]:
     if not skills:
         return []
@@ -296,9 +448,15 @@ def _role_skill_weights(
         supply_probs = {skill: supply_counts.get(skill, 0) / total_supply for skill in skills}
     uniform = 1.0 / len(skills)
     weights = []
-    for skill, base in zip(skills, base_weights):
+    empirical_demand = None
+    if empirical_profile and len(empirical_profile.demand_weights) == len(skills):
+        empirical_demand = normalize_weights(empirical_profile.demand_weights, len(skills))
+    for idx, (skill, base) in enumerate(zip(skills, base_weights)):
         aligned = supply_probs.get(skill, 0.0)
-        unaligned = 0.5 * uniform + 0.5 * base
+        if empirical_demand is None:
+            unaligned = 0.5 * uniform + 0.5 * base
+        else:
+            unaligned = empirical_demand[idx]
         weights.append(
             params.role_skill_alignment * aligned
             + (1.0 - params.role_skill_alignment) * unaligned

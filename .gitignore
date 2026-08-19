@@ -1,2 +1,5 @@
 /.agents
 /.pytest_cache
+__pycache__/
+*.pyc
+type5_source_cache/

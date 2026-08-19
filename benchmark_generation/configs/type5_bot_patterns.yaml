@@ -1,0 +1,18 @@
+{
+  "bot_patterns": [
+    "\\[bot\\]",
+    "bot$",
+    "dependabot",
+    "renovate",
+    "github-actions",
+    "pre-commit-ci",
+    "codecov",
+    "mergify",
+    "release[ _-]?automation",
+    "semantic-release",
+    "bors",
+    "copybara",
+    "snyk",
+    "greenkeeper"
+  ]
+}

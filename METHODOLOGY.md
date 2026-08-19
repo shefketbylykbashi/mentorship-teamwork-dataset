@@ -300,6 +300,171 @@ radius validations pass, all five anchors are represented, every calibrated band
 expected for every anchor is represented, and required metadata fields are
 present.
 
+## Type 5: Empirically Grounded Synthetic Software-Project Family
+
+Type 5 represents empirically grounded synthetic MTP instances. The instances
+are not literal copies of GitHub repositories. Public repository activity is
+measured first, converted into an empirical source configuration, and then used
+to parameterize the same forward MTP generator used by the other synthetic
+families:
+
+```text
+public GitHub activity -> aggregate source measurements
+-> empirical source configuration -> shared forward generator
+-> validation and Type 5 realism gates -> benchmark instance.
+```
+
+Type 5 uses 25 purposively selected mature public software repositories and
+four fixed half-open six-month UTC observation windows:
+
+```text
+W1 [2024-08-17T00:00:00Z, 2025-02-17T00:00:00Z)
+W2 [2025-02-17T00:00:00Z, 2025-08-17T00:00:00Z)
+W3 [2025-08-17T00:00:00Z, 2026-02-17T00:00:00Z)
+W4 [2026-02-17T00:00:00Z, 2026-08-17T00:00:00Z)
+```
+
+These windows are an implementation design choice, not part of the original
+Hash Code MTP definition. The deterministic slot mapping is repository-major
+and window-minor, so repository 1 W1 maps to `type5_001`, repository 1 W2 to
+`type5_002`, and so on through `type5_100`.
+
+### Empirically Observed
+
+The collector uses authenticated public GitHub REST API access and caches
+successful responses under `type5_source_cache/`. The cache is excluded from
+version control and may temporarily contain public GitHub usernames returned by
+the API. Public benchmark metadata and final `.txt` instances do not contain
+real usernames.
+
+For each repository the collector records repository metadata, default-branch
+snapshot SHA, language byte counts, releases, milestones, and window-specific
+merged pull requests. Merged pull requests are treated as observable work-unit
+proxies. For each six-month window all merged PRs are counted; if there are more
+than 60, a deterministic time-stratified sample of 60 PRs is selected for
+file-level analysis. The sample targets roughly 10 PRs per month and avoids a
+single contributor exceeding 20 percent of the detailed sample unless the
+source distribution itself makes that impossible.
+
+Changed file paths, additions, deletions, and status are collected for sampled
+PRs. File contents are never stored. Obvious bots are filtered with documented
+regular expressions such as `[bot]`, dependabot, renovate, github-actions, and
+release automation identities.
+
+### Derived Proxies
+
+Skill tokens are inferred from changed technical file paths using a deterministic
+language plus subsystem taxonomy. Examples include `Python::db`,
+`TypeScript::compiler`, and `Go::scheduler`. The final MTP instance anonymizes
+these semantic skills to `s0000`, `s0001`, and so on; semantic tokens are kept
+only in research metadata. Vendor, build, generated, lock, binary, minified,
+and documentation-only paths are excluded or prevented from dominating.
+
+Rare subsystem skills are merged into their parent language skill unless they
+appear in at least two distinct human contributors or at least three sampled
+PRs. A source window with fewer than five retained technical skills fails the
+source-quality gate rather than receiving invented skills.
+
+For contributor `c` and skill `s`, activity is measured as:
+
+```text
+activity_cs =
+    0.60 * log1p(lines_changed_cs)
+  + 0.25 * log1p(files_touched_cs)
+  + 0.15 * log1p(prs_touching_skill_cs).
+```
+
+For each retained skill, contributors are ranked by activity and converted to
+MTP levels by:
+
+```text
+level = 1 + floor(9 * percentile_rank), clipped to [1, 10].
+```
+
+These levels are relative empirical activity-based skill-level proxies, not
+claims about true human competence.
+
+Contributor specialization is derived by normalizing contributor-skill activity
+vectors and clustering them with deterministic k-means for `k = 3..8`. The
+chosen `k` maximizes silhouette score when the source data supports meaningful
+profiles. Profile centroids and profile sizes are passed to the shared forward
+generator through an optional empirical source-profile hook.
+
+PR cycle time is the duration proxy:
+
+```text
+duration = max(1, ceil(merged_at - created_at in days)).
+```
+
+Per-window duration bounds use robust P10/P90 values. Deadline tightness uses a
+milestone due date when available, otherwise the nearest subsequent stable
+release within the configured association window, otherwise the corpus-level
+P10/P90 fallback. This is documented as a deadline proxy, never as an observed
+true deadline.
+
+### Synthetic Modeling Decisions
+
+GitHub does not provide cross-project business value. Type 5 therefore keeps
+MTP scores synthetic and grounds only their scale and variability weakly in
+engineering effort:
+
+```text
+effort_i = log1p(additions_i + deletions_i) * sqrt(max(1, role_count_i)).
+```
+
+A corpus-wide normalization constant `K` is chosen so the median normalized
+score density is approximately 2.0. Per-window `score_base` is clipped to
+`[0.5, 5.0]`, and `score_perturbation` is derived from robust effort-density
+variability clipped to `[1.0, 3.0]`. Score is an effort-conditioned synthetic
+proxy, not observed project value.
+
+Required role levels are not observable from GitHub. Each Type 5 instance
+samples its difficulty mixture from a deterministic Dirichlet prior with
+concentration proportional to `[25, 45, 20, 10]`, centered on:
+
+```text
+p_over = 0.25, p_match = 0.45, p_mentor = 0.20, p_future = 0.10.
+```
+
+The sampled mixture enforces broad bounds on mentorship and future roles, then
+renormalizes. This prior is a Type 5 modeling decision, not an empirical GitHub
+measurement.
+
+### Type 5 Acceptance
+
+Type 5 is origin-driven and does not use Type 2/3 target-vector search. For each
+source window, the source-derived `GenerationParameters` and empirical profile
+are held fixed. If an attempt fails structural validation, duplicate detection,
+or a realism gate, only the deterministic seed changes.
+
+The Type 5 realism gate requires structural validity, no duplicate structural
+hash against Google and generated families, 3 to 8 non-empty generated profiles,
+no catastrophic profile collapse unless supported by the source profile,
+skill-skew difference at most 0.20, generated demand-supply alignment at least
+0.55 and close to the source target, measured mentorship and future-role shares
+within broad Type 5 bounds, and:
+
+```text
+directly_fillable_share
+  + truly_valid_initial_mentorship_feasible_share >= 0.70.
+```
+
+The mentorship feasibility measurement respects the original same-project
+mentorship rule: a one-below contributor is counted only when a distinct
+qualified mentor can also be assigned to the same project.
+
+Before final manifest update, the executable Type 5 final gate checks exact
+accepted count, 100 unique hashes, structural validity, duplicate status,
+overall realism pass, complete source provenance and metadata, all four windows,
+at least 25 source repositories, anonymized final IDs, recorded seeds,
+statistical report, provenance report, and methodology documentation.
+
+This source corpus is purposively selected from mature public open-source
+software repositories. It is not statistically representative of all software
+companies, proprietary projects, non-software teamwork, all countries, or all
+organization sizes. GitHub activity is an observable proxy for work, not a
+complete measurement of human expertise or organizational decision-making.
+
 ## Reproducibility
 
 Each CLI accepts a root seed. Child seeds are derived deterministically by a

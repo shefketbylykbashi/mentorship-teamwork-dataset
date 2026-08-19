@@ -38,7 +38,7 @@ def build_diagnostics(metadata_dir: str | Path, output_dir: str | Path) -> Dict[
     output_dir.mkdir(parents=True, exist_ok=True)
     rows_by_family = {
         family: read_metadata(metadata_dir / f"{family}_metadata.csv")
-        for family in ("type2", "type3", "type4")
+        for family in ("type2", "type3", "type4", "type5")
     }
     all_rows = [row for rows in rows_by_family.values() for row in rows]
     all_features = [feature_dict(row) for row in all_rows]
@@ -71,6 +71,7 @@ def build_diagnostics(metadata_dir: str | Path, output_dir: str | Path) -> Dict[
         report[f"{family}_feature_distributions"] = feature_report
 
     _write_feature_distribution_csv(rows_by_family, output_dir)
+    _write_type5_source_generated_csv(rows_by_family.get("type5", []), output_dir)
     _try_write_plots(rows_by_family, output_dir)
     write_manifest(output_dir / "diagnostic_report.json", report)
     return report
@@ -130,6 +131,85 @@ def _try_write_plots(rows_by_family: Dict[str, List[Dict[str, str]]], output_dir
         plt.legend()
         plt.tight_layout()
         plt.savefig(output_dir / f"{feature_name}_by_family.png", dpi=150)
+        plt.close()
+    _try_write_type5_plots(rows_by_family.get("type5", []), output_dir, plt)
+
+
+def _write_type5_source_generated_csv(rows: List[Dict[str, str]], output_dir: Path) -> None:
+    if not rows:
+        return
+    path = output_dir / "type5_source_vs_generated.csv"
+    fields = [
+        "filename",
+        "source_repo",
+        "window",
+        "source_contributors",
+        "generated_contributors",
+        "source_projects",
+        "generated_projects",
+        "source_skill_skew",
+        "generated_skill_skew",
+        "source_alignment",
+        "generated_alignment",
+        "source_roles_per_work_unit",
+        "generated_roles_per_project",
+    ]
+    with path.open("w", encoding="utf-8", newline="") as fh:
+        import csv
+
+        writer = csv.DictWriter(fh, fieldnames=fields)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(
+                {
+                    "filename": row.get("filename", ""),
+                    "source_repo": f"{row.get('source_owner', '')}/{row.get('source_repo', '')}",
+                    "window": row.get("source_window_name", ""),
+                    "source_contributors": row.get("source_human_contributor_count", ""),
+                    "generated_contributors": row.get("feature.n_contributors", ""),
+                    "source_projects": row.get("source_merged_pr_count", ""),
+                    "generated_projects": row.get("feature.n_projects", ""),
+                    "source_skill_skew": row.get("source_skill_skew", ""),
+                    "generated_skill_skew": row.get("type5.quality_metrics.generated_skill_skew", ""),
+                    "source_alignment": row.get("source_alignment", ""),
+                    "generated_alignment": row.get("type5.quality_metrics.generated_alignment", ""),
+                    "source_roles_per_work_unit": row.get("source_roles_per_work_unit_mean", ""),
+                    "generated_roles_per_project": row.get("feature.roles_per_project_mean", ""),
+                }
+            )
+
+
+def _try_write_type5_plots(rows: List[Dict[str, str]], output_dir: Path, plt) -> None:
+    if not rows:
+        return
+    pairs = [
+        ("source_human_contributor_count", "feature.n_contributors", "type5_source_vs_generated_contributors.png"),
+        ("source_merged_pr_count", "feature.n_projects", "type5_source_vs_generated_projects.png"),
+        ("source_skill_skew", "type5.quality_metrics.generated_skill_skew", "type5_source_vs_generated_skill_skew.png"),
+        ("source_alignment", "type5.quality_metrics.generated_alignment", "type5_source_vs_generated_alignment.png"),
+        ("source_roles_per_work_unit_mean", "feature.roles_per_project_mean", "type5_source_vs_generated_roles_per_project.png"),
+    ]
+    for source_key, generated_key, filename in pairs:
+        source_values = [float(row.get(source_key) or 0.0) for row in rows]
+        generated_values = [float(row.get(generated_key) or 0.0) for row in rows]
+        plt.figure(figsize=(6, 6))
+        plt.scatter(source_values, generated_values, alpha=0.7)
+        plt.xlabel(source_key)
+        plt.ylabel(generated_key)
+        plt.tight_layout()
+        plt.savefig(output_dir / filename, dpi=150)
+        plt.close()
+    for key, filename in [
+        ("type5.quality_metrics.measured_p_mentor", "type5_mentorship_share_distribution.png"),
+        ("type5.quality_metrics.measured_p_future", "type5_future_share_distribution.png"),
+    ]:
+        values = [float(row.get(key) or 0.0) for row in rows]
+        plt.figure(figsize=(8, 5))
+        plt.hist(values, bins=20, alpha=0.7)
+        plt.xlabel(key)
+        plt.ylabel("count")
+        plt.tight_layout()
+        plt.savefig(output_dir / filename, dpi=150)
         plt.close()
 
 
