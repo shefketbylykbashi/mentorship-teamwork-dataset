@@ -104,6 +104,14 @@ class EmpiricalSourceProfile:
     profile_centroids: Tuple[Tuple[float, ...], ...] = tuple()
     profile_sizes: Tuple[int, ...] = tuple()
     duration_values: Tuple[int, ...] = tuple()
+    skills_per_contributor_values: Tuple[int, ...] = tuple()
+    level_values: Tuple[int, ...] = tuple()
+    role_count_values: Tuple[int, ...] = tuple()
+    required_level_values: Tuple[int, ...] = tuple()
+    deadline_tightness_values: Tuple[float, ...] = tuple()
+    score_values: Tuple[int, ...] = tuple()
+    contributor_level_rows: Tuple[Tuple[int, ...], ...] = tuple()
+    activity_role_skill_level_rows: Tuple[Tuple[Tuple[int, int], ...], ...] = tuple()
 
 
 @dataclass
@@ -195,6 +203,7 @@ def generate_instance(
         profile_skill_weights,
         profile_assignments,
         rng,
+        empirical_profile,
     )
     contributors = _ensure_skill_supply_coverage(contributors, skills, params, rng)
     supply_index = build_supply_index(
@@ -212,18 +221,78 @@ def generate_instance(
     )
 
     projects = []
+    project_source_indices = _empirical_project_indices(empirical_profile, params.n_projects, rng)
+    role_count_sequence = _empirical_int_sequence(
+        empirical_profile.role_count_values if empirical_profile else (),
+        params.n_projects,
+        rng,
+        params.roles_min,
+        params.roles_max,
+    )
+    required_level_sequence = _empirical_int_sequence(
+        empirical_profile.required_level_values if empirical_profile else (),
+        sum(role_count_sequence) if role_count_sequence else 0,
+        rng,
+        1,
+        params.role_level_max,
+    )
+    tightness_sequence = _empirical_float_sequence(
+        empirical_profile.deadline_tightness_values if empirical_profile else (),
+        params.n_projects,
+        rng,
+        params.tightness_min,
+        params.tightness_max,
+    )
+    score_sequence = _empirical_int_sequence(
+        empirical_profile.score_values if empirical_profile else (),
+        params.n_projects,
+        rng,
+        1,
+        None,
+    )
+    role_cursor = 0
     for project_idx in range(params.n_projects):
-        duration = _project_duration(params, rng, empirical_profile)
-        n_roles = rng.randint(params.roles_min, params.roles_max)
-        perturb = rng.uniform(1.0, params.score_perturbation)
-        score = max(1, int(round(params.score_base * duration * n_roles * perturb)))
-        tightness = rng.uniform(params.tightness_min, params.tightness_max)
+        source_idx = project_source_indices[project_idx] if project_source_indices else None
+        duration = _project_duration(params, rng, empirical_profile, source_idx)
+        empirical_roles = _empirical_project_roles(empirical_profile, source_idx, skills, params)
+        n_roles = len(empirical_roles) if empirical_roles else (
+            role_count_sequence[project_idx] if role_count_sequence else rng.randint(params.roles_min, params.roles_max)
+        )
+        if (
+            empirical_profile
+            and source_idx is not None
+            and 0 <= source_idx < len(empirical_profile.score_values)
+        ):
+            score = max(1, int(empirical_profile.score_values[source_idx]))
+        elif score_sequence:
+            score = score_sequence[project_idx]
+        else:
+            perturb = rng.uniform(1.0, params.score_perturbation)
+            score = max(1, int(round(params.score_base * duration * n_roles * perturb)))
+        if (
+            empirical_profile
+            and source_idx is not None
+            and 0 <= source_idx < len(empirical_profile.deadline_tightness_values)
+        ):
+            tightness = max(
+                params.tightness_min,
+                min(params.tightness_max, float(empirical_profile.deadline_tightness_values[source_idx])),
+            )
+        else:
+            tightness = tightness_sequence[project_idx] if tightness_sequence else rng.uniform(params.tightness_min, params.tightness_max)
         best_before = max(0, int(round(duration * tightness)))
         roles = []
-        for _role_idx in range(n_roles):
-            skill = weighted_choice(skills, role_weights, rng)
-            level = _required_level(skill, supply_index, params, rng)
-            roles.append(Role(skill=skill, level=level))
+        if empirical_roles:
+            roles.extend(empirical_roles)
+        else:
+            for _role_idx in range(n_roles):
+                skill = weighted_choice(skills, role_weights, rng)
+                if required_level_sequence and role_cursor < len(required_level_sequence):
+                    level = required_level_sequence[role_cursor]
+                else:
+                    level = _required_level(skill, supply_index, params, rng)
+                role_cursor += 1
+                roles.append(Role(skill=skill, level=level))
         projects.append(
             Project(
                 name=f"p{project_idx:05d}",
@@ -278,6 +347,52 @@ def normalize_weights(weights: Sequence[float], n_items: int | None = None) -> L
     if total <= 0.0:
         return [1.0 / n_items for _ in range(n_items)]
     return [value / total for value in values]
+
+
+def _empirical_int_sequence(
+    values: Sequence[int],
+    count: int,
+    rng: random.Random,
+    low: int,
+    high: int | None,
+) -> List[int]:
+    if count <= 0 or not values:
+        return []
+    pool = []
+    for value in values:
+        item = max(low, int(round(value)))
+        if high is not None:
+            item = min(high, item)
+        pool.append(item)
+    return _shuffled_repeated_sequence(pool, count, rng)
+
+
+def _empirical_float_sequence(
+    values: Sequence[float],
+    count: int,
+    rng: random.Random,
+    low: float,
+    high: float,
+) -> List[float]:
+    if count <= 0 or not values:
+        return []
+    pool = [max(low, min(high, float(value))) for value in values]
+    return _shuffled_repeated_sequence(pool, count, rng)
+
+
+def _shuffled_repeated_sequence(
+    values: Sequence[int] | Sequence[float],
+    count: int,
+    rng: random.Random,
+) -> List:
+    if not values:
+        return []
+    sequence = []
+    while len(sequence) < count:
+        chunk = list(values)
+        rng.shuffle(chunk)
+        sequence.extend(chunk)
+    return sequence[:count]
 
 
 def weighted_choice(items: Sequence[str], weights: Sequence[float], rng: random.Random) -> str:
@@ -389,10 +504,39 @@ def _generate_contributors(
     profile_skill_weights: Sequence[Sequence[float]],
     profile_assignments: Sequence[int],
     rng: random.Random,
+    empirical_profile: EmpiricalSourceProfile | None = None,
 ) -> List[Contributor]:
+    empirical_rows = _empirical_contributor_rows(empirical_profile, params.n_contributors, len(skills), rng)
+    if empirical_rows:
+        contributors = []
+        for contributor_idx, row in enumerate(empirical_rows):
+            levels = {
+                skill: max(1, min(params.level_max, int(level)))
+                for skill, level in zip(skills, row)
+                if int(level) > 0
+            }
+            contributors.append(Contributor(name=f"c{contributor_idx:05d}", skills=dict(sorted(levels.items()))))
+        return contributors
+
+    skill_count_sequence = _empirical_int_sequence(
+        empirical_profile.skills_per_contributor_values if empirical_profile else (),
+        params.n_contributors,
+        rng,
+        1,
+        params.n_skills,
+    )
+    total_skill_assignments = sum(skill_count_sequence) if skill_count_sequence else 0
+    level_sequence = _empirical_int_sequence(
+        empirical_profile.level_values if empirical_profile else (),
+        total_skill_assignments,
+        rng,
+        1,
+        params.level_max,
+    )
+    level_cursor = 0
     contributors = []
     for contributor_idx in range(params.n_contributors):
-        n_skills = rng.randint(
+        n_skills = skill_count_sequence[contributor_idx] if skill_count_sequence else rng.randint(
             params.skills_per_contributor_min, params.skills_per_contributor_max
         )
         profile_idx = profile_assignments[contributor_idx] % len(profile_skill_weights)
@@ -400,14 +544,42 @@ def _generate_contributors(
         chosen = set()
         while len(chosen) < n_skills:
             chosen.add(weighted_choice(skills, skill_weights, rng))
-        levels = {
-            skill: _truncated_normal_level(
-                params.level_mean, params.level_sd, params.level_max, rng
-            )
-            for skill in sorted(chosen)
-        }
+        levels = {}
+        for skill in sorted(chosen):
+            if level_sequence and level_cursor < len(level_sequence):
+                level = level_sequence[level_cursor]
+            else:
+                level = _truncated_normal_level(
+                    params.level_mean, params.level_sd, params.level_max, rng
+                )
+            level_cursor += 1
+            levels[skill] = level
         contributors.append(Contributor(name=f"c{contributor_idx:05d}", skills=levels))
     return contributors
+
+
+def _empirical_contributor_rows(
+    empirical_profile: EmpiricalSourceProfile | None,
+    n_contributors: int,
+    n_skills: int,
+    rng: random.Random,
+) -> List[Tuple[int, ...]]:
+    if (
+        not empirical_profile
+        or not empirical_profile.contributor_level_rows
+        or any(len(row) != n_skills for row in empirical_profile.contributor_level_rows)
+    ):
+        return []
+    rows = list(empirical_profile.contributor_level_rows)
+    if len(rows) >= n_contributors:
+        rng.shuffle(rows)
+        return rows[:n_contributors]
+    sequence = []
+    while len(sequence) < n_contributors:
+        chunk = list(rows)
+        rng.shuffle(chunk)
+        sequence.extend(chunk)
+    return sequence[:n_contributors]
 
 
 def _ensure_skill_supply_coverage(
@@ -532,11 +704,67 @@ def _project_duration(
     params: GenerationParameters,
     rng: random.Random,
     empirical_profile: EmpiricalSourceProfile | None = None,
+    source_idx: int | None = None,
 ) -> int:
+    if (
+        empirical_profile
+        and source_idx is not None
+        and 0 <= source_idx < len(empirical_profile.duration_values)
+    ):
+        value = int(round(empirical_profile.duration_values[source_idx]))
+        return max(params.duration_min, min(params.duration_max, max(1, value)))
     if empirical_profile and empirical_profile.duration_values:
         value = int(round(rng.choice(empirical_profile.duration_values)))
         return max(params.duration_min, min(params.duration_max, max(1, value)))
     return rng.randint(params.duration_min, params.duration_max)
+
+
+def _empirical_project_indices(
+    empirical_profile: EmpiricalSourceProfile | None,
+    n_projects: int,
+    rng: random.Random,
+) -> List[int]:
+    if not empirical_profile or not empirical_profile.activity_role_skill_level_rows:
+        return []
+    count = min(
+        len(empirical_profile.activity_role_skill_level_rows),
+        len(empirical_profile.duration_values) if empirical_profile.duration_values else n_projects,
+    )
+    if count <= 0:
+        return []
+    indices = list(range(count))
+    sequence = []
+    while len(sequence) < n_projects:
+        chunk = list(indices)
+        rng.shuffle(chunk)
+        sequence.extend(chunk)
+    return sequence[:n_projects]
+
+
+def _empirical_project_roles(
+    empirical_profile: EmpiricalSourceProfile | None,
+    source_idx: int | None,
+    skills: Sequence[str],
+    params: GenerationParameters,
+) -> List[Role]:
+    if (
+        not empirical_profile
+        or source_idx is None
+        or source_idx < 0
+        or source_idx >= len(empirical_profile.activity_role_skill_level_rows)
+    ):
+        return []
+    roles = []
+    for skill_id, required_level in empirical_profile.activity_role_skill_level_rows[source_idx]:
+        skill_index = int(skill_id) - 1
+        if 0 <= skill_index < len(skills):
+            roles.append(
+                Role(
+                    skill=skills[skill_index],
+                    level=max(1, min(params.role_level_max, int(required_level))),
+                )
+            )
+    return roles
 
 
 def _required_level(

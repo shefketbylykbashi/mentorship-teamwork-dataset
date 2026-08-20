@@ -1,0 +1,180 @@
+{
+  "all_mslib1_4_sources_have_four_skills": true,
+  "built_at": "2026-08-20T21:47:01Z",
+  "dataset_checks": {
+    "MSLIB1": true,
+    "MSLIB2": true,
+    "MSLIB3": true,
+    "MSLIB4": true
+  },
+  "methodological_note": "All canonical MSLIB1-4 source instances expose exactly four skill types. Type 6 must therefore preserve n_skills=4 and must not artificially diversify skill count for this family.",
+  "official_documentation": {
+    "MSRCPSP_DataFormat.pdf_present": true,
+    "source_header_interpretation": "First non-section row in each .msrcp Project Module is activities, resources, skill types, skill levels; the third field is n_skills.",
+    "workbook_parameter_overview_definition": "# of skill types = The total number of skill types"
+  },
+  "parsed_skill_count_frequencies_per_set": {
+    "MSLIB1": {
+      "4": 6600
+    },
+    "MSLIB2": {
+      "4": 9000
+    },
+    "MSLIB3": {
+      "4": 11880
+    },
+    "MSLIB4": {
+      "4": 5000
+    }
+  },
+  "parsed_unique_skill_counts_per_set": {
+    "MSLIB1": [
+      4
+    ],
+    "MSLIB2": [
+      4
+    ],
+    "MSLIB3": [
+      4
+    ],
+    "MSLIB4": [
+      4
+    ]
+  },
+  "raw_header_samples": {
+    "MSLIB1": [
+      {
+        "activities": 32,
+        "raw_header": "32\t4\t4\t5",
+        "resources": 4,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB1/MSLIB_Set1_1.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t14\t4\t5",
+        "resources": 14,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB1/MSLIB_Set1_2322.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t286\t4\t5",
+        "resources": 286,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB1/MSLIB_Set1_6600.msrcp"
+      }
+    ],
+    "MSLIB2": [
+      {
+        "activities": 32,
+        "raw_header": "32\t6\t4\t5",
+        "resources": 6,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB2/MSLIB_Set2_1.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t18\t4\t5",
+        "resources": 18,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB2/MSLIB_Set2_1891.msrcp"
+      },
+      {
+        "activities": 92,
+        "raw_header": "92\t794\t4\t5",
+        "resources": 794,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB2/MSLIB_Set2_9000.msrcp"
+      }
+    ],
+    "MSLIB3": [
+      {
+        "activities": 32,
+        "raw_header": "32\t4\t4\t5",
+        "resources": 4,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB3/MSLIB_Set3_1.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t109\t4\t5",
+        "resources": 109,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB3/MSLIB_Set3_5863.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t281\t4\t5",
+        "resources": 281,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB3/MSLIB_Set3_11880.msrcp"
+      }
+    ],
+    "MSLIB4": [
+      {
+        "activities": 32,
+        "raw_header": "32\t4\t4\t5",
+        "resources": 4,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB4/MSLIB_Set4_1.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t59\t4\t5",
+        "resources": 59,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB4/MSLIB_Set4_3206.msrcp"
+      },
+      {
+        "activities": 32,
+        "raw_header": "32\t80\t4\t5",
+        "resources": 80,
+        "skill_levels": 5,
+        "skills": 4,
+        "source_zip_entry": "MSLIB4/MSLIB_Set4_5000.msrcp"
+      }
+    ]
+  },
+  "selected_100_four_skills_is_genuine_source_property": true,
+  "workbook_and_parser_agree_exactly": true,
+  "workbook_skill_count_frequencies_per_set": {
+    "MSLIB1": {
+      "4": 6600
+    },
+    "MSLIB2": {
+      "4": 9000
+    },
+    "MSLIB3": {
+      "4": 11880
+    },
+    "MSLIB4": {
+      "4": 5000
+    }
+  },
+  "workbook_unique_skill_counts_per_set": {
+    "MSLIB1": [
+      4
+    ],
+    "MSLIB2": [
+      4
+    ],
+    "MSLIB3": [
+      4
+    ],
+    "MSLIB4": [
+      4
+    ]
+  }
+}

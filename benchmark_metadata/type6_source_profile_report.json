@@ -1,0 +1,1792 @@
+{
+  "built_at": "2026-08-20T21:52:22Z",
+  "config_hash": "6cfe2c97b0cdf5d89a2045d34aa365c14047700f8cd27988a89c6a84effeaf76",
+  "count_per_MSLIB_set": {
+    "MSLIB1": 25,
+    "MSLIB2": 25,
+    "MSLIB3": 25,
+    "MSLIB4": 25
+  },
+  "family": "type6",
+  "major_dimension_summaries": {
+    "source_activity_count": {
+      "max": 90.0,
+      "mean": 31.2,
+      "median": 30.0,
+      "min": 30.0
+    },
+    "source_contention": {
+      "max": 22.833333333333332,
+      "mean": 9.02162574920067,
+      "median": 8.465079365079365,
+      "min": 1.0
+    },
+    "source_critical_path": {
+      "max": 207.0,
+      "mean": 66.29,
+      "median": 52.0,
+      "min": 18.0
+    },
+    "source_demand_supply_alignment": {
+      "max": 1.0000000000000002,
+      "mean": 0.9460186418023342,
+      "median": 0.9834626607643191,
+      "min": 0.5322050090167005
+    },
+    "source_duration_mean": {
+      "max": 7.333333333333333,
+      "mean": 5.360777777777778,
+      "median": 5.466666666666667,
+      "min": 3.7666666666666666
+    },
+    "source_duration_median": {
+      "max": 7.0,
+      "mean": 5.295,
+      "median": 5.5,
+      "min": 3.0
+    },
+    "source_natural_direct_fillability": {
+      "max": 1.0,
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0
+    },
+    "source_natural_one_below_potential": {
+      "max": 0.875,
+      "mean": 0.5593735116602715,
+      "median": 0.5748441760810283,
+      "min": 0.11538461538461539
+    },
+    "source_network_depth": {
+      "max": 43.0,
+      "mean": 12.88,
+      "median": 10.0,
+      "min": 4.0
+    },
+    "source_potential_mentor_availability": {
+      "max": 0.875,
+      "mean": 0.5593735116602715,
+      "median": 0.5748441760810283,
+      "min": 0.11538461538461539
+    },
+    "source_resource_count": {
+      "max": 451.0,
+      "mean": 36.73,
+      "median": 16.0,
+      "min": 4.0
+    },
+    "source_roles_per_activity_mean": {
+      "max": 10.2,
+      "mean": 5.699611111111111,
+      "median": 5.25,
+      "min": 1.8666666666666667
+    },
+    "source_roles_total": {
+      "max": 886.0,
+      "mean": 179.94,
+      "median": 158.0,
+      "min": 56.0
+    },
+    "source_skill_count": {
+      "max": 4.0,
+      "mean": 4.0,
+      "median": 4.0,
+      "min": 4.0
+    },
+    "source_skill_level_mean": {
+      "max": 4.1875,
+      "mean": 3.002619565648067,
+      "median": 3.0,
+      "min": 1.9375
+    },
+    "source_skill_skew": {
+      "max": 2.0,
+      "mean": 0.5122965551788957,
+      "median": 0.24656878112606503,
+      "min": 0.0
+    },
+    "source_skills_per_resource_mean": {
+      "max": 4.0,
+      "mean": 1.6140440663577909,
+      "median": 1.3055555555555554,
+      "min": 1.0
+    }
+  },
+  "phase": "literature_profiles_phase_4",
+  "profile_count": 100,
+  "quality_gate": {
+    "all_generation_parameters_without_bks": true,
+    "all_source_provenance_complete": true,
+    "count_per_MSLIB_set": {
+      "MSLIB1": 25,
+      "MSLIB2": 25,
+      "MSLIB3": 25,
+      "MSLIB4": 25
+    },
+    "dummy_activities_excluded_from_project_count": true,
+    "exactly_25_per_mslib1_4": true,
+    "no_mslib5_profiles": true,
+    "passed": true,
+    "precedence_not_generation_constraint": true,
+    "profile_count": 100,
+    "profile_count_exact": true,
+    "source_resource_count_preserved": true,
+    "source_skill_count_preserved": true
+  },
+  "representation_notes": [
+    "MSLIB precedence arcs are retained only as network summary/distribution metadata.",
+    "MTP project count equals non-dummy activity count.",
+    "MTP score parameters are synthetic source-structure proxies and do not use BKS/LB/UB/open status.",
+    "All canonical MSLIB1-4 source instances contain exactly four skill types; Type 6 preserves this source characteristic and does not artificially diversify n_skills.",
+    "No MTP instances are generated in Phase 4."
+  ],
+  "root_seed": 2026,
+  "source_selection_audit": {
+    "audit_rows": [
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Total project activities including dummy start and dummy end.",
+        "indicator": "n_activities_total",
+        "provenance": "Project Module header in .msrcp source file.",
+        "reason": "Direct source scale field, not a solution result.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Non-dummy activity count, total activities minus dummy start/end.",
+        "indicator": "n_real_activities",
+        "provenance": "Deterministically derived from Project Module header and dummy-node convention.",
+        "reason": "Defines the MSLIB activity/work-package scale without using objective values.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Number of renewable multi-skilled resources.",
+        "indicator": "n_resources",
+        "provenance": "Project Module header in .msrcp source file.",
+        "reason": "Direct workforce scale field.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Number of skill types.",
+        "indicator": "n_skills",
+        "provenance": "Project Module header in .msrcp source file.",
+        "reason": "Direct skill-space scale field.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Number of hierarchical skill levels.",
+        "indicator": "n_skill_levels",
+        "provenance": "Project Module header in .msrcp source file.",
+        "reason": "Direct hierarchical skill structure field.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Count of immediate precedence arcs.",
+        "indicator": "n_precedence_arcs",
+        "provenance": "Derived by counting successors in Project Module activity rows.",
+        "reason": "Deterministic network structure measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Immediate precedence arcs divided by possible acyclic ordered pairs.",
+        "indicator": "arc_density",
+        "provenance": "Derived from parsed precedence arcs and activity count.",
+        "reason": "Deterministic network density measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Transitive real-activity precedence comparability share.",
+        "indicator": "order_strength",
+        "provenance": "Derived from transitive closure of parsed precedence DAG.",
+        "reason": "Deterministic network complexity measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Longest precedence-only path duration from dummy start to dummy end.",
+        "indicator": "critical_path_length",
+        "provenance": "Independently computed from parsed durations and precedence DAG.",
+        "reason": "Allowed CP-like quantity because it is recomputed from source structure, not copied from BKS columns.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Maximum number of precedence edges on a path to dummy end.",
+        "indicator": "network_depth",
+        "provenance": "Derived from parsed precedence DAG.",
+        "reason": "Deterministic topology measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Mean duration over non-dummy activities.",
+        "indicator": "duration_mean",
+        "provenance": "Derived from Project Module activity durations.",
+        "reason": "Duration distribution summary, not a solved objective.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Population standard deviation of non-dummy activity durations.",
+        "indicator": "duration_sd",
+        "provenance": "Derived from Project Module activity durations.",
+        "reason": "Duration distribution summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "10th percentile of non-dummy activity durations.",
+        "indicator": "duration_p10",
+        "provenance": "Derived from Project Module activity durations.",
+        "reason": "Duration distribution summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "90th percentile of non-dummy activity durations.",
+        "indicator": "duration_p90",
+        "provenance": "Derived from Project Module activity durations.",
+        "reason": "Duration distribution summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Total expanded skill/resource requirements over non-dummy activities.",
+        "indicator": "total_roles",
+        "provenance": "Derived from Skill Requirements Module multiplicities.",
+        "reason": "Demand-size measure from source requirements.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Mean expanded role multiplicity over non-dummy activities.",
+        "indicator": "roles_per_activity_mean",
+        "provenance": "Derived from Skill Requirements Module multiplicities.",
+        "reason": "Demand distribution summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Population standard deviation of expanded role multiplicity over non-dummy activities.",
+        "indicator": "roles_per_activity_sd",
+        "provenance": "Derived from Skill Requirements Module multiplicities.",
+        "reason": "Demand distribution summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Mean mastered skills per resource.",
+        "indicator": "skills_per_resource_mean",
+        "provenance": "Derived from Workforce Module with Skill Levels.",
+        "reason": "Workforce breadth summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Population standard deviation of mastered skills per resource.",
+        "indicator": "skills_per_resource_sd",
+        "provenance": "Derived from Workforce Module with Skill Levels.",
+        "reason": "Workforce breadth summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Mean positive resource skill level.",
+        "indicator": "skill_level_mean",
+        "provenance": "Derived from Workforce Module with Skill Levels.",
+        "reason": "Hierarchical workforce-depth summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Mean required level over expanded activity roles.",
+        "indicator": "requirement_level_mean",
+        "provenance": "Derived from Skill Level Requirements Module.",
+        "reason": "Hierarchical demand-depth summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "One minus normalized entropy of skill-demand counts.",
+        "indicator": "demand_concentration",
+        "provenance": "Derived from Skill Requirements Module.",
+        "reason": "Demand concentration summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "One minus normalized entropy of resource skill-supply counts.",
+        "indicator": "supply_concentration",
+        "provenance": "Derived from Workforce Module with Skill Levels.",
+        "reason": "Supply concentration summary.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Cosine similarity between source skill demand and source skill supply.",
+        "indicator": "demand_supply_alignment",
+        "provenance": "Derived from source demand and supply counts.",
+        "reason": "Source structural alignment measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Zipf-like slope proxy estimated from source skill-supply concentration.",
+        "indicator": "source_skill_skew",
+        "provenance": "Derived from source skill supply counts.",
+        "reason": "Source workforce heterogeneity measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Total expanded source roles divided by source resources.",
+        "indicator": "source_contention",
+        "provenance": "Derived from source requirements and resource count.",
+        "reason": "Source resource-pressure measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Mean inverse directly qualified resource count per role, with unqualified roles treated as maximally scarce.",
+        "indicator": "qualified_contention",
+        "provenance": "Derived from source role levels and workforce levels.",
+        "reason": "Skill-level scarcity measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Share of source roles with at least one directly qualified resource.",
+        "indicator": "natural_direct_share",
+        "provenance": "Derived from source role levels and workforce levels.",
+        "reason": "Natural source feasibility measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Share of source roles with at least one resource exactly one level below requirement.",
+        "indicator": "natural_one_below_share",
+        "provenance": "Derived from source role levels and workforce levels.",
+        "reason": "Natural mentorship-potential measure.",
+        "selection_allowed": true
+      },
+      {
+        "category": "2_deterministic_feature_derived_only_from_source_instance",
+        "configured_selection_dimension": true,
+        "definition": "Share of source roles with both a one-below resource and a directly qualified potential mentor.",
+        "indicator": "natural_mentor_available_share",
+        "provenance": "Derived from source role levels and workforce levels.",
+        "reason": "Source hierarchical mentorship-potential measure, not an algorithm result.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Coefficient of Network Complexity.",
+        "indicator": "excel_CNC",
+        "provenance": "Official workbook Parameter Overview, Network Topology.",
+        "reason": "Workbook network indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Order Strength.",
+        "indicator": "excel_OS",
+        "provenance": "Official workbook Parameter Overview, Network Topology.",
+        "reason": "Workbook network indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Serial-Parallel Network Indicator.",
+        "indicator": "excel_SP",
+        "provenance": "Official workbook Parameter Overview, Network Topology.",
+        "reason": "Workbook network indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Skill Factor.",
+        "indicator": "excel_SF",
+        "provenance": "Official workbook Parameter Overview, Skill Parameters.",
+        "reason": "Workbook skill-structure indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Skill Factor Variability.",
+        "indicator": "excel_SF_alpha",
+        "provenance": "Official workbook Parameter Overview, Skill Parameters.",
+        "reason": "Workbook skill-structure indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Skill Strength.",
+        "indicator": "excel_SS",
+        "provenance": "Official workbook Parameter Overview, Skill Parameters.",
+        "reason": "Workbook skill-supply indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Skill Strength Variability.",
+        "indicator": "excel_SS_alpha",
+        "provenance": "Official workbook Parameter Overview, Skill Parameters.",
+        "reason": "Workbook skill-supply indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Resource availability.",
+        "indicator": "excel_RA",
+        "provenance": "Official workbook Parameter Overview, Resource parameters.",
+        "reason": "Workbook resource-availability indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "1_source_native_structural_network_resource_skill_indicator",
+        "configured_selection_dimension": true,
+        "definition": "Resource availability variability.",
+        "indicator": "excel_RA_alpha",
+        "provenance": "Official workbook Parameter Overview, Resource parameters.",
+        "reason": "Workbook resource-availability indicator, not BKS/performance.",
+        "selection_allowed": true
+      },
+      {
+        "category": "3_solution_bks_or_algorithmic_performance_information",
+        "configured_selection_dimension": false,
+        "definition": "Best lower bound found by CPLEX within the time limit (linear relaxation).",
+        "indicator": "LB",
+        "provenance": "Official workbook Parameter Overview, Best Known Solutions.",
+        "reason": "Solution/BKS information must remain provenance/diagnostic only.",
+        "selection_allowed": false
+      },
+      {
+        "category": "3_solution_bks_or_algorithmic_performance_information",
+        "configured_selection_dimension": false,
+        "definition": "Best known solution.",
+        "indicator": "UB",
+        "provenance": "Official workbook Parameter Overview, Best Known Solutions and algorithm result sections.",
+        "reason": "Best-known objective values cannot influence source selection.",
+        "selection_allowed": false
+      },
+      {
+        "category": "3_solution_bks_or_algorithmic_performance_information",
+        "configured_selection_dimension": false,
+        "definition": "Closed if best found lower bound equals best found upper bound across procedures; otherwise open.",
+        "indicator": "Open?",
+        "provenance": "Official workbook Parameter Overview, Best Known Solutions.",
+        "reason": "Solved/open status depends on lower and upper bounds from solution procedures.",
+        "selection_allowed": false
+      },
+      {
+        "category": "3_solution_bks_or_algorithmic_performance_information",
+        "configured_selection_dimension": false,
+        "definition": "Critical path based lower bound.",
+        "indicator": "CP",
+        "provenance": "Official workbook Parameter Overview, Fast lower bounds.",
+        "reason": "Workbook CP is not selected; Type 6 uses independently recomputed critical_path_length from the parsed DAG instead.",
+        "selection_allowed": false
+      }
+    ],
+    "built_at": "2026-08-20T21:28:12Z",
+    "configured_selection_dimensions": [
+      "n_activities_total",
+      "n_real_activities",
+      "n_resources",
+      "n_skills",
+      "n_skill_levels",
+      "n_precedence_arcs",
+      "arc_density",
+      "order_strength",
+      "critical_path_length",
+      "network_depth",
+      "duration_mean",
+      "duration_sd",
+      "duration_p10",
+      "duration_p90",
+      "total_roles",
+      "roles_per_activity_mean",
+      "roles_per_activity_sd",
+      "skills_per_resource_mean",
+      "skills_per_resource_sd",
+      "skill_level_mean",
+      "requirement_level_mean",
+      "demand_concentration",
+      "supply_concentration",
+      "demand_supply_alignment",
+      "source_skill_skew",
+      "source_contention",
+      "qualified_contention",
+      "natural_direct_share",
+      "natural_one_below_share",
+      "natural_mentor_available_share",
+      "excel_CNC",
+      "excel_OS",
+      "excel_SP",
+      "excel_SF",
+      "excel_SF_alpha",
+      "excel_SS",
+      "excel_SS_alpha",
+      "excel_RA",
+      "excel_RA_alpha"
+    ],
+    "corrected_selection_ids": [
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2322.msrcp",
+        "source_instance_id": 2322,
+        "type6_source_index": 1
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3317.msrcp",
+        "source_instance_id": 3317,
+        "type6_source_index": 2
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_673.msrcp",
+        "source_instance_id": 673,
+        "type6_source_index": 3
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_4308.msrcp",
+        "source_instance_id": 4308,
+        "type6_source_index": 4
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5628.msrcp",
+        "source_instance_id": 5628,
+        "type6_source_index": 5
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_358.msrcp",
+        "source_instance_id": 358,
+        "type6_source_index": 6
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_395.msrcp",
+        "source_instance_id": 395,
+        "type6_source_index": 7
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5649.msrcp",
+        "source_instance_id": 5649,
+        "type6_source_index": 8
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5963.msrcp",
+        "source_instance_id": 5963,
+        "type6_source_index": 9
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3327.msrcp",
+        "source_instance_id": 3327,
+        "type6_source_index": 10
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_1681.msrcp",
+        "source_instance_id": 1681,
+        "type6_source_index": 11
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2709.msrcp",
+        "source_instance_id": 2709,
+        "type6_source_index": 12
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2970.msrcp",
+        "source_instance_id": 2970,
+        "type6_source_index": 13
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3508.msrcp",
+        "source_instance_id": 3508,
+        "type6_source_index": 14
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_6274.msrcp",
+        "source_instance_id": 6274,
+        "type6_source_index": 15
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2545.msrcp",
+        "source_instance_id": 2545,
+        "type6_source_index": 16
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_101.msrcp",
+        "source_instance_id": 101,
+        "type6_source_index": 17
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_993.msrcp",
+        "source_instance_id": 993,
+        "type6_source_index": 18
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3998.msrcp",
+        "source_instance_id": 3998,
+        "type6_source_index": 19
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_1676.msrcp",
+        "source_instance_id": 1676,
+        "type6_source_index": 20
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2289.msrcp",
+        "source_instance_id": 2289,
+        "type6_source_index": 21
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5449.msrcp",
+        "source_instance_id": 5449,
+        "type6_source_index": 22
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_40.msrcp",
+        "source_instance_id": 40,
+        "type6_source_index": 23
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_298.msrcp",
+        "source_instance_id": 298,
+        "type6_source_index": 24
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2495.msrcp",
+        "source_instance_id": 2495,
+        "type6_source_index": 25
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2553.msrcp",
+        "source_instance_id": 2553,
+        "type6_source_index": 26
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_312.msrcp",
+        "source_instance_id": 312,
+        "type6_source_index": 27
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1066.msrcp",
+        "source_instance_id": 1066,
+        "type6_source_index": 28
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1811.msrcp",
+        "source_instance_id": 1811,
+        "type6_source_index": 29
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1518.msrcp",
+        "source_instance_id": 1518,
+        "type6_source_index": 30
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2860.msrcp",
+        "source_instance_id": 2860,
+        "type6_source_index": 31
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_319.msrcp",
+        "source_instance_id": 319,
+        "type6_source_index": 32
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_79.msrcp",
+        "source_instance_id": 79,
+        "type6_source_index": 33
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1276.msrcp",
+        "source_instance_id": 1276,
+        "type6_source_index": 34
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_5118.msrcp",
+        "source_instance_id": 5118,
+        "type6_source_index": 35
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_901.msrcp",
+        "source_instance_id": 901,
+        "type6_source_index": 36
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1353.msrcp",
+        "source_instance_id": 1353,
+        "type6_source_index": 37
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1808.msrcp",
+        "source_instance_id": 1808,
+        "type6_source_index": 38
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1347.msrcp",
+        "source_instance_id": 1347,
+        "type6_source_index": 39
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1208.msrcp",
+        "source_instance_id": 1208,
+        "type6_source_index": 40
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_27.msrcp",
+        "source_instance_id": 27,
+        "type6_source_index": 41
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_617.msrcp",
+        "source_instance_id": 617,
+        "type6_source_index": 42
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_6536.msrcp",
+        "source_instance_id": 6536,
+        "type6_source_index": 43
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1165.msrcp",
+        "source_instance_id": 1165,
+        "type6_source_index": 44
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2219.msrcp",
+        "source_instance_id": 2219,
+        "type6_source_index": 45
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2429.msrcp",
+        "source_instance_id": 2429,
+        "type6_source_index": 46
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_8.msrcp",
+        "source_instance_id": 8,
+        "type6_source_index": 47
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_4878.msrcp",
+        "source_instance_id": 4878,
+        "type6_source_index": 48
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_41.msrcp",
+        "source_instance_id": 41,
+        "type6_source_index": 49
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2455.msrcp",
+        "source_instance_id": 2455,
+        "type6_source_index": 50
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_5371.msrcp",
+        "source_instance_id": 5371,
+        "type6_source_index": 51
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_623.msrcp",
+        "source_instance_id": 623,
+        "type6_source_index": 52
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7734.msrcp",
+        "source_instance_id": 7734,
+        "type6_source_index": 53
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_3590.msrcp",
+        "source_instance_id": 3590,
+        "type6_source_index": 54
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_10720.msrcp",
+        "source_instance_id": 10720,
+        "type6_source_index": 55
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_3006.msrcp",
+        "source_instance_id": 3006,
+        "type6_source_index": 56
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_10727.msrcp",
+        "source_instance_id": 10727,
+        "type6_source_index": 57
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_5400.msrcp",
+        "source_instance_id": 5400,
+        "type6_source_index": 58
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_598.msrcp",
+        "source_instance_id": 598,
+        "type6_source_index": 59
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7760.msrcp",
+        "source_instance_id": 7760,
+        "type6_source_index": 60
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_2996.msrcp",
+        "source_instance_id": 2996,
+        "type6_source_index": 61
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_5978.msrcp",
+        "source_instance_id": 5978,
+        "type6_source_index": 62
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_10095.msrcp",
+        "source_instance_id": 10095,
+        "type6_source_index": 63
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_6679.msrcp",
+        "source_instance_id": 6679,
+        "type6_source_index": 64
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_4425.msrcp",
+        "source_instance_id": 4425,
+        "type6_source_index": 65
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_2328.msrcp",
+        "source_instance_id": 2328,
+        "type6_source_index": 66
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_9691.msrcp",
+        "source_instance_id": 9691,
+        "type6_source_index": 67
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_301.msrcp",
+        "source_instance_id": 301,
+        "type6_source_index": 68
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_2641.msrcp",
+        "source_instance_id": 2641,
+        "type6_source_index": 69
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_308.msrcp",
+        "source_instance_id": 308,
+        "type6_source_index": 70
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7283.msrcp",
+        "source_instance_id": 7283,
+        "type6_source_index": 71
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_533.msrcp",
+        "source_instance_id": 533,
+        "type6_source_index": 72
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_11127.msrcp",
+        "source_instance_id": 11127,
+        "type6_source_index": 73
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_4258.msrcp",
+        "source_instance_id": 4258,
+        "type6_source_index": 74
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7152.msrcp",
+        "source_instance_id": 7152,
+        "type6_source_index": 75
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1159.msrcp",
+        "source_instance_id": 1159,
+        "type6_source_index": 76
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1126.msrcp",
+        "source_instance_id": 1126,
+        "type6_source_index": 77
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_953.msrcp",
+        "source_instance_id": 953,
+        "type6_source_index": 78
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1009.msrcp",
+        "source_instance_id": 1009,
+        "type6_source_index": 79
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1006.msrcp",
+        "source_instance_id": 1006,
+        "type6_source_index": 80
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4567.msrcp",
+        "source_instance_id": 4567,
+        "type6_source_index": 81
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1346.msrcp",
+        "source_instance_id": 1346,
+        "type6_source_index": 82
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1561.msrcp",
+        "source_instance_id": 1561,
+        "type6_source_index": 83
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1576.msrcp",
+        "source_instance_id": 1576,
+        "type6_source_index": 84
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1263.msrcp",
+        "source_instance_id": 1263,
+        "type6_source_index": 85
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1452.msrcp",
+        "source_instance_id": 1452,
+        "type6_source_index": 86
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1506.msrcp",
+        "source_instance_id": 1506,
+        "type6_source_index": 87
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_139.msrcp",
+        "source_instance_id": 139,
+        "type6_source_index": 88
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_128.msrcp",
+        "source_instance_id": 128,
+        "type6_source_index": 89
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4994.msrcp",
+        "source_instance_id": 4994,
+        "type6_source_index": 90
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_53.msrcp",
+        "source_instance_id": 53,
+        "type6_source_index": 91
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4998.msrcp",
+        "source_instance_id": 4998,
+        "type6_source_index": 92
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4422.msrcp",
+        "source_instance_id": 4422,
+        "type6_source_index": 93
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_916.msrcp",
+        "source_instance_id": 916,
+        "type6_source_index": 94
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_148.msrcp",
+        "source_instance_id": 148,
+        "type6_source_index": 95
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_90.msrcp",
+        "source_instance_id": 90,
+        "type6_source_index": 96
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1029.msrcp",
+        "source_instance_id": 1029,
+        "type6_source_index": 97
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_136.msrcp",
+        "source_instance_id": 136,
+        "type6_source_index": 98
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_3232.msrcp",
+        "source_instance_id": 3232,
+        "type6_source_index": 99
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4728.msrcp",
+        "source_instance_id": 4728,
+        "type6_source_index": 100
+      }
+    ],
+    "critical_path_selection_source": "critical_path_length is independently computed from the parsed precedence DAG; the workbook CP lower-bound column is not used.",
+    "disallowed_configured_dimensions": [],
+    "policy_passed": true,
+    "previous_selection_ids": [
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2322.msrcp",
+        "source_instance_id": 2322,
+        "type6_source_index": 1
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3317.msrcp",
+        "source_instance_id": 3317,
+        "type6_source_index": 2
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_673.msrcp",
+        "source_instance_id": 673,
+        "type6_source_index": 3
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_4308.msrcp",
+        "source_instance_id": 4308,
+        "type6_source_index": 4
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5628.msrcp",
+        "source_instance_id": 5628,
+        "type6_source_index": 5
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_358.msrcp",
+        "source_instance_id": 358,
+        "type6_source_index": 6
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_395.msrcp",
+        "source_instance_id": 395,
+        "type6_source_index": 7
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5649.msrcp",
+        "source_instance_id": 5649,
+        "type6_source_index": 8
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5963.msrcp",
+        "source_instance_id": 5963,
+        "type6_source_index": 9
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3327.msrcp",
+        "source_instance_id": 3327,
+        "type6_source_index": 10
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_1681.msrcp",
+        "source_instance_id": 1681,
+        "type6_source_index": 11
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2709.msrcp",
+        "source_instance_id": 2709,
+        "type6_source_index": 12
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2970.msrcp",
+        "source_instance_id": 2970,
+        "type6_source_index": 13
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3508.msrcp",
+        "source_instance_id": 3508,
+        "type6_source_index": 14
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_6274.msrcp",
+        "source_instance_id": 6274,
+        "type6_source_index": 15
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2545.msrcp",
+        "source_instance_id": 2545,
+        "type6_source_index": 16
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_101.msrcp",
+        "source_instance_id": 101,
+        "type6_source_index": 17
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_993.msrcp",
+        "source_instance_id": 993,
+        "type6_source_index": 18
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_3998.msrcp",
+        "source_instance_id": 3998,
+        "type6_source_index": 19
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_1676.msrcp",
+        "source_instance_id": 1676,
+        "type6_source_index": 20
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2289.msrcp",
+        "source_instance_id": 2289,
+        "type6_source_index": 21
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_5449.msrcp",
+        "source_instance_id": 5449,
+        "type6_source_index": 22
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_40.msrcp",
+        "source_instance_id": 40,
+        "type6_source_index": 23
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_298.msrcp",
+        "source_instance_id": 298,
+        "type6_source_index": 24
+      },
+      {
+        "MSLIB_set": "MSLIB1",
+        "source_filename": "MSLIB_Set1_2495.msrcp",
+        "source_instance_id": 2495,
+        "type6_source_index": 25
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2553.msrcp",
+        "source_instance_id": 2553,
+        "type6_source_index": 26
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_312.msrcp",
+        "source_instance_id": 312,
+        "type6_source_index": 27
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1066.msrcp",
+        "source_instance_id": 1066,
+        "type6_source_index": 28
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1811.msrcp",
+        "source_instance_id": 1811,
+        "type6_source_index": 29
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1518.msrcp",
+        "source_instance_id": 1518,
+        "type6_source_index": 30
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2860.msrcp",
+        "source_instance_id": 2860,
+        "type6_source_index": 31
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_319.msrcp",
+        "source_instance_id": 319,
+        "type6_source_index": 32
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_79.msrcp",
+        "source_instance_id": 79,
+        "type6_source_index": 33
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1276.msrcp",
+        "source_instance_id": 1276,
+        "type6_source_index": 34
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_5118.msrcp",
+        "source_instance_id": 5118,
+        "type6_source_index": 35
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_901.msrcp",
+        "source_instance_id": 901,
+        "type6_source_index": 36
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1353.msrcp",
+        "source_instance_id": 1353,
+        "type6_source_index": 37
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1808.msrcp",
+        "source_instance_id": 1808,
+        "type6_source_index": 38
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1347.msrcp",
+        "source_instance_id": 1347,
+        "type6_source_index": 39
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1208.msrcp",
+        "source_instance_id": 1208,
+        "type6_source_index": 40
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_27.msrcp",
+        "source_instance_id": 27,
+        "type6_source_index": 41
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_617.msrcp",
+        "source_instance_id": 617,
+        "type6_source_index": 42
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_6536.msrcp",
+        "source_instance_id": 6536,
+        "type6_source_index": 43
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_1165.msrcp",
+        "source_instance_id": 1165,
+        "type6_source_index": 44
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2219.msrcp",
+        "source_instance_id": 2219,
+        "type6_source_index": 45
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2429.msrcp",
+        "source_instance_id": 2429,
+        "type6_source_index": 46
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_8.msrcp",
+        "source_instance_id": 8,
+        "type6_source_index": 47
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_4878.msrcp",
+        "source_instance_id": 4878,
+        "type6_source_index": 48
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_41.msrcp",
+        "source_instance_id": 41,
+        "type6_source_index": 49
+      },
+      {
+        "MSLIB_set": "MSLIB2",
+        "source_filename": "MSLIB_Set2_2455.msrcp",
+        "source_instance_id": 2455,
+        "type6_source_index": 50
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_5371.msrcp",
+        "source_instance_id": 5371,
+        "type6_source_index": 51
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_623.msrcp",
+        "source_instance_id": 623,
+        "type6_source_index": 52
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7734.msrcp",
+        "source_instance_id": 7734,
+        "type6_source_index": 53
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_3590.msrcp",
+        "source_instance_id": 3590,
+        "type6_source_index": 54
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_10720.msrcp",
+        "source_instance_id": 10720,
+        "type6_source_index": 55
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_3006.msrcp",
+        "source_instance_id": 3006,
+        "type6_source_index": 56
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_10727.msrcp",
+        "source_instance_id": 10727,
+        "type6_source_index": 57
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_5400.msrcp",
+        "source_instance_id": 5400,
+        "type6_source_index": 58
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_598.msrcp",
+        "source_instance_id": 598,
+        "type6_source_index": 59
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7760.msrcp",
+        "source_instance_id": 7760,
+        "type6_source_index": 60
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_2996.msrcp",
+        "source_instance_id": 2996,
+        "type6_source_index": 61
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_5978.msrcp",
+        "source_instance_id": 5978,
+        "type6_source_index": 62
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_10095.msrcp",
+        "source_instance_id": 10095,
+        "type6_source_index": 63
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_6679.msrcp",
+        "source_instance_id": 6679,
+        "type6_source_index": 64
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_4425.msrcp",
+        "source_instance_id": 4425,
+        "type6_source_index": 65
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_2328.msrcp",
+        "source_instance_id": 2328,
+        "type6_source_index": 66
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_9691.msrcp",
+        "source_instance_id": 9691,
+        "type6_source_index": 67
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_301.msrcp",
+        "source_instance_id": 301,
+        "type6_source_index": 68
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_2641.msrcp",
+        "source_instance_id": 2641,
+        "type6_source_index": 69
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_308.msrcp",
+        "source_instance_id": 308,
+        "type6_source_index": 70
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7283.msrcp",
+        "source_instance_id": 7283,
+        "type6_source_index": 71
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_533.msrcp",
+        "source_instance_id": 533,
+        "type6_source_index": 72
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_11127.msrcp",
+        "source_instance_id": 11127,
+        "type6_source_index": 73
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_4258.msrcp",
+        "source_instance_id": 4258,
+        "type6_source_index": 74
+      },
+      {
+        "MSLIB_set": "MSLIB3",
+        "source_filename": "MSLIB_Set3_7152.msrcp",
+        "source_instance_id": 7152,
+        "type6_source_index": 75
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1159.msrcp",
+        "source_instance_id": 1159,
+        "type6_source_index": 76
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1126.msrcp",
+        "source_instance_id": 1126,
+        "type6_source_index": 77
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_953.msrcp",
+        "source_instance_id": 953,
+        "type6_source_index": 78
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1009.msrcp",
+        "source_instance_id": 1009,
+        "type6_source_index": 79
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1006.msrcp",
+        "source_instance_id": 1006,
+        "type6_source_index": 80
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4567.msrcp",
+        "source_instance_id": 4567,
+        "type6_source_index": 81
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1346.msrcp",
+        "source_instance_id": 1346,
+        "type6_source_index": 82
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1561.msrcp",
+        "source_instance_id": 1561,
+        "type6_source_index": 83
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1576.msrcp",
+        "source_instance_id": 1576,
+        "type6_source_index": 84
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1263.msrcp",
+        "source_instance_id": 1263,
+        "type6_source_index": 85
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1452.msrcp",
+        "source_instance_id": 1452,
+        "type6_source_index": 86
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1506.msrcp",
+        "source_instance_id": 1506,
+        "type6_source_index": 87
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_139.msrcp",
+        "source_instance_id": 139,
+        "type6_source_index": 88
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_128.msrcp",
+        "source_instance_id": 128,
+        "type6_source_index": 89
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4994.msrcp",
+        "source_instance_id": 4994,
+        "type6_source_index": 90
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_53.msrcp",
+        "source_instance_id": 53,
+        "type6_source_index": 91
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4998.msrcp",
+        "source_instance_id": 4998,
+        "type6_source_index": 92
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4422.msrcp",
+        "source_instance_id": 4422,
+        "type6_source_index": 93
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_916.msrcp",
+        "source_instance_id": 916,
+        "type6_source_index": 94
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_148.msrcp",
+        "source_instance_id": 148,
+        "type6_source_index": 95
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_90.msrcp",
+        "source_instance_id": 90,
+        "type6_source_index": 96
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_1029.msrcp",
+        "source_instance_id": 1029,
+        "type6_source_index": 97
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_136.msrcp",
+        "source_instance_id": 136,
+        "type6_source_index": 98
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_3232.msrcp",
+        "source_instance_id": 3232,
+        "type6_source_index": 99
+      },
+      {
+        "MSLIB_set": "MSLIB4",
+        "source_filename": "MSLIB_Set4_4728.msrcp",
+        "source_instance_id": 4728,
+        "type6_source_index": 100
+      }
+    ],
+    "selection_changed_after_audit": false,
+    "selection_dimension_count": 39,
+    "sensitive_solution_fields_not_used": {
+      "CP": true,
+      "LB": true,
+      "Open?": true,
+      "UB": true
+    }
+  }
+}

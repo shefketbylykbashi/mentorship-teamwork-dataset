@@ -1,0 +1,288 @@
+{
+  "archive_path": "type6_source_data\\MSLIB_v2_2.zip",
+  "archive_report": {
+    "canonical_dataset_counts": {
+      "MSLIB1": {
+        "canonical_msrcp_count": 6600,
+        "expected_count": 6600,
+        "first_id": 1,
+        "last_id": 6600
+      },
+      "MSLIB2": {
+        "canonical_msrcp_count": 9000,
+        "expected_count": 9000,
+        "first_id": 1,
+        "last_id": 9000
+      },
+      "MSLIB3": {
+        "canonical_msrcp_count": 11880,
+        "expected_count": 11880,
+        "first_id": 1,
+        "last_id": 11880
+      },
+      "MSLIB4": {
+        "canonical_msrcp_count": 5000,
+        "expected_count": 5000,
+        "first_id": 1,
+        "last_id": 5000
+      }
+    },
+    "contains_dataset_information_files": true,
+    "contains_mslib1_4": true,
+    "contains_msrcpsp_dataformat_document": true,
+    "contains_parameters_and_bks_workbook": true,
+    "dataset_information_files": {
+      "MSLIB1": [],
+      "MSLIB2": [],
+      "MSLIB3": [],
+      "MSLIB4": [],
+      "MSLIB5": [
+        "MSLIB5/MSLIB_INFO_FILE.rtf"
+      ]
+    },
+    "internal_readme_version_statement": "Last update: v2.2 (June 2026)",
+    "noncanonical_msrcp_files_excluded": {
+      "MSLIB2": [
+        "MSLIB2/MSLIB_Set2_3563 copy.msrcp"
+      ]
+    }
+  },
+  "extract_dir": "type6_source_data\\MSLIB_v2_2",
+  "observed_sha256": "f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c",
+  "phase6_final_generation": {
+    "count_per_MSLIB_set": {
+      "MSLIB1": 25,
+      "MSLIB2": 25,
+      "MSLIB3": 25,
+      "MSLIB4": 25
+    },
+    "filename_convention": "type6_<family_id>__<MSLIB_set>__src<source_instance_id>.txt",
+    "final_instance_count": 100,
+    "generated_at": "2026-08-20T22:16:00Z",
+    "mapping_files": [
+      "benchmark_metadata\\type6_source_to_output_mapping.csv",
+      "benchmark_metadata\\type6_source_to_output_mapping.json"
+    ],
+    "output_dir": "generated_instances\\type6",
+    "phase_dependencies_preserved": [
+      "benchmark_metadata/type6_selection_audit.csv",
+      "benchmark_metadata/type6_selection_audit.json",
+      "benchmark_metadata/type6_skill_count_sanity_check.csv",
+      "benchmark_metadata/type6_skill_count_sanity_check.json",
+      "benchmark_metadata/type6_literature_profiles.csv",
+      "benchmark_metadata/type6_literature_profiles.json",
+      "benchmark_metadata/type6_source_profile_report.json",
+      "benchmark_metadata/type6_pilot/type6_pilot_report.json"
+    ],
+    "redistribution_note": "The upstream MSLIB archive is not redistributed by this metadata. The source artifact is identified by release asset filename and SHA-256.",
+    "root_seed": 2026,
+    "source_identification_policy": "Source identifiers may appear in final Type 6 filenames and metadata; MTP file contents remain anonymous standard Hash Code-format c/s/p identifiers.",
+    "source_to_output_mapping_rows": 100,
+    "upstream_versioning_note": "MSLIB official release asset MSLIB_v2_2.zip, retrieved from GitHub release v2.2, SHA-256 f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c, with upstream documentation still describing the dataset release as v2.1 (June 2026)."
+  },
+  "phase_1_3_report": {
+    "candidate_counts_per_set": {
+      "MSLIB1": 6600,
+      "MSLIB2": 9000,
+      "MSLIB3": 11880,
+      "MSLIB4": 5000
+    },
+    "hierarchical_skill_representation": {
+      "available": "yes",
+      "eligibility_interpretation": "The Type 6 mapping uses lower-bound hierarchical eligibility: resource/contributor level >= required role level.",
+      "requirement_levels": "Skill Level Requirements Module gives one required level per required resource/skill role.",
+      "resource_levels": "Workforce Module with Skill Levels gives each resource's level for each skill."
+    },
+    "selection_gate": {
+      "all_source_provenance_complete": true,
+      "candidate_counts_match_expected": true,
+      "exactly_25_per_mslib1_4": true,
+      "no_mslib5_selected": true,
+      "passed": true,
+      "selected_count": 100,
+      "selected_counts_per_set": {
+        "MSLIB1": 25,
+        "MSLIB2": 25,
+        "MSLIB3": 25,
+        "MSLIB4": 25
+      },
+      "selection_independent_of_mtp_isa_features": true,
+      "unique_source_selection": true
+    },
+    "source_format_interpretation": {
+      "format_document": "Official MSRCPSP_DataFormat.pdf included in MSLIB_v2_2.zip.",
+      "optional_modules": "Cost, common resource usage, and rework modules are parsed as available source metadata only for later phases.",
+      "project_module": "Header is number of activities including dummy start/end, renewable multi-skilled resources, skill types, and skill levels; the next two singleton lines are BKS/basic and deadline/provenance values; then one activity row per node contains duration, successor count, and successor ids.",
+      "skill_level_requirements_module": "One row per activity; dummy rows are -1. For non-dummy activities, level entries are expanded in skill order according to the multiplicities in the Skill Requirements Module.",
+      "skill_requirements_module": "Activity-by-skill integer demand multiplicity matrix.",
+      "workforce_level_module": "Resource-skill level matrix with 0 for unmastered skills and positive levels 1..L for mastered skills.",
+      "workforce_module": "Binary resource-skill mastery matrix with one row per resource and one column per skill."
+    },
+    "workbook_info": {
+      "available_source_indicator_names": [
+        "# Act",
+        "CNC",
+        "OS",
+        "SP",
+        "# Skills",
+        "SF",
+        "SFalpha",
+        "SS",
+        "SSalpha",
+        "# R",
+        "RA",
+        "RAalpha",
+        "LB",
+        "UB",
+        "Open?",
+        "CP"
+      ],
+      "basic_sheet_category_row_9": [
+        "Instances",
+        "",
+        "Network Topology",
+        "",
+        "",
+        "",
+        "Skill Parameters",
+        "",
+        "",
+        "",
+        "",
+        "Resource parameters",
+        "",
+        "",
+        "Best Known Solutions",
+        "",
+        "",
+        "Fast lower bounds",
+        "",
+        "",
+        "PR40",
+        "",
+        "PR ALL",
+        "",
+        "GA (15k)",
+        "GA (500k)",
+        "SA (1k)",
+        "SA (500k)",
+        "CPLEX (10 min.)",
+        "",
+        "CPLEX (1 hr)",
+        "",
+        "SAT (10 min.)",
+        "",
+        "SAT (1 hr)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "basic_sheet_column_header_row_10": [
+        "Dataset",
+        "Name",
+        "# Act",
+        "CNC",
+        "OS",
+        "SP",
+        "# Skills",
+        "SF",
+        "SF\u03b1",
+        "SS",
+        "SS\u03b1",
+        "# R",
+        "RA",
+        "RA\u03b1",
+        "LB",
+        "UB",
+        "Open?",
+        "CP",
+        "WC (6)",
+        "RCP (11)",
+        "UB",
+        "A/S/R rule",
+        "UB",
+        "A/S/R rule",
+        "UB",
+        "UB",
+        "UB",
+        "UB",
+        "LB",
+        "UB",
+        "LB",
+        "UB",
+        "LB",
+        "UB",
+        "LB",
+        "UB",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "canonical_indicator_rows_per_set": {
+        "MSLIB1": 6600,
+        "MSLIB2": 9000,
+        "MSLIB3": 11880,
+        "MSLIB4": 5000
+      },
+      "path": "type6_source_data\\MSLIB_v2_2\\MSLIB_v2_2\\MSLIB (Parameters and BKS).xlsx",
+      "sheets": [
+        "Overview",
+        "Parameter Overview",
+        "Summary Artificial Data",
+        "Empirical Artificial Data",
+        "MSRCPSP (basic)",
+        "hMSRCPSP(VAD)",
+        "hMSRCPSP(ALR)",
+        "hMSRCPSP(RLF)",
+        "hMSRCPSP(CRS)",
+        "hMSRCPSP(HRU)",
+        "hMSRCPSP(QRP)"
+      ]
+    }
+  },
+  "redistribution_note": "The upstream archive is kept in type6_source_data and ignored by git. Public benchmark provenance should record deterministic download instructions, checksums, and selected filenames rather than redistributing the archive unless upstream terms explicitly permit it.",
+  "release": {
+    "download_url": "https://github.com/MarioVanhoucke/MSLIB-Multi-Skilled-Resource-Constrained-Project-Library/releases/download/v2.2/MSLIB_v2_2.zip",
+    "github_repository": "MarioVanhoucke/MSLIB-Multi-Skilled-Resource-Constrained-Project-Library",
+    "observed_release_tag": "v2.2",
+    "release_asset": "MSLIB_v2_2.zip",
+    "release_body_version_statement": "This is release v2.1",
+    "release_name": "MSLIB_v2.2",
+    "repository_readme_version_statement": "Last update: v2.1 (June 2026)",
+    "sha256": "f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c",
+    "upstream_versioning_note": "MSLIB official release asset MSLIB_v2_2.zip, retrieved from GitHub release v2.2, SHA-256 f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c, with upstream documentation still describing the dataset release as v2.1 (June 2026)."
+  },
+  "source_release": {
+    "download_url": "https://github.com/MarioVanhoucke/MSLIB-Multi-Skilled-Resource-Constrained-Project-Library/releases/download/v2.2/MSLIB_v2_2.zip",
+    "github_repository": "MarioVanhoucke/MSLIB-Multi-Skilled-Resource-Constrained-Project-Library",
+    "observed_release_tag": "v2.2",
+    "release_asset": "MSLIB_v2_2.zip",
+    "release_body_version_statement": "This is release v2.1",
+    "release_name": "MSLIB_v2.2",
+    "repository_readme_version_statement": "Last update: v2.1 (June 2026)",
+    "sha256": "f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c",
+    "upstream_versioning_note": "MSLIB official release asset MSLIB_v2_2.zip, retrieved from GitHub release v2.2, SHA-256 f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c, with upstream documentation still describing the dataset release as v2.1 (June 2026)."
+  },
+  "type6_source_artifact": "MSLIB official release asset MSLIB_v2_2.zip, retrieved from GitHub release v2.2, SHA-256 f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c, with upstream documentation still describing the dataset release as v2.1 (June 2026).",
+  "v2_1_tag_archive_evidence": {
+    "filename": "MSLIB_v2.1_tag.zip",
+    "observed_contents": "GitHub source zip for tag v2.1 contains repository text only and no MSLIB data assets or MSRCPSP_DataFormat document; retained only as provenance evidence.",
+    "sha256": "197406df4991314cc7879a3cb65eda450b855c96fa8118963332a6f23d6e0833"
+  },
+  "verified_at": "2026-08-20T21:24:31Z"
+}

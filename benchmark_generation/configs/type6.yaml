@@ -1,0 +1,111 @@
+{
+  "family": "type6",
+  "root_seed": 2026,
+  "source_release": {
+    "github_repository": "MarioVanhoucke/MSLIB-Multi-Skilled-Resource-Constrained-Project-Library",
+    "observed_release_tag": "v2.2",
+    "release_name": "MSLIB_v2.2",
+    "release_asset": "MSLIB_v2_2.zip",
+    "download_url": "https://github.com/MarioVanhoucke/MSLIB-Multi-Skilled-Resource-Constrained-Project-Library/releases/download/v2.2/MSLIB_v2_2.zip",
+    "sha256": "f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c",
+    "release_body_version_statement": "This is release v2.1",
+    "repository_readme_version_statement": "Last update: v2.1 (June 2026)",
+    "upstream_versioning_note": "MSLIB official release asset MSLIB_v2_2.zip, retrieved from GitHub release v2.2, SHA-256 f1672d2e2e85091f598e497b898b20c468b0b9a10030c5ca8d8ae798b6529e8c, with upstream documentation still describing the dataset release as v2.1 (June 2026)."
+  },
+  "v2_1_tag_archive_evidence": {
+    "filename": "MSLIB_v2.1_tag.zip",
+    "sha256": "197406df4991314cc7879a3cb65eda450b855c96fa8118963332a6f23d6e0833",
+    "observed_contents": "GitHub source zip for tag v2.1 contains repository text only and no MSLIB data assets or MSRCPSP_DataFormat document; retained only as provenance evidence."
+  },
+  "expected_counts": {
+    "MSLIB1": 6600,
+    "MSLIB2": 9000,
+    "MSLIB3": 11880,
+    "MSLIB4": 5000
+  },
+  "fillable_fraction": 0.30,
+  "max_generation_attempts_per_source": 30,
+  "type6_score_scaling_constant": 10.0,
+  "pilot": {
+    "allocation": {
+      "MSLIB1": 2,
+      "MSLIB2": 2,
+      "MSLIB3": 3,
+      "MSLIB4": 3
+    },
+    "feature_columns": [
+      "source_activity_count",
+      "source_resource_count",
+      "source_skills_per_resource_mean",
+      "source_skill_level_mean",
+      "source_roles_per_activity_mean",
+      "source_duration_mean",
+      "source_contention",
+      "source_network_depth",
+      "source_critical_path",
+      "source_demand_supply_alignment",
+      "source_skill_skew"
+    ]
+  },
+  "quality_gates": {
+    "skill_skew_tolerance": 0.05,
+    "demand_supply_alignment_tolerance": 0.05,
+    "demand_concentration_tolerance": 0.05,
+    "supply_concentration_tolerance": 0.05,
+    "contention_relative_tolerance": 0.001,
+    "distribution_distance_tolerance": 0.001
+  },
+  "selection": {
+    "count_per_dataset": 25,
+    "seed": 2026,
+    "group_seed_limit": 12,
+    "feature_columns": [
+      "n_activities_total",
+      "n_real_activities",
+      "n_resources",
+      "n_skills",
+      "n_skill_levels",
+      "n_precedence_arcs",
+      "arc_density",
+      "order_strength",
+      "critical_path_length",
+      "network_depth",
+      "duration_mean",
+      "duration_sd",
+      "duration_p10",
+      "duration_p90",
+      "total_roles",
+      "roles_per_activity_mean",
+      "roles_per_activity_sd",
+      "skills_per_resource_mean",
+      "skills_per_resource_sd",
+      "skill_level_mean",
+      "requirement_level_mean",
+      "demand_concentration",
+      "supply_concentration",
+      "demand_supply_alignment",
+      "source_skill_skew",
+      "source_contention",
+      "qualified_contention",
+      "natural_direct_share",
+      "natural_one_below_share",
+      "natural_mentor_available_share",
+      "excel_CNC",
+      "excel_OS",
+      "excel_SP",
+      "excel_SF",
+      "excel_SF_alpha",
+      "excel_SS",
+      "excel_SS_alpha",
+      "excel_RA",
+      "excel_RA_alpha"
+    ],
+    "categorical_columns": [
+      "n_real_activities",
+      "n_resources",
+      "n_skills",
+      "n_skill_levels",
+      "excel_SP"
+    ]
+  }
+}
