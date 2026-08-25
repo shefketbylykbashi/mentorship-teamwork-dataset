@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 type5_source_cache/
 type6_source_data/
+**/__pycache__*/*
