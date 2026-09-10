@@ -1,0 +1,13 @@
+{
+  "all_duplicate_checks_pass": true,
+  "all_exact_mentorship_checks_pass": true,
+  "all_overall_type5_quality_pass": true,
+  "all_source_correspondence_pass": true,
+  "all_structural_valid": true,
+  "domain_diversity_count": 3,
+  "lifetime_band_diversity_count": 5,
+  "passed": true,
+  "pilot_accepted_count": 5,
+  "pilot_accepted_count_exact": true,
+  "source_repositories_unique": true
+}

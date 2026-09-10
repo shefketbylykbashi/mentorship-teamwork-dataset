@@ -1,0 +1,31 @@
+{
+  "api_and_cache_note": "GitHub API data are collected by collect_github_full_projects.py and cached locally; API tokens are not stored.",
+  "candidate_count": 150,
+  "extension": "type5_full_project",
+  "observation_mode": "full_project",
+  "privacy_note": "Final MTP text files contain only anonymous contributors, skills, and projects.",
+  "repository_overlap_with_existing_type5": 0,
+  "selected_count": 17,
+  "source_origin": "GitHub_empirical",
+  "source_repositories": [
+    "LTplus-AG/ifc-lite",
+    "open-telemetry/opentelemetry-python-genai",
+    "BRIKEV/twd",
+    "DevLoversTeam/devlovers.net",
+    "neondatabase/neon-pkgs",
+    "OpenListTeam/OpenList-Frontend",
+    "siemens/element",
+    "strands-labs/robots",
+    "wso2/product-integrator",
+    "lithosui/Lithos_UI",
+    "sahil87/run-kit",
+    "griffinwork40/agent-afk",
+    "LAA-Software-Engineering/raglogs",
+    "profullstack/coinpayportal",
+    "Nerivec/zigbee2mqtt-windfront",
+    "rhel-lightspeed/linux-mcp-server",
+    "SakuraByteCore/codexmate"
+  ],
+  "source_window_type": "complete_eligible_project_history",
+  "valid_candidate_count": 17
+}

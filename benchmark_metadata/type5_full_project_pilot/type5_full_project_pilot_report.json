@@ -1,0 +1,481 @@
+{
+  "contention": {
+    "max": 368.5833333333333,
+    "mean": 111.91565656565656,
+    "median": 59.27272727272727,
+    "min": 15.555555555555555
+  },
+  "contributor_level_mean": {
+    "max": 7.805555555555555,
+    "mean": 6.129069025984378,
+    "median": 5.888888888888889,
+    "min": 5.323529411764706
+  },
+  "contributor_level_sd": {
+    "max": 3.9787242821764175,
+    "mean": 3.621194477336985,
+    "median": 3.588390058212254,
+    "min": 3.2694718788792185
+  },
+  "count": 5,
+  "deadline_tightness_mean": {
+    "max": 3.535580342039672,
+    "mean": 2.9341755925845234,
+    "median": 3.197530864197531,
+    "min": 2.086296168450121
+  },
+  "deadline_tightness_sd": {
+    "max": 1.611028572770743,
+    "mean": 1.325568730048958,
+    "median": 1.4863060628856828,
+    "min": 0.9159503089119713
+  },
+  "degeneracy_flags": [],
+  "demand_concentration": {
+    "max": 0.1836272879920532,
+    "mean": 0.08529017490781869,
+    "median": 0.06669263111391444,
+    "min": 0.036817898340511745
+  },
+  "demand_supply_alignment": {
+    "max": 0.9982294225049646,
+    "mean": 0.99443018257065,
+    "median": 0.9950192782329895,
+    "min": 0.9869880103125774
+  },
+  "difficulty_prior": "Reuses the existing Type 5 Dirichlet prior centered on [0.25,0.45,0.20,0.10].",
+  "direct_fillability": {
+    "max": 0.8778625954198473,
+    "mean": 0.8037231321371109,
+    "median": 0.8035714285714286,
+    "min": 0.752656567940312
+  },
+  "duration_mean": {
+    "max": 5.5311004784688995,
+    "mean": 2.1016893292967826,
+    "median": 1.2609596133931653,
+    "min": 1.0
+  },
+  "duration_sd": {
+    "max": 4.7703469259302125,
+    "mean": 1.3785923976758436,
+    "median": 0.6453986072138428,
+    "min": 0.0
+  },
+  "duration_statistics": {
+    "max": 5.5311004784688995,
+    "mean": 2.1016893292967826,
+    "median": 1.2609596133931653,
+    "min": 1.0
+  },
+  "existing_fixed_type5_instances_before": 91,
+  "extension": "type5_full_project",
+  "failed_attempt_samples": [
+    {
+      "attempt": 1,
+      "family_instance_id": 92,
+      "filename": "type5_full_project_pilot_001__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": true,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 92,
+      "filename": "type5_full_project_pilot_001__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 92,
+      "filename": "type5_full_project_pilot_001__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 4,
+      "family_instance_id": 92,
+      "filename": "type5_full_project_pilot_001__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 94,
+      "filename": "type5_full_project_pilot_003__GHFULL__BRIKEV__twd.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": true,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 94,
+      "filename": "type5_full_project_pilot_003__GHFULL__BRIKEV__twd.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": true,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 95,
+      "filename": "type5_full_project_pilot_004__GHFULL__DevLoversTeam__devlovers.net.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    }
+  ],
+  "failed_attempts": 7,
+  "infeasible_deadline_share": {
+    "max": 0.019138755980861243,
+    "mean": 0.009524458598498039,
+    "median": 0.012605042016806723,
+    "min": 0.0
+  },
+  "learning_reachable_demand": {
+    "max": 0.2055166176803075,
+    "mean": 0.1578949008358368,
+    "median": 0.16551724137931034,
+    "min": 0.089058524173028
+  },
+  "level_gap_mean": {
+    "max": 2.015419501133787,
+    "mean": 1.4637831758075883,
+    "median": 1.705173713166026,
+    "min": 0.28045977011494255
+  },
+  "level_gap_sd": {
+    "max": 1.4565816416895083,
+    "mean": 1.2221473017287576,
+    "median": 1.299478544876696,
+    "min": 0.9017741503438722
+  },
+  "mentor_availability": {
+    "max": 0.41475826972010177,
+    "mean": 0.19490411584015993,
+    "median": 0.13542844223377798,
+    "min": 0.011494252873563218
+  },
+  "mentorship_fillability": {
+    "max": 0.41475826972010177,
+    "mean": 0.19490411584015993,
+    "median": 0.13542844223377798,
+    "min": 0.011494252873563218
+  },
+  "mentorship_statistics": {
+    "direct_fillability": {
+      "max": 0.8778625954198473,
+      "mean": 0.8037231321371109,
+      "median": 0.8035714285714286,
+      "min": 0.752656567940312
+    },
+    "global_mentor_availability": {
+      "max": 0.41475826972010177,
+      "mean": 0.19490411584015993,
+      "median": 0.13542844223377798,
+      "min": 0.011494252873563218
+    },
+    "one_level_below_potential": {
+      "max": 0.41475826972010177,
+      "mean": 0.19490411584015993,
+      "median": 0.13542844223377798,
+      "min": 0.011494252873563218
+    },
+    "true_same_project_mentorship_feasibility": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    }
+  },
+  "n_contributors": {
+    "max": 18.0,
+    "mean": 11.2,
+    "median": 11.0,
+    "min": 6.0
+  },
+  "n_projects": {
+    "max": 2897.0,
+    "mean": 805.0,
+    "median": 324.0,
+    "min": 119.0
+  },
+  "n_skills": {
+    "max": 25.0,
+    "mean": 13.8,
+    "median": 15.0,
+    "min": 6.0
+  },
+  "penalty_exposure": {
+    "max": 0.005638016338741226,
+    "mean": 0.002452003841374825,
+    "median": 0.0031556163135110504,
+    "min": 0.0
+  },
+  "pilot": true,
+  "pilot_quality_gate": {
+    "all_duplicate_checks_pass": true,
+    "all_exact_mentorship_checks_pass": true,
+    "all_overall_type5_quality_pass": true,
+    "all_source_correspondence_pass": true,
+    "all_structural_valid": true,
+    "domain_diversity_count": 3,
+    "lifetime_band_diversity_count": 5,
+    "passed": true,
+    "pilot_accepted_count": 5,
+    "pilot_accepted_count_exact": true,
+    "source_repositories_unique": true
+  },
+  "project_history_days": {
+    "max": 518.2030439814815,
+    "mean": 304.6890833333333,
+    "median": 278.04356481481483,
+    "min": 119.78890046296296
+  },
+  "project_history_months": {
+    "max": 17.025151342307403,
+    "mean": 10.0103189596167,
+    "median": 9.134901513423074,
+    "min": 3.935569625066545
+  },
+  "required_level_mean": {
+    "max": 8.108045977011495,
+    "mean": 7.5662674051878165,
+    "median": 7.421779141104294,
+    "min": 7.242857142857143
+  },
+  "required_level_sd": {
+    "max": 3.5943512000930364,
+    "mean": 3.2506488398986844,
+    "median": 3.3811528713363486,
+    "min": 2.6636323859450663
+  },
+  "roles_per_project_mean": {
+    "max": 3.6554621848739495,
+    "mean": 1.8209275555752802,
+    "median": 1.3697478991596639,
+    "min": 1.212962962962963
+  },
+  "roles_per_project_sd": {
+    "max": 1.7937190827244047,
+    "mean": 0.8198695543428306,
+    "median": 0.6812685426478085,
+    "min": 0.40940168461915083
+  },
+  "schedule_pressure": {
+    "max": 1.4123376623376624,
+    "mean": 0.6640790242462177,
+    "median": 0.41675936225435667,
+    "min": 0.37681862269641125
+  },
+  "score_concentration": {
+    "max": 0.08245005246719161,
+    "mean": 0.044677970814517985,
+    "median": 0.03145670230879283,
+    "min": 0.014733178890647847
+  },
+  "score_density": {
+    "max": 5.703703703703703,
+    "mean": 3.844140280109098,
+    "median": 4.189898459383754,
+    "min": 1.5900367309458219
+  },
+  "score_effort_correlation": {
+    "max": 0.9348632180421198,
+    "mean": 0.8888445083373442,
+    "median": 0.901246831176275,
+    "min": 0.8001024143536583
+  },
+  "score_mean": {
+    "max": 11.885167464114833,
+    "mean": 9.640707051329585,
+    "median": 9.903361344537815,
+    "min": 6.938271604938271
+  },
+  "score_proxy_methodology": "Effort-conditioned synthetic MTP project value; GitHub popularity/social metrics are not used.",
+  "score_sd": {
+    "max": 12.172846875259328,
+    "mean": 7.882701008007193,
+    "median": 7.863785036934433,
+    "min": 3.0270210227069403
+  },
+  "skills_per_contributor_mean": {
+    "max": 6.0,
+    "mean": 3.3156565656565657,
+    "median": 3.272727272727273,
+    "min": 1.8888888888888888
+  },
+  "skills_per_contributor_sd": {
+    "max": 8.563488385776752,
+    "mean": 3.5160517565595133,
+    "median": 3.0178532132177875,
+    "min": 1.0540925533894598
+  },
+  "source_statistics": {
+    "alignment": {
+      "max": 0.9851509468399763,
+      "mean": 0.918034807661359,
+      "median": 0.9261632588328846,
+      "min": 0.8417046181352497
+    },
+    "contributors": {
+      "max": 18.0,
+      "mean": 11.2,
+      "median": 11.0,
+      "min": 6.0
+    },
+    "count": 5,
+    "domain_counts": {
+      "developer_tooling": 2,
+      "frontend": 2,
+      "python_library": 1
+    },
+    "lifetime_band_counts": {
+      "181_270": 1,
+      "271_365": 1,
+      "366_456": 1,
+      "457_548": 1,
+      "90_180": 1
+    },
+    "project_history_days": {
+      "max": 518.2030439814815,
+      "mean": 304.6890833333333,
+      "median": 278.04356481481483,
+      "min": 119.78890046296296
+    },
+    "project_history_months": {
+      "max": 17.025151342307403,
+      "mean": 10.0103189596167,
+      "median": 9.134901513423074,
+      "min": 3.935569625066545
+    },
+    "projects_work_units": {
+      "max": 2897.0,
+      "mean": 805.0,
+      "median": 324.0,
+      "min": 119.0
+    },
+    "skill_skew": {
+      "max": 1.1845810523068228,
+      "mean": 0.7981460642493573,
+      "median": 0.6436639206346016,
+      "min": 0.501055043515309
+    },
+    "skills": {
+      "max": 25.0,
+      "mean": 13.8,
+      "median": 15.0,
+      "min": 6.0
+    }
+  },
+  "supply_concentration": {
+    "max": 0.15002259305069898,
+    "mean": 0.08486898352945113,
+    "median": 0.06718406954158196,
+    "min": 0.030276100131752637
+  },
+  "total_roles": {
+    "max": 4423.0,
+    "mean": 1236.6,
+    "median": 435.0,
+    "min": 280.0
+  },
+  "unmet_skill_share": {
+    "max": 0.0,
+    "mean": 0.0,
+    "median": 0.0,
+    "min": 0.0
+  },
+  "within_family_min_pairwise_distance": 1.1344797230602275,
+  "within_family_pairwise_distance": {
+    "max": 1.9376525834014329,
+    "mean": 1.5408047490424566,
+    "median": 1.5364867079505578,
+    "min": 1.1344797230602275
+  },
+  "within_project_mentorship_feasibility": {
+    "max": 0.215311004784689,
+    "mean": 0.1068894918037282,
+    "median": 0.1090783569209527,
+    "min": 0.01680672268907563
+  },
+  "workload_contention": {
+    "max": 466.75,
+    "mean": 154.28636363636363,
+    "median": 86.33333333333333,
+    "min": 43.666666666666664
+  }
+}

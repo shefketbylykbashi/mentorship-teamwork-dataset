@@ -102,6 +102,49 @@ configurations, so the final command writes `type5_001.txt` through
 `type5_091.txt`. You may pass `--count 91` explicitly, but any other non-pilot
 count is rejected.
 
+Extend Type 5 with complete eligible GitHub project histories. This is an
+opt-in extension and does not regenerate, rename, or overwrite the accepted
+`type5_001.txt` through `type5_091.txt` files. Collection again requires
+authenticated public GitHub access.
+
+To resume source collection from the existing cache, rerun the collection
+command below with the same seed. Completed candidate summaries and PR file
+details under `type5_full_project_source_cache` are reused.
+
+```bash
+python -m benchmark_generation.type5.collect_github_full_projects \
+  --config benchmark_generation/configs/type5_full_project.yaml \
+  --cache-dir type5_full_project_source_cache \
+  --metadata-dir benchmark_metadata \
+  --seed 2026 \
+  --verbose
+```
+
+```bash
+python -m benchmark_generation.type5.build_full_project_profiles \
+  --cache-dir type5_full_project_source_cache \
+  --metadata-dir benchmark_metadata \
+  --config benchmark_generation/configs/type5_full_project.yaml \
+  --seed 2026 \
+  --verbose
+```
+
+```bash
+python -m benchmark_generation.type5.generate_type5_full_project \
+  --output-dir generated_instances/type5 \
+  --metadata-dir benchmark_metadata \
+  --pilot-output-dir generated_instances/type5_full_project_pilot \
+  --pilot-metadata-dir benchmark_metadata/type5_full_project_pilot \
+  --config benchmark_generation/configs/type5_full_project.yaml \
+  --seed 2026 \
+  --verbose
+```
+
+The full-project generator first writes a five-instance pilot from the frozen
+selected sources. With the current 17-source full-project selection, if that
+pilot passes all gates, it appends `type5_092__GHFULL__...txt` through
+`type5_108__GHFULL__...txt`.
+
 Use `--overwrite` only when intentionally replacing generated files. The
 generators never overwrite existing instance files silently.
 
@@ -128,6 +171,7 @@ generated_instances/type2/type2_001.txt ... type2_100.txt
 generated_instances/type3/type3_001.txt ... type3_100.txt
 generated_instances/type4/type4_001.txt ... type4_100.txt
 generated_instances/type5/type5_001.txt ... type5_091.txt
+generated_instances/type5/type5_092__GHFULL__...txt ... type5_108__GHFULL__...txt
 ```
 
 Metadata and reports are written under `benchmark_metadata/`, including:

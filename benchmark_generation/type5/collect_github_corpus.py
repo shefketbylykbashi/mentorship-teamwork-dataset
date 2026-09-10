@@ -50,6 +50,19 @@ class AuthenticationError(RuntimeError):
     """Raised when authenticated public GitHub access is unavailable."""
 
 
+class GitHubAPIError(RuntimeError):
+    """Raised for non-retryable GitHub API failures without cached fallback."""
+
+    def __init__(self, endpoint: str, status: int | None, message: str) -> None:
+        self.endpoint = endpoint
+        self.status = status
+        super().__init__(f"GitHub endpoint failed: {endpoint}: status={status}: {message}")
+
+
+class GitHubNotFoundError(GitHubAPIError):
+    """Raised when GitHub returns HTTP 404 for an endpoint."""
+
+
 class GitHubClient:
     def __init__(
         self,
@@ -111,6 +124,8 @@ class GitHubClient:
                 if exc.code == 304 and cached:
                     logging.debug("GitHub cache hit via ETag: %s", endpoint)
                     return cached.get("body")
+                if exc.code == 404:
+                    raise GitHubNotFoundError(endpoint, exc.code, str(exc)) from exc
                 if exc.code in {403, 429, 500, 502, 503, 504} and attempt < self.retry_attempts:
                     wait = retry_wait_seconds(exc, self.backoff_initial_seconds, attempt)
                     logging.warning(

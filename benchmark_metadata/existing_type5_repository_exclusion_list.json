@@ -1,0 +1,174 @@
+{
+  "count": 28,
+  "note": "Exclusion list for the Type 5 full-project extension. It is derived from frozen fixed-window Type 5 source metadata and does not alter the accepted 91 instances.",
+  "repositories": [
+    {
+      "owner": "ansible",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;successful_existing_type5_reserve_source",
+      "repo": "ansible",
+      "repository": "ansible/ansible"
+    },
+    {
+      "owner": "apache",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "airflow",
+      "repository": "apache/airflow"
+    },
+    {
+      "owner": "apache",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;successful_existing_type5_reserve_source",
+      "repo": "flink",
+      "repository": "apache/flink"
+    },
+    {
+      "owner": "apache",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "kafka",
+      "repository": "apache/kafka"
+    },
+    {
+      "owner": "apache",
+      "reasons": "existing_type5_primary_source",
+      "repo": "spark",
+      "repository": "apache/spark"
+    },
+    {
+      "owner": "django",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "django",
+      "repository": "django/django"
+    },
+    {
+      "owner": "dotnet",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "runtime",
+      "repository": "dotnet/runtime"
+    },
+    {
+      "owner": "elastic",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "elasticsearch",
+      "repository": "elastic/elasticsearch"
+    },
+    {
+      "owner": "fastapi",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "fastapi",
+      "repository": "fastapi/fastapi"
+    },
+    {
+      "owner": "hashicorp",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "terraform",
+      "repository": "hashicorp/terraform"
+    },
+    {
+      "owner": "kubernetes",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "kubernetes",
+      "repository": "kubernetes/kubernetes"
+    },
+    {
+      "owner": "microsoft",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "vscode",
+      "repository": "microsoft/vscode"
+    },
+    {
+      "owner": "nodejs",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "node",
+      "repository": "nodejs/node"
+    },
+    {
+      "owner": "numpy",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "numpy",
+      "repository": "numpy/numpy"
+    },
+    {
+      "owner": "pallets",
+      "reasons": "existing_type5_primary_source",
+      "repo": "flask",
+      "repository": "pallets/flask"
+    },
+    {
+      "owner": "pandas-dev",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "pandas",
+      "repository": "pandas-dev/pandas"
+    },
+    {
+      "owner": "prometheus",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "prometheus",
+      "repository": "prometheus/prometheus"
+    },
+    {
+      "owner": "psf",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "requests",
+      "repository": "psf/requests"
+    },
+    {
+      "owner": "pydantic",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "pydantic",
+      "repository": "pydantic/pydantic"
+    },
+    {
+      "owner": "pytorch",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "pytorch",
+      "repository": "pytorch/pytorch"
+    },
+    {
+      "owner": "react",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "react",
+      "repository": "react/react"
+    },
+    {
+      "owner": "redis",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;successful_existing_type5_reserve_source",
+      "repo": "redis",
+      "repository": "redis/redis"
+    },
+    {
+      "owner": "rust-lang",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "rust",
+      "repository": "rust-lang/rust"
+    },
+    {
+      "owner": "scikit-learn",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "scikit-learn",
+      "repository": "scikit-learn/scikit-learn"
+    },
+    {
+      "owner": "spring-projects",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "spring-boot",
+      "repository": "spring-projects/spring-boot"
+    },
+    {
+      "owner": "tensorflow",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "tensorflow",
+      "repository": "tensorflow/tensorflow"
+    },
+    {
+      "owner": "vitejs",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "vite",
+      "repository": "vitejs/vite"
+    },
+    {
+      "owner": "vuejs",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "core",
+      "repository": "vuejs/core"
+    }
+  ]
+}
