@@ -1,0 +1,396 @@
+{
+  "contention": {
+    "max": 101.0,
+    "mean": 12.242893862917537,
+    "median": 4.092165898617512,
+    "min": 0.04130808950086059
+  },
+  "contributor_level_mean": {
+    "max": 7.0625,
+    "mean": 4.923219103564739,
+    "median": 4.917596520426574,
+    "min": 2.0473469387755103
+  },
+  "contributor_level_sd": {
+    "max": 2.4819347291981715,
+    "mean": 1.5172317266114985,
+    "median": 1.5937949664554192,
+    "min": 0.5065658856849644
+  },
+  "count": 100,
+  "coverage_before_after": {
+    "after": {
+      "max": 2.5796490877986558,
+      "mean": 0.570560505458478,
+      "median": 0.5431281010062943,
+      "min": 0.253879262198706,
+      "p05": 0.39829525521056774,
+      "p25": 0.4783673641697366,
+      "p75": 0.6224893803638148,
+      "p90": 0.7146321508309383,
+      "p95": 0.779642947055982
+    },
+    "before": {
+      "max": 5.189653085440134,
+      "mean": 0.6170123724096722,
+      "median": 0.5442048535732027,
+      "min": 0.253879262198706,
+      "p05": 0.39829525521056774,
+      "p25": 0.4783673641697366,
+      "p75": 0.6305856251399168,
+      "p90": 0.7828112208698681,
+      "p95": 0.9806945563998206
+    },
+    "evaluation_cloud_independent": true,
+    "evaluation_cloud_size": 500,
+    "evaluation_seed": 2027,
+    "percentage_reduction": {
+      "max": 50.29245605961586,
+      "mean": 7.528514666534426,
+      "median": 0.19785794996839107,
+      "p75": 1.2839247285894773,
+      "p90": 8.709516192571748,
+      "p95": 20.500940688598217
+    },
+    "quality_gate": {
+      "mean_after_less_than_before": true,
+      "p95_after_less_than_before": true
+    },
+    "selection_seed": 2026
+  },
+  "deadline_tightness_mean": {
+    "max": 6.0,
+    "mean": 2.8014006549344055,
+    "median": 2.621726664371026,
+    "min": 0.7745494827372532
+  },
+  "deadline_tightness_sd": {
+    "max": 1.685157572710115,
+    "mean": 0.5056028652125351,
+    "median": 0.4185263195628744,
+    "min": 0.0
+  },
+  "degeneracy_flags": [],
+  "demand_concentration": {
+    "max": 0.2776379205450912,
+    "mean": 0.05699703026196551,
+    "median": 0.035285412562159724,
+    "min": 0.0
+  },
+  "demand_supply_alignment": {
+    "max": 0.9972280040214254,
+    "mean": 0.7062567886628578,
+    "median": 0.7425765340903779,
+    "min": 0.2307692307692308
+  },
+  "direct_fillability": {
+    "max": 1.0,
+    "mean": 0.7071677666806049,
+    "median": 0.7441380767876012,
+    "min": 0.3
+  },
+  "duration_mean": {
+    "max": 500.0,
+    "mean": 311.46077211467195,
+    "median": 313.5367346938775,
+    "min": 56.5
+  },
+  "duration_sd": {
+    "max": 159.3189981897424,
+    "mean": 48.70343064783968,
+    "median": 34.54329343759417,
+    "min": 0.0
+  },
+  "existing_instance_count_by_family": {
+    "type1": 5,
+    "type2": 100,
+    "type3": 98,
+    "type4": 100,
+    "type5": 108,
+    "type6": 100
+  },
+  "final_quality_gate": {
+    "accepted_count": 100,
+    "accepted_count_exact": true,
+    "all_candidates_forward_generated": true,
+    "all_degeneracy_checks_pass": true,
+    "all_exact_mentorship_checks_pass": true,
+    "all_existing_type1_6_files_unchanged": true,
+    "all_generation_seeds_recorded": true,
+    "all_metadata_complete": true,
+    "all_output_ids_contiguous": true,
+    "all_search_lineage_recorded": true,
+    "all_structurally_valid": true,
+    "coverage_before_after_report_exists": true,
+    "coverage_mean_after_less_than_before": true,
+    "coverage_p95_after_less_than_before": true,
+    "duplicate_against_existing_count": 0,
+    "duplicate_checks_against_all_existing_families_pass": true,
+    "duplicate_count": 0,
+    "evaluation_cloud_independent": true,
+    "existing_file_count_protected": 511,
+    "expected_count": 100,
+    "feature_space_definition_frozen": true,
+    "feature_space_frozen_before_type7_selection": true,
+    "final_type7_instances": 100,
+    "full_test_suite_passes": true,
+    "gap_analysis_exists": true,
+    "methodology_matches_implementation": true,
+    "missing_metadata_rows": [],
+    "no_solver_performance_leakage": true,
+    "passed": true,
+    "pilot_passed": true,
+    "shared_generator_regression_check_pass": true,
+    "statistical_report_exists": true,
+    "unique_structural_hashes": 100,
+    "unique_structural_hashes_exact": true
+  },
+  "infeasible_deadline_share": {
+    "max": 1.0,
+    "mean": 0.15351856700210703,
+    "median": 0.0,
+    "min": 0.0
+  },
+  "learning_reachable_demand": {
+    "max": 0.625,
+    "mean": 0.1867513810831677,
+    "median": 0.15387937653562656,
+    "min": 0.0
+  },
+  "level_gap_mean": {
+    "max": 3.7056998468854747,
+    "mean": 0.7436890571224662,
+    "median": 0.8110021020930733,
+    "min": -2.253667778074986
+  },
+  "level_gap_sd": {
+    "max": 3.7354045501083473,
+    "mean": 1.4200310921947816,
+    "median": 1.2703745483233937,
+    "min": 0.07507783978880109
+  },
+  "mentor_availability": {
+    "max": 1.0,
+    "mean": 0.3165120587429926,
+    "median": 0.21490494711206426,
+    "min": 0.0
+  },
+  "mentorship_fillability": {
+    "max": 1.0,
+    "mean": 0.3165120587429926,
+    "median": 0.21490494711206426,
+    "min": 0.0
+  },
+  "mentorship_statistics": {
+    "direct_fillability": {
+      "max": 1.0,
+      "mean": 0.7071677666806049,
+      "median": 0.7441380767876012,
+      "min": 0.3
+    },
+    "global_mentor_availability": {
+      "max": 1.0,
+      "mean": 0.40275442483508184,
+      "median": 0.32272727272727275,
+      "min": 0.0
+    },
+    "one_level_below_potential": {
+      "max": 1.0,
+      "mean": 0.5498984017426449,
+      "median": 0.5285947712418301,
+      "min": 0.05296610169491525
+    },
+    "true_same_project_mentorship_feasibility": {
+      "max": 1.0,
+      "mean": 0.16413886136727932,
+      "median": 0.04494949494949495,
+      "min": 0.0
+    }
+  },
+  "n_contributors": {
+    "max": 2000.0,
+    "mean": 150.69,
+    "median": 40.0,
+    "min": 5.0
+  },
+  "n_projects": {
+    "max": 2000.0,
+    "mean": 166.25,
+    "median": 12.0,
+    "min": 5.0
+  },
+  "n_skills": {
+    "max": 200.0,
+    "mean": 117.21,
+    "median": 111.5,
+    "min": 8.0
+  },
+  "nearest_neighbor_family_composition": {
+    "type2": 2,
+    "type3": 1,
+    "type4": 45,
+    "type5": 4,
+    "type7": 48
+  },
+  "novelty_at_acceptance": {
+    "max": 3.127165143604991,
+    "mean": 1.031615276233226,
+    "median": 0.9219295571158943,
+    "min": 0.7785987728446293
+  },
+  "penalty_exposure": {
+    "max": 0.2254505172627468,
+    "mean": 0.03323822499198867,
+    "median": 0.0,
+    "min": 0.0
+  },
+  "required_level_mean": {
+    "max": 9.043478260869565,
+    "mean": 5.529730836276766,
+    "median": 5.454219425183398,
+    "min": 2.130434782608696
+  },
+  "required_level_sd": {
+    "max": 3.7128964434791336,
+    "mean": 2.1792005232067075,
+    "median": 2.1121050485479076,
+    "min": 0.5773502691896257
+  },
+  "roles_per_project_mean": {
+    "max": 20.0,
+    "mean": 7.430872662065191,
+    "median": 6.59074074074074,
+    "min": 1.0
+  },
+  "roles_per_project_sd": {
+    "max": 6.887670143089026,
+    "mean": 1.8939472761166851,
+    "median": 1.436864386473041,
+    "min": 0.0
+  },
+  "scale_band_counts": {
+    "large": 7,
+    "medium": 26,
+    "small": 67
+  },
+  "schedule_pressure": {
+    "max": 12.888515222761228,
+    "mean": 3.7582308693130924,
+    "median": 2.4198346955443286,
+    "min": 0.2894279557934246
+  },
+  "score_concentration": {
+    "max": 0.188976365789417,
+    "mean": 0.05500767584608276,
+    "median": 0.03389027913395887,
+    "min": 0.004116211676742254
+  },
+  "score_density": {
+    "max": 10.264788041115212,
+    "mean": 3.8518336214795243,
+    "median": 3.8543575056479646,
+    "min": 0.49999958465104716
+  },
+  "score_effort_correlation": {
+    "max": 1.0,
+    "mean": 0.7407828244608406,
+    "median": 0.9148673022720073,
+    "min": -0.3288053407427592
+  },
+  "score_mean": {
+    "max": 40884.6,
+    "mean": 8146.16715737091,
+    "median": 6062.218141233767,
+    "min": 393.4
+  },
+  "score_sd": {
+    "max": 26390.608743263198,
+    "mean": 3593.9892765438058,
+    "median": 2171.8120309639307,
+    "min": 233.95208963998073
+  },
+  "skills_per_contributor_mean": {
+    "max": 20.0,
+    "mean": 11.24459541802829,
+    "median": 11.276923076923076,
+    "min": 1.0
+  },
+  "skills_per_contributor_sd": {
+    "max": 5.751718871355054,
+    "mean": 1.724085551507723,
+    "median": 1.2519592302510696,
+    "min": 0.0
+  },
+  "supply_concentration": {
+    "max": 0.3065843344788075,
+    "mean": 0.06916035783988937,
+    "median": 0.02779322247685234,
+    "min": 0.0
+  },
+  "total_roles": {
+    "max": 23256.0,
+    "mean": 1462.83,
+    "median": 68.5,
+    "min": 10.0
+  },
+  "type7_diversity_statistics": {
+    "distance_to_nearest_overall_at_acceptance": {
+      "max": 3.127165143604991,
+      "mean": 1.031615276233226,
+      "median": 0.9219295571158943,
+      "min": 0.7785987728446293
+    },
+    "distance_to_nearest_type1_6": {
+      "max": 3.127165143604991,
+      "mean": 1.1680954658496963,
+      "median": 0.9872773208149402,
+      "min": 0.779943937519756
+    },
+    "within_type7_maximum_pairwise_distance": 4.7825735237354055,
+    "within_type7_mean_pairwise_distance": 1.9909947603269058,
+    "within_type7_median_pairwise_distance": 1.8207380570580116,
+    "within_type7_minimum_pairwise_distance": 0.7785987728446293
+  },
+  "type7_to_types1_6_novelty": {
+    "max": 3.127165143604991,
+    "mean": 1.1680954658496963,
+    "median": 0.9872773208149402,
+    "min": 0.779943937519756
+  },
+  "unmet_skill_share": {
+    "max": 0.3157894736842105,
+    "mean": 0.028776956680123183,
+    "median": 0.0,
+    "min": 0.0
+  },
+  "within_family_min_pairwise_distance": 0.7785987728446293,
+  "within_family_pairwise_distance": {
+    "max": 4.7825735237354055,
+    "mean": 1.9909947603269058,
+    "median": 1.8207380570580116,
+    "min": 0.7785987728446293
+  },
+  "within_project_mentorship_feasibility": {
+    "max": 1.0,
+    "mean": 0.5556534626328545,
+    "median": 0.6,
+    "min": 0.0
+  },
+  "within_type7_pairwise_distance": {
+    "max": 4.7825735237354055,
+    "mean": 1.9909947603269058,
+    "median": 1.8207380570580116,
+    "min": 0.7785987728446293,
+    "p05": 1.081319002595535,
+    "p25": 1.4850761500396654,
+    "p75": 2.3278310850065598,
+    "p90": 3.013332218185226,
+    "p95": 3.639047636881939
+  },
+  "workload_contention": {
+    "max": 29047.6,
+    "mean": 3503.589887992067,
+    "median": 1216.840127614321,
+    "min": 19.00315457413249
+  }
+}

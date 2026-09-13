@@ -8,6 +8,7 @@ Type 2: gap-filling instances between the five non-trivial Google anchors
 Type 3: neighborhood instances around the five non-trivial Google anchors
 Type 4: broad random instances across scale bands
 Type 5: empirically grounded synthetic instances from public GitHub activity
+Type 7: remaining coverage-driven synthetic gap-filling instances
 ```
 
 The original files in `google_instances/` are immutable inputs. The toy
@@ -145,6 +146,25 @@ selected sources. With the current 17-source full-project selection, if that
 pilot passes all gates, it appends `type5_092__GHFULL__...txt` through
 `type5_108__GHFULL__...txt`.
 
+Generate Type 7 after Types 1-6 are frozen. The generator audits the actual
+files currently present in Types 1-6, writes a frozen manifest, freezes the
+coverage feature space, generates a 10-instance pilot, and if the pilot passes
+continues automatically to the final 100 Type 7 instances.
+
+```bash
+python -m benchmark_generation.type7.generate_type7 \
+  --google-dir google_instances \
+  --generated-root generated_instances \
+  --pilot-output-dir generated_instances/type7_pilot \
+  --output-dir generated_instances/type7 \
+  --pilot-metadata-dir benchmark_metadata/type7_pilot \
+  --metadata-dir benchmark_metadata \
+  --count 100 \
+  --seed 2026 \
+  --config benchmark_generation/configs/type7.yaml \
+  --verbose
+```
+
 Use `--overwrite` only when intentionally replacing generated files. The
 generators never overwrite existing instance files silently.
 
@@ -172,6 +192,7 @@ generated_instances/type3/type3_001.txt ... type3_100.txt
 generated_instances/type4/type4_001.txt ... type4_100.txt
 generated_instances/type5/type5_001.txt ... type5_091.txt
 generated_instances/type5/type5_092__GHFULL__...txt ... type5_108__GHFULL__...txt
+generated_instances/type7/type7_001.txt ... type7_100.txt
 ```
 
 Metadata and reports are written under `benchmark_metadata/`, including:
@@ -186,6 +207,14 @@ type5_empirical_corpus.csv/json
 type5_source_windows.csv
 type5_data_provenance.json
 TYPE5_SOURCES.md
+type7_existing_benchmark_manifest.csv/json
+type7_feature_space_definition.json
+type7_feasibility_calibration.json
+type7_gap_analysis.json
+type7_metadata.csv/jsonl
+type7_coverage_before_after.json
+type7_search_manifest.json
+TYPE7_METHODOLOGY.md
 type*_statistical_report.json
 benchmark_manifest.json
 ```

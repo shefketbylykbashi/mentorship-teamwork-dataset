@@ -1,0 +1,21 @@
+{
+  "accepted_count": 10,
+  "accepted_count_exact": true,
+  "all_candidates_forward_generated": true,
+  "all_degeneracy_checks_pass": true,
+  "all_exact_mentorship_checks_pass": true,
+  "all_generation_seeds_recorded": true,
+  "all_metadata_complete": true,
+  "all_output_ids_contiguous": true,
+  "all_search_lineage_recorded": true,
+  "all_structurally_valid": true,
+  "duplicate_against_existing_count": 0,
+  "duplicate_count": 0,
+  "expected_count": 10,
+  "feature_space_frozen_before_type7_selection": true,
+  "missing_metadata_rows": [],
+  "no_solver_performance_leakage": true,
+  "passed": true,
+  "unique_structural_hashes": 10,
+  "unique_structural_hashes_exact": true
+}

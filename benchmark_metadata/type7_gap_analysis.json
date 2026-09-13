@@ -1,0 +1,2641 @@
+{
+  "calibration_candidate_count": 400,
+  "calibration_gap_score_statistics": {
+    "max": 3.127165143604991,
+    "mean": 0.5997206251361017,
+    "median": 0.5520443979153431,
+    "min": 0.3005808251558588,
+    "p05": 0.4254205665975943,
+    "p25": 0.4963490715902951,
+    "p75": 0.6387543090403057,
+    "p90": 0.7819764950823052,
+    "p95": 0.9239589363402192
+  },
+  "calibration_k_nearest_density_statistics": {
+    "max": 3.3737450130077735,
+    "mean": 0.6777473120372882,
+    "median": 0.6293607392981764,
+    "min": 0.43338943818085673,
+    "p05": 0.5098058320568875,
+    "p25": 0.570301601744168,
+    "p75": 0.7084731242574912,
+    "p90": 0.8679073767402823,
+    "p95": 1.0160642376656839
+  },
+  "calibration_nearest_family_counts": {
+    "type2": 3,
+    "type3": 3,
+    "type4": 391,
+    "type5": 3
+  },
+  "existing_family_nearest_neighbor_overlap": {
+    "type1": {
+      "type2": 2,
+      "type3": 3
+    },
+    "type2": {
+      "type2": 90,
+      "type3": 9,
+      "type4": 1
+    },
+    "type3": {
+      "type1": 1,
+      "type3": 97
+    },
+    "type4": {
+      "type3": 1,
+      "type4": 99
+    },
+    "type5": {
+      "type5": 108
+    },
+    "type6": {
+      "type6": 100
+    }
+  },
+  "existing_instance_count_by_family": {
+    "type1": 5,
+    "type2": 100,
+    "type3": 98,
+    "type4": 100,
+    "type5": 108,
+    "type6": 100
+  },
+  "existing_instance_count_total": 511,
+  "existing_nearest_neighbor_statistics": {
+    "max": 6.070246440205196,
+    "mean": 0.35377181589321943,
+    "median": 0.29188811306171536,
+    "min": 0.015568933439955798,
+    "p05": 0.051145569815986294,
+    "p25": 0.19805160212379982,
+    "p75": 0.4846269583774585,
+    "p90": 0.604705714618141,
+    "p95": 0.6704754376968628
+  },
+  "gap_score_definition": "distance from each feasible calibration candidate to nearest frozen Type 1-6 instance",
+  "largest_uncovered_regions": [
+    {
+      "archive_id": "broad_0_000052",
+      "candidate_id": 52,
+      "gap_score": 3.127165143604991,
+      "generator_parameter_hash": "066ea4d4754a7265d27369754881677a73723cfff06a348f26bc1180d879293e",
+      "k_nearest_density": 3.3737450130077735,
+      "nearest_existing_family": "type5",
+      "nearest_existing_filename": "type5_067.txt",
+      "nearest_existing_instance_id": "067",
+      "rank": 1,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "bc00c866b3ea52ae0bb0e87ed69cb30f6d2bc89d7041d11de9ecad5efd4f4dd4",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 89204.87439483435,
+          "candidate_value": 4891.36231884058,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 47228.358121330726,
+          "candidate_value": 3762.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46940.06141440697,
+          "candidate_value": 21458.034,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 39154.0739855196,
+          "candidate_value": 7498.156476150921,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2425.7123287671234,
+          "candidate_value": 500.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 310.6468827444794,
+          "candidate_value": 358.876,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 240.82778864970646,
+          "candidate_value": 276.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 157.63864550436654,
+          "candidate_value": 81.19064369741135,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000133",
+      "candidate_id": 133,
+      "gap_score": 1.859080472556067,
+      "generator_parameter_hash": "2b809b5d7ec63a11ada1bdab8fb10bb15569b088267056c7349d952ae406e0df",
+      "k_nearest_density": 2.019893842731298,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_023.txt",
+      "nearest_existing_instance_id": "023",
+      "rank": 2,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "a2e3946c96c5b37e26a8383f3c572a26d588ffd0fdf9229d3b80c739982bcd3d",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 88309.23671367492,
+          "candidate_value": 5787.0,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 62241.87319218475,
+          "candidate_value": 6156.222222222223,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50539.358121330726,
+          "candidate_value": 451.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44828.38797469859,
+          "candidate_value": 1823.8424869719288,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2880.7123287671234,
+          "candidate_value": 45.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 495.82778864970646,
+          "candidate_value": 21.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 400.7006605222572,
+          "candidate_value": 268.8222222222222,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 179.8022562653008,
+          "candidate_value": 59.027032936477084,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000337",
+      "candidate_id": 337,
+      "gap_score": 1.350862962055573,
+      "generator_parameter_hash": "0d9b9866728857c9eaab15cb0326bac338c65aa214d852b63c022df817cc44a9",
+      "k_nearest_density": 1.4134300357435272,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_035.txt",
+      "nearest_existing_instance_id": "035",
+      "rank": 3,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "e4ee681de23de5d6b1bc1eeff203e04899928ea2df3b64dd6f31ebd33f58cdd3",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92810.57004700825,
+          "candidate_value": 1285.6666666666667,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 67054.34541440697,
+          "candidate_value": 1343.75,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50942.358121330726,
+          "candidate_value": 48.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46389.34134531155,
+          "candidate_value": 262.8891163589699,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2909.7123287671234,
+          "candidate_value": 16.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 507.82778864970646,
+          "candidate_value": 9.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 428.4603827444794,
+          "candidate_value": 241.0625,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 213.54473672897345,
+          "candidate_value": 25.284552472804418,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000176",
+      "candidate_id": 176,
+      "gap_score": 1.3008003601063927,
+      "generator_parameter_hash": "4bc10af1af808a45a89532b75ff270fb2ab111b8ff563a0e07e3f6ce21614f2a",
+      "k_nearest_density": 1.3398283690081414,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_009.txt",
+      "nearest_existing_instance_id": "009",
+      "rank": 4,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "489608495a3e7bb2ce7beeb005bd2bba56ec460d31233536f5feb8e90f406279",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 90870.37307731129,
+          "candidate_value": 3225.8636363636365,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 58545.18470012126,
+          "candidate_value": 9852.910714285714,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 49754.358121330726,
+          "candidate_value": 1236.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 41519.8484131449,
+          "candidate_value": 5132.382048525622,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2813.7123287671234,
+          "candidate_value": 112.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 496.2907398873365,
+          "candidate_value": 173.23214285714286,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 450.82778864970646,
+          "candidate_value": 66.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 213.11590256074942,
+          "candidate_value": 25.71338664102845,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000269",
+      "candidate_id": 269,
+      "gap_score": 1.2801020967428531,
+      "generator_parameter_hash": "b034f529b91a77e10fd2a6e6d83574ae1941b3541190ba3adaf7c8f36794c51c",
+      "k_nearest_density": 1.3842301507341204,
+      "nearest_existing_family": "type5",
+      "nearest_existing_filename": "type5_067.txt",
+      "nearest_existing_instance_id": "067",
+      "rank": 5,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "1d27cb03b06a471c8c3ade6f89c421b9ddf560198bd13aa3a7eaa16caa274ff7",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 84606.42421367492,
+          "candidate_value": 9489.8125,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 51785.96588072821,
+          "candidate_value": 16612.129533678755,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 47391.358121330726,
+          "candidate_value": 3599.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 40118.44823264103,
+          "candidate_value": 6533.782229029496,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2539.7123287671234,
+          "candidate_value": 386.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 372.82778864970646,
+          "candidate_value": 144.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 289.8493076149457,
+          "candidate_value": 379.6735751295337,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 175.728233840266,
+          "candidate_value": 63.101055361511854,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000144",
+      "candidate_id": 144,
+      "gap_score": 1.2187580736997137,
+      "generator_parameter_hash": "82314810dbbf402523b06806488222da05b74a7388ab070e1600b879ef3e3660",
+      "k_nearest_density": 1.277033700454781,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_010.txt",
+      "nearest_existing_instance_id": "010",
+      "rank": 6,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "47528a2fa073b6182783617abd7593dcd2927d33a9d8e48b2382b02e0b26c85a",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93996.79921367492,
+          "candidate_value": 99.4375,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 66861.69541440698,
+          "candidate_value": 1536.4,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50981.358121330726,
+          "candidate_value": 9.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46037.3328767021,
+          "candidate_value": 614.8975849684239,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2920.7123287671234,
+          "candidate_value": 5.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 500.82778864970646,
+          "candidate_value": 16.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 493.1228827444794,
+          "candidate_value": 176.4,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 236.97456550267873,
+          "candidate_value": 1.8547236990991407,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000112",
+      "candidate_id": 112,
+      "gap_score": 1.1736802076146147,
+      "generator_parameter_hash": "2162e07f01a350eee9a3337e9a753f571886b49bbd4e85afd7d23de46bbcbe42",
+      "k_nearest_density": 1.269945308926069,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_084.txt",
+      "nearest_existing_instance_id": "084",
+      "rank": 7,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "3974e034339493309289a8732f60a753a92d0dc580dbcac7e701a9a32750a73f",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93537.61171367492,
+          "candidate_value": 558.625,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 64187.09541440697,
+          "candidate_value": 4211.0,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50927.358121330726,
+          "candidate_value": 63.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 43847.70608131652,
+          "candidate_value": 2804.524380354002,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2919.7123287671234,
+          "candidate_value": 6.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 598.3562160778127,
+          "candidate_value": 71.16666666666667,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 508.82778864970646,
+          "candidate_value": 8.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 229.49446789181758,
+          "candidate_value": 9.334821309960297,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000172",
+      "candidate_id": 172,
+      "gap_score": 1.156603495559177,
+      "generator_parameter_hash": "20cb034680c42ea955edc76ede69cafca2de95f5cb487acb9a7e2d214cce0914",
+      "k_nearest_density": 1.1858227467554712,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_045.txt",
+      "nearest_existing_instance_id": "045",
+      "rank": 8,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "25373cc1d7765d290b2c64a6af62a56fd810ceaa46e24b9c5333b54eb894f85c",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93871.53458601535,
+          "candidate_value": 224.70212765957447,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 61472.76208107363,
+          "candidate_value": 6925.333333333333,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50933.358121330726,
+          "candidate_value": 57.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 45534.15388905923,
+          "candidate_value": 1118.076572611296,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2919.7123287671234,
+          "candidate_value": 6.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 484.189549411146,
+          "candidate_value": 185.33333333333334,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 469.82778864970646,
+          "candidate_value": 47.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 210.87297407342885,
+          "candidate_value": 27.956315128349008,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000081",
+      "candidate_id": 81,
+      "gap_score": 1.142566132629459,
+      "generator_parameter_hash": "b699858b329d85bc795c740ac77a2a500e970b5f452817e837d569b811ed77ae",
+      "k_nearest_density": 1.1851083842527286,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_015.txt",
+      "nearest_existing_instance_id": "015",
+      "rank": 9,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "a9a38f12b001408becb27a67b74ae55be085bc795b236a194c6f29316eb9aed3",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 85576.08154126113,
+          "candidate_value": 8520.155172413793,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 64893.837198444526,
+          "candidate_value": 3504.258215962441,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 47895.358121330726,
+          "candidate_value": 3095.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 45083.10174078298,
+          "candidate_value": 1569.1287208875467,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2712.7123287671234,
+          "candidate_value": 213.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 509.4149015238221,
+          "candidate_value": 160.10798122065728,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 458.82778864970646,
+          "candidate_value": 58.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 172.62840993893607,
+          "candidate_value": 66.2008792628418,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000313",
+      "candidate_id": 313,
+      "gap_score": 1.0969230347800398,
+      "generator_parameter_hash": "6826dc5db48038da5e86a28e936621d3678b38ec5501e2a7714ec2e8cdf031a7",
+      "k_nearest_density": 1.2283609802676678,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_015.txt",
+      "nearest_existing_instance_id": "015",
+      "rank": 10,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "799eef77519cb4b4572980ac485c67e9d125adfb7df531703362350a0290c88b",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 87717.82560256381,
+          "candidate_value": 6378.4111111111115,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 66233.00505296119,
+          "candidate_value": 2165.090361445783,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 48885.358121330726,
+          "candidate_value": 2105.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46099.15577203382,
+          "candidate_value": 553.0746896367043,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2759.7123287671234,
+          "candidate_value": 166.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 426.82778864970646,
+          "candidate_value": 90.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 397.20360563604567,
+          "candidate_value": 272.3192771084337,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 183.51288940728278,
+          "candidate_value": 55.316399794495084,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000139",
+      "candidate_id": 139,
+      "gap_score": 1.0872986725788067,
+      "generator_parameter_hash": "f6a7ffc6280addd4521257542890b4668a2460cd27bdf454f6005ac55ae628cf",
+      "k_nearest_density": 1.12062794940527,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_045.txt",
+      "nearest_existing_instance_id": "045",
+      "rank": 11,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "dfb58b1ba90ed6b6892b20c4d65de439f0a2242eff77b6ccdde438b9e0d8b868",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92045.39055982877,
+          "candidate_value": 2050.846153846154,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 54186.238271549824,
+          "candidate_value": 14211.857142857143,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50921.358121330726,
+          "candidate_value": 69.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 43658.80578994315,
+          "candidate_value": 2993.424671727372,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2918.7123287671234,
+          "candidate_value": 7.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 503.82778864970646,
+          "candidate_value": 13.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 282.2371684587651,
+          "candidate_value": 387.2857142857143,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 195.46796909234564,
+          "candidate_value": 43.36132010943224,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000365",
+      "candidate_id": 365,
+      "gap_score": 1.0723222820247544,
+      "generator_parameter_hash": "8e40b2dbf94aed3fbc5dd066b4b4aff6c9a5df6dea0f0af8a3d148395dd41a8b",
+      "k_nearest_density": 1.0940220973389652,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_044.txt",
+      "nearest_existing_instance_id": "044",
+      "rank": 12,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "9b26a8206aa2b9522e6a7976703b29d3b9a81a4a193cf5d949aabadb4d279e40",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92440.159790598,
+          "candidate_value": 1656.076923076923,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 65311.624826171676,
+          "candidate_value": 3086.470588235294,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50877.358121330726,
+          "candidate_value": 113.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44928.831814753976,
+          "candidate_value": 1723.3986469165432,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2891.7123287671234,
+          "candidate_value": 34.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 490.82778864970646,
+          "candidate_value": 26.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 285.9640592150676,
+          "candidate_value": 383.55882352941177,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 205.71789861105802,
+          "candidate_value": 33.11139059071985,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000244",
+      "candidate_id": 244,
+      "gap_score": 1.0343401805872434,
+      "generator_parameter_hash": "0049f09e866368f8686ec913c5d3799d00a730cf955c7032f97897112c0304b1",
+      "k_nearest_density": 1.1287093493951257,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_023.txt",
+      "nearest_existing_instance_id": "023",
+      "rank": 13,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "a1e45cf123de5f6fae7b0e0d0af8955c60b61571ccf90da9efd2b498f94ed71c",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93281.00795550499,
+          "candidate_value": 815.2287581699346,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 61201.81541440697,
+          "candidate_value": 7196.28,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50419.358121330726,
+          "candidate_value": 571.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44836.7826046391,
+          "candidate_value": 1815.4478570314268,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2875.7123287671234,
+          "candidate_value": 50.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 451.2028827444794,
+          "candidate_value": 218.32,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 363.82778864970646,
+          "candidate_value": 153.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 217.3300427033538,
+          "candidate_value": 21.49924649842408,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000225",
+      "candidate_id": 225,
+      "gap_score": 0.9880704236836546,
+      "generator_parameter_hash": "20466b97d0ee7102c18f5faf575bbca3891962ca61c7f7df278db2c2cf1948c8",
+      "k_nearest_density": 1.0123513509041966,
+      "nearest_existing_family": "type2",
+      "nearest_existing_filename": "type2_081.txt",
+      "nearest_existing_instance_id": "081",
+      "rank": 14,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "0137353deb8449cbdf70646831d9ab8c0751efb0d0d5865b6b3ff5ffe711f6f4",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93621.23671367492,
+          "candidate_value": 475.0,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 66340.80970012126,
+          "candidate_value": 2057.285714285714,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50941.358121330726,
+          "candidate_value": 49.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 45040.68996403784,
+          "candidate_value": 1611.5404976326856,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2918.7123287671234,
+          "candidate_value": 7.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 532.6657398873365,
+          "candidate_value": 136.85714285714286,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 502.82778864970646,
+          "candidate_value": 14.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 230.5756567299754,
+          "candidate_value": 8.253632471802451,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000389",
+      "candidate_id": 389,
+      "gap_score": 0.9535032456569207,
+      "generator_parameter_hash": "299a3d7fd4198a2c1f0e158dba4a6081d5591f2081d175ba15b75575cb55a29f",
+      "k_nearest_density": 1.0205357945899565,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_010.txt",
+      "nearest_existing_instance_id": "010",
+      "rank": 15,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "d73235e49e1436b3ab0e9605da9fffac7c3b1086105e2e634ec742cc65dc2226",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92864.03671367493,
+          "candidate_value": 1232.2,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 62145.71079902235,
+          "candidate_value": 6252.384615384615,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50933.358121330726,
+          "candidate_value": 57.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 42720.42473952626,
+          "candidate_value": 3931.8057221442655,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2912.7123287671234,
+          "candidate_value": 13.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 506.82778864970646,
+          "candidate_value": 10.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 460.0613442829409,
+          "candidate_value": 209.46153846153845,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 182.84767768154413,
+          "candidate_value": 55.98161152023374,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000183",
+      "candidate_id": 183,
+      "gap_score": 0.9491300002129797,
+      "generator_parameter_hash": "a8aa70fc2a5506e1efd56709efc4c73189926310239a605847a4b23e30673b94",
+      "k_nearest_density": 1.0079301492060482,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_035.txt",
+      "nearest_existing_instance_id": "035",
+      "rank": 16,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "082343fe64f6cbaa89629092f61741c31d436bc7951ee0d292cd5a746a5cc742",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 86913.07004700825,
+          "candidate_value": 7183.166666666667,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 61972.93751967013,
+          "candidate_value": 6425.1578947368425,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50868.358121330726,
+          "candidate_value": 122.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44843.83206404268,
+          "candidate_value": 1808.3983976278391,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2906.7123287671234,
+          "candidate_value": 19.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 510.82778864970646,
+          "candidate_value": 6.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 313.7860406392162,
+          "candidate_value": 355.7368421052632,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 219.78683771966155,
+          "candidate_value": 19.042451482116306,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000231",
+      "candidate_id": 231,
+      "gap_score": 0.9475071034193319,
+      "generator_parameter_hash": "b41816d0920f6a6605fa4eb1d7317b57b7fbfb59fe727eaa8b9203ef8820b38c",
+      "k_nearest_density": 0.9973505716327853,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_044.txt",
+      "nearest_existing_instance_id": "044",
+      "rank": 17,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "808ec5b59f9d2373be620078e42808f5d906ec284dad29843cd065b07e62e3c6",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93477.9033803416,
+          "candidate_value": 618.3333333333334,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 65456.09541440697,
+          "candidate_value": 2942.0,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50947.358121330726,
+          "candidate_value": 43.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44806.43827401775,
+          "candidate_value": 1845.7921876527705,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2920.7123287671234,
+          "candidate_value": 5.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 534.9228827444794,
+          "candidate_value": 134.6,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 507.82778864970646,
+          "candidate_value": 9.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 147.36869659490702,
+          "candidate_value": 91.46059260687086,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000333",
+      "candidate_id": 333,
+      "gap_score": 0.9421882516726889,
+      "generator_parameter_hash": "c67f1d57609b6305e1ee80d51df0ecb73ff168105376cd614d6e66fe26d5208e",
+      "k_nearest_density": 0.9787247444977747,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_023.txt",
+      "nearest_existing_instance_id": "023",
+      "rank": 18,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "ffdc8b918a5fe597361b464a239e76d12c2f6d4c0b9abe0e3bc2d1310ea73c7f",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 84328.46568563754,
+          "candidate_value": 9767.771028037383,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 57676.037414406965,
+          "candidate_value": 10722.058,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 44214.99538424447,
+          "candidate_value": 2437.2350774260576,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 44187.358121330726,
+          "candidate_value": 6803.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 2425.7123287671234,
+          "candidate_value": 500.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 362.52888274447935,
+          "candidate_value": 306.994,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 302.82778864970646,
+          "candidate_value": 214.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 200.33516024683203,
+          "candidate_value": 38.49412895494584,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000224",
+      "candidate_id": 224,
+      "gap_score": 0.9393434995842148,
+      "generator_parameter_hash": "c4a9684121e643be17ccfb91d7ecdc675476c1e79fd5cb8c0c8ba45d823416dd",
+      "k_nearest_density": 0.9957650026231192,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_045.txt",
+      "nearest_existing_instance_id": "045",
+      "rank": 19,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "37778b2069eb4ca54341c739b770f27235d49b52c108653726b25d52bbed7874",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 91816.23671367492,
+          "candidate_value": 2280.0,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 58677.72041440697,
+          "candidate_value": 9720.375,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50955.358121330726,
+          "candidate_value": 35.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44484.8067641958,
+          "candidate_value": 2167.423697474723,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2917.7123287671234,
+          "candidate_value": 8.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 511.82778864970646,
+          "candidate_value": 5.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 340.7728827444794,
+          "candidate_value": 328.75,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 216.68346566775682,
+          "candidate_value": 22.145823534021037,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000306",
+      "candidate_id": 306,
+      "gap_score": 0.9324285479596205,
+      "generator_parameter_hash": "0b85a06354a392260c3f79668735a0980d357778feafd1f0b5390ccc24d0d11c",
+      "k_nearest_density": 1.0085770467220012,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_099.txt",
+      "nearest_existing_instance_id": "099",
+      "rank": 20,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "de43e396da75f5ab70918119f5f06896a584fdc81230fe06caa076241c13f6be",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92485.47355578019,
+          "candidate_value": 1610.7631578947369,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 56910.0099443215,
+          "candidate_value": 11488.08547008547,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50416.358121330726,
+          "candidate_value": 574.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 39548.40026261816,
+          "candidate_value": 7103.830199052365,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2808.7123287671234,
+          "candidate_value": 117.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 364.82778864970646,
+          "candidate_value": 152.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 243.00151522311188,
+          "candidate_value": 426.5213675213675,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 238.32974598139486,
+          "candidate_value": 0.49954322038299,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    }
+  ],
+  "major_gap_regions": [
+    {
+      "archive_id": "broad_0_000052",
+      "candidate_id": 52,
+      "gap_score": 3.127165143604991,
+      "generator_parameter_hash": "066ea4d4754a7265d27369754881677a73723cfff06a348f26bc1180d879293e",
+      "k_nearest_density": 3.3737450130077735,
+      "nearest_existing_family": "type5",
+      "nearest_existing_filename": "type5_067.txt",
+      "nearest_existing_instance_id": "067",
+      "rank": 1,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "bc00c866b3ea52ae0bb0e87ed69cb30f6d2bc89d7041d11de9ecad5efd4f4dd4",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 89204.87439483435,
+          "candidate_value": 4891.36231884058,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 47228.358121330726,
+          "candidate_value": 3762.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46940.06141440697,
+          "candidate_value": 21458.034,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 39154.0739855196,
+          "candidate_value": 7498.156476150921,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2425.7123287671234,
+          "candidate_value": 500.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 310.6468827444794,
+          "candidate_value": 358.876,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 240.82778864970646,
+          "candidate_value": 276.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 157.63864550436654,
+          "candidate_value": 81.19064369741135,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000133",
+      "candidate_id": 133,
+      "gap_score": 1.859080472556067,
+      "generator_parameter_hash": "2b809b5d7ec63a11ada1bdab8fb10bb15569b088267056c7349d952ae406e0df",
+      "k_nearest_density": 2.019893842731298,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_023.txt",
+      "nearest_existing_instance_id": "023",
+      "rank": 2,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "a2e3946c96c5b37e26a8383f3c572a26d588ffd0fdf9229d3b80c739982bcd3d",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 88309.23671367492,
+          "candidate_value": 5787.0,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 62241.87319218475,
+          "candidate_value": 6156.222222222223,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50539.358121330726,
+          "candidate_value": 451.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44828.38797469859,
+          "candidate_value": 1823.8424869719288,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2880.7123287671234,
+          "candidate_value": 45.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 495.82778864970646,
+          "candidate_value": 21.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 400.7006605222572,
+          "candidate_value": 268.8222222222222,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 179.8022562653008,
+          "candidate_value": 59.027032936477084,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000337",
+      "candidate_id": 337,
+      "gap_score": 1.350862962055573,
+      "generator_parameter_hash": "0d9b9866728857c9eaab15cb0326bac338c65aa214d852b63c022df817cc44a9",
+      "k_nearest_density": 1.4134300357435272,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_035.txt",
+      "nearest_existing_instance_id": "035",
+      "rank": 3,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "e4ee681de23de5d6b1bc1eeff203e04899928ea2df3b64dd6f31ebd33f58cdd3",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92810.57004700825,
+          "candidate_value": 1285.6666666666667,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 67054.34541440697,
+          "candidate_value": 1343.75,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50942.358121330726,
+          "candidate_value": 48.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46389.34134531155,
+          "candidate_value": 262.8891163589699,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2909.7123287671234,
+          "candidate_value": 16.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 507.82778864970646,
+          "candidate_value": 9.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 428.4603827444794,
+          "candidate_value": 241.0625,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 213.54473672897345,
+          "candidate_value": 25.284552472804418,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000176",
+      "candidate_id": 176,
+      "gap_score": 1.3008003601063927,
+      "generator_parameter_hash": "4bc10af1af808a45a89532b75ff270fb2ab111b8ff563a0e07e3f6ce21614f2a",
+      "k_nearest_density": 1.3398283690081414,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_009.txt",
+      "nearest_existing_instance_id": "009",
+      "rank": 4,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "489608495a3e7bb2ce7beeb005bd2bba56ec460d31233536f5feb8e90f406279",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 90870.37307731129,
+          "candidate_value": 3225.8636363636365,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 58545.18470012126,
+          "candidate_value": 9852.910714285714,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 49754.358121330726,
+          "candidate_value": 1236.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 41519.8484131449,
+          "candidate_value": 5132.382048525622,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2813.7123287671234,
+          "candidate_value": 112.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 496.2907398873365,
+          "candidate_value": 173.23214285714286,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 450.82778864970646,
+          "candidate_value": 66.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 213.11590256074942,
+          "candidate_value": 25.71338664102845,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000269",
+      "candidate_id": 269,
+      "gap_score": 1.2801020967428531,
+      "generator_parameter_hash": "b034f529b91a77e10fd2a6e6d83574ae1941b3541190ba3adaf7c8f36794c51c",
+      "k_nearest_density": 1.3842301507341204,
+      "nearest_existing_family": "type5",
+      "nearest_existing_filename": "type5_067.txt",
+      "nearest_existing_instance_id": "067",
+      "rank": 5,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "1d27cb03b06a471c8c3ade6f89c421b9ddf560198bd13aa3a7eaa16caa274ff7",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 84606.42421367492,
+          "candidate_value": 9489.8125,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 51785.96588072821,
+          "candidate_value": 16612.129533678755,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 47391.358121330726,
+          "candidate_value": 3599.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 40118.44823264103,
+          "candidate_value": 6533.782229029496,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2539.7123287671234,
+          "candidate_value": 386.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 372.82778864970646,
+          "candidate_value": 144.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 289.8493076149457,
+          "candidate_value": 379.6735751295337,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 175.728233840266,
+          "candidate_value": 63.101055361511854,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000144",
+      "candidate_id": 144,
+      "gap_score": 1.2187580736997137,
+      "generator_parameter_hash": "82314810dbbf402523b06806488222da05b74a7388ab070e1600b879ef3e3660",
+      "k_nearest_density": 1.277033700454781,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_010.txt",
+      "nearest_existing_instance_id": "010",
+      "rank": 6,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "47528a2fa073b6182783617abd7593dcd2927d33a9d8e48b2382b02e0b26c85a",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93996.79921367492,
+          "candidate_value": 99.4375,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 66861.69541440698,
+          "candidate_value": 1536.4,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50981.358121330726,
+          "candidate_value": 9.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46037.3328767021,
+          "candidate_value": 614.8975849684239,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2920.7123287671234,
+          "candidate_value": 5.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 500.82778864970646,
+          "candidate_value": 16.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 493.1228827444794,
+          "candidate_value": 176.4,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 236.97456550267873,
+          "candidate_value": 1.8547236990991407,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000112",
+      "candidate_id": 112,
+      "gap_score": 1.1736802076146147,
+      "generator_parameter_hash": "2162e07f01a350eee9a3337e9a753f571886b49bbd4e85afd7d23de46bbcbe42",
+      "k_nearest_density": 1.269945308926069,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_084.txt",
+      "nearest_existing_instance_id": "084",
+      "rank": 7,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "3974e034339493309289a8732f60a753a92d0dc580dbcac7e701a9a32750a73f",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93537.61171367492,
+          "candidate_value": 558.625,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 64187.09541440697,
+          "candidate_value": 4211.0,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50927.358121330726,
+          "candidate_value": 63.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 43847.70608131652,
+          "candidate_value": 2804.524380354002,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2919.7123287671234,
+          "candidate_value": 6.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 598.3562160778127,
+          "candidate_value": 71.16666666666667,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 508.82778864970646,
+          "candidate_value": 8.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 229.49446789181758,
+          "candidate_value": 9.334821309960297,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000172",
+      "candidate_id": 172,
+      "gap_score": 1.156603495559177,
+      "generator_parameter_hash": "20cb034680c42ea955edc76ede69cafca2de95f5cb487acb9a7e2d214cce0914",
+      "k_nearest_density": 1.1858227467554712,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_045.txt",
+      "nearest_existing_instance_id": "045",
+      "rank": 8,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "25373cc1d7765d290b2c64a6af62a56fd810ceaa46e24b9c5333b54eb894f85c",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93871.53458601535,
+          "candidate_value": 224.70212765957447,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 61472.76208107363,
+          "candidate_value": 6925.333333333333,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50933.358121330726,
+          "candidate_value": 57.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 45534.15388905923,
+          "candidate_value": 1118.076572611296,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2919.7123287671234,
+          "candidate_value": 6.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 484.189549411146,
+          "candidate_value": 185.33333333333334,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 469.82778864970646,
+          "candidate_value": 47.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 210.87297407342885,
+          "candidate_value": 27.956315128349008,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000081",
+      "candidate_id": 81,
+      "gap_score": 1.142566132629459,
+      "generator_parameter_hash": "b699858b329d85bc795c740ac77a2a500e970b5f452817e837d569b811ed77ae",
+      "k_nearest_density": 1.1851083842527286,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_015.txt",
+      "nearest_existing_instance_id": "015",
+      "rank": 9,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "a9a38f12b001408becb27a67b74ae55be085bc795b236a194c6f29316eb9aed3",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 85576.08154126113,
+          "candidate_value": 8520.155172413793,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 64893.837198444526,
+          "candidate_value": 3504.258215962441,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 47895.358121330726,
+          "candidate_value": 3095.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 45083.10174078298,
+          "candidate_value": 1569.1287208875467,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2712.7123287671234,
+          "candidate_value": 213.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 509.4149015238221,
+          "candidate_value": 160.10798122065728,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 458.82778864970646,
+          "candidate_value": 58.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 172.62840993893607,
+          "candidate_value": 66.2008792628418,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000313",
+      "candidate_id": 313,
+      "gap_score": 1.0969230347800398,
+      "generator_parameter_hash": "6826dc5db48038da5e86a28e936621d3678b38ec5501e2a7714ec2e8cdf031a7",
+      "k_nearest_density": 1.2283609802676678,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_015.txt",
+      "nearest_existing_instance_id": "015",
+      "rank": 10,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "799eef77519cb4b4572980ac485c67e9d125adfb7df531703362350a0290c88b",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 87717.82560256381,
+          "candidate_value": 6378.4111111111115,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 66233.00505296119,
+          "candidate_value": 2165.090361445783,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 48885.358121330726,
+          "candidate_value": 2105.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 46099.15577203382,
+          "candidate_value": 553.0746896367043,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2759.7123287671234,
+          "candidate_value": 166.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 426.82778864970646,
+          "candidate_value": 90.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 397.20360563604567,
+          "candidate_value": 272.3192771084337,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 183.51288940728278,
+          "candidate_value": 55.316399794495084,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000139",
+      "candidate_id": 139,
+      "gap_score": 1.0872986725788067,
+      "generator_parameter_hash": "f6a7ffc6280addd4521257542890b4668a2460cd27bdf454f6005ac55ae628cf",
+      "k_nearest_density": 1.12062794940527,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_045.txt",
+      "nearest_existing_instance_id": "045",
+      "rank": 11,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "dfb58b1ba90ed6b6892b20c4d65de439f0a2242eff77b6ccdde438b9e0d8b868",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92045.39055982877,
+          "candidate_value": 2050.846153846154,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 54186.238271549824,
+          "candidate_value": 14211.857142857143,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50921.358121330726,
+          "candidate_value": 69.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 43658.80578994315,
+          "candidate_value": 2993.424671727372,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2918.7123287671234,
+          "candidate_value": 7.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 503.82778864970646,
+          "candidate_value": 13.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 282.2371684587651,
+          "candidate_value": 387.2857142857143,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 195.46796909234564,
+          "candidate_value": 43.36132010943224,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000365",
+      "candidate_id": 365,
+      "gap_score": 1.0723222820247544,
+      "generator_parameter_hash": "8e40b2dbf94aed3fbc5dd066b4b4aff6c9a5df6dea0f0af8a3d148395dd41a8b",
+      "k_nearest_density": 1.0940220973389652,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_044.txt",
+      "nearest_existing_instance_id": "044",
+      "rank": 12,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "9b26a8206aa2b9522e6a7976703b29d3b9a81a4a193cf5d949aabadb4d279e40",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92440.159790598,
+          "candidate_value": 1656.076923076923,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 65311.624826171676,
+          "candidate_value": 3086.470588235294,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50877.358121330726,
+          "candidate_value": 113.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44928.831814753976,
+          "candidate_value": 1723.3986469165432,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2891.7123287671234,
+          "candidate_value": 34.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 490.82778864970646,
+          "candidate_value": 26.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 285.9640592150676,
+          "candidate_value": 383.55882352941177,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 205.71789861105802,
+          "candidate_value": 33.11139059071985,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000244",
+      "candidate_id": 244,
+      "gap_score": 1.0343401805872434,
+      "generator_parameter_hash": "0049f09e866368f8686ec913c5d3799d00a730cf955c7032f97897112c0304b1",
+      "k_nearest_density": 1.1287093493951257,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_023.txt",
+      "nearest_existing_instance_id": "023",
+      "rank": 13,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "a1e45cf123de5f6fae7b0e0d0af8955c60b61571ccf90da9efd2b498f94ed71c",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93281.00795550499,
+          "candidate_value": 815.2287581699346,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 61201.81541440697,
+          "candidate_value": 7196.28,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50419.358121330726,
+          "candidate_value": 571.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44836.7826046391,
+          "candidate_value": 1815.4478570314268,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2875.7123287671234,
+          "candidate_value": 50.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 451.2028827444794,
+          "candidate_value": 218.32,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 363.82778864970646,
+          "candidate_value": 153.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 217.3300427033538,
+          "candidate_value": 21.49924649842408,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000225",
+      "candidate_id": 225,
+      "gap_score": 0.9880704236836546,
+      "generator_parameter_hash": "20466b97d0ee7102c18f5faf575bbca3891962ca61c7f7df278db2c2cf1948c8",
+      "k_nearest_density": 1.0123513509041966,
+      "nearest_existing_family": "type2",
+      "nearest_existing_filename": "type2_081.txt",
+      "nearest_existing_instance_id": "081",
+      "rank": 14,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "0137353deb8449cbdf70646831d9ab8c0751efb0d0d5865b6b3ff5ffe711f6f4",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93621.23671367492,
+          "candidate_value": 475.0,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 66340.80970012126,
+          "candidate_value": 2057.285714285714,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50941.358121330726,
+          "candidate_value": 49.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 45040.68996403784,
+          "candidate_value": 1611.5404976326856,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2918.7123287671234,
+          "candidate_value": 7.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 532.6657398873365,
+          "candidate_value": 136.85714285714286,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 502.82778864970646,
+          "candidate_value": 14.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 230.5756567299754,
+          "candidate_value": 8.253632471802451,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000389",
+      "candidate_id": 389,
+      "gap_score": 0.9535032456569207,
+      "generator_parameter_hash": "299a3d7fd4198a2c1f0e158dba4a6081d5591f2081d175ba15b75575cb55a29f",
+      "k_nearest_density": 1.0205357945899565,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_010.txt",
+      "nearest_existing_instance_id": "010",
+      "rank": 15,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "d73235e49e1436b3ab0e9605da9fffac7c3b1086105e2e634ec742cc65dc2226",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92864.03671367493,
+          "candidate_value": 1232.2,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 62145.71079902235,
+          "candidate_value": 6252.384615384615,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50933.358121330726,
+          "candidate_value": 57.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 42720.42473952626,
+          "candidate_value": 3931.8057221442655,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2912.7123287671234,
+          "candidate_value": 13.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 506.82778864970646,
+          "candidate_value": 10.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 460.0613442829409,
+          "candidate_value": 209.46153846153845,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 182.84767768154413,
+          "candidate_value": 55.98161152023374,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000183",
+      "candidate_id": 183,
+      "gap_score": 0.9491300002129797,
+      "generator_parameter_hash": "a8aa70fc2a5506e1efd56709efc4c73189926310239a605847a4b23e30673b94",
+      "k_nearest_density": 1.0079301492060482,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_035.txt",
+      "nearest_existing_instance_id": "035",
+      "rank": 16,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "082343fe64f6cbaa89629092f61741c31d436bc7951ee0d292cd5a746a5cc742",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 86913.07004700825,
+          "candidate_value": 7183.166666666667,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 61972.93751967013,
+          "candidate_value": 6425.1578947368425,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50868.358121330726,
+          "candidate_value": 122.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44843.83206404268,
+          "candidate_value": 1808.3983976278391,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2906.7123287671234,
+          "candidate_value": 19.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 510.82778864970646,
+          "candidate_value": 6.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 313.7860406392162,
+          "candidate_value": 355.7368421052632,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 219.78683771966155,
+          "candidate_value": 19.042451482116306,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000231",
+      "candidate_id": 231,
+      "gap_score": 0.9475071034193319,
+      "generator_parameter_hash": "b41816d0920f6a6605fa4eb1d7317b57b7fbfb59fe727eaa8b9203ef8820b38c",
+      "k_nearest_density": 0.9973505716327853,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_044.txt",
+      "nearest_existing_instance_id": "044",
+      "rank": 17,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "808ec5b59f9d2373be620078e42808f5d906ec284dad29843cd065b07e62e3c6",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 93477.9033803416,
+          "candidate_value": 618.3333333333334,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 65456.09541440697,
+          "candidate_value": 2942.0,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50947.358121330726,
+          "candidate_value": 43.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44806.43827401775,
+          "candidate_value": 1845.7921876527705,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2920.7123287671234,
+          "candidate_value": 5.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 534.9228827444794,
+          "candidate_value": 134.6,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 507.82778864970646,
+          "candidate_value": 9.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 147.36869659490702,
+          "candidate_value": 91.46059260687086,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000333",
+      "candidate_id": 333,
+      "gap_score": 0.9421882516726889,
+      "generator_parameter_hash": "c67f1d57609b6305e1ee80d51df0ecb73ff168105376cd614d6e66fe26d5208e",
+      "k_nearest_density": 0.9787247444977747,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_023.txt",
+      "nearest_existing_instance_id": "023",
+      "rank": 18,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "ffdc8b918a5fe597361b464a239e76d12c2f6d4c0b9abe0e3bc2d1310ea73c7f",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 84328.46568563754,
+          "candidate_value": 9767.771028037383,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 57676.037414406965,
+          "candidate_value": 10722.058,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 44214.99538424447,
+          "candidate_value": 2437.2350774260576,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 44187.358121330726,
+          "candidate_value": 6803.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 2425.7123287671234,
+          "candidate_value": 500.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 362.52888274447935,
+          "candidate_value": 306.994,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 302.82778864970646,
+          "candidate_value": 214.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 200.33516024683203,
+          "candidate_value": 38.49412895494584,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000224",
+      "candidate_id": 224,
+      "gap_score": 0.9393434995842148,
+      "generator_parameter_hash": "c4a9684121e643be17ccfb91d7ecdc675476c1e79fd5cb8c0c8ba45d823416dd",
+      "k_nearest_density": 0.9957650026231192,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_045.txt",
+      "nearest_existing_instance_id": "045",
+      "rank": 19,
+      "scale_band": "small",
+      "search_mode": "broad",
+      "structural_hash": "37778b2069eb4ca54341c739b770f27235d49b52c108653726b25d52bbed7874",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 91816.23671367492,
+          "candidate_value": 2280.0,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 58677.72041440697,
+          "candidate_value": 9720.375,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50955.358121330726,
+          "candidate_value": 35.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 44484.8067641958,
+          "candidate_value": 2167.423697474723,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2917.7123287671234,
+          "candidate_value": 8.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 511.82778864970646,
+          "candidate_value": 5.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 340.7728827444794,
+          "candidate_value": 328.75,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 216.68346566775682,
+          "candidate_value": 22.145823534021037,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    },
+    {
+      "archive_id": "broad_0_000306",
+      "candidate_id": 306,
+      "gap_score": 0.9324285479596205,
+      "generator_parameter_hash": "0b85a06354a392260c3f79668735a0980d357778feafd1f0b5390ccc24d0d11c",
+      "k_nearest_density": 1.0085770467220012,
+      "nearest_existing_family": "type4",
+      "nearest_existing_filename": "type4_099.txt",
+      "nearest_existing_instance_id": "099",
+      "rank": 20,
+      "scale_band": "medium",
+      "search_mode": "broad",
+      "structural_hash": "de43e396da75f5ab70918119f5f06896a584fdc81230fe06caa076241c13f6be",
+      "top_feature_deviations": [
+        {
+          "absolute_delta": 92485.47355578019,
+          "candidate_value": 1610.7631578947369,
+          "existing_mean": 94096.23671367492,
+          "feature": "workload_contention"
+        },
+        {
+          "absolute_delta": 56910.0099443215,
+          "candidate_value": 11488.08547008547,
+          "existing_mean": 68398.09541440697,
+          "feature": "score_mean"
+        },
+        {
+          "absolute_delta": 50416.358121330726,
+          "candidate_value": 574.0,
+          "existing_mean": 50990.358121330726,
+          "feature": "total_roles"
+        },
+        {
+          "absolute_delta": 39548.40026261816,
+          "candidate_value": 7103.830199052365,
+          "existing_mean": 46652.23046167052,
+          "feature": "score_sd"
+        },
+        {
+          "absolute_delta": 2808.7123287671234,
+          "candidate_value": 117.0,
+          "existing_mean": 2925.7123287671234,
+          "feature": "n_projects"
+        },
+        {
+          "absolute_delta": 364.82778864970646,
+          "candidate_value": 152.0,
+          "existing_mean": 516.8277886497065,
+          "feature": "n_contributors"
+        },
+        {
+          "absolute_delta": 243.00151522311188,
+          "candidate_value": 426.5213675213675,
+          "existing_mean": 669.5228827444794,
+          "feature": "duration_mean"
+        },
+        {
+          "absolute_delta": 238.32974598139486,
+          "candidate_value": 0.49954322038299,
+          "existing_mean": 238.82928920177787,
+          "feature": "duration_sd"
+        }
+      ]
+    }
+  ]
+}
