@@ -3,7 +3,7 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 #include <algorithm>
-#include <array>
+#include <chrono>
 #include <iostream>
 #include <numeric>
 #include <random>
@@ -11,17 +11,21 @@
 #include <unordered_set>
 #include <vector>
 
+#include "../mtp_solver_common.hpp"
+
 using namespace std;
 
-int main() {
+int main(int argc, char **argv) {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	const SolverOptions options = parse_solver_options(argc, argv);
+	const auto t0 = chrono::steady_clock::now();
 
 	int C, P;
 	cin >> C >> P;
 	vector<string> Cnames(C), Pnames(P);
 	unordered_map<string, int> s2i;
-	vector<array<int, 800>> skill(C);
+	vector<vector<int>> skill(C);
 	vector<int> ts(C, 0);
 	vector<vector<pair<int, int>>> req(P);
 	vector<int> D(P), S(P), B(P);
@@ -29,12 +33,12 @@ int main() {
 	for(int c = 0; c < C; ++c) {
 		int n;
 		cin >> Cnames[c] >> n;
-		skill[c].fill(0);
+		skill[c].assign(s2i.size(), 0);
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
-			skill[c][s2i[s]] = l;
+			int sid = get_skill_id(s2i, skill, nullptr, s);
+			skill[c][sid] = l;
 			ts[c] += l;
 		}
 	}
@@ -44,8 +48,7 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
-			req[p].emplace_back(s2i[s], l);
+			req[p].emplace_back(get_skill_id(s2i, skill, nullptr, s), l);
 		}
 	}
 
@@ -56,18 +59,19 @@ int main() {
 	vector<int> order(P);
 	vector<bool> chosen(C, false);
 	iota(order.begin(), order.end(), 0);
-	mt19937 mt;
+	mt19937 mt(options.seed);
 	const auto ckey = [&](int c, int m, int s) { return make_tuple(max(av[c], m), skill[c][s], ts[c]); };
 	bool need_lvl = false;
-	while(true) {
+	while(!time_limit_reached(t0, options.time_limit_seconds)) {
 		bool bad = true;
 		vector<int> fail;
 		if(need_lvl) sort(order.begin(), order.end(), [&](int a, int b) { return S[a]+B[a]-D[a] > S[b]+B[b]-D[b]; });
 		else sort(order.begin(), order.end(), [&](int a, int b) { return B[a]-D[a] < B[b]-D[b]; });
 		for(int p : order) {
+			if(time_limit_reached(t0, options.time_limit_seconds)) break;
 			int mav = 0;
 			vector<int> cs;
-			array<int, 800> ms; ms.fill(0);
+			vector<int> ms(s2i.size(), 0);
 			for(auto [s, l] : req[p]) {
 				if(ms[s] >= l) --l;
 				int best = -1;

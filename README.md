@@ -182,6 +182,54 @@ Run tests:
 pytest benchmark_generation/tests
 ```
 
+## Solver Campaign Execution
+
+The production runner for solver experiments lives in `experiments/`. It builds
+the ten configured C++ solvers once, discovers accepted final benchmark files at
+run time, derives deterministic seeds for every solver-instance-execution tuple,
+and persists every run independently.
+
+Build configured solvers:
+
+```bash
+python -m experiments.build_solvers \
+  --config experiments/configs/mtp_solver_campaign.yaml
+```
+
+Inspect a campaign without launching solvers:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id pc_trial \
+  --runs 10 \
+  --time-limit 180 \
+  --threads 8 \
+  --resume \
+  --dry-run
+```
+
+Run locally after reviewing the dry run:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id pc_trial \
+  --runs 10 \
+  --time-limit 180 \
+  --threads 8 \
+  --resume
+```
+
+Rebuild reports from per-run JSON without rerunning solvers:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id pc_trial \
+  --rebuild-reports
+```
+
+See `experiments/README.md` for PowerShell/Linux examples, campaign layout,
+resume behavior, and report files.
+
 ## Outputs
 
 Generated instances use deterministic sortable names:

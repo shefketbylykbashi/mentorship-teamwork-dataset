@@ -3,8 +3,8 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 #include <algorithm>
-#include <array>
 #include <cassert>
+#include <chrono>
 #include <iostream>
 #include <numeric>
 #include <ranges>
@@ -12,8 +12,9 @@
 #include <unordered_map>
 #include <vector>
 
+#include "../mtp_solver_common.hpp"
+
 using namespace std;
-const int NS = 500;
 
 template<typename Scal>
 struct Hungarian {
@@ -88,34 +89,36 @@ protected:
 
 };
 
-int main() {
+int main(int argc, char **argv) {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	const SolverOptions options = parse_solver_options(argc, argv);
+	const auto t0 = chrono::steady_clock::now();
 
 	int C, P;
 	cin >> C >> P;
 	cerr << C << ' ' << P << endl;
 	vector<string> Cnames(C), Pnames(P);
 	unordered_map<string, int> s2i;
-	vector<array<int, NS>> skill(C);
+	vector<vector<int>> skill(C);
 	vector<int> ts(C, 0); // sum of skill levels
 	vector<vector<pair<int, int>>> req(P);
 	vector<int> D(P), S(P), B(P);
-	array<vector<int>, NS> s2c;
+	vector<vector<int>> s2c;
 	vector<vector<int>> c2s(C);
 
 	for(int c = 0; c < C; ++c) {
 		int n;
 		cin >> Cnames[c] >> n;
-		skill[c].fill(0);
+		skill[c].assign(s2i.size(), 0);
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
-			skill[c][s2i[s]] = l;
+			int sid = get_skill_id(s2i, skill, &s2c, s);
+			skill[c][sid] = l;
 			ts[c] += l;
-			s2c[s2i[s]].push_back(c);
-			c2s[c].push_back(s2i[s]);
+			s2c[sid].push_back(c);
+			c2s[c].push_back(sid);
 		}
 	}
 	vector<bool> sameR(P);
@@ -125,15 +128,10 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
-			req[p].emplace_back(s2i[s], l);
+			req[p].emplace_back(get_skill_id(s2i, skill, &s2c, s), l);
 		}
 		set<pair<int, int>> sr(req[p].begin(), req[p].end());
 		sameR[p] = sr.size() == 1 && req[p][0].second > 1;
-	}
-	if(s2i.size() != NS) {
-		cerr << "Skill array too large: " << s2i.size() << endl;
-		assert(s2i.size() <= NS);
 	}
 
 	int score = 0;
@@ -143,8 +141,8 @@ int main() {
 	vector<char> chosen(C, false);
 	vector<int> av(C, 0), subR(C);
 	iota(ps.begin(), ps.end(), 0);
-	while(true) {
-		for(int s = 0; s < NS; ++s) ranges::sort(s2c[s], {}, [&](int i) { return av[i]; });
+	while(!time_limit_reached(t0, options.time_limit_seconds)) {
+		for(int s = 0; s < (int)s2c.size(); ++s) ranges::sort(s2c[s], {}, [&](int i) { return av[i]; });
 		int bestP = -1, bestEnd = -1;
 		double bestScore = -1.;
 		vector<int> bestCS, cs, cs0;
@@ -173,6 +171,7 @@ int main() {
 		};
 
 		for(int p : ps) {
+			if(time_limit_reached(t0, options.time_limit_seconds)) break;
 			int sav = 0, mav = 0;
 
 			if(sameR[p]) {
@@ -208,7 +207,7 @@ int main() {
 				sav = bestSAV;
 			} else {
 				cs.clear();
-				array<int, NS> ms; ms.fill(0);
+				vector<int> ms(s2i.size(), 0);
 				for(const auto [s, l0] : req[p]) {
 					int l = l0, best;
 					if(ms[s] >= l) --l;

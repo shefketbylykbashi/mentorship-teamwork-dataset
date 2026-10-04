@@ -6,3 +6,5 @@ type5_source_cache/
 type5_full_project_source_cache/
 type6_source_data/
 **/__pycache__*/*
+experiments/bin/
+experiment_results/
