@@ -1,0 +1,138 @@
+// Copyright (C) 2026, Coudert--Osmont Yoann
+// SPDX-License-Identifier: MIT
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
+#include <algorithm>
+#include <array>
+#include <iostream>
+#include <numeric>
+#include <random>
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+const int NS = 800;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+
+	int C, P;
+	cin >> C >> P;
+	vector<string> Cnames(C), Pnames(P);
+	unordered_map<string, int> s2i;
+	vector<array<int, NS>> skill(C);
+	vector<int> ts(C, 0);
+	vector<vector<pair<int, int>>> req(P);
+	vector<int> D(P), S(P), B(P);
+
+	for(int c = 0; c < C; ++c) {
+		int n;
+		cin >> Cnames[c] >> n;
+		skill[c].fill(0);
+		while(n--) {
+			string s; int l;
+			cin >> s >> l;
+			if(!s2i.count(s)) s2i[s] = s2i.size();
+			skill[c][s2i[s]] = l;
+			ts[c] += l;
+		}
+	}
+	for(int p = 0; p < P; ++p) {
+		int r;
+		cin >> Pnames[p] >> D[p] >> S[p] >> B[p] >> r;
+		while(r--) {
+			string s; int l;
+			cin >> s >> l;
+			if(!s2i.count(s)) s2i[s] = s2i.size();
+			req[p].emplace_back(s2i[s], l);
+		}
+	}
+	cerr << C << ' ' << P << ' ' << s2i.size() << endl;
+
+	int score = 0;
+	vector<pair<int, vector<int>>> sol;
+
+	vector<int> av(C, 0);
+	vector<int> order(P);
+	vector<bool> chosen(C, false);
+	iota(order.begin(), order.end(), 0);
+	mt19937 mt(42);
+	const auto ckey = [&](int c, int m, int s, int l) { return make_tuple(max(av[c], m), skill[c][s], ts[c]); };
+	while(true) {
+		bool bad = true;
+		vector<int> fail;
+		sort(order.begin(), order.end(), [&](int a, int b) { return (long long)S[b]*D[a]*req[a].size() < (long long)S[a]*D[b]*req[b].size(); });
+		for(int p : order) {
+			int beste = -1, besto = -1;
+			vector<int> cs(req[p].size(), 0), cs2, ro=cs;
+			iota(ro.begin(), ro.end(), 0);
+			array<int, NS> ms;
+			for(int test = 0; test < 50; ++test) {
+				shuffle(ro.begin(), ro.end(), mt);
+				ms.fill(0);
+				int mav = 0, oo = 0, nr = req[p].size();
+				for(int o : ro) {
+					auto [s, l] = req[p][o];
+					const int l0 = l;
+					if(ms[s] >= l) --l;
+					int best = -1;
+					for(int c = 0; c < C; ++c) if(!chosen[c] && skill[c][s] >= l)
+						if(best == -1 || ckey(c, mav, s, l0) < ckey(best, mav, s, l0))
+							best = c;
+					if(best == -1) break;
+					-- nr;
+					cs[o] = best;
+					if(skill[best][s] <= l0) ++oo;
+					for(int i = 0; i < s2i.size(); ++i) ms[i] = max(ms[i], skill[best][i]);
+					chosen[best] = true;
+					mav = max(mav, av[best]);
+				}
+				for(int c : cs) chosen[c] = false;
+				int end = mav+D[p];
+				if(nr || end >= B[p]+S[p]) continue;
+				for(int i = 1; i < cs.size(); ++i) if(skill[cs[i]][req[p][i].first] > req[p][i].second)
+					for(int j = 0; j < i; ++j) if(skill[cs[j]][req[p][j].first] > req[p][j].second)
+						if(skill[cs[i]][req[p][j].first] >= req[p][j].second-1 && skill[cs[j]][req[p][i].first] >= req[p][i].second-1) {
+							swap(cs[i], cs[j]);
+							oo += 2;
+						}
+				oo += 1000000-mav;
+				if(oo > besto) {
+					besto = oo;
+					beste = end;
+					cs2 = cs;
+				}
+			}
+			int end = beste;
+			if(cs2.empty() || end >= B[p]+S[p]) {
+				fail.push_back(p);
+				continue;
+			}
+			cs = cs2;
+			score += S[p] - max(0, end-B[p]);
+			for(int i = 0; i < cs.size(); ++i) {
+				av[cs[i]] = end;
+				auto [s, l] = req[p][i];
+				if(skill[cs[i]][s] <= l) {
+					++ skill[cs[i]][s];
+					++ ts[cs[i]];
+				}
+			}
+			sol.emplace_back(p, cs);
+			bad = false;
+		}
+		if(bad) break;
+		order = fail;
+	}
+
+	cerr << score << endl;
+	cout << sol.size() << endl;
+	for(const auto &[p, cs] : sol) {
+		cout << Pnames[p] << '\n';
+		for(int c : cs) cout << Cnames[c] << ' ';
+		cout << '\n';
+	}
+
+	return 0;
+}
