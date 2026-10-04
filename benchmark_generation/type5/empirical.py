@@ -363,6 +363,11 @@ def empirical_profile_from_record(record: Mapping[str, Any]) -> EmpiricalSourceP
         ),
         profile_sizes=tuple(int(value) for value in profile.get("profile_sizes", [])),
         duration_values=tuple(int(value) for value in profile.get("duration_values", [])),
+        skills_per_contributor_values=tuple(
+            int(value) for value in profile.get("skills_per_contributor_values", [])
+        ),
+        level_values=tuple(int(value) for value in profile.get("level_values", [])),
+        role_count_values=tuple(int(value) for value in profile.get("role_count_values", [])),
     )
 
 

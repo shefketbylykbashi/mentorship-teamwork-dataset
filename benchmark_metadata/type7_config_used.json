@@ -1,0 +1,167 @@
+{
+  "candidate_search": {
+    "adaptive_rounds": 2,
+    "candidates_per_adaptive_round": 150,
+    "elite_gap_fraction": 0.1,
+    "initial_valid_candidate_bank": 400,
+    "minimum_candidate_bank_multiplier": 4,
+    "mutation_scale_decay": 0.7,
+    "mutation_scale_initial": 0.3,
+    "random_restart_fraction": 0.2
+  },
+  "count": 100,
+  "degeneracy": {
+    "min_fillability": 0.3,
+    "min_meaningful_skills": 2,
+    "min_projects_for_variance_checks": 10,
+    "reject_identical_project_shape": true,
+    "reject_zero_duration_variance": true,
+    "reject_zero_score_variance": true
+  },
+  "distance_group_weights": {
+    "levels": 1,
+    "mentorship": 1,
+    "scores": 1,
+    "size": 1,
+    "supply_demand": 1,
+    "time": 1
+  },
+  "evaluation_cloud_size": 500,
+  "evaluation_minimum_required": {
+    "mean_after_less_than_before": true,
+    "p95_after_less_than_before": true
+  },
+  "evaluation_seed": 2027,
+  "existing_audit_fillable_fraction": 0.0,
+  "family": "type7",
+  "fillable_fraction": 0.3,
+  "generator_parameter_config": {
+    "count": 100,
+    "difficulty_simplex": {
+      "alpha": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "distribution": "symmetric_dirichlet"
+    },
+    "family": "type7_candidate",
+    "fillable_fraction": 0.3,
+    "max_generation_attempts": 40,
+    "max_parameter_attempts": 20,
+    "parameter_ranges": {
+      "duration": [
+        1,
+        500
+      ],
+      "level_max": 10,
+      "level_mean": [
+        2.0,
+        7.0
+      ],
+      "level_sd": [
+        0.5,
+        3.0
+      ],
+      "n_profiles": 1,
+      "n_skills": [
+        5,
+        200
+      ],
+      "role_skill_alignment": [
+        0.0,
+        1.0
+      ],
+      "roles_per_project": [
+        1,
+        20
+      ],
+      "score_base": [
+        0.5,
+        5.0
+      ],
+      "score_perturbation": [
+        1.0,
+        3.0
+      ],
+      "skill_skew": [
+        0.0,
+        1.5
+      ],
+      "skills_per_contributor": [
+        1,
+        20
+      ],
+      "supply_quantile": [
+        0.5,
+        0.9
+      ],
+      "tightness": [
+        0.5,
+        6.0
+      ]
+    },
+    "project_contributor_ratio": [
+      0.25,
+      4.0
+    ],
+    "role_level_max": 100,
+    "root_seed": 2026,
+    "scale_band_weights": {
+      "large": 0.1,
+      "medium": 0.45,
+      "small": 0.45
+    },
+    "scale_bands": {
+      "large": {
+        "contributors": [
+          500,
+          2000
+        ],
+        "projects": [
+          500,
+          2000
+        ]
+      },
+      "medium": {
+        "contributors": [
+          50,
+          500
+        ],
+        "projects": [
+          50,
+          500
+        ]
+      },
+      "small": {
+        "contributors": [
+          5,
+          50
+        ],
+        "projects": [
+          5,
+          50
+        ]
+      }
+    }
+  },
+  "major_gap_region_count": 20,
+  "max_generation_attempts": 40,
+  "max_parameter_attempts": 20,
+  "mentorship_metrics": {
+    "assignment_search_node_limit": 20000,
+    "candidate_limit_per_role": 32
+  },
+  "pilot_count": 10,
+  "plausibility": {
+    "margin_fraction": 0.1,
+    "quantile_high": 1.0,
+    "quantile_low": 0.0
+  },
+  "root_seed": 2026,
+  "selection": {
+    "minimum_novelty_quantile": 0.05,
+    "use_hard_minimum_novelty": false
+  }
+}

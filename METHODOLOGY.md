@@ -501,3 +501,13 @@ checked against Google anchors and already generated family files.
 feature and distance reports, and optional matplotlib plots. Any PCA or visual
 projection added here is diagnostic only and is not used as the instance
 generation mechanism or the final ISA projection.
+
+## Type 7 Remaining Gap Filling
+
+Type 7 is documented separately in `benchmark_metadata/TYPE7_METHODOLOGY.md`.
+It audits the frozen Types 1-6 files actually present in the repository,
+freezes the existing canonical scaled feature space using those files plus a
+deterministic feasibility-calibration cloud, and selects forward-generated
+synthetic instances by sequential maximin novelty. Type 7 does not use solver
+performance, best-known-solution data, filenames, repository labels, seeds, or
+family labels as selection features.

@@ -1,0 +1,832 @@
+{
+  "contention": {
+    "max": 477.8888888888889,
+    "mean": 131.17614444111186,
+    "median": 62.2,
+    "min": 7.069767441860465
+  },
+  "contributor_level_mean": {
+    "max": 7.805555555555555,
+    "mean": 6.025938108148106,
+    "median": 5.738095238095238,
+    "min": 5.323529411764706
+  },
+  "contributor_level_sd": {
+    "max": 4.028735518316288,
+    "mean": 3.570847621146208,
+    "median": 3.6025539637496613,
+    "min": 3.0065411922720107
+  },
+  "count": 17,
+  "deadline_tightness_mean": {
+    "max": 4.201761201761202,
+    "mean": 2.9185993374230907,
+    "median": 3.2956932773109244,
+    "min": 0.9205128205128205
+  },
+  "deadline_tightness_sd": {
+    "max": 1.6827500790888137,
+    "mean": 1.261936971651797,
+    "median": 1.5173367155944906,
+    "min": 0.0
+  },
+  "degeneracy_flags": [],
+  "demand_concentration": {
+    "max": 0.1835673340458367,
+    "mean": 0.09677303080728751,
+    "median": 0.09468783899564326,
+    "min": 0.04703685746816111
+  },
+  "demand_supply_alignment": {
+    "max": 0.9997498029109254,
+    "mean": 0.988759683883102,
+    "median": 0.9932158630555303,
+    "min": 0.9723594796121166
+  },
+  "difficulty_prior": "Reuses the existing Type 5 Dirichlet prior centered on [0.25,0.45,0.20,0.10].",
+  "direct_fillability": {
+    "max": 0.9210526315789473,
+    "mean": 0.7980701159295581,
+    "median": 0.8048289738430584,
+    "min": 0.7006541845251523
+  },
+  "duration_mean": {
+    "max": 4.880382775119617,
+    "mean": 1.8714031144912653,
+    "median": 1.2904564315352698,
+    "min": 1.0
+  },
+  "duration_sd": {
+    "max": 5.9165596988757,
+    "mean": 1.378571753832358,
+    "median": 0.6718468169237822,
+    "min": 0.0
+  },
+  "duration_statistics": {
+    "max": 4.880382775119617,
+    "mean": 1.8714031144912653,
+    "median": 1.2904564315352698,
+    "min": 1.0
+  },
+  "existing_fixed_type5_instances_before": 91,
+  "extension": "type5_full_project",
+  "failed_attempt_samples": [
+    {
+      "attempt": 1,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 4,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 5,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 6,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 7,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 8,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 9,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 10,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 11,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": false,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 12,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 13,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 14,
+      "family_instance_id": 92,
+      "filename": "type5_092__GHFULL__LTplus-AG__ifc-lite.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": false,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 95,
+      "filename": "type5_095__GHFULL__DevLoversTeam__devlovers.net.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 95,
+      "filename": "type5_095__GHFULL__DevLoversTeam__devlovers.net.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 95,
+      "filename": "type5_095__GHFULL__DevLoversTeam__devlovers.net.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 1,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 2,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 3,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 4,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 5,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 6,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 7,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": true,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    },
+    {
+      "attempt": 8,
+      "family_instance_id": 97,
+      "filename": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend.txt",
+      "quality": {
+        "alignment_pass": true,
+        "difficulty_mix_pass": true,
+        "duplicate_pass": true,
+        "initial_realistic_feasibility_pass": true,
+        "overall_type5_quality_pass": false,
+        "profiles_pass": true,
+        "scale_pass": true,
+        "skill_skew_pass": false,
+        "source_distribution_match_pass": false,
+        "structural_validation_pass": true
+      },
+      "reason": "type5_full_project_quality_gate_failed"
+    }
+  ],
+  "failed_attempts": 469,
+  "final_quality_gate": {
+    "all_new_duplicate_checks_pass": true,
+    "all_new_exact_mentorship_checks_pass": true,
+    "all_new_generation_seeds_recorded": true,
+    "all_new_metadata_complete": true,
+    "all_new_output_ids_contiguous_from_configured_start": true,
+    "all_new_source_correspondence_pass": true,
+    "all_new_source_provenance_complete": true,
+    "all_new_source_to_output_mappings_one_to_one": true,
+    "all_new_structurally_valid": true,
+    "all_project_histories_at_least_90_days": true,
+    "all_project_histories_at_most_548_days": true,
+    "all_projects_use_complete_eligible_history": true,
+    "combined_type5_instances": 108,
+    "combined_type5_instances_exact_configured_total": true,
+    "configured_output_family_id_end": 108,
+    "configured_output_family_id_start": 92,
+    "existing_type5_instances": 91,
+    "existing_type5_instances_exact_91": true,
+    "existing_type5_instances_unchanged": true,
+    "family_ids_contiguous_from_configured_start": true,
+    "new_duplicate_count": 0,
+    "new_full_project_instances": 17,
+    "new_full_project_instances_exact_configured_count": true,
+    "new_source_repositories_unique": 17,
+    "new_source_repositories_unique_exact_configured_count": true,
+    "no_fixed_six_month_windows_in_extension": true,
+    "no_source_identifiers_inside_MTP_contents": true,
+    "overlapping_repositories": [],
+    "passed": true,
+    "repository_overlap_with_existing_type5": 0,
+    "shared_generator_regression_check_pass": true,
+    "statistical_report_exists": true,
+    "unique_new_structural_hashes": 17,
+    "unique_new_structural_hashes_exact_configured_count": true
+  },
+  "infeasible_deadline_share": {
+    "max": 0.19819004524886877,
+    "mean": 0.01973853449381749,
+    "median": 0.0064516129032258064,
+    "min": 0.0
+  },
+  "learning_reachable_demand": {
+    "max": 0.2467854725919242,
+    "mean": 0.1633724760378256,
+    "median": 0.1785146491028844,
+    "min": 0.06578947368421052
+  },
+  "level_gap_mean": {
+    "max": 2.036383010735727,
+    "mean": 1.3971833508253566,
+    "median": 1.543379790940767,
+    "min": 0.054662379421221825
+  },
+  "level_gap_sd": {
+    "max": 1.7879294928702547,
+    "mean": 1.1713835179646974,
+    "median": 1.2445515540742726,
+    "min": 0.7413075968100037
+  },
+  "mentor_availability": {
+    "max": 0.5888157894736842,
+    "mean": 0.19253019809844493,
+    "median": 0.15869565217391304,
+    "min": 0.004672897196261682
+  },
+  "mentorship_fillability": {
+    "max": 0.5888157894736842,
+    "mean": 0.19253019809844493,
+    "median": 0.15869565217391304,
+    "min": 0.004672897196261682
+  },
+  "mentorship_statistics": {
+    "direct_fillability": {
+      "max": 0.9210526315789473,
+      "mean": 0.7980701159295581,
+      "median": 0.8048289738430584,
+      "min": 0.7006541845251523
+    },
+    "global_mentor_availability": {
+      "max": 0.5888157894736842,
+      "mean": 0.19253019809844493,
+      "median": 0.15869565217391304,
+      "min": 0.004672897196261682
+    },
+    "one_level_below_potential": {
+      "max": 0.5888157894736842,
+      "mean": 0.19253019809844493,
+      "median": 0.15869565217391304,
+      "min": 0.004672897196261682
+    },
+    "true_same_project_mentorship_feasibility": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    }
+  },
+  "n_contributors": {
+    "max": 43.0,
+    "mean": 12.176470588235293,
+    "median": 10.0,
+    "min": 5.0
+  },
+  "n_projects": {
+    "max": 2897.0,
+    "mean": 719.8235294117648,
+    "median": 324.0,
+    "min": 82.0
+  },
+  "n_skills": {
+    "max": 50.0,
+    "mean": 16.41176470588235,
+    "median": 15.0,
+    "min": 6.0
+  },
+  "penalty_exposure": {
+    "max": 0.07948717948717948,
+    "mean": 0.006982727907854612,
+    "median": 0.002314670974958056,
+    "min": 0.0
+  },
+  "pilot": false,
+  "pilot_gate": {
+    "skipped": true
+  },
+  "project_history_days": {
+    "max": 518.2030439814815,
+    "mean": 275.90638208061,
+    "median": 240.51310185185184,
+    "min": 96.26703703703704
+  },
+  "project_history_months": {
+    "max": 17.025151342307403,
+    "mean": 9.064686064250022,
+    "median": 7.90186782264811,
+    "min": 3.162777397520724
+  },
+  "required_level_mean": {
+    "max": 8.11448598130841,
+    "mean": 7.389406301998871,
+    "median": 7.416494845360825,
+    "min": 6.286075949367088
+  },
+  "required_level_sd": {
+    "max": 3.7564244616103735,
+    "mean": 3.3104111885109386,
+    "median": 3.418019131182127,
+    "min": 2.6268295958744208
+  },
+  "roles_per_project_mean": {
+    "max": 3.792682926829268,
+    "mean": 2.0627522781935146,
+    "median": 1.6,
+    "min": 1.1511627906976745
+  },
+  "roles_per_project_sd": {
+    "max": 2.5768973592287296,
+    "mean": 1.057626277520991,
+    "median": 0.7489104856146194,
+    "min": 0.35820748373835726
+  },
+  "schedule_pressure": {
+    "max": 1.5473684210526315,
+    "mean": 0.8259297076315159,
+    "median": 0.7164271775767252,
+    "min": 0.3315184513006655
+  },
+  "score_concentration": {
+    "max": 0.1722273855894889,
+    "mean": 0.056774006456878315,
+    "median": 0.044516789890807096,
+    "min": 0.013641481751421658
+  },
+  "score_density": {
+    "max": 5.8120953120953125,
+    "mean": 3.732447977867694,
+    "median": 4.05854271356784,
+    "min": 1.5872145066523058
+  },
+  "score_effort_correlation": {
+    "max": 0.9654839060018134,
+    "mean": 0.9064352704454206,
+    "median": 0.9101904918706591,
+    "min": 0.7750965948509679
+  },
+  "score_mean": {
+    "max": 16.226315789473684,
+    "mean": 10.85248359039918,
+    "median": 10.300613496932515,
+    "min": 6.004651162790697
+  },
+  "score_proxy_methodology": "Effort-conditioned synthetic MTP project value; GitHub popularity/social metrics are not used.",
+  "score_sd": {
+    "max": 26.88036540527918,
+    "mean": 10.279483567102474,
+    "median": 10.784163824147711,
+    "min": 2.908953482658968
+  },
+  "skills_per_contributor_mean": {
+    "max": 7.0,
+    "mean": 4.110146955187995,
+    "median": 3.4166666666666665,
+    "min": 1.6
+  },
+  "skills_per_contributor_sd": {
+    "max": 11.47375521891283,
+    "mean": 3.9707120168999968,
+    "median": 2.984365244286196,
+    "min": 0.916515138991168
+  },
+  "source_statistics": {
+    "alignment": {
+      "max": 0.9858949744039537,
+      "mean": 0.9246918030956254,
+      "median": 0.9233978689088411,
+      "min": 0.8417046181352497
+    },
+    "contributors": {
+      "max": 43.0,
+      "mean": 12.176470588235293,
+      "median": 10.0,
+      "min": 5.0
+    },
+    "count": 17,
+    "domain_counts": {
+      "backend_api": 2,
+      "developer_tooling": 6,
+      "frontend": 6,
+      "python_library": 3
+    },
+    "lifetime_band_counts": {
+      "181_270": 4,
+      "271_365": 3,
+      "366_456": 2,
+      "457_548": 3,
+      "90_180": 5
+    },
+    "project_history_days": {
+      "max": 518.2030439814815,
+      "mean": 275.90638208061,
+      "median": 240.51310185185184,
+      "min": 96.26703703703704
+    },
+    "project_history_months": {
+      "max": 17.025151342307403,
+      "mean": 9.064686064250022,
+      "median": 7.90186782264811,
+      "min": 3.162777397520724
+    },
+    "projects_work_units": {
+      "max": 2897.0,
+      "mean": 719.8235294117648,
+      "median": 324.0,
+      "min": 82.0
+    },
+    "skill_skew": {
+      "max": 1.1845810523068228,
+      "mean": 0.8634668586647313,
+      "median": 0.7962538588731504,
+      "min": 0.501055043515309
+    },
+    "skills": {
+      "max": 50.0,
+      "mean": 16.41176470588235,
+      "median": 15.0,
+      "min": 6.0
+    }
+  },
+  "supply_concentration": {
+    "max": 0.1566467474986286,
+    "mean": 0.08136119436926355,
+    "median": 0.06687828149840425,
+    "min": 0.0295529744133477
+  },
+  "total_roles": {
+    "max": 4433.0,
+    "mean": 1259.1764705882354,
+    "median": 497.0,
+    "min": 280.0
+  },
+  "unmet_skill_share": {
+    "max": 0.0,
+    "mean": 0.0,
+    "median": 0.0,
+    "min": 0.0
+  },
+  "within_family_min_pairwise_distance": 0.5613135878697044,
+  "within_family_pairwise_distance": {
+    "max": 2.3583839450770196,
+    "mean": 1.3965149119599325,
+    "median": 1.3712909033659781,
+    "min": 0.5613135878697044
+  },
+  "within_project_mentorship_feasibility": {
+    "max": 0.4206306787814003,
+    "mean": 0.16370369164999696,
+    "median": 0.13496720745598895,
+    "min": 0.01050420168067227
+  },
+  "workload_contention": {
+    "max": 1794.888888888889,
+    "mean": 246.2756582177289,
+    "median": 89.33333333333333,
+    "min": 29.235294117647058
+  }
+}

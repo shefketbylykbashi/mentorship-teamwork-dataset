@@ -1,0 +1,290 @@
+{
+  "api_version": "2026-03-10",
+  "backoff_initial_seconds": 2.0,
+  "candidate_existing_batch": "initial_001_060",
+  "candidate_expansion_batch": "expansion_061_150",
+  "candidate_minimum_before_selection": 120,
+  "candidate_queries": [
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "python_library",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false language:Python"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "backend_api",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:api"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "frontend",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false language:TypeScript topic:frontend"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "developer_tooling",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:cli"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "machine_learning",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:machine-learning"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "data_engineering",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:data-engineering"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "devops",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:devops"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "infrastructure",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:kubernetes"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "observability",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:observability"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "testing",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:testing"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "web_application",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:webapp"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "sdk",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:sdk"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "automation",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:automation"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "go_backend",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false language:Go topic:api"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "rust_tooling",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false language:Rust"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "javascript_frontend",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false language:JavaScript topic:frontend"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "database",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:database"
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "domain": "security",
+      "pages": 2,
+      "per_page": 20,
+      "q": "created:2025-03-10..2026-06-11 pushed:>=2026-01-01 stars:5..500 archived:false fork:false topic:security"
+    }
+  ],
+  "candidate_repositories": [],
+  "candidate_target": 150,
+  "cheap_prescreen": {
+    "low_activity_keywords": [
+      "documentation",
+      "docs",
+      "tutorial",
+      "course",
+      "workshop",
+      "example",
+      "sample",
+      "demo",
+      "starter",
+      "template",
+      "boilerplate"
+    ],
+    "max_bot_pr_share": 0.8,
+    "min_technical_language_bytes": 1,
+    "nontechnical_languages": [
+      "Markdown",
+      "MDX",
+      "Text",
+      "TeX"
+    ],
+    "personal_only_keywords": [
+      "personal portfolio",
+      "portfolio",
+      "resume",
+      "curriculum vitae"
+    ]
+  },
+  "deadline_min_observations": 10,
+  "default_tightness_bounds": [
+    0.8,
+    4.0
+  ],
+  "detailed_pr_sample_size": 60,
+  "difficulty_prior": {
+    "dirichlet_alpha": [
+      25,
+      45,
+      20,
+      10
+    ],
+    "future_bounds": [
+      0.05,
+      0.15
+    ],
+    "mean": [
+      0.25,
+      0.45,
+      0.2,
+      0.1
+    ],
+    "mentor_bounds": [
+      0.15,
+      0.3
+    ]
+  },
+  "distance_group_weights": {
+    "levels": 1,
+    "mentorship": 1,
+    "scores": 1,
+    "size": 1,
+    "supply_demand": 1,
+    "time": 1
+  },
+  "duration_range": [
+    1,
+    500
+  ],
+  "extension": "type5_full_project",
+  "family": "type5",
+  "fillable_fraction": 0.3,
+  "final_extension_count": 17,
+  "final_extension_start_id": 92,
+  "full_detail_pr_limit": 200,
+  "full_project_corpus_path": "benchmark_metadata/type5_full_project_empirical_corpus.json",
+  "future_offset_max": 4,
+  "future_offset_min": 2,
+  "max_author_sample_share": 0.2,
+  "max_full_pr_pages": 1000,
+  "max_generation_attempts_per_source": 1000,
+  "max_release_deadline_days": 180,
+  "max_search_pages_per_query": 2,
+  "min_human_contributors": 5,
+  "min_merged_prs": 5,
+  "min_retained_skills": 5,
+  "monthly_pr_sample_target": 10,
+  "per_page": 100,
+  "pilot_count": 5,
+  "profile_count_range": [
+    3,
+    8
+  ],
+  "project_history_days_range": [
+    90,
+    548
+  ],
+  "quality_gates": {
+    "alignment_min": 0.55,
+    "alignment_tolerance": 0.15,
+    "distribution_tolerances": {
+      "contributor_level_mean": 1.25,
+      "deadline_tightness_mean": 1.25,
+      "duration_median_relative": 0.6,
+      "future_share": 0.1,
+      "mentor_share": 0.15,
+      "required_level_mean": 2.0,
+      "role_skill_alignment": 0.15,
+      "roles_per_project_mean": 2.0,
+      "skill_skew": 0.2,
+      "skills_per_contributor_mean": 2.0
+    },
+    "future_share_bounds": [
+      0.03,
+      0.18
+    ],
+    "largest_profile_share_max": 0.7,
+    "mentor_share_bounds": [
+      0.1,
+      0.3
+    ],
+    "realistic_initial_feasibility_min": 0.7,
+    "skill_skew_tolerance": 0.2
+  },
+  "retry_attempts": 4,
+  "role_level_max": 100,
+  "roles_per_project_range": [
+    1,
+    20
+  ],
+  "root_seed": 2026,
+  "scale_compression": {
+    "max_contributors": 10000,
+    "max_projects": 10000
+  },
+  "score_base_range": [
+    0.5,
+    5.0
+  ],
+  "score_density_target": 2.0,
+  "score_perturbation_range": [
+    1.0,
+    3.0
+  ],
+  "selection_count": 17,
+  "skill_count_range": [
+    5,
+    200
+  ],
+  "tightness_range": [
+    0.5,
+    6.0
+  ]
+}

@@ -24,6 +24,27 @@
       "output_dir": "generated_instances\\type5",
       "seed": 2026,
       "statistical_report": "benchmark_metadata\\type5_statistical_report.json"
+    },
+    "type5_full_project_extension": {
+      "config_hash": "b284e17975fcc756bcdbcf735003ab30610f87b6350bf669d7329c6dbad825e7",
+      "count": 17,
+      "empirical_corpus": "benchmark_metadata/type5_full_project_empirical_corpus.json",
+      "fixed_type5_instances_preserved": true,
+      "metadata_csv": "benchmark_metadata\\type5_full_project_metadata.csv",
+      "output_dir": "generated_instances\\type5",
+      "seed": 2026,
+      "statistical_report": "benchmark_metadata\\type5_full_project_statistical_report.json"
+    },
+    "type7": {
+      "config_hash": "2a0a745eaddccc923d2e4c88261533e344cd56edf69b42a70d39903b830273c4",
+      "count": 100,
+      "coverage_before_after": "benchmark_metadata\\type7_coverage_before_after.json",
+      "evaluation_seed": 2027,
+      "metadata_csv": "benchmark_metadata\\type7_metadata.csv",
+      "output_dir": "generated_instances\\type7",
+      "search_manifest": "benchmark_metadata\\type7_search_manifest.json",
+      "seed": 2026,
+      "statistical_report": "benchmark_metadata\\type7_statistical_report.json"
     }
   }
 }

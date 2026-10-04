@@ -1,0 +1,4813 @@
+{
+  "candidate_count": 150,
+  "candidates": [
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:45:15Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "9512dfacf6051f9ecb25534c31ef7db7dd2dce86",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 71,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 77,
+      "full_history_human_pr_count": 71,
+      "full_history_merged_pr_count": 71,
+      "languages": {
+        "Makefile": 1888,
+        "Python": 4857
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 407.0970486111111,
+      "project_history_end": "2026-09-09T18:44:13Z",
+      "project_history_months": 13.37485169974903,
+      "project_history_start": "2025-07-29T16:24:28Z",
+      "rejection_reason": "",
+      "repository_id": 1027988477,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 1,
+        "kind": "full_project_search",
+        "owner": "package-url",
+        "repo": "vers-spec",
+        "url": "https://github.com/package-url/vers-spec"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:45:15Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 71,
+          "source_sampled_pr_count": 71,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T18:44:13Z",
+            "name": "FULL",
+            "start": "2025-07-29T16:24:28Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:45:18Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 2,
+        "kind": "full_project_search",
+        "owner": "vesaias",
+        "repo": "JobNavigator",
+        "url": "https://github.com/vesaias/JobNavigator"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:45:22Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 4,
+      "full_history_merged_pr_count": 4,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 3,
+        "kind": "full_project_search",
+        "owner": "yashveeeeeeer",
+        "repo": "india-geodata",
+        "url": "https://github.com/yashveeeeeeer/india-geodata"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:45:25Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 4,
+        "kind": "full_project_search",
+        "owner": "LegendVibrate",
+        "repo": "CapCut-Pro-Cracker",
+        "url": "https://github.com/LegendVibrate/CapCut-Pro-Cracker"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:46:27Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "9ba9ded033fe42f54292769307fb9fd41d19abec",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 1093,
+      "full_history_human_pr_count": 888,
+      "full_history_merged_pr_count": 888,
+      "languages": {
+        "Circom": 32103,
+        "Dockerfile": 15906,
+        "Go Template": 2498,
+        "HCL": 225902,
+        "HTML": 115697,
+        "JavaScript": 724,
+        "Makefile": 32699,
+        "Open Policy Agent": 19200,
+        "Python": 28409953,
+        "Shell": 275273
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 293.82920138888886,
+      "project_history_end": "2026-09-09T18:42:22Z",
+      "project_history_months": 9.653526123659592,
+      "project_history_start": "2025-11-19T22:48:19Z",
+      "rejection_reason": "",
+      "repository_id": 1099589092,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 5,
+        "kind": "full_project_search",
+        "owner": "musicmonk42",
+        "repo": "VulcanAMI_LLM",
+        "url": "https://github.com/musicmonk42/VulcanAMI_LLM"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:46:27Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 888,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T18:42:22Z",
+            "name": "FULL",
+            "start": "2025-11-19T22:48:19Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:46:30Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 6,
+        "kind": "full_project_search",
+        "owner": "BottomCustodian",
+        "repo": "Onimusha-Way-of-the-Sword-Trainer",
+        "url": "https://github.com/BottomCustodian/Onimusha-Way-of-the-Sword-Trainer"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:46:32Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 7,
+        "kind": "full_project_search",
+        "owner": "breakchemistsqueeze",
+        "repo": "MECCHA-CHAMELEON-CHEAT",
+        "url": "https://github.com/breakchemistsqueeze/MECCHA-CHAMELEON-CHEAT"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:46:35Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 8,
+        "kind": "full_project_search",
+        "owner": "Openoolead99",
+        "repo": "FC-Nexus-Mod-Hub",
+        "url": "https://github.com/Openoolead99/FC-Nexus-Mod-Hub"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:46:41Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "1b47857651d8d3798329a687c3b7294a8c584bb2",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 6,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 24,
+      "full_history_human_pr_count": 6,
+      "full_history_merged_pr_count": 21,
+      "languages": {
+        "Dockerfile": 621,
+        "JavaScript": 99772,
+        "Python": 161335
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 153.95008101851852,
+      "project_history_end": "2026-09-09T17:38:48Z",
+      "project_history_months": 5.0579082059472205,
+      "project_history_start": "2026-04-08T18:50:41Z",
+      "rejection_reason": "",
+      "repository_id": 1136372265,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 9,
+        "kind": "full_project_search",
+        "owner": "htomasz",
+        "repo": "vultron",
+        "url": "https://github.com/htomasz/vultron"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:46:41Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 6,
+          "source_sampled_pr_count": 6,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T17:38:48Z",
+            "name": "FULL",
+            "start": "2026-04-08T18:50:41Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:48:22Z",
+      "default_branch": "master",
+      "default_branch_head_sha": "7b6ff2ec58bbef8b696e96c7db88ba5b5f48ab84",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 106,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 181,
+      "full_history_human_pr_count": 106,
+      "full_history_merged_pr_count": 137,
+      "languages": {
+        "CSS": 13264,
+        "Dockerfile": 6822,
+        "HTML": 195772,
+        "JavaScript": 86409,
+        "Mako": 494,
+        "PowerShell": 18560,
+        "Python": 9187846,
+        "Shell": 33658,
+        "TypeScript": 3572174
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 166.04635416666667,
+      "project_history_end": "2026-07-30T14:21:12Z",
+      "project_history_months": 5.455321697467488,
+      "project_history_start": "2026-02-14T13:14:27Z",
+      "rejection_reason": "",
+      "repository_id": 1157886148,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 10,
+        "kind": "full_project_search",
+        "owner": "Abrechen2",
+        "repo": "sublarr",
+        "url": "https://github.com/Abrechen2/sublarr"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:48:22Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 106,
+          "source_sampled_pr_count": 106,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-07-30T14:21:12Z",
+            "name": "FULL",
+            "start": "2026-02-14T13:14:27Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:49:06Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "f5cf7d89fba3c6ab23c7e25a9b2eee2f2c8ba258",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 443,
+      "full_history_human_pr_count": 337,
+      "full_history_merged_pr_count": 392,
+      "languages": {
+        "Astro": 415366,
+        "C++": 270,
+        "CSS": 18181,
+        "Dockerfile": 11214,
+        "Gherkin": 1419,
+        "JavaScript": 89605,
+        "Jupyter Notebook": 12732,
+        "Just": 23524,
+        "Python": 890700,
+        "Shell": 33058,
+        "TypeScript": 28006
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 105.77832175925926,
+      "project_history_end": "2026-09-08T18:58:14Z",
+      "project_history_months": 3.4752631378812078,
+      "project_history_start": "2026-05-26T00:17:27Z",
+      "rejection_reason": "",
+      "repository_id": 1249630002,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 11,
+        "kind": "full_project_search",
+        "owner": "projectbluefin",
+        "repo": "lab",
+        "url": "https://github.com/projectbluefin/lab"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:49:06Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 337,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T18:58:14Z",
+            "name": "FULL",
+            "start": "2026-05-26T00:17:27Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:50:04Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "ed7b44c1d0fa53ee15df8259ef75023c153d2643",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 472,
+      "full_history_human_pr_count": 209,
+      "full_history_merged_pr_count": 409,
+      "languages": {
+        "Jinja": 720,
+        "Open Policy Agent": 17271,
+        "Python": 2679200,
+        "Shell": 9597
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 119.78890046296296,
+      "project_history_end": "2026-09-09T18:42:59Z",
+      "project_history_months": 3.935569625066545,
+      "project_history_start": "2026-05-12T23:46:58Z",
+      "rejection_reason": "",
+      "repository_id": 1237002559,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 12,
+        "kind": "full_project_search",
+        "owner": "open-telemetry",
+        "repo": "opentelemetry-python-genai",
+        "url": "https://github.com/open-telemetry/opentelemetry-python-genai"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:50:04Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 209,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T18:42:59Z",
+            "name": "FULL",
+            "start": "2026-05-12T23:46:58Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:50:06Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 13,
+        "kind": "full_project_search",
+        "owner": "MrAbolfazlNorouzi",
+        "repo": "iran-configs",
+        "url": "https://github.com/MrAbolfazlNorouzi/iran-configs"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:50:25Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "e91be27c24412848bc0c6bf8a7360a2c390d86b5",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 20,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 97,
+      "full_history_human_pr_count": 20,
+      "full_history_merged_pr_count": 21,
+      "languages": {
+        "Batchfile": 7061,
+        "C": 3186,
+        "CSS": 147115,
+        "Dockerfile": 7210,
+        "HTML": 55825,
+        "Inno Setup": 8254,
+        "JavaScript": 28940,
+        "PLpgSQL": 10585,
+        "PowerShell": 286570,
+        "Python": 41958050,
+        "Ruby": 2429,
+        "Shell": 191952,
+        "TypeScript": 10616599
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 101.16737268518519,
+      "project_history_end": "2026-09-09T16:39:03Z",
+      "project_history_months": 3.323774051258651,
+      "project_history_start": "2026-05-31T12:38:02Z",
+      "rejection_reason": "",
+      "repository_id": 1255092568,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 14,
+        "kind": "full_project_search",
+        "owner": "PersonalJarvis",
+        "repo": "PersonalJarvis",
+        "url": "https://github.com/PersonalJarvis/PersonalJarvis"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:50:25Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 20,
+          "source_sampled_pr_count": 20,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T16:39:03Z",
+            "name": "FULL",
+            "start": "2026-05-31T12:38:02Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:50:30Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "project_history_outside_90_548_days",
+      "full_history_human_pr_count": 125,
+      "full_history_merged_pr_count": 125,
+      "profile_quality_pass": false,
+      "project_history_days": 73.32599537037036,
+      "project_history_end": "2026-09-09T18:42:20Z",
+      "project_history_months": 2.40906760970416,
+      "project_history_start": "2026-06-28T10:52:54Z",
+      "rejection_reason": "project_history_outside_90_548_days",
+      "source": {
+        "domain": "python_library",
+        "index": 15,
+        "kind": "full_project_search",
+        "owner": "fideus-labs",
+        "repo": "KonfAI",
+        "url": "https://github.com/fideus-labs/KonfAI"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:51:28Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "0087f1f9c24250174913f3245ca8e4a5a2851d0f",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 1171,
+      "full_history_human_pr_count": 1148,
+      "full_history_merged_pr_count": 1152,
+      "languages": {
+        "Awk": 9156,
+        "Cython": 5910,
+        "HTML": 417366,
+        "JavaScript": 11032,
+        "Jinja": 17966,
+        "Python": 18225723,
+        "Shell": 1155468
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 144.5434837962963,
+      "project_history_end": "2026-05-27T21:08:39Z",
+      "project_history_months": 4.7488618906380715,
+      "project_history_start": "2026-01-03T08:06:02Z",
+      "rejection_reason": "",
+      "repository_id": 1127048733,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 16,
+        "kind": "full_project_search",
+        "owner": "Nursedude",
+        "repo": "meshforge",
+        "url": "https://github.com/Nursedude/meshforge"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:51:28Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 1148,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-05-27T21:08:39Z",
+            "name": "FULL",
+            "start": "2026-01-03T08:06:02Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:51:31Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 3,
+      "full_history_merged_pr_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "python_library",
+        "index": 17,
+        "kind": "full_project_search",
+        "owner": "Prateek-squadron",
+        "repo": "hyprconf2lua",
+        "url": "https://github.com/Prateek-squadron/hyprconf2lua"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:51:34Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "project_history_outside_90_548_days",
+      "full_history_human_pr_count": 9,
+      "full_history_merged_pr_count": 9,
+      "profile_quality_pass": false,
+      "project_history_days": 41.96377314814815,
+      "project_history_end": "2026-07-20T09:44:33Z",
+      "project_history_months": 1.378686592136284,
+      "project_history_start": "2026-06-08T10:36:43Z",
+      "rejection_reason": "project_history_outside_90_548_days",
+      "source": {
+        "domain": "python_library",
+        "index": 18,
+        "kind": "full_project_search",
+        "owner": "mann1x",
+        "repo": "omnimergekit",
+        "url": "https://github.com/mann1x/omnimergekit"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:51:46Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "444ee224230fdce41d25a9d64b0da5673262d477",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 9,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 9,
+      "full_history_human_pr_count": 9,
+      "full_history_merged_pr_count": 9,
+      "languages": {
+        "CSS": 32440,
+        "Dockerfile": 1062,
+        "HTML": 1386,
+        "JavaScript": 9709,
+        "Mako": 581,
+        "Python": 1651479,
+        "Shell": 2591,
+        "Svelte": 294241,
+        "TypeScript": 217716
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 115.18638888888889,
+      "project_history_end": "2026-07-12T21:06:22Z",
+      "project_history_months": 3.7843577458361852,
+      "project_history_start": "2026-03-19T16:37:58Z",
+      "rejection_reason": "",
+      "repository_id": 1183608517,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 19,
+        "kind": "full_project_search",
+        "owner": "thiagodsti",
+        "repo": "partiu",
+        "url": "https://github.com/thiagodsti/partiu"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:51:46Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 9,
+          "source_sampled_pr_count": 9,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-07-12T21:06:22Z",
+            "name": "FULL",
+            "start": "2026-03-19T16:37:58Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:53:49Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "d6f0001b7c105d886360951f70cc70d34c48d0d6",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 173,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 187,
+      "full_history_human_pr_count": 173,
+      "full_history_merged_pr_count": 173,
+      "languages": {
+        "CSS": 1735,
+        "Dockerfile": 8489,
+        "HCL": 3914,
+        "HTML": 1737,
+        "JavaScript": 559,
+        "Python": 8306950,
+        "Rust": 27142,
+        "Shell": 13980,
+        "TypeScript": 34469
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 445.99337962962966,
+      "project_history_end": "2026-07-28T19:45:44Z",
+      "project_history_months": 14.652759905696252,
+      "project_history_start": "2025-05-08T19:55:16Z",
+      "rejection_reason": "",
+      "repository_id": 960997724,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 20,
+        "kind": "full_project_search",
+        "owner": "emersonfelipesp",
+        "repo": "proxbox-api",
+        "url": "https://github.com/emersonfelipesp/proxbox-api"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:53:49Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 173,
+          "source_sampled_pr_count": 173,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-07-28T19:45:44Z",
+            "name": "FULL",
+            "start": "2025-05-08T19:55:16Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:53:52Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 21,
+        "kind": "full_project_search",
+        "owner": "ProxyScrape",
+        "repo": "free-proxy-list",
+        "url": "https://github.com/ProxyScrape/free-proxy-list"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:53:55Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 22,
+        "kind": "full_project_search",
+        "owner": "GetCometCMS",
+        "repo": "CometCMS",
+        "url": "https://github.com/GetCometCMS/CometCMS"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:55:34Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 1,
+      "full_history_merged_pr_count": 7249,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 23,
+        "kind": "full_project_search",
+        "owner": "3bsalam-1",
+        "repo": "Car-Info",
+        "url": "https://github.com/3bsalam-1/Car-Info"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:55:37Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 24,
+        "kind": "full_project_search",
+        "owner": "philogicae",
+        "repo": "torrent-search-mcp",
+        "url": "https://github.com/philogicae/torrent-search-mcp"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:55:39Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 25,
+        "kind": "full_project_search",
+        "owner": "starshaped-demureness3573",
+        "repo": "AI-Powered-Job-Search-Tool",
+        "url": "https://github.com/starshaped-demureness3573/AI-Powered-Job-Search-Tool"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:55:42Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 26,
+        "kind": "full_project_search",
+        "owner": "Karthijay18",
+        "repo": "APILEECH",
+        "url": "https://github.com/Karthijay18/APILEECH"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:55:44Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 27,
+        "kind": "full_project_search",
+        "owner": "hajdu-patrik",
+        "repo": "ARSM",
+        "url": "https://github.com/hajdu-patrik/ARSM"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:57:41Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "86e7739653aad3109c98c558b2a2aad1a163a581",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 54,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 60,
+      "full_history_human_pr_count": 54,
+      "full_history_merged_pr_count": 58,
+      "languages": {
+        "Blade": 27927,
+        "PHP": 3338327,
+        "TypeScript": 1794921
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 181.21443287037036,
+      "project_history_end": "2026-09-07T17:41:34Z",
+      "project_history_months": 5.95365693208609,
+      "project_history_start": "2026-03-10T12:32:47Z",
+      "rejection_reason": "",
+      "repository_id": 1164347520,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 28,
+        "kind": "full_project_search",
+        "owner": "abetwothree",
+        "repo": "laravel-ts-publish",
+        "url": "https://github.com/abetwothree/laravel-ts-publish"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:57:41Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 54,
+          "source_sampled_pr_count": 54,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-07T17:41:34Z",
+            "name": "FULL",
+            "start": "2026-03-10T12:32:47Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:57:44Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "project_history_outside_90_548_days",
+      "full_history_human_pr_count": 14,
+      "full_history_merged_pr_count": 14,
+      "profile_quality_pass": false,
+      "project_history_days": 3.8749421296296296,
+      "project_history_end": "2025-11-26T12:49:30Z",
+      "project_history_months": 0.12730816031637388,
+      "project_history_start": "2025-11-22T15:49:35Z",
+      "rejection_reason": "project_history_outside_90_548_days",
+      "source": {
+        "domain": "backend_api",
+        "index": 29,
+        "kind": "full_project_search",
+        "owner": "jeankassio",
+        "repo": "ZapToBox-Whatsapp-Api",
+        "url": "https://github.com/jeankassio/ZapToBox-Whatsapp-Api"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:57:47Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 30,
+        "kind": "full_project_search",
+        "owner": "ckdnd99",
+        "repo": "node-express-drizzle-api",
+        "url": "https://github.com/ckdnd99/node-express-drizzle-api"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:57:49Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 31,
+        "kind": "full_project_search",
+        "owner": "levvolkov",
+        "repo": "github_stats",
+        "url": "https://github.com/levvolkov/github_stats"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:57:52Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 32,
+        "kind": "full_project_search",
+        "owner": "VOIDBFD",
+        "repo": "Autism_Companian_Gen-Ai_Project_Kaggle",
+        "url": "https://github.com/VOIDBFD/Autism_Companian_Gen-Ai_Project_Kaggle"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T18:57:55Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 2,
+      "full_history_merged_pr_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "backend_api",
+        "index": 33,
+        "kind": "full_project_search",
+        "owner": "yuvraj0412s",
+        "repo": "ai-native-portfolio",
+        "url": "https://github.com/yuvraj0412s/ai-native-portfolio"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T18:58:58Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "e7bc4cb35014c6b1c6c959b089af19e169abbe44",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 1166,
+      "full_history_human_pr_count": 1109,
+      "full_history_merged_pr_count": 1111,
+      "languages": {
+        "C": 136142,
+        "C++": 358320,
+        "CMake": 66527,
+        "Dockerfile": 227808,
+        "HTML": 48509,
+        "Jinja": 523,
+        "Python": 45507404,
+        "Shell": 550729
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 186.62157407407406,
+      "project_history_end": "2026-09-09T18:46:53Z",
+      "project_history_months": 6.131304281694425,
+      "project_history_start": "2026-03-07T03:51:49Z",
+      "rejection_reason": "",
+      "repository_id": 1174916622,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 34,
+        "kind": "full_project_search",
+        "owner": "abicheck",
+        "repo": "abicheck",
+        "url": "https://github.com/abicheck/abicheck"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T18:58:58Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 1109,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T18:46:53Z",
+            "name": "FULL",
+            "start": "2026-03-07T03:51:49Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:01:18Z",
+      "default_branch": "master",
+      "default_branch_head_sha": "a068f9094d27a992f67900b564d211286dd33734",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 199,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 239,
+      "full_history_human_pr_count": 199,
+      "full_history_merged_pr_count": 229,
+      "languages": {
+        "CSS": 22327,
+        "Dockerfile": 4326,
+        "HTML": 37072,
+        "JavaScript": 1037033,
+        "PHP": 149207,
+        "PLpgSQL": 225693,
+        "Shell": 77181,
+        "TypeScript": 9269882
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 197.07021990740742,
+      "project_history_end": "2026-09-09T17:22:18Z",
+      "project_history_months": 6.4745862803255,
+      "project_history_start": "2026-02-24T15:41:11Z",
+      "rejection_reason": "",
+      "repository_id": 1104634812,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 35,
+        "kind": "full_project_search",
+        "owner": "profullstack",
+        "repo": "coinpayportal",
+        "url": "https://github.com/profullstack/coinpayportal"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:01:18Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 199,
+          "source_sampled_pr_count": 199,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T17:22:18Z",
+            "name": "FULL",
+            "start": "2026-02-24T15:41:11Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:16:50Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "github_repository_not_found_or_inaccessible",
+      "github_failure": {
+        "endpoint": "/repos/boatraceopenapi/programs/pulls",
+        "http_status": 404,
+        "reason": "github_repository_not_found_or_inaccessible",
+        "repository": "boatraceopenapi/programs",
+        "stage": "pull_request_discovery",
+        "timestamp": "2026-09-09T19:16:50Z"
+      },
+      "profile_quality_pass": false,
+      "rejection_endpoint": "/repos/boatraceopenapi/programs/pulls",
+      "rejection_http_status": 404,
+      "rejection_reason": "github_repository_not_found_or_inaccessible",
+      "rejection_stage": "pull_request_discovery",
+      "rejection_timestamp": "2026-09-09T19:16:50Z",
+      "repository": "boatraceopenapi/programs",
+      "source": {
+        "domain": "backend_api",
+        "index": 36,
+        "kind": "full_project_search",
+        "owner": "boatraceopenapi",
+        "repo": "programs",
+        "url": "https://github.com/boatraceopenapi/programs"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:16:52Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "github_repository_not_found_or_inaccessible",
+      "github_failure": {
+        "endpoint": "/repos/boatraceopenapi/results/pulls",
+        "http_status": 404,
+        "reason": "github_repository_not_found_or_inaccessible",
+        "repository": "boatraceopenapi/results",
+        "stage": "pull_request_discovery",
+        "timestamp": "2026-09-09T19:16:52Z"
+      },
+      "profile_quality_pass": false,
+      "rejection_endpoint": "/repos/boatraceopenapi/results/pulls",
+      "rejection_http_status": 404,
+      "rejection_reason": "github_repository_not_found_or_inaccessible",
+      "rejection_stage": "pull_request_discovery",
+      "rejection_timestamp": "2026-09-09T19:16:52Z",
+      "repository": "boatraceopenapi/results",
+      "source": {
+        "domain": "backend_api",
+        "index": 37,
+        "kind": "full_project_search",
+        "owner": "boatraceopenapi",
+        "repo": "results",
+        "url": "https://github.com/boatraceopenapi/results"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:18:01Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "0f5c99fd6cca782207b60e8aadb2942efd39fb93",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 1613,
+      "full_history_human_pr_count": 1521,
+      "full_history_merged_pr_count": 1592,
+      "languages": {
+        "CSS": 31084,
+        "Dockerfile": 514,
+        "JavaScript": 35331,
+        "Shell": 57601,
+        "TypeScript": 12752019
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 166.12902777777776,
+      "project_history_end": "2026-09-09T17:09:13Z",
+      "project_history_months": 5.458037873602555,
+      "project_history_start": "2026-03-27T14:03:25Z",
+      "rejection_reason": "",
+      "repository_id": 1192057748,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 38,
+        "kind": "full_project_search",
+        "owner": "buildinternet",
+        "repo": "releases",
+        "url": "https://github.com/buildinternet/releases"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:18:01Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 1521,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T17:09:13Z",
+            "name": "FULL",
+            "start": "2026-03-27T14:03:25Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:18:27Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "66b815fec78e0d34c85494a697162f0e41122c6f",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 33,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 48,
+      "full_history_human_pr_count": 33,
+      "full_history_merged_pr_count": 38,
+      "languages": {
+        "Python": 423357,
+        "Shell": 2844
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 243.90030092592593,
+      "project_history_end": "2026-09-09T19:16:40Z",
+      "project_history_months": 8.013151570461632,
+      "project_history_start": "2026-01-08T21:40:14Z",
+      "rejection_reason": "",
+      "repository_id": 1130467676,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 39,
+        "kind": "full_project_search",
+        "owner": "MarketDataApp",
+        "repo": "sdk-py",
+        "url": "https://github.com/MarketDataApp/sdk-py"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:18:27Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 33,
+          "source_sampled_pr_count": 33,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T19:16:40Z",
+            "name": "FULL",
+            "start": "2026-01-08T21:40:14Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:19:01Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "8e91c4351eda49a7ffe5ae82b396af207ef67f1c",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 46,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 55,
+      "full_history_human_pr_count": 46,
+      "full_history_merged_pr_count": 46,
+      "languages": {},
+      "profile_quality_pass": "",
+      "project_history_days": 161.1624537037037,
+      "project_history_end": "2026-01-16T16:09:59Z",
+      "project_history_months": 5.294865008745912,
+      "project_history_start": "2025-08-08T12:16:03Z",
+      "rejection_reason": "",
+      "repository_id": 1017910139,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 40,
+        "kind": "full_project_search",
+        "owner": "Micro-SaaS-Examples",
+        "repo": "Best-Micro-SaaS-Tools",
+        "url": "https://github.com/Micro-SaaS-Examples/Best-Micro-SaaS-Tools"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:19:01Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 46,
+          "source_sampled_pr_count": 46,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-01-16T16:09:59Z",
+            "name": "FULL",
+            "start": "2025-08-08T12:16:03Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T19:19:03Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "frontend",
+        "index": 41,
+        "kind": "full_project_search",
+        "owner": "tomasburkett",
+        "repo": "banana-sprite",
+        "url": "https://github.com/tomasburkett/banana-sprite"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:19:05Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "github_repository_not_found_or_inaccessible",
+      "github_failure": {
+        "endpoint": "/repos/yatori-dev/yatori-free/pulls",
+        "http_status": 404,
+        "reason": "github_repository_not_found_or_inaccessible",
+        "repository": "yatori-dev/yatori-free",
+        "stage": "pull_request_discovery",
+        "timestamp": "2026-09-09T19:19:05Z"
+      },
+      "profile_quality_pass": false,
+      "rejection_endpoint": "/repos/yatori-dev/yatori-free/pulls",
+      "rejection_http_status": 404,
+      "rejection_reason": "github_repository_not_found_or_inaccessible",
+      "rejection_stage": "pull_request_discovery",
+      "rejection_timestamp": "2026-09-09T19:19:05Z",
+      "repository": "yatori-dev/yatori-free",
+      "source": {
+        "domain": "frontend",
+        "index": 42,
+        "kind": "full_project_search",
+        "owner": "yatori-dev",
+        "repo": "yatori-free",
+        "url": "https://github.com/yatori-dev/yatori-free"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:20:05Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "29922a25504f94e212a7a14b95915c0142c190ab",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 81,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 180,
+      "full_history_human_pr_count": 81,
+      "full_history_merged_pr_count": 179,
+      "languages": {
+        "CSS": 16779,
+        "Dockerfile": 2546,
+        "Handlebars": 18968,
+        "Java": 26518,
+        "JavaScript": 3010,
+        "Python": 14898,
+        "SCSS": 5694,
+        "TypeScript": 899036
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 463.9437731481481,
+      "project_history_end": "2026-09-09T15:41:19Z",
+      "project_history_months": 15.242505893984333,
+      "project_history_start": "2025-06-02T17:02:17Z",
+      "rejection_reason": "",
+      "repository_id": 967420615,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 43,
+        "kind": "full_project_search",
+        "owner": "omercikan",
+        "repo": "nexthire",
+        "url": "https://github.com/omercikan/nexthire"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:20:05Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 81,
+          "source_sampled_pr_count": 81,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T15:41:19Z",
+            "name": "FULL",
+            "start": "2025-06-02T17:02:17Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:21:31Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "8697a55e96922cf7a93751b39a9f19eacc09dc16",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 2391,
+      "full_history_human_pr_count": 1871,
+      "full_history_merged_pr_count": 2119,
+      "languages": {
+        "CSS": 4543,
+        "HTML": 1087657,
+        "JavaScript": 47423,
+        "Python": 12070,
+        "SCSS": 609494,
+        "Shell": 5966,
+        "TypeScript": 5531157
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 482.995,
+      "project_history_end": "2026-09-09T15:09:01Z",
+      "project_history_months": 15.868418891170432,
+      "project_history_start": "2025-05-14T15:16:13Z",
+      "rejection_reason": "",
+      "repository_id": 982829384,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 44,
+        "kind": "full_project_search",
+        "owner": "siemens",
+        "repo": "element",
+        "url": "https://github.com/siemens/element"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:21:31Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 1871,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T15:09:01Z",
+            "name": "FULL",
+            "start": "2025-05-14T15:16:13Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T19:21:34Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 3,
+      "full_history_merged_pr_count": 5,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "frontend",
+        "index": 45,
+        "kind": "full_project_search",
+        "owner": "WJDDesigns",
+        "repo": "Ultra-Card",
+        "url": "https://github.com/WJDDesigns/Ultra-Card"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:21:58Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "5132177057666e1dfc3520c16f7604f57958d6d6",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 26,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 35,
+      "full_history_human_pr_count": 26,
+      "full_history_merged_pr_count": 26,
+      "languages": {
+        "CSS": 104230,
+        "HTML": 54,
+        "JavaScript": 153754,
+        "MDX": 37488,
+        "PLpgSQL": 64031,
+        "Shell": 3269,
+        "TypeScript": 23066663
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 213.35577546296295,
+      "project_history_end": "2026-09-09T13:53:10Z",
+      "project_history_months": 7.009635333485436,
+      "project_history_start": "2026-02-08T05:20:51Z",
+      "rejection_reason": "",
+      "repository_id": 1147330830,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 46,
+        "kind": "full_project_search",
+        "owner": "AnxForever",
+        "repo": "stylekit",
+        "url": "https://github.com/AnxForever/stylekit"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:21:58Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 26,
+          "source_sampled_pr_count": 26,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T13:53:10Z",
+            "name": "FULL",
+            "start": "2026-02-08T05:20:51Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:23:32Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "205a09dba8918f98490412b7babcf4911b32869e",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 119,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 276,
+      "full_history_human_pr_count": 119,
+      "full_history_merged_pr_count": 256,
+      "languages": {
+        "JavaScript": 46194,
+        "Shell": 830,
+        "TypeScript": 431670
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 366.89680555555555,
+      "project_history_end": "2026-09-09T13:00:44Z",
+      "project_history_months": 12.054104494638375,
+      "project_history_start": "2025-09-07T15:29:20Z",
+      "rejection_reason": "",
+      "repository_id": 1050279764,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 47,
+        "kind": "full_project_search",
+        "owner": "BRIKEV",
+        "repo": "twd",
+        "url": "https://github.com/BRIKEV/twd"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:23:32Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 119,
+          "source_sampled_pr_count": 119,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T13:00:44Z",
+            "name": "FULL",
+            "start": "2025-09-07T15:29:20Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T19:23:34Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "frontend",
+        "index": 48,
+        "kind": "full_project_search",
+        "owner": "beixiyo",
+        "repo": "react-tool",
+        "url": "https://github.com/beixiyo/react-tool"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:24:58Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "21c2b764e5c4758109e68d2ae244015f59b034c4",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 116,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 236,
+      "full_history_human_pr_count": 116,
+      "full_history_merged_pr_count": 211,
+      "languages": {
+        "Astro": 31359,
+        "CSS": 7190,
+        "JavaScript": 75,
+        "TypeScript": 60715
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 409.73068287037034,
+      "project_history_end": "2026-08-18T07:35:27Z",
+      "project_history_months": 13.461377671305803,
+      "project_history_start": "2025-07-04T14:03:16Z",
+      "rejection_reason": "",
+      "repository_id": 1013801311,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 49,
+        "kind": "full_project_search",
+        "owner": "leo-lem",
+        "repo": "leolem.dev",
+        "url": "https://github.com/leo-lem/leolem.dev"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:24:58Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 116,
+          "source_sampled_pr_count": 116,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-08-18T07:35:27Z",
+            "name": "FULL",
+            "start": "2025-07-04T14:03:16Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:25:36Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "c3b53027d0ffccfdde27ae8fefce5a9710bfc1fe",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 43,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 196,
+      "full_history_human_pr_count": 43,
+      "full_history_merged_pr_count": 148,
+      "languages": {
+        "CSS": 13214,
+        "Dockerfile": 2176,
+        "JavaScript": 489,
+        "Shell": 444,
+        "TypeScript": 374770,
+        "Vue": 173277
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 431.04340277777777,
+      "project_history_end": "2026-09-08T12:21:19Z",
+      "project_history_months": 14.16159023499886,
+      "project_history_start": "2025-07-04T11:18:49Z",
+      "rejection_reason": "",
+      "repository_id": 952618498,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 50,
+        "kind": "full_project_search",
+        "owner": "DCC-BS",
+        "repo": "text-mate-frontend",
+        "url": "https://github.com/DCC-BS/text-mate-frontend"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:25:36Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 43,
+          "source_sampled_pr_count": 43,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T12:21:19Z",
+            "name": "FULL",
+            "start": "2025-07-04T11:18:49Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:27:34Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "73bf030609ac6d7a1d8be92b849a7f605669743a",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 132,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 137,
+      "full_history_human_pr_count": 132,
+      "full_history_merged_pr_count": 132,
+      "languages": {
+        "CSS": 67791,
+        "Dockerfile": 184,
+        "HTML": 515384,
+        "JavaScript": 626235,
+        "PowerShell": 3725,
+        "Python": 12235,
+        "Shell": 6216,
+        "TypeScript": 6795054
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 168.08355324074074,
+      "project_history_end": "2026-09-08T23:06:41Z",
+      "project_history_months": 5.52225226252947,
+      "project_history_start": "2026-03-24T21:06:22Z",
+      "rejection_reason": "",
+      "repository_id": 1189684552,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 51,
+        "kind": "full_project_search",
+        "owner": "memi-design",
+        "repo": "memi",
+        "url": "https://github.com/memi-design/memi"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:27:34Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 132,
+          "source_sampled_pr_count": 132,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T23:06:41Z",
+            "name": "FULL",
+            "start": "2026-03-24T21:06:22Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:28:38Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "b1d52706b710981f341c18f4ebb08e3b03d73251",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 53,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 697,
+      "full_history_human_pr_count": 53,
+      "full_history_merged_pr_count": 678,
+      "languages": {
+        "CSS": 165326,
+        "JavaScript": 21618,
+        "TypeScript": 412695,
+        "Vue": 196024
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 450.1175578703704,
+      "project_history_end": "2026-08-12T08:07:57Z",
+      "project_history_months": 14.788256521408472,
+      "project_history_start": "2025-05-19T05:18:40Z",
+      "rejection_reason": "",
+      "repository_id": 983970812,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 52,
+        "kind": "full_project_search",
+        "owner": "line",
+        "repo": "abc-def",
+        "url": "https://github.com/line/abc-def"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:28:38Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 53,
+          "source_sampled_pr_count": 53,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-08-12T08:07:57Z",
+            "name": "FULL",
+            "start": "2025-05-19T05:18:40Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:29:05Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "55cbbca7ff37167a3d737f8d2eeb0b2068a92760",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 35,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 46,
+      "full_history_human_pr_count": 35,
+      "full_history_merged_pr_count": 43,
+      "languages": {
+        "TypeScript": 214122
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 331.9223148148148,
+      "project_history_end": "2026-06-26T14:08:47Z",
+      "project_history_months": 10.905045250589398,
+      "project_history_start": "2025-07-29T16:00:39Z",
+      "rejection_reason": "",
+      "repository_id": 972408074,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 53,
+        "kind": "full_project_search",
+        "owner": "workos",
+        "repo": "authkit-session",
+        "url": "https://github.com/workos/authkit-session"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:29:05Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 35,
+          "source_sampled_pr_count": 35,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-06-26T14:08:47Z",
+            "name": "FULL",
+            "start": "2025-07-29T16:00:39Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:29:56Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "00e9677bfe82ae586cba1974531e95d76050f950",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 337,
+      "full_history_human_pr_count": 324,
+      "full_history_merged_pr_count": 326,
+      "languages": {
+        "CSS": 15111,
+        "JavaScript": 16479,
+        "PLpgSQL": 22684,
+        "PowerShell": 844,
+        "TypeScript": 4694453
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 278.04356481481483,
+      "project_history_end": "2026-09-08T19:50:37Z",
+      "project_history_months": 9.134901513423074,
+      "project_history_start": "2025-12-04T18:47:53Z",
+      "rejection_reason": "",
+      "repository_id": 987215447,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 54,
+        "kind": "full_project_search",
+        "owner": "DevLoversTeam",
+        "repo": "devlovers.net",
+        "url": "https://github.com/DevLoversTeam/devlovers.net"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:29:56Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 324,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T19:50:37Z",
+            "name": "FULL",
+            "start": "2025-12-04T18:47:53Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:30:33Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "2c6de82ed81f261a065d47fe31c1e3ecc7cf1d19",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 47,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 72,
+      "full_history_human_pr_count": 47,
+      "full_history_merged_pr_count": 58,
+      "languages": {
+        "JavaScript": 221,
+        "TypeScript": 188577
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 536.0388194444445,
+      "project_history_end": "2026-09-08T18:18:46Z",
+      "project_history_months": 17.611131644992014,
+      "project_history_start": "2025-03-21T17:22:52Z",
+      "rejection_reason": "",
+      "repository_id": 946221876,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 55,
+        "kind": "full_project_search",
+        "owner": "workos",
+        "repo": "authkit-react-router",
+        "url": "https://github.com/workos/authkit-react-router"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:30:33Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 47,
+          "source_sampled_pr_count": 47,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T18:18:46Z",
+            "name": "FULL",
+            "start": "2025-03-21T17:22:52Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T19:30:35Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "frontend",
+        "index": 56,
+        "kind": "full_project_search",
+        "owner": "pratikshadake",
+        "repo": "aliveui",
+        "url": "https://github.com/pratikshadake/aliveui"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:31:15Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "00fc5053ff1be67c399a0e40173aba4c7f64924a",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 44,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 68,
+      "full_history_human_pr_count": 44,
+      "full_history_merged_pr_count": 53,
+      "languages": {
+        "CSS": 17088,
+        "Dockerfile": 1213,
+        "JavaScript": 60095,
+        "Shell": 5100,
+        "TypeScript": 5090788
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 98.18835648148148,
+      "project_history_end": "2026-09-08T09:21:48Z",
+      "project_history_months": 3.225900828960377,
+      "project_history_start": "2026-06-02T04:50:34Z",
+      "rejection_reason": "",
+      "repository_id": 1219736395,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 57,
+        "kind": "full_project_search",
+        "owner": "ShivaBhattacharjee",
+        "repo": "Tokokino",
+        "url": "https://github.com/ShivaBhattacharjee/Tokokino"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:31:15Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 44,
+          "source_sampled_pr_count": 44,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T09:21:48Z",
+            "name": "FULL",
+            "start": "2026-06-02T04:50:34Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:31:59Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "10a49d0c60375b04c606a5690d87f06abdb98d0e",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 249,
+      "full_history_human_pr_count": 241,
+      "full_history_merged_pr_count": 241,
+      "languages": {
+        "CSS": 5440,
+        "HTML": 3182,
+        "JavaScript": 10988,
+        "Shell": 40,
+        "TypeScript": 793942
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 131.59498842592592,
+      "project_history_end": "2026-09-08T08:44:24Z",
+      "project_history_months": 4.323449311734732,
+      "project_history_start": "2026-04-29T18:27:37Z",
+      "rejection_reason": "",
+      "repository_id": 1222970598,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 58,
+        "kind": "full_project_search",
+        "owner": "lithosui",
+        "repo": "Lithos_UI",
+        "url": "https://github.com/lithosui/Lithos_UI"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:31:59Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 241,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T08:44:24Z",
+            "name": "FULL",
+            "start": "2026-04-29T18:27:37Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:32:20Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "344041639f166465f62d9c1d01ddffea5ed9e223",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 16,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 16,
+      "full_history_human_pr_count": 16,
+      "full_history_merged_pr_count": 16,
+      "languages": {
+        "CSS": 8598,
+        "JavaScript": 92,
+        "TypeScript": 428086
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 274.55413194444446,
+      "project_history_end": "2026-09-08T06:16:24Z",
+      "project_history_months": 9.020258955053617,
+      "project_history_start": "2025-12-07T16:58:27Z",
+      "rejection_reason": "",
+      "repository_id": 1070558131,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 59,
+        "kind": "full_project_search",
+        "owner": "diip3sh",
+        "repo": "portfolio",
+        "url": "https://github.com/diip3sh/portfolio"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:32:20Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 16,
+          "source_sampled_pr_count": 16,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T06:16:24Z",
+            "name": "FULL",
+            "start": "2025-12-07T16:58:27Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "initial_001_060",
+      "cheap_prescreen_pass": "",
+      "collection_timestamp": "2026-09-09T19:32:22Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "source": {
+        "domain": "frontend",
+        "index": 60,
+        "kind": "full_project_search",
+        "owner": "banastas",
+        "repo": "comics.banast.as",
+        "url": "https://github.com/banastas/comics.banast.as"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T19:59:27Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "0f0ab55c10ce531e8a81f66a61a2ce19fb35b21c",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 425,
+      "full_history_human_pr_count": 413,
+      "full_history_merged_pr_count": 413,
+      "languages": {
+        "HTML": 18283,
+        "Python": 31813
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 140.40283564814814,
+      "project_history_end": "2026-09-09T19:56:50Z",
+      "project_history_months": 4.612824169138337,
+      "project_history_start": "2026-04-22T10:16:45Z",
+      "rejection_reason": "",
+      "repository_id": 1187696386,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 61,
+        "kind": "full_project_search",
+        "owner": "Yoonmoonsik",
+        "repo": "bg3dnd",
+        "url": "https://github.com/Yoonmoonsik/bg3dnd"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T19:59:27Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 413,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T19:56:50Z",
+            "name": "FULL",
+            "start": "2026-04-22T10:16:45Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:59:30Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 42,
+      "full_history_merged_pr_count": 42,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 62,
+        "kind": "full_project_search",
+        "owner": "dp-web4",
+        "repo": "SAGE",
+        "url": "https://github.com/dp-web4/SAGE"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:59:32Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 12,
+      "full_history_merged_pr_count": 12,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 63,
+        "kind": "full_project_search",
+        "owner": "Hehejie1",
+        "repo": "NoteMeld",
+        "url": "https://github.com/Hehejie1/NoteMeld"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:59:33Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 64,
+        "kind": "full_project_search",
+        "owner": "BrkBuilds",
+        "repo": "Canvas-Downloader",
+        "url": "https://github.com/BrkBuilds/Canvas-Downloader"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:59:35Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 65,
+        "kind": "full_project_search",
+        "owner": "dgp1000",
+        "repo": "pi-nmos-st2110",
+        "url": "https://github.com/dgp1000/pi-nmos-st2110"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:59:37Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 1,
+      "full_history_merged_pr_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 66,
+        "kind": "full_project_search",
+        "owner": "RollingStonie",
+        "repo": "MightyOS",
+        "url": "https://github.com/RollingStonie/MightyOS"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T19:59:38Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 67,
+        "kind": "full_project_search",
+        "owner": "tejassunny",
+        "repo": "chinese-novelist-skill",
+        "url": "https://github.com/tejassunny/chinese-novelist-skill"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:01:19Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "083fa12c7b6bea23a245c35e069680893cf21527",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 2732,
+      "full_history_human_pr_count": 2574,
+      "full_history_merged_pr_count": 2574,
+      "languages": {
+        "Dockerfile": 7909,
+        "Python": 32246587,
+        "Shell": 15164
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 184.7400925925926,
+      "project_history_end": "2026-09-09T19:55:49Z",
+      "project_history_months": 6.069489695033843,
+      "project_history_start": "2026-03-09T02:10:05Z",
+      "rejection_reason": "",
+      "repository_id": 1162027622,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 68,
+        "kind": "full_project_search",
+        "owner": "strands-labs",
+        "repo": "robots",
+        "url": "https://github.com/strands-labs/robots"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:01:19Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 2574,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T19:55:49Z",
+            "name": "FULL",
+            "start": "2026-03-09T02:10:05Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:02:10Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "f9b409892338edff263382606e2becf725ec85c7",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 530,
+      "full_history_human_pr_count": 326,
+      "full_history_merged_pr_count": 414,
+      "languages": {
+        "CSS": 6636,
+        "Dockerfile": 3238,
+        "HTML": 37186,
+        "JavaScript": 11743,
+        "Makefile": 5877,
+        "Python": 628056,
+        "Shell": 17024
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 329.10291666666666,
+      "project_history_end": "2026-09-09T19:55:46Z",
+      "project_history_months": 10.812416153319644,
+      "project_history_start": "2025-10-15T17:27:34Z",
+      "rejection_reason": "",
+      "repository_id": 1076975384,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "python_library",
+        "index": 69,
+        "kind": "full_project_search",
+        "owner": "rhel-lightspeed",
+        "repo": "linux-mcp-server",
+        "url": "https://github.com/rhel-lightspeed/linux-mcp-server"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:02:10Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 326,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T19:55:46Z",
+            "name": "FULL",
+            "start": "2025-10-15T17:27:34Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:02:12Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 59,
+      "full_history_merged_pr_count": 59,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 70,
+        "kind": "full_project_search",
+        "owner": "Greyyy-HJC",
+        "repo": "lamet-agent",
+        "url": "https://github.com/Greyyy-HJC/lamet-agent"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:02:14Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 2,
+      "full_history_merged_pr_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 71,
+        "kind": "full_project_search",
+        "owner": "oteomamo",
+        "repo": "SALT",
+        "url": "https://github.com/oteomamo/SALT"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "closed_pr_count_at_limit": 100000,
+      "collection_timestamp": "2026-09-09T20:31:21Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "closed_pr_history_page_limit_reached",
+      "profile_quality_pass": false,
+      "rejection_reason": "closed_pr_history_page_limit_reached",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 72,
+        "kind": "full_project_search",
+        "owner": "merge-demo",
+        "repo": "mergequeue-bazel",
+        "url": "https://github.com/merge-demo/mergequeue-bazel"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:31:24Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 22,
+      "full_history_merged_pr_count": 22,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 73,
+        "kind": "full_project_search",
+        "owner": "MoonlightByte",
+        "repo": "NeverEndingQuest",
+        "url": "https://github.com/MoonlightByte/NeverEndingQuest"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:31:26Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 74,
+        "kind": "full_project_search",
+        "owner": "abusaeeidx",
+        "repo": "BDxTV",
+        "url": "https://github.com/abusaeeidx/BDxTV"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:31:28Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "python_library",
+        "index": 75,
+        "kind": "full_project_search",
+        "owner": "w0ven",
+        "repo": "SnapSync",
+        "url": "https://github.com/w0ven/SnapSync"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:32:17Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "69125eee62d1178568902c2c960ff73341c0bfec",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 537,
+      "full_history_human_pr_count": 430,
+      "full_history_merged_pr_count": 443,
+      "languages": {
+        "Batchfile": 21404,
+        "C#": 20445,
+        "CSS": 33745,
+        "HTML": 156397,
+        "JavaScript": 52110,
+        "PowerShell": 2913,
+        "Python": 19532,
+        "Shell": 131098,
+        "TypeScript": 968574
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 349.3517939814815,
+      "project_history_end": "2026-09-09T17:00:24Z",
+      "project_history_months": 11.47767700965853,
+      "project_history_start": "2025-09-25T08:33:49Z",
+      "rejection_reason": "",
+      "repository_id": 1060011588,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "backend_api",
+        "index": 76,
+        "kind": "full_project_search",
+        "owner": "wso2",
+        "repo": "product-integrator",
+        "url": "https://github.com/wso2/product-integrator"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:32:17Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 430,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T17:00:24Z",
+            "name": "FULL",
+            "start": "2025-09-25T08:33:49Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:19Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 15,
+      "full_history_merged_pr_count": 15,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 77,
+        "kind": "full_project_search",
+        "owner": "thediymaker",
+        "repo": "obleth-gateway",
+        "url": "https://github.com/thediymaker/obleth-gateway"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:20Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "42b072f03489e5ffe04d87588bf0ef7baec1c2e9",
+      "detailed_collection_attempted": false,
+      "failure_reason": "insufficient_technical_activity",
+      "languages": {},
+      "profile_quality_pass": false,
+      "rejection_reason": "insufficient_technical_activity",
+      "rejection_stage": "cheap_repository_prescreen",
+      "repository_id": 1108646090,
+      "source": {
+        "domain": "backend_api",
+        "index": 78,
+        "kind": "full_project_search",
+        "owner": "Benjam1nCup",
+        "repo": "Robinhood-Trading-Bot-System",
+        "url": "https://github.com/Benjam1nCup/Robinhood-Trading-Bot-System"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:25Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 140,
+      "full_history_merged_pr_count": 249,
+      "plausible_human_contributor_count": 4,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 79,
+        "kind": "full_project_search",
+        "owner": "jentic",
+        "repo": "jentic-api-scorecard",
+        "url": "https://github.com/jentic/jentic-api-scorecard"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:30Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 140,
+      "full_history_merged_pr_count": 158,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 80,
+        "kind": "full_project_search",
+        "owner": "atomicassets",
+        "repo": "atomicassets-api",
+        "url": "https://github.com/atomicassets/atomicassets-api"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:37Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 406,
+      "full_history_merged_pr_count": 406,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 81,
+        "kind": "full_project_search",
+        "owner": "ccomb",
+        "repo": "volca",
+        "url": "https://github.com/ccomb/volca"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:38Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 82,
+        "kind": "full_project_search",
+        "owner": "Free-AI-Things",
+        "repo": "g4f-working",
+        "url": "https://github.com/Free-AI-Things/g4f-working"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:40Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 83,
+        "kind": "full_project_search",
+        "owner": "tigusigalpa",
+        "repo": "bingx-php",
+        "url": "https://github.com/tigusigalpa/bingx-php"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:42Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 51,
+      "full_history_merged_pr_count": 52,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 84,
+        "kind": "full_project_search",
+        "owner": "Viperisuseful",
+        "repo": "ViperCapture",
+        "url": "https://github.com/Viperisuseful/ViperCapture"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:44Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "backend_api",
+        "index": 85,
+        "kind": "full_project_search",
+        "owner": "teamtinvio",
+        "repo": "jaz-ai",
+        "url": "https://github.com/teamtinvio/jaz-ai"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:57Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 26,
+      "full_history_merged_pr_count": 519,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 86,
+        "kind": "full_project_search",
+        "owner": "sajanv88",
+        "repo": "full_stack_fastapi_react_template",
+        "url": "https://github.com/sajanv88/full_stack_fastapi_react_template"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:32:59Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 33,
+      "full_history_merged_pr_count": 33,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 87,
+        "kind": "full_project_search",
+        "owner": "Noineri",
+        "repo": "vibe_tavern",
+        "url": "https://github.com/Noineri/vibe_tavern"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:35:18Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "d1d4e8a5487cecd36a63d6a4615f495faeab9132",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 200,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 428,
+      "full_history_human_pr_count": 200,
+      "full_history_merged_pr_count": 312,
+      "languages": {
+        "CSS": 1015,
+        "Dockerfile": 392,
+        "HTML": 1441,
+        "JavaScript": 7171,
+        "Shell": 3471,
+        "TypeScript": 2200282
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 461.8709953703704,
+      "project_history_end": "2026-09-05T12:52:15Z",
+      "project_history_months": 15.174406418739068,
+      "project_history_start": "2025-05-31T15:58:01Z",
+      "rejection_reason": "",
+      "repository_id": 972294330,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 88,
+        "kind": "full_project_search",
+        "owner": "Nerivec",
+        "repo": "zigbee2mqtt-windfront",
+        "url": "https://github.com/Nerivec/zigbee2mqtt-windfront"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:35:18Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 200,
+          "source_sampled_pr_count": 200,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-05T12:52:15Z",
+            "name": "FULL",
+            "start": "2025-05-31T15:58:01Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:37:28Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "8de44dadf199580ba9b09a5cc5430525be803a21",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 190,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 559,
+      "full_history_human_pr_count": 190,
+      "full_history_merged_pr_count": 457,
+      "languages": {
+        "CSS": 26247,
+        "HTML": 18463,
+        "JavaScript": 14351,
+        "Shell": 7805,
+        "TypeScript": 828209
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 451.6679050925926,
+      "project_history_end": "2026-09-07T07:19:25Z",
+      "project_history_months": 14.839191953760743,
+      "project_history_start": "2025-06-12T15:17:38Z",
+      "rejection_reason": "",
+      "repository_id": 1000661181,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "frontend",
+        "index": 89,
+        "kind": "full_project_search",
+        "owner": "OpenListTeam",
+        "repo": "OpenList-Frontend",
+        "url": "https://github.com/OpenListTeam/OpenList-Frontend"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:37:28Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 190,
+          "source_sampled_pr_count": 190,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-07T07:19:25Z",
+            "name": "FULL",
+            "start": "2025-06-12T15:17:38Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:30Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 11,
+      "full_history_merged_pr_count": 11,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 90,
+        "kind": "full_project_search",
+        "owner": "dogxii",
+        "repo": "iFace",
+        "url": "https://github.com/dogxii/iFace"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:31Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 91,
+        "kind": "full_project_search",
+        "owner": "ChenZiHong-Gavin",
+        "repo": "weekly-vibe-coding",
+        "url": "https://github.com/ChenZiHong-Gavin/weekly-vibe-coding"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:40Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 32,
+      "full_history_merged_pr_count": 278,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 92,
+        "kind": "full_project_search",
+        "owner": "herokwon",
+        "repo": "framix",
+        "url": "https://github.com/herokwon/framix"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:42Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 13,
+      "full_history_merged_pr_count": 13,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 93,
+        "kind": "full_project_search",
+        "owner": "patrickkuei",
+        "repo": "CyberUI",
+        "url": "https://github.com/patrickkuei/CyberUI"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:44Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 5,
+      "full_history_merged_pr_count": 5,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 94,
+        "kind": "full_project_search",
+        "owner": "elements-kit",
+        "repo": "elements-kit",
+        "url": "https://github.com/elements-kit/elements-kit"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:46Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 10,
+      "full_history_merged_pr_count": 10,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 95,
+        "kind": "full_project_search",
+        "owner": "witqq",
+        "repo": "spreadsheet",
+        "url": "https://github.com/witqq/spreadsheet"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:47Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 96,
+        "kind": "full_project_search",
+        "owner": "SkyDev16",
+        "repo": "Merry-Christmas-crypto-store",
+        "url": "https://github.com/SkyDev16/Merry-Christmas-crypto-store"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:49Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 5,
+      "full_history_merged_pr_count": 5,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 97,
+        "kind": "full_project_search",
+        "owner": "as9978",
+        "repo": "designfit",
+        "url": "https://github.com/as9978/designfit"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:51Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 1,
+      "full_history_merged_pr_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 98,
+        "kind": "full_project_search",
+        "owner": "pdanpdan",
+        "repo": "virtual-scroll",
+        "url": "https://github.com/pdanpdan/virtual-scroll"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:53Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 15,
+      "full_history_merged_pr_count": 15,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 99,
+        "kind": "full_project_search",
+        "owner": "cwklurks",
+        "repo": "codesprint",
+        "url": "https://github.com/cwklurks/codesprint"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:55Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 2,
+      "full_history_merged_pr_count": 12,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 100,
+        "kind": "full_project_search",
+        "owner": "arvindrk",
+        "repo": "extract-design-system",
+        "url": "https://github.com/arvindrk/extract-design-system"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:37:58Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 2,
+      "full_history_merged_pr_count": 6,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 101,
+        "kind": "full_project_search",
+        "owner": "netgoat-xyz",
+        "repo": "frontend",
+        "url": "https://github.com/netgoat-xyz/frontend"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:00Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "project_history_outside_90_548_days",
+      "full_history_human_pr_count": 29,
+      "full_history_merged_pr_count": 29,
+      "profile_quality_pass": false,
+      "project_history_days": 48.117337962962964,
+      "project_history_end": "2025-10-26T14:04:49Z",
+      "project_history_months": 1.580857099399194,
+      "project_history_start": "2025-09-08T11:15:51Z",
+      "rejection_reason": "project_history_outside_90_548_days",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 102,
+        "kind": "full_project_search",
+        "owner": "theopensourceworld",
+        "repo": "open-source-world",
+        "url": "https://github.com/theopensourceworld/open-source-world"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:02Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 103,
+        "kind": "full_project_search",
+        "owner": "msabitov",
+        "repo": "effcss",
+        "url": "https://github.com/msabitov/effcss"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:06Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 11,
+      "full_history_merged_pr_count": 111,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 104,
+        "kind": "full_project_search",
+        "owner": "oberryjs",
+        "repo": "oBerry",
+        "url": "https://github.com/oberryjs/oBerry"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:08Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 18,
+      "full_history_merged_pr_count": 19,
+      "plausible_human_contributor_count": 4,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "frontend",
+        "index": 105,
+        "kind": "full_project_search",
+        "owner": "theexperiencecompany",
+        "repo": "gaia-ui",
+        "url": "https://github.com/theexperiencecompany/gaia-ui"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:10Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 12,
+      "full_history_merged_pr_count": 12,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 106,
+        "kind": "full_project_search",
+        "owner": "max-rh",
+        "repo": "sshelf",
+        "url": "https://github.com/max-rh/sshelf"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:12Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 54,
+      "full_history_merged_pr_count": 63,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 107,
+        "kind": "full_project_search",
+        "owner": "derekwisong",
+        "repo": "datui",
+        "url": "https://github.com/derekwisong/datui"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:16Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 172,
+      "full_history_merged_pr_count": 172,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 108,
+        "kind": "full_project_search",
+        "owner": "wshm-dev",
+        "repo": "wshm",
+        "url": "https://github.com/wshm-dev/wshm"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:28Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 632,
+      "full_history_merged_pr_count": 634,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 109,
+        "kind": "full_project_search",
+        "owner": "arrrrny",
+        "repo": "zuraffa",
+        "url": "https://github.com/arrrrny/zuraffa"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:38:34Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 255,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 110,
+        "kind": "full_project_search",
+        "owner": "monkescience",
+        "repo": "yeet",
+        "url": "https://github.com/monkescience/yeet"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:40:30Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "946e60f0d61ff427d52ddc6503575e7a19b3d722",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 3334,
+      "full_history_human_pr_count": 2897,
+      "full_history_merged_pr_count": 3077,
+      "languages": {
+        "C#": 3623599,
+        "CSS": 101207,
+        "Dockerfile": 4334,
+        "HTML": 91671,
+        "JavaScript": 4915008,
+        "Python": 89553,
+        "Rust": 11586174,
+        "Shell": 75534,
+        "TypeScript": 48028528
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 240.51310185185184,
+      "project_history_end": "2026-09-09T20:32:14Z",
+      "project_history_months": 7.90186782264811,
+      "project_history_start": "2026-01-12T08:13:22Z",
+      "rejection_reason": "",
+      "repository_id": 1131742715,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 111,
+        "kind": "full_project_search",
+        "owner": "LTplus-AG",
+        "repo": "ifc-lite",
+        "url": "https://github.com/LTplus-AG/ifc-lite"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:40:30Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 2897,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T20:32:14Z",
+            "name": "FULL",
+            "start": "2026-01-12T08:13:22Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:40:34Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 30,
+      "full_history_merged_pr_count": 80,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 112,
+        "kind": "full_project_search",
+        "owner": "wraps-team",
+        "repo": "wraps",
+        "url": "https://github.com/wraps-team/wraps"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:40:52Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "project_history_outside_90_548_days",
+      "full_history_human_pr_count": 1162,
+      "full_history_merged_pr_count": 1162,
+      "profile_quality_pass": false,
+      "project_history_days": 48.89559027777778,
+      "project_history_end": "2026-09-09T20:28:10Z",
+      "project_history_months": 1.6064259639516314,
+      "project_history_start": "2026-07-22T22:58:31Z",
+      "rejection_reason": "project_history_outside_90_548_days",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 113,
+        "kind": "full_project_search",
+        "owner": "romp-on",
+        "repo": "romp",
+        "url": "https://github.com/romp-on/romp"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:40:57Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 214,
+      "full_history_merged_pr_count": 214,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 114,
+        "kind": "full_project_search",
+        "owner": "oneshot-agent",
+        "repo": "oneshot-gtm",
+        "url": "https://github.com/oneshot-agent/oneshot-gtm"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:40:58Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 115,
+        "kind": "full_project_search",
+        "owner": "igr290",
+        "repo": "XHS_Business_Idea_Validator",
+        "url": "https://github.com/igr290/XHS_Business_Idea_Validator"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:41:03Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 197,
+      "full_history_merged_pr_count": 197,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 116,
+        "kind": "full_project_search",
+        "owner": "AruNi-01",
+        "repo": "atmos",
+        "url": "https://github.com/AruNi-01/atmos"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:41:04Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 117,
+        "kind": "full_project_search",
+        "owner": "Rych156",
+        "repo": "PEAnalyzer",
+        "url": "https://github.com/Rych156/PEAnalyzer"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:41:06Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 27,
+      "full_history_merged_pr_count": 27,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 118,
+        "kind": "full_project_search",
+        "owner": "BA-CalderonMorales",
+        "repo": "agent-harness",
+        "url": "https://github.com/BA-CalderonMorales/agent-harness"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:41:16Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 540,
+      "full_history_merged_pr_count": 540,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 119,
+        "kind": "full_project_search",
+        "owner": "SmooAI",
+        "repo": "smooth",
+        "url": "https://github.com/SmooAI/smooth"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:42:55Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 7091,
+      "full_history_merged_pr_count": 7149,
+      "plausible_human_contributor_count": 4,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 120,
+        "kind": "full_project_search",
+        "owner": "Extra-Chill",
+        "repo": "homeboy",
+        "url": "https://github.com/Extra-Chill/homeboy"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:43:59Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "ef4755be3fc47fb4cf7658e32503a5c39c01806b",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 888,
+      "full_history_human_pr_count": 839,
+      "full_history_merged_pr_count": 848,
+      "languages": {
+        "CSS": 260239,
+        "Go": 5799863,
+        "HTML": 687146,
+        "JavaScript": 5461,
+        "Just": 4685,
+        "Shell": 37632,
+        "TypeScript": 7281533
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 191.06590277777778,
+      "project_history_end": "2026-09-09T20:13:05Z",
+      "project_history_months": 6.277319187770933,
+      "project_history_start": "2026-03-02T18:38:11Z",
+      "rejection_reason": "",
+      "repository_id": 1170681249,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 121,
+        "kind": "full_project_search",
+        "owner": "sahil87",
+        "repo": "run-kit",
+        "url": "https://github.com/sahil87/run-kit"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:43:59Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 839,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T20:13:05Z",
+            "name": "FULL",
+            "start": "2026-03-02T18:38:11Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:45:04Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "9e2af446e2522c20bbdd09687f21e8ef6e5b49c3",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 1174,
+      "full_history_human_pr_count": 1105,
+      "full_history_merged_pr_count": 1134,
+      "languages": {
+        "CSS": 98242,
+        "HTML": 5176,
+        "JavaScript": 80100,
+        "MDX": 247171,
+        "Shell": 28255,
+        "TypeScript": 23281930
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 96.26703703703704,
+      "project_history_end": "2026-09-09T19:43:57Z",
+      "project_history_months": 3.162777397520724,
+      "project_history_start": "2026-06-05T13:19:25Z",
+      "rejection_reason": "",
+      "repository_id": 1260291990,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 122,
+        "kind": "full_project_search",
+        "owner": "griffinwork40",
+        "repo": "agent-afk",
+        "url": "https://github.com/griffinwork40/agent-afk"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:45:04Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 1105,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T19:43:57Z",
+            "name": "FULL",
+            "start": "2026-06-05T13:19:25Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:45:23Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 1183,
+      "full_history_merged_pr_count": 1183,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 123,
+        "kind": "full_project_search",
+        "owner": "digitaldrywood",
+        "repo": "detent",
+        "url": "https://github.com/digitaldrywood/detent"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:45:42Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 1338,
+      "full_history_merged_pr_count": 1352,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 124,
+        "kind": "full_project_search",
+        "owner": "mmnto-ai",
+        "repo": "totem",
+        "url": "https://github.com/mmnto-ai/totem"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:46:01Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 1040,
+      "full_history_merged_pr_count": 1070,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 125,
+        "kind": "full_project_search",
+        "owner": "ivankuznetsov",
+        "repo": "hive",
+        "url": "https://github.com/ivankuznetsov/hive"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:46:56Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "c05f23153f33b4c4fa425a8011168cb70ffbf30d",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 60,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 529,
+      "full_history_human_pr_count": 476,
+      "full_history_merged_pr_count": 479,
+      "languages": {
+        "Dockerfile": 3749,
+        "HTML": 1389,
+        "JavaScript": 96026,
+        "PLpgSQL": 44808,
+        "Shell": 4713,
+        "TypeScript": 8314886
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 518.2030439814815,
+      "project_history_end": "2026-09-09T19:45:39Z",
+      "project_history_months": 17.025151342307403,
+      "project_history_start": "2025-04-09T14:53:16Z",
+      "rejection_reason": "",
+      "repository_id": 963266451,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 126,
+        "kind": "full_project_search",
+        "owner": "neondatabase",
+        "repo": "neon-pkgs",
+        "url": "https://github.com/neondatabase/neon-pkgs"
+      },
+      "technical_detail_mode": "deterministic_pr_file_detail_sample",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:46:56Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 476,
+          "source_sampled_pr_count": 60,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T19:45:39Z",
+            "name": "FULL",
+            "start": "2025-04-09T14:53:16Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:47:04Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 134,
+      "full_history_merged_pr_count": 134,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 127,
+        "kind": "full_project_search",
+        "owner": "coddy-project",
+        "repo": "coddy-agent",
+        "url": "https://github.com/coddy-project/coddy-agent"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:47:09Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 130,
+      "full_history_merged_pr_count": 132,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 128,
+        "kind": "full_project_search",
+        "owner": "phuetz",
+        "repo": "code-buddy",
+        "url": "https://github.com/phuetz/code-buddy"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:49:04Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "0e90720a0559036609037af2c0e580416341f798",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 155,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 173,
+      "full_history_human_pr_count": 155,
+      "full_history_merged_pr_count": 155,
+      "languages": {
+        "Batchfile": 1680,
+        "CSS": 280371,
+        "HTML": 411668,
+        "JavaScript": 5087276,
+        "Python": 21210,
+        "Shell": 4109,
+        "Vue": 1806
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 143.40652777777777,
+      "project_history_end": "2026-07-26T12:46:12Z",
+      "project_history_months": 4.711508099475245,
+      "project_history_start": "2026-03-05T03:00:48Z",
+      "rejection_reason": "",
+      "repository_id": 1130426505,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 129,
+        "kind": "full_project_search",
+        "owner": "SakuraByteCore",
+        "repo": "codexmate",
+        "url": "https://github.com/SakuraByteCore/codexmate"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:49:04Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 155,
+          "source_sampled_pr_count": 155,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-07-26T12:46:12Z",
+            "name": "FULL",
+            "start": "2026-03-05T03:00:48Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:49:05Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 7,
+      "full_history_merged_pr_count": 7,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 130,
+        "kind": "full_project_search",
+        "owner": "hamidi-dev",
+        "repo": "opentab",
+        "url": "https://github.com/hamidi-dev/opentab"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:49:07Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 13,
+      "full_history_merged_pr_count": 24,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 131,
+        "kind": "full_project_search",
+        "owner": "jvgomg",
+        "repo": "podkit",
+        "url": "https://github.com/jvgomg/podkit"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:49:10Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 41,
+      "full_history_merged_pr_count": 41,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 132,
+        "kind": "full_project_search",
+        "owner": "yllibed",
+        "repo": "repl",
+        "url": "https://github.com/yllibed/repl"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:50:11Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "de2db7484e2fb1e8e8d284a6584f6f38c4b88beb",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 82,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 87,
+      "full_history_human_pr_count": 82,
+      "full_history_merged_pr_count": 87,
+      "languages": {
+        "CSS": 5472,
+        "Dockerfile": 607,
+        "HTML": 8335,
+        "JavaScript": 16903,
+        "Makefile": 8516,
+        "Python": 1508803
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 147.82969907407409,
+      "project_history_end": "2026-09-09T20:15:41Z",
+      "project_history_months": 4.856827895657465,
+      "project_history_start": "2026-04-15T00:20:55Z",
+      "rejection_reason": "",
+      "repository_id": 1179439388,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 133,
+        "kind": "full_project_search",
+        "owner": "LAA-Software-Engineering",
+        "repo": "raglogs",
+        "url": "https://github.com/LAA-Software-Engineering/raglogs"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:50:11Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 82,
+          "source_sampled_pr_count": 82,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-09T20:15:41Z",
+            "name": "FULL",
+            "start": "2026-04-15T00:20:55Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": true,
+      "collection_timestamp": "2026-09-09T20:50:42Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "716fdd8f2ca77e0bbd3155e7b11f53adc771240f",
+      "detailed_collection_attempted": true,
+      "detailed_pr_count": 37,
+      "failure_reason": "",
+      "full_history_closed_pr_count": 44,
+      "full_history_human_pr_count": 37,
+      "full_history_merged_pr_count": 37,
+      "languages": {
+        "JavaScript": 3021,
+        "Shell": 2994
+      },
+      "profile_quality_pass": "",
+      "project_history_days": 144.94690972222222,
+      "project_history_end": "2026-09-08T11:49:07Z",
+      "project_history_months": 4.762116130504221,
+      "project_history_start": "2026-04-16T13:05:34Z",
+      "rejection_reason": "",
+      "repository_id": 1210382787,
+      "repository_overlap_with_existing_type5": 0,
+      "source": {
+        "domain": "developer_tooling",
+        "index": 134,
+        "kind": "full_project_search",
+        "owner": "LambdaTest",
+        "repo": "kane-cli",
+        "url": "https://github.com/LambdaTest/kane-cli"
+      },
+      "technical_detail_mode": "complete_pr_file_details",
+      "valid": true,
+      "windows": {
+        "FULL": {
+          "collected_at": "2026-09-09T20:50:42Z",
+          "observation_mode": "full_project",
+          "source_commit_count": 0,
+          "source_pr_total_count": 37,
+          "source_sampled_pr_count": 37,
+          "source_window_type": "complete_eligible_project_history",
+          "window": {
+            "end": "2026-09-08T11:49:07Z",
+            "name": "FULL",
+            "start": "2026-04-16T13:05:34Z"
+          }
+        }
+      }
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:50:44Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 1,
+      "full_history_merged_pr_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 135,
+        "kind": "full_project_search",
+        "owner": "LunarWerxs",
+        "repo": "NormWind",
+        "url": "https://github.com/LunarWerxs/NormWind"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:50:57Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 878,
+      "full_history_merged_pr_count": 878,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 136,
+        "kind": "full_project_search",
+        "owner": "atrislabs",
+        "repo": "atris",
+        "url": "https://github.com/atrislabs/atris"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:51:52Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 2843,
+      "full_history_merged_pr_count": 2852,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 137,
+        "kind": "full_project_search",
+        "owner": "app-vitals",
+        "repo": "shipwright",
+        "url": "https://github.com/app-vitals/shipwright"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:52:04Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 653,
+      "full_history_merged_pr_count": 686,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 138,
+        "kind": "full_project_search",
+        "owner": "traverse-framework",
+        "repo": "traverse",
+        "url": "https://github.com/traverse-framework/traverse"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:52:11Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 308,
+      "full_history_merged_pr_count": 308,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 139,
+        "kind": "full_project_search",
+        "owner": "robertjbass",
+        "repo": "spindb",
+        "url": "https://github.com/robertjbass/spindb"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:52:15Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 156,
+      "full_history_merged_pr_count": 164,
+      "plausible_human_contributor_count": 4,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 140,
+        "kind": "full_project_search",
+        "owner": "pacphi",
+        "repo": "agentic-kit",
+        "url": "https://github.com/pacphi/agentic-kit"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:52:48Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 1730,
+      "full_history_merged_pr_count": 1733,
+      "plausible_human_contributor_count": 1,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 141,
+        "kind": "full_project_search",
+        "owner": "dork-labs",
+        "repo": "dorkos",
+        "url": "https://github.com/dork-labs/dorkos"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:52:51Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 29,
+      "full_history_merged_pr_count": 29,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 142,
+        "kind": "full_project_search",
+        "owner": "lemoncrow-lab",
+        "repo": "lemoncrow",
+        "url": "https://github.com/lemoncrow-lab/lemoncrow"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:52:52Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 143,
+        "kind": "full_project_search",
+        "owner": "jp-220738",
+        "repo": "OsintInteractive",
+        "url": "https://github.com/jp-220738/OsintInteractive"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:02Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 301,
+      "full_history_merged_pr_count": 403,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 144,
+        "kind": "full_project_search",
+        "owner": "hyperb1iss",
+        "repo": "sibyl",
+        "url": "https://github.com/hyperb1iss/sibyl"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:09Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 392,
+      "full_history_merged_pr_count": 450,
+      "plausible_human_contributor_count": 2,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "developer_tooling",
+        "index": 145,
+        "kind": "full_project_search",
+        "owner": "DouglasdeMoura",
+        "repo": "chroncal",
+        "url": "https://github.com/DouglasdeMoura/chroncal"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:11Z",
+      "default_branch": "main",
+      "default_branch_head_sha": "fdcd34e9ff7a3ee0beec8cebc46d3cc7b187cebc",
+      "detailed_collection_attempted": false,
+      "failure_reason": "repository_documentation_tutorial_or_personal_only",
+      "languages": {
+        "C#": 503319,
+        "Python": 6157
+      },
+      "profile_quality_pass": false,
+      "rejection_reason": "repository_documentation_tutorial_or_personal_only",
+      "rejection_stage": "cheap_repository_prescreen",
+      "repository_id": 1003914737,
+      "source": {
+        "domain": "machine_learning",
+        "index": 146,
+        "kind": "full_project_search",
+        "owner": "Vixoq",
+        "repo": "vnpy-Machine-Learning",
+        "url": "https://github.com/Vixoq/vnpy-Machine-Learning"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:13Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 23,
+      "full_history_merged_pr_count": 23,
+      "plausible_human_contributor_count": 4,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "machine_learning",
+        "index": 147,
+        "kind": "full_project_search",
+        "owner": "cgrtml",
+        "repo": "neural-trees",
+        "url": "https://github.com/cgrtml/neural-trees"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:17Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_plausible_human_contributors",
+      "full_history_human_pr_count": 10,
+      "full_history_merged_pr_count": 10,
+      "plausible_human_contributor_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_plausible_human_contributors",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "machine_learning",
+        "index": 148,
+        "kind": "full_project_search",
+        "owner": "SAIRAMANALADI",
+        "repo": "vybe-intelligence-vault",
+        "url": "https://github.com/SAIRAMANALADI/vybe-intelligence-vault"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:18Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 3,
+      "full_history_merged_pr_count": 3,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "machine_learning",
+        "index": 149,
+        "kind": "full_project_search",
+        "owner": "neeljshah",
+        "repo": "court-vision",
+        "url": "https://github.com/neeljshah/court-vision"
+      },
+      "valid": false
+    },
+    {
+      "candidate_batch": "expansion_061_150",
+      "cheap_prescreen_pass": false,
+      "collection_timestamp": "2026-09-09T20:53:20Z",
+      "detailed_collection_attempted": false,
+      "failure_reason": "fewer_than_five_non_bot_merged_prs",
+      "full_history_human_pr_count": 0,
+      "full_history_merged_pr_count": 0,
+      "profile_quality_pass": false,
+      "rejection_reason": "fewer_than_five_non_bot_merged_prs",
+      "rejection_stage": "pull_request_discovery",
+      "source": {
+        "domain": "machine_learning",
+        "index": 150,
+        "kind": "full_project_search",
+        "owner": "Grulmex",
+        "repo": "UFund-Me-Qbot",
+        "url": "https://github.com/Grulmex/UFund-Me-Qbot"
+      },
+      "valid": false
+    }
+  ],
+  "collected_at": "2026-09-09T20:53:20Z",
+  "existing_type5_repository_exclusion_list": [
+    {
+      "owner": "ansible",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;successful_existing_type5_reserve_source",
+      "repo": "ansible",
+      "repository": "ansible/ansible"
+    },
+    {
+      "owner": "apache",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "airflow",
+      "repository": "apache/airflow"
+    },
+    {
+      "owner": "apache",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;successful_existing_type5_reserve_source",
+      "repo": "flink",
+      "repository": "apache/flink"
+    },
+    {
+      "owner": "apache",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "kafka",
+      "repository": "apache/kafka"
+    },
+    {
+      "owner": "apache",
+      "reasons": "existing_type5_primary_source",
+      "repo": "spark",
+      "repository": "apache/spark"
+    },
+    {
+      "owner": "django",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "django",
+      "repository": "django/django"
+    },
+    {
+      "owner": "dotnet",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "runtime",
+      "repository": "dotnet/runtime"
+    },
+    {
+      "owner": "elastic",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "elasticsearch",
+      "repository": "elastic/elasticsearch"
+    },
+    {
+      "owner": "fastapi",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "fastapi",
+      "repository": "fastapi/fastapi"
+    },
+    {
+      "owner": "hashicorp",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "terraform",
+      "repository": "hashicorp/terraform"
+    },
+    {
+      "owner": "kubernetes",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "kubernetes",
+      "repository": "kubernetes/kubernetes"
+    },
+    {
+      "owner": "microsoft",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "vscode",
+      "repository": "microsoft/vscode"
+    },
+    {
+      "owner": "nodejs",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "node",
+      "repository": "nodejs/node"
+    },
+    {
+      "owner": "numpy",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "numpy",
+      "repository": "numpy/numpy"
+    },
+    {
+      "owner": "pallets",
+      "reasons": "existing_type5_primary_source",
+      "repo": "flask",
+      "repository": "pallets/flask"
+    },
+    {
+      "owner": "pandas-dev",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "pandas",
+      "repository": "pandas-dev/pandas"
+    },
+    {
+      "owner": "prometheus",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "prometheus",
+      "repository": "prometheus/prometheus"
+    },
+    {
+      "owner": "psf",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "requests",
+      "repository": "psf/requests"
+    },
+    {
+      "owner": "pydantic",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "pydantic",
+      "repository": "pydantic/pydantic"
+    },
+    {
+      "owner": "pytorch",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "pytorch",
+      "repository": "pytorch/pytorch"
+    },
+    {
+      "owner": "react",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "react",
+      "repository": "react/react"
+    },
+    {
+      "owner": "redis",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;successful_existing_type5_reserve_source",
+      "repo": "redis",
+      "repository": "redis/redis"
+    },
+    {
+      "owner": "rust-lang",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "rust",
+      "repository": "rust-lang/rust"
+    },
+    {
+      "owner": "scikit-learn",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "scikit-learn",
+      "repository": "scikit-learn/scikit-learn"
+    },
+    {
+      "owner": "spring-projects",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "spring-boot",
+      "repository": "spring-projects/spring-boot"
+    },
+    {
+      "owner": "tensorflow",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "tensorflow",
+      "repository": "tensorflow/tensorflow"
+    },
+    {
+      "owner": "vitejs",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "vite",
+      "repository": "vitejs/vite"
+    },
+    {
+      "owner": "vuejs",
+      "reasons": "contributed_existing_type5_empirical_record;contributed_existing_type5_instance;existing_type5_primary_source",
+      "repo": "core",
+      "repository": "vuejs/core"
+    }
+  ],
+  "extension": "type5_full_project",
+  "repository_overlap_with_existing_type5": 0,
+  "valid_collection_count": 43
+}

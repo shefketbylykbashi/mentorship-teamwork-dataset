@@ -1,0 +1,580 @@
+{
+  "constant_features": [],
+  "coverage_feature_names": [
+    "n_contributors",
+    "n_projects",
+    "n_skills",
+    "total_roles",
+    "roles_per_project_mean",
+    "roles_per_project_sd",
+    "skills_per_contributor_mean",
+    "skills_per_contributor_sd",
+    "contention",
+    "workload_contention",
+    "demand_concentration",
+    "supply_concentration",
+    "demand_supply_alignment",
+    "unmet_skill_share",
+    "contributor_level_mean",
+    "contributor_level_sd",
+    "required_level_mean",
+    "required_level_sd",
+    "level_gap_mean",
+    "level_gap_sd",
+    "direct_fillability",
+    "mentorship_fillability",
+    "learning_reachable_demand",
+    "mentor_availability",
+    "within_project_mentorship_feasibility",
+    "duration_mean",
+    "duration_sd",
+    "deadline_tightness_mean",
+    "deadline_tightness_sd",
+    "infeasible_deadline_share",
+    "schedule_pressure",
+    "score_mean",
+    "score_sd",
+    "score_concentration",
+    "score_density",
+    "score_effort_correlation",
+    "penalty_exposure"
+  ],
+  "distance_metric": "sqrt(sum_j w_j (z_a_j - z_b_j)^2), with group-balanced w_j",
+  "excluded_features": [
+    "aco",
+    "annealing",
+    "beam",
+    "bks",
+    "family",
+    "filename",
+    "ga_",
+    "hash",
+    "ilp",
+    "objective_quality",
+    "optimal",
+    "repository",
+    "runtime",
+    "score_result",
+    "seed",
+    "solver",
+    "source"
+  ],
+  "feature_groups": {
+    "levels": [
+      "contributor_level_mean",
+      "contributor_level_sd",
+      "required_level_mean",
+      "required_level_sd",
+      "level_gap_mean",
+      "level_gap_sd"
+    ],
+    "mentorship": [
+      "direct_fillability",
+      "mentorship_fillability",
+      "learning_reachable_demand",
+      "mentor_availability",
+      "within_project_mentorship_feasibility"
+    ],
+    "scores": [
+      "score_mean",
+      "score_sd",
+      "score_concentration",
+      "score_density",
+      "score_effort_correlation",
+      "penalty_exposure"
+    ],
+    "size": [
+      "n_contributors",
+      "n_projects",
+      "n_skills",
+      "total_roles",
+      "roles_per_project_mean",
+      "roles_per_project_sd",
+      "skills_per_contributor_mean",
+      "skills_per_contributor_sd"
+    ],
+    "supply_demand": [
+      "contention",
+      "workload_contention",
+      "demand_concentration",
+      "supply_concentration",
+      "demand_supply_alignment",
+      "unmet_skill_share"
+    ],
+    "time": [
+      "duration_mean",
+      "duration_sd",
+      "deadline_tightness_mean",
+      "deadline_tightness_sd",
+      "infeasible_deadline_share",
+      "schedule_pressure"
+    ]
+  },
+  "feature_names": [
+    "n_contributors",
+    "n_projects",
+    "n_skills",
+    "total_roles",
+    "roles_per_project_mean",
+    "roles_per_project_sd",
+    "skills_per_contributor_mean",
+    "skills_per_contributor_sd",
+    "contention",
+    "workload_contention",
+    "demand_concentration",
+    "supply_concentration",
+    "demand_supply_alignment",
+    "unmet_skill_share",
+    "contributor_level_mean",
+    "contributor_level_sd",
+    "required_level_mean",
+    "required_level_sd",
+    "level_gap_mean",
+    "level_gap_sd",
+    "direct_fillability",
+    "mentorship_fillability",
+    "learning_reachable_demand",
+    "mentor_availability",
+    "within_project_mentorship_feasibility",
+    "duration_mean",
+    "duration_sd",
+    "deadline_tightness_mean",
+    "deadline_tightness_sd",
+    "infeasible_deadline_share",
+    "schedule_pressure",
+    "score_mean",
+    "score_sd",
+    "score_concentration",
+    "score_density",
+    "score_effort_correlation",
+    "penalty_exposure"
+  ],
+  "frozen_before_selection": true,
+  "group_weights": {
+    "levels": 0.16666666666666666,
+    "mentorship": 0.16666666666666666,
+    "scores": 0.16666666666666666,
+    "size": 0.16666666666666666,
+    "supply_demand": 0.16666666666666666,
+    "time": 0.16666666666666666
+  },
+  "missing_value_policy": "non-finite canonical feature values are converted to 0.0 before transform, matching core.distance.transform_features",
+  "per_feature_weights": {
+    "contention": 0.027777777777777776,
+    "contributor_level_mean": 0.027777777777777776,
+    "contributor_level_sd": 0.027777777777777776,
+    "deadline_tightness_mean": 0.027777777777777776,
+    "deadline_tightness_sd": 0.027777777777777776,
+    "demand_concentration": 0.027777777777777776,
+    "demand_supply_alignment": 0.027777777777777776,
+    "direct_fillability": 0.03333333333333333,
+    "duration_mean": 0.027777777777777776,
+    "duration_sd": 0.027777777777777776,
+    "infeasible_deadline_share": 0.027777777777777776,
+    "learning_reachable_demand": 0.03333333333333333,
+    "level_gap_mean": 0.027777777777777776,
+    "level_gap_sd": 0.027777777777777776,
+    "mentor_availability": 0.03333333333333333,
+    "mentorship_fillability": 0.03333333333333333,
+    "n_contributors": 0.020833333333333332,
+    "n_projects": 0.020833333333333332,
+    "n_skills": 0.020833333333333332,
+    "penalty_exposure": 0.027777777777777776,
+    "required_level_mean": 0.027777777777777776,
+    "required_level_sd": 0.027777777777777776,
+    "roles_per_project_mean": 0.020833333333333332,
+    "roles_per_project_sd": 0.020833333333333332,
+    "schedule_pressure": 0.027777777777777776,
+    "score_concentration": 0.027777777777777776,
+    "score_density": 0.027777777777777776,
+    "score_effort_correlation": 0.027777777777777776,
+    "score_mean": 0.027777777777777776,
+    "score_sd": 0.027777777777777776,
+    "skills_per_contributor_mean": 0.020833333333333332,
+    "skills_per_contributor_sd": 0.020833333333333332,
+    "supply_concentration": 0.027777777777777776,
+    "total_roles": 0.020833333333333332,
+    "unmet_skill_share": 0.027777777777777776,
+    "within_project_mentorship_feasibility": 0.03333333333333333,
+    "workload_contention": 0.027777777777777776
+  },
+  "plausibility_bounds_normalized": {
+    "contention": {
+      "high": 0.5959799022069812,
+      "low": -0.5652819729392848
+    },
+    "contributor_level_mean": {
+      "high": 1.6732743120924505,
+      "low": -1.9995221323170245
+    },
+    "contributor_level_sd": {
+      "high": 1.869063008842434,
+      "low": -2.040105039721648
+    },
+    "deadline_tightness_mean": {
+      "high": -0.03588784669759871,
+      "low": -0.04331207932029626
+    },
+    "deadline_tightness_sd": {
+      "high": -0.041400305884971456,
+      "low": -0.04555042765237388
+    },
+    "demand_concentration": {
+      "high": 4.1709409435959675,
+      "low": -1.5302594255017796
+    },
+    "demand_supply_alignment": {
+      "high": 1.3573926167138914,
+      "low": -7.7832842275914675
+    },
+    "direct_fillability": {
+      "high": 1.579101073395969,
+      "low": -3.3051813456262438
+    },
+    "duration_mean": {
+      "high": 0.9749692163961008,
+      "low": -1.409729898949416
+    },
+    "duration_sd": {
+      "high": 1.2171053281673179,
+      "low": -1.9393670949162822
+    },
+    "infeasible_deadline_share": {
+      "high": 17.28569154601675,
+      "low": -1.8867634873323955
+    },
+    "learning_reachable_demand": {
+      "high": 4.8963827620970815,
+      "low": -1.7844115696907044
+    },
+    "level_gap_mean": {
+      "high": 3.226616876994025,
+      "low": -3.082260713287394
+    },
+    "level_gap_sd": {
+      "high": 5.846495777154654,
+      "low": -1.8948307036781808
+    },
+    "mentor_availability": {
+      "high": 2.4112842975523776,
+      "low": -2.2674901227320863
+    },
+    "mentorship_fillability": {
+      "high": 2.4112842975523776,
+      "low": -2.2674901227320863
+    },
+    "n_contributors": {
+      "high": 2.0827410978149956,
+      "low": -2.100580810127913
+    },
+    "n_projects": {
+      "high": 1.336103850091495,
+      "low": -2.071787558565626
+    },
+    "n_skills": {
+      "high": 1.1079062449474864,
+      "low": -1.8816184410170864
+    },
+    "penalty_exposure": {
+      "high": 20.144259975919063,
+      "low": -2.1533323370733353
+    },
+    "required_level_mean": {
+      "high": 2.934045058365309,
+      "low": -2.3995309368759665
+    },
+    "required_level_sd": {
+      "high": 2.3031003867822943,
+      "low": -2.8730596022465065
+    },
+    "roles_per_project_mean": {
+      "high": 1.6547749620517225,
+      "low": -1.4883591987489475
+    },
+    "roles_per_project_sd": {
+      "high": 1.3075845075315724,
+      "low": -1.2884157724863723
+    },
+    "schedule_pressure": {
+      "high": 4.868766376971275,
+      "low": -1.71578689703564
+    },
+    "score_concentration": {
+      "high": 4.137327941980173,
+      "low": -1.5966615159274833
+    },
+    "score_density": {
+      "high": 0.06537049982439637,
+      "low": -0.42564926947529585
+    },
+    "score_effort_correlation": {
+      "high": 1.7851007421667198,
+      "low": -8.236285067894222
+    },
+    "score_mean": {
+      "high": 1.3850810292526667,
+      "low": -1.8747989028056087
+    },
+    "score_sd": {
+      "high": 1.3744183980940583,
+      "low": -2.0234016747041554
+    },
+    "skills_per_contributor_mean": {
+      "high": 2.784288880239993,
+      "low": -1.4402491593350446
+    },
+    "skills_per_contributor_sd": {
+      "high": 3.5464147352441335,
+      "low": -1.446670817882476
+    },
+    "supply_concentration": {
+      "high": 4.205281540776683,
+      "low": -1.416565686216702
+    },
+    "total_roles": {
+      "high": 1.5110181146688284,
+      "low": -2.5334083712097955
+    },
+    "unmet_skill_share": {
+      "high": 9.140183728255826,
+      "low": -1.053890945267172
+    },
+    "within_project_mentorship_feasibility": {
+      "high": 1.0909741287030088,
+      "low": -3.283873081882847
+    },
+    "workload_contention": {
+      "high": 1.548068332812598,
+      "low": -1.947262681785722
+    }
+  },
+  "scaler": {
+    "fit_rows": {
+      "feasibility_calibration_candidates": 400,
+      "frozen_type1_6_instances": 511
+    },
+    "means": {
+      "contention": 51.670652705938465,
+      "contributor_level_mean": 4.793323078666845,
+      "contributor_level_sd": 1.6739326299367698,
+      "deadline_tightness_mean": 35.98406848138805,
+      "deadline_tightness_sd": 22.010663177538213,
+      "demand_concentration": 0.06166117474940132,
+      "demand_supply_alignment": 0.9396897183703984,
+      "direct_fillability": 0.8024868565706894,
+      "duration_mean": 4.675289884499422,
+      "duration_sd": 3.326285113143332,
+      "infeasible_deadline_share": 0.01809213691520478,
+      "learning_reachable_demand": 0.1385535868295048,
+      "level_gap_mean": 0.7654576242947532,
+      "level_gap_sd": 0.7247733494723919,
+      "mentor_availability": 0.4775043287326568,
+      "mentorship_fillability": 0.4775043287326568,
+      "n_contributors": 4.706397635078842,
+      "n_projects": 5.449080162399526,
+      "n_skills": 4.09282132022326,
+      "penalty_exposure": 0.003581709356297008,
+      "required_level_mean": 5.516277019607503,
+      "required_level_sd": 2.2267931907051985,
+      "roles_per_project_mean": 10.073673668710676,
+      "roles_per_project_sd": 3.1394226342758604,
+      "schedule_pressure": 2.9540085568970413,
+      "score_concentration": 0.04438911144977009,
+      "score_density": 9.384262932743836,
+      "score_effort_correlation": 0.8614717196640385,
+      "score_mean": 8.156698433900265,
+      "score_sd": 7.58915213534878,
+      "skills_per_contributor_mean": 6.873082056598615,
+      "skills_per_contributor_sd": 1.4339110621074749,
+      "supply_concentration": 0.0662754801672289,
+      "total_roles": 7.472763790809533,
+      "unmet_skill_share": 0.008019745941411856,
+      "within_project_mentorship_feasibility": 0.8007509310780493,
+      "workload_contention": 7.416867532692786
+    },
+    "method": "z_score_after_declared_feature_transform",
+    "scales": {
+      "contention": 109.30240049522274,
+      "contributor_level_mean": 1.608992706324657,
+      "contributor_level_sd": 0.6548167129185855,
+      "deadline_tightness_mean": 824.7065014789434,
+      "deadline_tightness_sd": 486.8833632254133,
+      "demand_concentration": 0.05843778206076891,
+      "demand_supply_alignment": 0.10005166630701885,
+      "direct_fillability": 0.1685154240613497,
+      "duration_mean": 1.9225792473833188,
+      "duration_sd": 1.7425736777364176,
+      "infeasible_deadline_share": 0.06258979342565592,
+      "learning_reachable_demand": 0.11285818174306671,
+      "level_gap_mean": 1.1809507936045234,
+      "level_gap_sd": 0.5266982888393307,
+      "mentor_availability": 0.25431737248596237,
+      "mentorship_fillability": 0.25431737248596237,
+      "n_contributors": 1.6636341276416002,
+      "n_projects": 2.0457140801836644,
+      "n_skills": 1.4095399667983077,
+      "penalty_exposure": 0.01213317639490866,
+      "required_level_mean": 1.7414150777487976,
+      "required_level_sd": 0.6557817696545094,
+      "roles_per_project_mean": 7.126644570047214,
+      "roles_per_project_sd": 2.9283407580935483,
+      "schedule_pressure": 2.205222413479473,
+      "score_concentration": 0.03912152178837702,
+      "score_density": 22.962838950928003,
+      "score_effort_correlation": 0.14581580112743103,
+      "score_mean": 2.270602811890639,
+      "score_sd": 2.0756244317560295,
+      "skills_per_contributor_mean": 5.3970398151021355,
+      "skills_per_contributor_sd": 1.3913626967378323,
+      "supply_concentration": 0.06990506160443094,
+      "total_roles": 2.353962235146046,
+      "unmet_skill_share": 0.0392384804712994,
+      "within_project_mentorship_feasibility": 0.2742952935810763,
+      "workload_contention": 2.441265220421696
+    }
+  },
+  "scaler_fit_excludes_selected_type7": true,
+  "selection_feature_policy": {
+    "feature_groups": {
+      "levels": [
+        "contributor_level_mean",
+        "contributor_level_sd",
+        "required_level_mean",
+        "required_level_sd",
+        "level_gap_mean",
+        "level_gap_sd"
+      ],
+      "mentorship": [
+        "direct_fillability",
+        "mentorship_fillability",
+        "learning_reachable_demand",
+        "mentor_availability",
+        "within_project_mentorship_feasibility"
+      ],
+      "scores": [
+        "score_mean",
+        "score_sd",
+        "score_concentration",
+        "score_density",
+        "score_effort_correlation",
+        "penalty_exposure"
+      ],
+      "size": [
+        "n_contributors",
+        "n_projects",
+        "n_skills",
+        "total_roles",
+        "roles_per_project_mean",
+        "roles_per_project_sd",
+        "skills_per_contributor_mean",
+        "skills_per_contributor_sd"
+      ],
+      "supply_demand": [
+        "contention",
+        "workload_contention",
+        "demand_concentration",
+        "supply_concentration",
+        "demand_supply_alignment",
+        "unmet_skill_share"
+      ],
+      "time": [
+        "duration_mean",
+        "duration_sd",
+        "deadline_tightness_mean",
+        "deadline_tightness_sd",
+        "infeasible_deadline_share",
+        "schedule_pressure"
+      ]
+    },
+    "feature_names": [
+      "n_contributors",
+      "n_projects",
+      "n_skills",
+      "total_roles",
+      "roles_per_project_mean",
+      "roles_per_project_sd",
+      "skills_per_contributor_mean",
+      "skills_per_contributor_sd",
+      "contention",
+      "workload_contention",
+      "demand_concentration",
+      "supply_concentration",
+      "demand_supply_alignment",
+      "unmet_skill_share",
+      "contributor_level_mean",
+      "contributor_level_sd",
+      "required_level_mean",
+      "required_level_sd",
+      "level_gap_mean",
+      "level_gap_sd",
+      "direct_fillability",
+      "mentorship_fillability",
+      "learning_reachable_demand",
+      "mentor_availability",
+      "within_project_mentorship_feasibility",
+      "duration_mean",
+      "duration_sd",
+      "deadline_tightness_mean",
+      "deadline_tightness_sd",
+      "infeasible_deadline_share",
+      "schedule_pressure",
+      "score_mean",
+      "score_sd",
+      "score_concentration",
+      "score_density",
+      "score_effort_correlation",
+      "penalty_exposure"
+    ],
+    "forbidden_feature_hits": [],
+    "forward_generated_only": true,
+    "mentorship_feature_present": true,
+    "mentorship_features": [
+      "direct_fillability",
+      "mentorship_fillability",
+      "learning_reachable_demand",
+      "mentor_availability",
+      "within_project_mentorship_feasibility"
+    ],
+    "solver_metrics_excluded": true
+  },
+  "solver_performance_features_excluded": true,
+  "transformations": {
+    "contention": "identity",
+    "contributor_level_mean": "identity",
+    "contributor_level_sd": "identity",
+    "deadline_tightness_mean": "identity",
+    "deadline_tightness_sd": "identity",
+    "demand_concentration": "identity",
+    "demand_supply_alignment": "identity",
+    "direct_fillability": "identity",
+    "duration_mean": "log1p_nonnegative",
+    "duration_sd": "log1p_nonnegative",
+    "infeasible_deadline_share": "identity",
+    "learning_reachable_demand": "identity",
+    "level_gap_mean": "identity",
+    "level_gap_sd": "identity",
+    "mentor_availability": "identity",
+    "mentorship_fillability": "identity",
+    "n_contributors": "log1p_nonnegative",
+    "n_projects": "log1p_nonnegative",
+    "n_skills": "log1p_nonnegative",
+    "penalty_exposure": "identity",
+    "required_level_mean": "identity",
+    "required_level_sd": "identity",
+    "roles_per_project_mean": "identity",
+    "roles_per_project_sd": "identity",
+    "schedule_pressure": "identity",
+    "score_concentration": "identity",
+    "score_density": "identity",
+    "score_effort_correlation": "identity",
+    "score_mean": "log1p_nonnegative",
+    "score_sd": "log1p_nonnegative",
+    "skills_per_contributor_mean": "identity",
+    "skills_per_contributor_sd": "identity",
+    "supply_concentration": "identity",
+    "total_roles": "log1p_nonnegative",
+    "unmet_skill_share": "identity",
+    "within_project_mentorship_feasibility": "identity",
+    "workload_contention": "log1p_nonnegative"
+  }
+}
