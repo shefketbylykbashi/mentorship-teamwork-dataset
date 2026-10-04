@@ -134,7 +134,10 @@ solvers are single-threaded, so this permits up to 50 solver processes at once.
 ## 7. Optional SLURM Batch Script
 
 If your supercomputer uses SLURM, create a job script like this. Adjust account,
-partition, wall time, memory, and module names for your site.
+partition, wall time, memory, and module names for your site. The example uses
+72 hours because the full 61,100-run campaign has a worst-case lower bound of
+about 61 hours at 50 concurrent slots before timeout grace and scheduling
+overhead.
 
 ```bash
 cat > run_full_mtp_campaign.slurm <<'EOF'
@@ -143,7 +146,7 @@ cat > run_full_mtp_campaign.slurm <<'EOF'
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=50
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --output=logs/mtp_full_%j.out
 #SBATCH --error=logs/mtp_full_%j.err
 
