@@ -37,6 +37,23 @@ command. It executes no solver process.
 
 ## Run Campaign
 
+Local validation campaign with two instances per benchmark family, all solvers,
+and ten executions per solver-instance pair:
+
+```powershell
+python -m experiments.run_mtp_campaign `
+  --campaign-id local_two_per_type `
+  --instances-per-family 2 `
+  --runs 10 `
+  --time-limit 180 `
+  --threads 8 `
+  --resume
+```
+
+This currently plans 14 benchmark instances when all Type 1-7 families are
+present: 2 instances x 7 families x 10 solvers x 10 executions = 1,400 planned
+runs.
+
 PowerShell:
 
 ```powershell

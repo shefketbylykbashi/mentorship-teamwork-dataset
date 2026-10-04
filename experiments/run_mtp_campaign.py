@@ -17,7 +17,11 @@ from typing import Any, Dict, List
 
 from benchmark_generation.core.config import load_config
 
-from .benchmark_discovery import benchmark_manifest, discover_final_benchmark
+from .benchmark_discovery import (
+    benchmark_manifest,
+    discover_final_benchmark,
+    limit_instances_per_family,
+)
 from .common import (
     atomic_write_json,
     config_hash,
@@ -76,7 +80,12 @@ def main(argv: list[str] | None = None) -> int:
         print(summary)
         return 0
 
-    instances = discover_final_benchmark(root, config.get("benchmark", {}))
+    all_instances = discover_final_benchmark(root, config.get("benchmark", {}))
+    instances_per_family = config.get("instances_per_family")
+    instances = limit_instances_per_family(
+        all_instances,
+        int(instances_per_family) if instances_per_family is not None else None,
+    )
     solvers = load_solver_definitions(config)
     bench_manifest = benchmark_manifest(instances)
     solv_manifest = solver_manifest(solvers, root)
@@ -96,6 +105,10 @@ def main(argv: list[str] | None = None) -> int:
         "timeout_grace_seconds": float(config.get("timeout_grace_seconds", 15)),
         "threads": int(config.get("threads", 1)),
         "planned_run_count": planned_run_count,
+        "instance_filter": {
+            "instances_per_family": instances_per_family,
+            "source_instance_count": len(all_instances),
+        },
         "benchmark_manifest": bench_manifest,
         "solver_manifest": solv_manifest,
         "solver_audit": audit,
@@ -131,6 +144,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--timeout-grace", type=float)
     parser.add_argument("--results-dir", dest="results_root")
     parser.add_argument("--max-parallel-runs", type=int)
+    parser.add_argument(
+        "--instances-per-family",
+        type=int,
+        help="Use only the first N deterministically sorted instances from each benchmark family.",
+    )
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--rebuild-reports", action="store_true")
@@ -154,6 +172,8 @@ def apply_overrides(config: dict, args: argparse.Namespace) -> None:
         config["results_root"] = args.results_root
     if args.max_parallel_runs is not None:
         config["max_parallel_runs"] = args.max_parallel_runs
+    if args.instances_per_family is not None:
+        config["instances_per_family"] = args.instances_per_family
     if args.retry_errors:
         config["retry_errors"] = True
     if args.retry_timeouts:
@@ -189,6 +209,13 @@ def print_dry_run(manifest: dict, run_plan: List[RunSpec], solvers, root: Path) 
     print(f"Campaign ID: {manifest['campaign_id']}")
     print(f"Benchmark instances: {manifest['benchmark_manifest']['count']}")
     print(f"Family counts: {manifest['benchmark_manifest']['family_counts']}")
+    instance_filter = manifest.get("instance_filter") or {}
+    if instance_filter.get("instances_per_family") is not None:
+        print(
+            "Instance subset: first "
+            f"{instance_filter['instances_per_family']} per family "
+            f"from {instance_filter['source_instance_count']} discovered instances"
+        )
     print(f"Solvers: {manifest['solver_manifest']['count']}")
     print(f"Runs per solver-instance: {manifest['runs']}")
     print(f"Total planned executions: {manifest['planned_run_count']}")

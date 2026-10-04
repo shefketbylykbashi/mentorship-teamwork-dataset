@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from experiments.benchmark_discovery import BenchmarkInstance
+from experiments.benchmark_discovery import BenchmarkInstance, limit_instances_per_family
 from experiments.common import atomic_write_json, stable_seed
 from experiments.reporting import update_best_for_pair
 from experiments.run_mtp_campaign import CampaignRunner, prepare_campaign_dir
@@ -225,4 +225,21 @@ def test_manifest_mismatch_detection(tmp_path):
     atomic_write_json(campaign / "campaign_manifest.json", existing)
     with pytest.raises(SystemExit):
         prepare_campaign_dir(campaign, current, resume=True, allow_mismatch=False)
+
+
+def test_instances_per_family_limit_is_deterministic():
+    rows = [
+        BenchmarkInstance("type2", "type2_b", "b.txt", "sha", 1, 1, 1, 1),
+        BenchmarkInstance("type1", "type1_c", "c.txt", "sha", 1, 1, 1, 1),
+        BenchmarkInstance("type2", "type2_a", "a.txt", "sha", 1, 1, 1, 1),
+        BenchmarkInstance("type1", "type1_a", "a.txt", "sha", 1, 1, 1, 1),
+        BenchmarkInstance("type1", "type1_b", "b.txt", "sha", 1, 1, 1, 1),
+    ]
+    selected = limit_instances_per_family(rows, 2)
+    assert [(row.family, row.instance_id) for row in selected] == [
+        ("type1", "type1_a"),
+        ("type1", "type1_b"),
+        ("type2", "type2_a"),
+        ("type2", "type2_b"),
+    ]
 

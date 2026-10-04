@@ -83,6 +83,34 @@ def benchmark_manifest(instances: Iterable[BenchmarkInstance]) -> dict:
     }
 
 
+def limit_instances_per_family(
+    instances: Iterable[BenchmarkInstance],
+    limit: int | None,
+) -> List[BenchmarkInstance]:
+    """Return the first ``limit`` deterministically ordered instances per family.
+
+    This is intended for local validation campaigns that should exercise every
+    benchmark family without launching the full solver-instance grid. The input
+    order is not trusted; instances are sorted exactly as the final manifest is
+    sorted before selecting each family prefix.
+    """
+
+    rows = sorted(instances, key=lambda row: (row.family, row.instance_id, row.path))
+    if limit is None:
+        return rows
+    if limit < 1:
+        raise ValueError("instances_per_family must be positive when provided")
+    counts: dict[str, int] = {}
+    selected: List[BenchmarkInstance] = []
+    for row in rows:
+        count = counts.get(row.family, 0)
+        if count >= limit:
+            continue
+        selected.append(row)
+        counts[row.family] = count + 1
+    return selected
+
+
 def _row_from_path(path: Path, family: str, instance_id: str, repo: Path) -> BenchmarkInstance:
     instance = parse_file(path)
     return BenchmarkInstance(

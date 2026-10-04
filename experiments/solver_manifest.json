@@ -190,12 +190,12 @@
     ],
     "output_manifest": "experiments/solver_manifest.json"
   },
-  "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
-  "created_at": "2026-10-04T11:30:39+00:00",
+  "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
+  "created_at": "2026-10-04T12:21:12+00:00",
   "solvers": [
     {
       "binary": "experiments\\bin\\nanored_original_ab.exe",
-      "binary_sha256": null,
+      "binary_sha256": "d37e062ce7f73e6c09db9b31e32a3c3a98edbfd895174d713be7e707d47a0b00",
       "command": [
         "g++",
         "-std=c++20",
@@ -205,25 +205,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_original_ab.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:20:56+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_original_ab",
       "source": "solvers\\Nanored_hashCode2022\\ab.cpp",
       "source_sha256": "26aebaff7d230d35e28c0a28f6178bf405b1af5856b78c45e7d35f268ac8a025",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:20:53+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_original_c.exe",
-      "binary_sha256": null,
+      "binary_sha256": "5108ac3115d4185ad42bc3605c1016f3b5c77b0804b93026f5bd061a05128d67",
       "command": [
         "g++",
         "-std=c++20",
@@ -233,25 +233,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_original_c.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:20:58+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_original_c",
       "source": "solvers\\Nanored_hashCode2022\\c.cpp",
       "source_sha256": "79339a99face207d5d686c17fafb955867bde10a2a469f976e1c2af205a6d803",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:20:56+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_original_d.exe",
-      "binary_sha256": null,
+      "binary_sha256": "6d68e3a674527720b5a1ecb44b098d7563e9285d78b7e6771f261bfd84c7bf4e",
       "command": [
         "g++",
         "-std=c++20",
@@ -261,25 +261,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_original_d.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:00+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_original_d",
       "source": "solvers\\Nanored_hashCode2022\\d.cpp",
       "source_sha256": "434996abb0ef5db443acfdb04cec92cb5f36dc012076b14b3b46102ce482ee4f",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:20:58+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_original_e.exe",
-      "binary_sha256": null,
+      "binary_sha256": "f17b0a134cbe3c9bebd3f1ca8a415e5aa9f48e013372cdf4161f1756c47999de",
       "command": [
         "g++",
         "-std=c++20",
@@ -289,25 +289,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_original_e.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:01+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_original_e",
       "source": "solvers\\Nanored_hashCode2022\\e.cpp",
       "source_sha256": "82ab5f7839cd58952c3398ff32816bf3ff2abbf6e5b43df2d19c54e558737752",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:00+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_original_f.exe",
-      "binary_sha256": null,
+      "binary_sha256": "3afbb726f2281bd81cf52971f6a96aef623a436850fbb5685d6d329aa00dbf60",
       "command": [
         "g++",
         "-std=c++20",
@@ -317,25 +317,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_original_f.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:03+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_original_f",
       "source": "solvers\\Nanored_hashCode2022\\f.cpp",
       "source_sha256": "48bccb8e028b11612154b0def3c41efb90f99b5206442bc9b9d7a04fa42c9a84",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:01+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_refactored_b.exe",
-      "binary_sha256": null,
+      "binary_sha256": "5a470cfc85517a488238c3aeb71f879f4d2ea8b1bf6c1b091ea5d481bec070d6",
       "command": [
         "g++",
         "-std=c++20",
@@ -345,25 +345,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_refactored_b.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:05+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_refactored_b",
       "source": "solvers\\refactored_Nanored\\b.cpp",
       "source_sha256": "94c0041b056897302f9ef568b3234d65ec878b7a8fd03198b9d2855f0fe75ef6",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:03+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_refactored_c.exe",
-      "binary_sha256": null,
+      "binary_sha256": "1ba081a5a43d35c9da51319657ba31955c49082ed1d56233ee436656c1424ca2",
       "command": [
         "g++",
         "-std=c++20",
@@ -373,25 +373,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_refactored_c.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:07+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_refactored_c",
       "source": "solvers\\refactored_Nanored\\c.cpp",
       "source_sha256": "431e27edb88dc91b1d00240bfc6bc62b71df0c841eff3b7ba8edccb88b047b22",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:05+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_refactored_d.exe",
-      "binary_sha256": null,
+      "binary_sha256": "9863dfb9be5fbb52f3a513a2a2370f7d1bf83ef9b3f5bbfd0197c363c57833bd",
       "command": [
         "g++",
         "-std=c++20",
@@ -401,25 +401,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_refactored_d.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:08+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_refactored_d",
       "source": "solvers\\refactored_Nanored\\d.cpp",
       "source_sha256": "79339a99face207d5d686c17fafb955867bde10a2a469f976e1c2af205a6d803",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:07+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_refactored_e.exe",
-      "binary_sha256": null,
+      "binary_sha256": "4319a2edcd5c94c8a905f913148ef1317bdc1a3b0be41a48703560232d728b46",
       "command": [
         "g++",
         "-std=c++20",
@@ -429,25 +429,25 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_refactored_e.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:10+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_refactored_e",
       "source": "solvers\\refactored_Nanored\\e.cpp",
       "source_sha256": "82ab5f7839cd58952c3398ff32816bf3ff2abbf6e5b43df2d19c54e558737752",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:08+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     },
     {
       "binary": "experiments\\bin\\nanored_refactored_f.exe",
-      "binary_sha256": null,
+      "binary_sha256": "ef79915c76d673d7971185f3f9b2b6c3d1893bff511bb04cb97b0d8594df8796",
       "command": [
         "g++",
         "-std=c++20",
@@ -457,20 +457,20 @@
         "C:\\Users\\shefk\\source\\repos\\Python\\mentorship-teamwork-dataset\\experiments\\bin\\nanored_refactored_f.exe"
       ],
       "compiler": "g++",
-      "compiler_version": "unavailable: [WinError 2] The system cannot find the file specified",
+      "compiler_version": "g++ (Rev4, Built by MSYS2 project) 16.2.0",
       "cxx_standard": "c++20",
-      "exit_code": 127,
+      "exit_code": 0,
       "extra_flags": [],
-      "finished_at": "2026-10-04T11:30:39+00:00",
+      "finished_at": "2026-10-04T12:21:12+00:00",
       "optimization_flags": [
         "-O3"
       ],
       "solver_id": "nanored_refactored_f",
       "source": "solvers\\refactored_Nanored\\f.cpp",
       "source_sha256": "48bccb8e028b11612154b0def3c41efb90f99b5206442bc9b9d7a04fa42c9a84",
-      "started_at": "2026-10-04T11:30:39+00:00",
-      "status": "ERROR",
-      "stderr": "[WinError 2] The system cannot find the file specified",
+      "started_at": "2026-10-04T12:21:10+00:00",
+      "status": "SUCCESS",
+      "stderr": "",
       "stdout": ""
     }
   ]

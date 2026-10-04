@@ -208,6 +208,23 @@ python -m experiments.run_mtp_campaign \
   --dry-run
 ```
 
+Local validation campaign: two accepted instances from every Type 1-7 family,
+all ten solvers, ten executions each:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id local_two_per_type \
+  --instances-per-family 2 \
+  --runs 10 \
+  --time-limit 180 \
+  --threads 8 \
+  --resume \
+  --dry-run
+```
+
+Remove `--dry-run` after reviewing the plan and confirming the solver binaries
+have been built.
+
 Run locally after reviewing the dry run:
 
 ```bash
