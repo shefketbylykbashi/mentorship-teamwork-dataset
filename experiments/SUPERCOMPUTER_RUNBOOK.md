@@ -114,6 +114,109 @@ number_of_discovered_instances x 10 solvers x 10 runs
 In the current local checkout this was 611 instances, so the planned total was
 61,100 runs. Do not hardcode this number; let the runner discover it.
 
+## 5A. Optional Kaggle CPU Shards
+
+Kaggle CPU notebooks currently provide four logical CPU cores. The configured
+C++ solvers are single-threaded, so use `--threads 4` to run up to four solver
+processes concurrently. Sharding is optional and does not alter run IDs, solver
+seeds, solver options, time-limit semantics, or evaluator behavior.
+
+The canonical shard order is:
+
+```text
+(instance_family, instance_id, solver_id, execution_index, run_id)
+```
+
+After sorting by that key, each run is assigned by:
+
+```text
+shard_index = global_sorted_run_index % num_shards
+```
+
+For the current accepted dataset this derives 611 instances x 10 solvers x 10
+executions = 61,100 runs. With 77 shards the distribution is 39 shards of 794
+runs and 38 shards of 793 runs.
+
+Kaggle shard 000 dry run:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id kaggle_shard_000 \
+  --runs 10 \
+  --time-limit 180 \
+  --timeout-grace 15 \
+  --threads 4 \
+  --num-shards 77 \
+  --shard-index 0 \
+  --results-dir /kaggle/working/experiment_results \
+  --resume \
+  --dry-run
+```
+
+Kaggle shard 000 execution:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id kaggle_shard_000 \
+  --runs 10 \
+  --time-limit 180 \
+  --timeout-grace 15 \
+  --threads 4 \
+  --num-shards 77 \
+  --shard-index 0 \
+  --results-dir /kaggle/working/experiment_results \
+  --resume
+```
+
+Final shard:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id kaggle_shard_076 \
+  --runs 10 \
+  --time-limit 180 \
+  --timeout-grace 15 \
+  --threads 4 \
+  --num-shards 77 \
+  --shard-index 76 \
+  --results-dir /kaggle/working/experiment_results \
+  --resume
+```
+
+Optional shard manifests can be generated with:
+
+```bash
+python -m experiments.create_shards \
+  --config experiments/configs/mtp_solver_campaign.yaml \
+  --runs 10 \
+  --num-shards 77 \
+  --output-dir experiments/shards/kaggle_77
+```
+
+The manifest form for shard 000 is equivalent to `--num-shards 77
+--shard-index 0`:
+
+```bash
+python -m experiments.run_mtp_campaign \
+  --campaign-id kaggle_shard_000 \
+  --shard-manifest experiments/shards/kaggle_77/shard_000.json \
+  --time-limit 180 \
+  --timeout-grace 15 \
+  --threads 4 \
+  --results-dir /kaggle/working/experiment_results \
+  --resume
+```
+
+After all 77 Kaggle outputs have been saved locally, merge them without running
+any solver:
+
+```bash
+python -m experiments.merge_shards \
+  --input-root kaggle_shard_results \
+  --num-shards 77 \
+  --output-dir experiment_results/kaggle_merged
+```
+
 ## 6. Run The Full Campaign Interactively Inside An Allocation
 
 If your cluster gives you an interactive allocation, use the same command without

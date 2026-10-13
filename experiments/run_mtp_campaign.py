@@ -35,6 +35,14 @@ from .common import (
 from .evaluator_adapter import evaluate_solution_file
 from .reporting import rebuild_reports, update_best_for_pair
 from .solver_adapters import audit_solver_sources, load_solver_definitions, solver_manifest
+from .sharding import (
+    SEED_DERIVATION_VERSION,
+    ShardingError,
+    select_manifest_runs,
+    select_shard,
+    sha256_json,
+    validate_cli_shard_args,
+)
 from .state import (
     ERROR,
     INTERRUPTED,
@@ -65,6 +73,11 @@ STOP_EVENT = threading.Event()
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    try:
+        validate_cli_shard_args(args.num_shards, args.shard_index, args.shard_manifest)
+    except ShardingError as exc:
+        raise SystemExit(f"Sharding configuration error: {exc}") from exc
+
     root = repo_root()
     config = load_config(args.config, defaults={})
     apply_overrides(config, args)
@@ -92,9 +105,30 @@ def main(argv: list[str] | None = None) -> int:
     audit = audit_solver_sources(solvers, root)
     runs = int(config.get("runs", 10))
     root_seed = int(config.get("root_seed", 2026))
-    run_plan = make_run_plan(instances, solvers, runs, root_seed)
+    full_run_plan = make_run_plan(instances, solvers, runs, root_seed)
+    benchmark_manifest_hash = sha256_json(bench_manifest)
+    solver_manifest_hash = sha256_json(solv_manifest)
+    run_plan = full_run_plan
+    shard_selection = None
+    try:
+        if args.shard_manifest:
+            run_plan, shard_selection, _shard_manifest = select_manifest_runs(
+                full_run_plan,
+                args.shard_manifest,
+                root_seed=root_seed,
+                runs_per_solver_instance=runs,
+                benchmark_manifest_hash=benchmark_manifest_hash,
+            )
+        elif args.num_shards is not None and args.shard_index is not None:
+            run_plan, shard_selection = select_shard(full_run_plan, args.num_shards, args.shard_index)
+    except ShardingError as exc:
+        raise SystemExit(f"Sharding configuration error: {exc}") from exc
+
     planned_run_count = len(run_plan)
     current_manifest = {
+        "experiment_schema_version": "mtp_experiment_campaign_v1",
+        "evaluator_version": "mtp_evaluator_adapter_v1",
+        "seed_derivation_version": SEED_DERIVATION_VERSION,
         "campaign_id": campaign_id,
         "created_at": now_utc(),
         "config_hash": config_hash(config),
@@ -104,15 +138,20 @@ def main(argv: list[str] | None = None) -> int:
         "time_limit_seconds": float(config.get("time_limit_seconds", 180)),
         "timeout_grace_seconds": float(config.get("timeout_grace_seconds", 15)),
         "threads": int(config.get("threads", 1)),
+        "global_planned_run_count": len(full_run_plan),
         "planned_run_count": planned_run_count,
         "instance_filter": {
             "instances_per_family": instances_per_family,
             "source_instance_count": len(all_instances),
         },
+        "benchmark_manifest_hash": benchmark_manifest_hash,
+        "solver_manifest_hash": solver_manifest_hash,
         "benchmark_manifest": bench_manifest,
         "solver_manifest": solv_manifest,
         "solver_audit": audit,
     }
+    if shard_selection is not None:
+        current_manifest["shard"] = shard_selection.to_campaign_payload()
 
     if args.dry_run:
         print_dry_run(current_manifest, run_plan, solvers, root)
@@ -149,6 +188,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=int,
         help="Use only the first N deterministically sorted instances from each benchmark family.",
     )
+    parser.add_argument("--num-shards", type=int)
+    parser.add_argument("--shard-index", type=int)
+    parser.add_argument("--shard-manifest")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--rebuild-reports", action="store_true")
@@ -218,10 +260,28 @@ def print_dry_run(manifest: dict, run_plan: List[RunSpec], solvers, root: Path) 
         )
     print(f"Solvers: {manifest['solver_manifest']['count']}")
     print(f"Runs per solver-instance: {manifest['runs']}")
-    print(f"Total planned executions: {manifest['planned_run_count']}")
+    print(f"Global planned executions: {manifest.get('global_planned_run_count', manifest['planned_run_count'])}")
+    shard = manifest.get("shard")
+    if shard:
+        print(f"Shard mode: {shard['mode']}")
+        print(f"num_shards: {shard['num_shards']}")
+        print(f"shard_index: {shard['shard_index']}")
+        print(f"Runs assigned to shard: {shard['shard_run_count']}")
+        print(f"Shard size range: {shard['minimum_shard_size']}..{shard['maximum_shard_size']}")
+        if run_plan:
+            print(f"First shard run ID: {run_plan[0].run_id}")
+            print(f"Last shard run ID: {run_plan[-1].run_id}")
+    print(f"Total planned executions for this invocation: {manifest['planned_run_count']}")
     print(f"Threads / total CPU slots: {manifest['threads']}")
     max_parallel = _max_parallel(manifest["config"], solvers)
     print(f"Max parallel solver processes: {max_parallel}")
+    theoretical_batches = (len(run_plan) + max_parallel - 1) // max_parallel if max_parallel else 0
+    theoretical_seconds = theoretical_batches * float(manifest["time_limit_seconds"])
+    print(
+        "Theoretical ideal worst-case compute for this invocation: "
+        f"{theoretical_seconds:.1f} seconds ({theoretical_seconds / 3600.0:.2f} hours) "
+        "before timeout grace and orchestration overhead"
+    )
     print(f"Missing binaries: {len(missing)}")
     for row in missing[:10]:
         print(f"  missing: {row['solver_id']} -> {row['binary']}")
@@ -266,6 +326,8 @@ def _assert_manifest_compatible(existing: dict, current: dict) -> None:
         ("solver_manifest", "solver manifest"),
         ("runs", "runs"),
         ("root_seed", "root seed"),
+        ("planned_run_count", "planned run count"),
+        ("shard", "shard selection"),
     )
     for key, label in checks:
         if existing.get(key) != current.get(key):
