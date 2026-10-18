@@ -1,0 +1,97 @@
+{
+  "root_seed": 2026,
+  "runs": 10,
+  "time_limit_seconds": 180,
+  "timeout_grace_seconds": 15,
+  "threads": 8,
+  "max_parallel_runs": null,
+  "results_root": "experiment_results",
+  "retry_errors": false,
+  "retry_timeouts": false,
+  "retry_invalid": false,
+  "benchmark": {
+    "google_dir": "google_instances",
+    "generated_root": "generated_instances",
+    "generated_families": ["type2", "type3", "type4", "type5", "type6", "type7"],
+    "include_google_toy": false
+  },
+  "build": {
+    "compiler": "g++",
+    "cxx_standard": "c++20",
+    "optimization_flags": ["-O3"],
+    "extra_flags": [],
+    "output_manifest": "experiments/solver_manifest.json"
+  },
+  "solvers": [
+    {
+      "solver_id": "nanored_original_ab",
+      "source": "solvers/Nanored_hashCode2022/ab.cpp",
+      "binary": "experiments/bin/nanored_original_ab{exe}",
+      "stochastic": true,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_original_c",
+      "source": "solvers/Nanored_hashCode2022/c.cpp",
+      "binary": "experiments/bin/nanored_original_c{exe}",
+      "stochastic": true,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_original_d",
+      "source": "solvers/Nanored_hashCode2022/d.cpp",
+      "binary": "experiments/bin/nanored_original_d{exe}",
+      "stochastic": true,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_original_e",
+      "source": "solvers/Nanored_hashCode2022/e.cpp",
+      "binary": "experiments/bin/nanored_original_e{exe}",
+      "stochastic": false,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_original_f",
+      "source": "solvers/Nanored_hashCode2022/f.cpp",
+      "binary": "experiments/bin/nanored_original_f{exe}",
+      "stochastic": false,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_refactored_b",
+      "source": "solvers/refactored_Nanored/b.cpp",
+      "binary": "experiments/bin/nanored_refactored_b{exe}",
+      "stochastic": true,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_refactored_c",
+      "source": "solvers/refactored_Nanored/c.cpp",
+      "binary": "experiments/bin/nanored_refactored_c{exe}",
+      "stochastic": false,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_refactored_d",
+      "source": "solvers/refactored_Nanored/d.cpp",
+      "binary": "experiments/bin/nanored_refactored_d{exe}",
+      "stochastic": true,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_refactored_e",
+      "source": "solvers/refactored_Nanored/e.cpp",
+      "binary": "experiments/bin/nanored_refactored_e{exe}",
+      "stochastic": false,
+      "cpu_slots_per_run": 1
+    },
+    {
+      "solver_id": "nanored_refactored_f",
+      "source": "solvers/refactored_Nanored/f.cpp",
+      "binary": "experiments/bin/nanored_refactored_f{exe}",
+      "stochastic": false,
+      "cpu_slots_per_run": 1
+    }
+  ]
+}

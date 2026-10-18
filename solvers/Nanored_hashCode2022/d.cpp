@@ -3,7 +3,7 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 #include <algorithm>
-#include <array>
+#include <chrono>
 #include <iostream>
 #include <numeric>
 #include <random>
@@ -11,34 +11,40 @@
 #include <unordered_map>
 #include <vector>
 
-using namespace std;
-const int NS = 188;
+#include "../mtp_solver_common.hpp"
 
-int main() {
+using namespace std;
+
+int main(int argc, char **argv) {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
+	const SolverOptions options = parse_solver_options(argc, argv);
+	const auto t0 = chrono::steady_clock::now();
 
 	int C, P;
 	cin >> C >> P;
 	vector<string> Cnames(C), Pnames(P);
 	unordered_map<string, int> s2i;
-	vector<array<int, NS>> skill(C);
+	vector<vector<int>> skill(C);
 	vector<int> ts(C, 0);
 	vector<vector<pair<int, int>>> req(P);
 	vector<int> D(P), S(P), B(P);
-	array<vector<int>, NS> s2c;
+	vector<vector<int>> s2c;
 	vector<vector<int>> c2s(C);
 
 	for(int c = 0; c < C; ++c) {
-		int n, l; // n=1
-		string s;
-		skill[c].fill(0);
-		cin >> Cnames[c] >> n >> s >> l;
-		if(!s2i.count(s)) s2i[s] = s2i.size();
-		skill[c][s2i[s]] = l;
-		ts[c] += l;
-		s2c[s2i[s]].push_back(c);
-		c2s[c].push_back(s2i[s]);
+		int n;
+		cin >> Cnames[c] >> n;
+		skill[c].assign(s2i.size(), 0);
+		while(n--) {
+			string s; int l;
+			cin >> s >> l;
+			int sid = get_skill_id(s2i, skill, &s2c, s);
+			skill[c][sid] = l;
+			ts[c] += l;
+			s2c[sid].push_back(c);
+			c2s[c].push_back(sid);
+		}
 	}
 	cerr << C << ' ' << P << ' ' << s2i.size() << endl;
 	for(int p = 0; p < P; ++p) {
@@ -47,8 +53,7 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
-			req[p].emplace_back(s2i[s], l);
+			req[p].emplace_back(get_skill_id(s2i, skill, &s2c, s), l);
 		}
 	}
 
@@ -59,20 +64,21 @@ int main() {
 	unordered_set<int> ps;
 	vector<bool> chosen(C, false);
 	for(int p = 0; p < P; ++p) ps.insert(p);
-	mt19937 mt(42);
+	mt19937 mt(options.seed);
 	const auto ckey = [&](int c, int m, int s, int l) { return make_tuple(max(av[c], m), -skill[c][s], ts[c]); };
-	while(true) {
+	while(!time_limit_reached(t0, options.time_limit_seconds)) {
 		int bestP = -1, bestlvlup = -1, bestEnd = -1;
 		vector<int> bestCS;
 		for(int p : ps) {
+			if(time_limit_reached(t0, options.time_limit_seconds)) break;
 			int beste = -1, besto = -1;
 			vector<int> cs(req[p].size(), 0), cs2;
 			vector<int> ro(req[p].size());
-			array<int, NS> ms;
+			vector<int> ms(s2i.size());
 			iota(ro.begin(), ro.end(), 0);
 			for(int test = 0; test < 50; ++test) {
 				shuffle(ro.begin(), ro.end(), mt);
-				ms.fill(0);
+				fill(ms.begin(), ms.end(), 0);
 				int mav = 0, oo = 0, nr = req[p].size();
 				for(int o : ro) {
 					auto [s, l] = req[p][o];
