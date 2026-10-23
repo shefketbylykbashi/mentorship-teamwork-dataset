@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 5,
+  "best_runtime": 0.28928789403289557,
+  "best_score": 1043759,
+  "best_seed": 3819287195,
+  "best_solution_path": "runs/nanored_refactored_b/type1_b_better_start_small/exec_05/solution.txt",
+  "instance_id": "type1_b_better_start_small",
+  "solver_id": "nanored_refactored_b",
+  "source_run_id": "nanored_refactored_b__type1_b_better_start_small__exec_05",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T22:43:34+00:00"
+}

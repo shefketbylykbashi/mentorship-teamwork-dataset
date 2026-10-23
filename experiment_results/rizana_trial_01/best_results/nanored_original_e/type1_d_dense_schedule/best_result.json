@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 10,
+  "best_runtime": 0.1314542379695922,
+  "best_score": 372996,
+  "best_seed": 2661377658,
+  "best_solution_path": "runs/nanored_original_e/type1_d_dense_schedule/exec_10/solution.txt",
+  "instance_id": "type1_d_dense_schedule",
+  "solver_id": "nanored_original_e",
+  "source_run_id": "nanored_original_e__type1_d_dense_schedule__exec_10",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T05:41:21+00:00"
+}

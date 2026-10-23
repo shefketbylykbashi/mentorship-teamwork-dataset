@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 180.0335798279848,
+  "best_score": 939,
+  "best_seed": 1478064779,
+  "best_solution_path": "runs/nanored_original_ab/type5_092__GHFULL__LTplus-AG__ifc-lite/exec_02/solution.txt",
+  "instance_id": "type5_092__GHFULL__LTplus-AG__ifc-lite",
+  "solver_id": "nanored_original_ab",
+  "source_run_id": "nanored_original_ab__type5_092__GHFULL__LTplus-AG__ifc-lite__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-18T19:31:15+00:00"
+}

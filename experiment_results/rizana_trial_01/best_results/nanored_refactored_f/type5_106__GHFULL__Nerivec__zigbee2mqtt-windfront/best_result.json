@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 9,
+  "best_runtime": 0.3080376519355923,
+  "best_score": 344,
+  "best_seed": 1595670825,
+  "best_solution_path": "runs/nanored_refactored_f/type5_106__GHFULL__Nerivec__zigbee2mqtt-windfront/exec_09/solution.txt",
+  "instance_id": "type5_106__GHFULL__Nerivec__zigbee2mqtt-windfront",
+  "solver_id": "nanored_refactored_f",
+  "source_run_id": "nanored_refactored_f__type5_106__GHFULL__Nerivec__zigbee2mqtt-windfront__exec_09",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-22T18:23:56+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 4,
+  "best_runtime": 0.4293251489289105,
+  "best_score": 796,
+  "best_seed": 1655599284,
+  "best_solution_path": "runs/nanored_original_e/type5_093__GHFULL__open-telemetry__opentelemetry-python-genai/exec_04/solution.txt",
+  "instance_id": "type5_093__GHFULL__open-telemetry__opentelemetry-python-genai",
+  "solver_id": "nanored_original_e",
+  "source_run_id": "nanored_original_e__type5_093__GHFULL__open-telemetry__opentelemetry-python-genai__exec_04",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T10:19:51+00:00"
+}

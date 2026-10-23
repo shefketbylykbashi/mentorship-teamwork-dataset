@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 6,
+  "best_runtime": 0.1692996472120285,
+  "best_score": 621,
+  "best_seed": 660546093,
+  "best_solution_path": "runs/nanored_refactored_c/type5_101__GHFULL__lithosui__Lithos_UI/exec_06/solution.txt",
+  "instance_id": "type5_101__GHFULL__lithosui__Lithos_UI",
+  "solver_id": "nanored_refactored_c",
+  "source_run_id": "nanored_refactored_c__type5_101__GHFULL__lithosui__Lithos_UI__exec_06",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T18:05:23+00:00"
+}

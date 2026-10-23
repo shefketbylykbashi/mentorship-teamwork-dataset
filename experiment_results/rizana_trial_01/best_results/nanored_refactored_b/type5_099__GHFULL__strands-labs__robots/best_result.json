@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 5,
+  "best_runtime": 23.895536452066153,
+  "best_score": 566,
+  "best_seed": 2699225286,
+  "best_solution_path": "runs/nanored_refactored_b/type5_099__GHFULL__strands-labs__robots/exec_05/solution.txt",
+  "instance_id": "type5_099__GHFULL__strands-labs__robots",
+  "solver_id": "nanored_refactored_b",
+  "source_run_id": "nanored_refactored_b__type5_099__GHFULL__strands-labs__robots__exec_05",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T06:29:02+00:00"
+}

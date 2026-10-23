@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 10,
+  "best_runtime": 0.5386112430132926,
+  "best_score": 141,
+  "best_seed": 3588475602,
+  "best_solution_path": "runs/nanored_refactored_b/type5_100__GHFULL__wso2__product-integrator/exec_10/solution.txt",
+  "instance_id": "type5_100__GHFULL__wso2__product-integrator",
+  "solver_id": "nanored_refactored_b",
+  "source_run_id": "nanored_refactored_b__type5_100__GHFULL__wso2__product-integrator__exec_10",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T06:28:37+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 181.1806817438919,
+  "best_score": 267629,
+  "best_seed": 1831554449,
+  "best_solution_path": "runs/nanored_original_ab/type1_f_find_great_mentors/exec_02/solution.txt",
+  "instance_id": "type1_f_find_great_mentors",
+  "solver_id": "nanored_original_ab",
+  "source_run_id": "nanored_original_ab__type1_f_find_great_mentors__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-18T13:15:42+00:00"
+}

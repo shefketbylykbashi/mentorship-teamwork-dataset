@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 7,
+  "best_runtime": 0.1945274171885103,
+  "best_score": 434,
+  "best_seed": 4219812452,
+  "best_solution_path": "runs/nanored_refactored_d/type5_103__GHFULL__griffinwork40__agent-afk/exec_07/solution.txt",
+  "instance_id": "type5_103__GHFULL__griffinwork40__agent-afk",
+  "solver_id": "nanored_refactored_d",
+  "source_run_id": "nanored_refactored_d__type5_103__GHFULL__griffinwork40__agent-afk__exec_07",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-21T06:52:28+00:00"
+}

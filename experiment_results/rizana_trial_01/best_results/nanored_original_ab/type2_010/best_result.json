@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 8,
+  "best_runtime": 180.2013608000707,
+  "best_score": 35341,
+  "best_seed": 3001164355,
+  "best_solution_path": "runs/nanored_original_ab/type2_010/exec_08/solution.txt",
+  "instance_id": "type2_010",
+  "solver_id": "nanored_original_ab",
+  "source_run_id": "nanored_original_ab__type2_010__exec_08",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-18T13:25:06+00:00"
+}

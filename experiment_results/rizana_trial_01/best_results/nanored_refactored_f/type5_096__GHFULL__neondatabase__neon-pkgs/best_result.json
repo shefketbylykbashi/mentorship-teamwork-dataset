@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 0.27139434800483286,
+  "best_score": 1366,
+  "best_seed": 770480186,
+  "best_solution_path": "runs/nanored_refactored_f/type5_096__GHFULL__neondatabase__neon-pkgs/exec_02/solution.txt",
+  "instance_id": "type5_096__GHFULL__neondatabase__neon-pkgs",
+  "solver_id": "nanored_refactored_f",
+  "source_run_id": "nanored_refactored_f__type5_096__GHFULL__neondatabase__neon-pkgs__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-22T18:01:59+00:00"
+}

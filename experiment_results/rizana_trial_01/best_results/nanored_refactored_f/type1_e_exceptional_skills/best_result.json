@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 17.636896878946573,
+  "best_score": 922154,
+  "best_seed": 1158517820,
+  "best_solution_path": "runs/nanored_refactored_f/type1_e_exceptional_skills/exec_02/solution.txt",
+  "instance_id": "type1_e_exceptional_skills",
+  "solver_id": "nanored_refactored_f",
+  "source_run_id": "nanored_refactored_f__type1_e_exceptional_skills__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-22T04:55:32+00:00"
+}

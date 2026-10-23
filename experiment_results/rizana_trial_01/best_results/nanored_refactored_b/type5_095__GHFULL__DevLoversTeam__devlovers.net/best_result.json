@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 0.27306670788675547,
+  "best_score": 271,
+  "best_seed": 2610563848,
+  "best_solution_path": "runs/nanored_refactored_b/type5_095__GHFULL__DevLoversTeam__devlovers.net/exec_02/solution.txt",
+  "instance_id": "type5_095__GHFULL__DevLoversTeam__devlovers.net",
+  "solver_id": "nanored_refactored_b",
+  "source_run_id": "nanored_refactored_b__type5_095__GHFULL__DevLoversTeam__devlovers.net__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T06:28:35+00:00"
+}

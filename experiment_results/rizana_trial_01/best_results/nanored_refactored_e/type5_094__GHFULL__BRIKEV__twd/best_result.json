@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 7,
+  "best_runtime": 0.05042309290729463,
+  "best_score": 71,
+  "best_seed": 4280664120,
+  "best_solution_path": "runs/nanored_refactored_e/type5_094__GHFULL__BRIKEV__twd/exec_07/solution.txt",
+  "instance_id": "type5_094__GHFULL__BRIKEV__twd",
+  "solver_id": "nanored_refactored_e",
+  "source_run_id": "nanored_refactored_e__type5_094__GHFULL__BRIKEV__twd__exec_07",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-21T22:37:42+00:00"
+}

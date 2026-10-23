@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 4,
+  "best_runtime": 0.2597721798811108,
+  "best_score": 317,
+  "best_seed": 2574212395,
+  "best_solution_path": "runs/nanored_original_e/type5_100__GHFULL__wso2__product-integrator/exec_04/solution.txt",
+  "instance_id": "type5_100__GHFULL__wso2__product-integrator",
+  "solver_id": "nanored_original_e",
+  "source_run_id": "nanored_original_e__type5_100__GHFULL__wso2__product-integrator__exec_04",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T10:24:00+00:00"
+}

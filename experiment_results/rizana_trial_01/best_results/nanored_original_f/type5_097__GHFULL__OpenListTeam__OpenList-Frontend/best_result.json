@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 1,
+  "best_runtime": 0.18768289289437234,
+  "best_score": 2017,
+  "best_seed": 2194037093,
+  "best_solution_path": "runs/nanored_original_f/type5_097__GHFULL__OpenListTeam__OpenList-Frontend/exec_01/solution.txt",
+  "instance_id": "type5_097__GHFULL__OpenListTeam__OpenList-Frontend",
+  "solver_id": "nanored_original_f",
+  "source_run_id": "nanored_original_f__type5_097__GHFULL__OpenListTeam__OpenList-Frontend__exec_01",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T19:31:40+00:00"
+}

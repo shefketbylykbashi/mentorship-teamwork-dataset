@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 0.2611597799696028,
+  "best_score": 531,
+  "best_seed": 1626493353,
+  "best_solution_path": "runs/nanored_refactored_f/type5_102__GHFULL__sahil87__run-kit/exec_02/solution.txt",
+  "instance_id": "type5_102__GHFULL__sahil87__run-kit",
+  "solver_id": "nanored_refactored_f",
+  "source_run_id": "nanored_refactored_f__type5_102__GHFULL__sahil87__run-kit__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-22T18:12:53+00:00"
+}

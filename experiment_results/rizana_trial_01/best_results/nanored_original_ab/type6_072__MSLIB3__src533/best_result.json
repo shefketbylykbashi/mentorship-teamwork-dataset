@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 5,
+  "best_runtime": 180.00902058603242,
+  "best_score": 4784,
+  "best_seed": 1229694177,
+  "best_solution_path": "runs/nanored_original_ab/type6_072__MSLIB3__src533/exec_05/solution.txt",
+  "instance_id": "type6_072__MSLIB3__src533",
+  "solver_id": "nanored_original_ab",
+  "source_run_id": "nanored_original_ab__type6_072__MSLIB3__src533__exec_05",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-18T20:54:08+00:00"
+}

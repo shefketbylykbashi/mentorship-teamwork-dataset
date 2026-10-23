@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 9,
+  "best_runtime": 0.29526599613018334,
+  "best_score": 110356,
+  "best_seed": 1752658023,
+  "best_solution_path": "runs/nanored_original_e/type1_c_collaboration/exec_09/solution.txt",
+  "instance_id": "type1_c_collaboration",
+  "solver_id": "nanored_original_e",
+  "source_run_id": "nanored_original_e__type1_c_collaboration__exec_09",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T05:40:32+00:00"
+}

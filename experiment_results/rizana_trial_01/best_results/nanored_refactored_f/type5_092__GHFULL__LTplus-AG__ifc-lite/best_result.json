@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 10,
+  "best_runtime": 2.322304188972339,
+  "best_score": 1732,
+  "best_seed": 1164563162,
+  "best_solution_path": "runs/nanored_refactored_f/type5_092__GHFULL__LTplus-AG__ifc-lite/exec_10/solution.txt",
+  "instance_id": "type5_092__GHFULL__LTplus-AG__ifc-lite",
+  "solver_id": "nanored_refactored_f",
+  "source_run_id": "nanored_refactored_f__type5_092__GHFULL__LTplus-AG__ifc-lite__exec_10",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-22T17:50:49+00:00"
+}

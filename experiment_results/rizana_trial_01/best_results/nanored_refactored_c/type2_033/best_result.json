@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 10,
+  "best_runtime": 9.857008401071653,
+  "best_score": 8414438,
+  "best_seed": 4157150684,
+  "best_solution_path": "runs/nanored_refactored_c/type2_033/exec_10/solution.txt",
+  "instance_id": "type2_033",
+  "solver_id": "nanored_refactored_c",
+  "source_run_id": "nanored_refactored_c__type2_033__exec_10",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T10:47:59+00:00"
+}

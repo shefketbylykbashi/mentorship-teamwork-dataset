@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 9,
+  "best_runtime": 180.05079389503226,
+  "best_score": 1102,
+  "best_seed": 2518335681,
+  "best_solution_path": "runs/nanored_original_ab/type5_107__GHFULL__rhel-lightspeed__linux-mcp-server/exec_09/solution.txt",
+  "instance_id": "type5_107__GHFULL__rhel-lightspeed__linux-mcp-server",
+  "solver_id": "nanored_original_ab",
+  "source_run_id": "nanored_original_ab__type5_107__GHFULL__rhel-lightspeed__linux-mcp-server__exec_09",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-18T19:44:56+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 10,
+  "best_runtime": 0.5391395529732108,
+  "best_score": 207,
+  "best_seed": 2273720931,
+  "best_solution_path": "runs/nanored_refactored_b/type5_105__GHFULL__profullstack__coinpayportal/exec_10/solution.txt",
+  "instance_id": "type5_105__GHFULL__profullstack__coinpayportal",
+  "solver_id": "nanored_refactored_b",
+  "source_run_id": "nanored_refactored_b__type5_105__GHFULL__profullstack__coinpayportal__exec_10",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T06:34:30+00:00"
+}

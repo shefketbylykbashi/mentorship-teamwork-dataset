@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 10,
+  "best_runtime": 0.16827744315378368,
+  "best_score": 89,
+  "best_seed": 1784603218,
+  "best_solution_path": "runs/nanored_original_d/type5_094__GHFULL__BRIKEV__twd/exec_10/solution.txt",
+  "instance_id": "type5_094__GHFULL__BRIKEV__twd",
+  "solver_id": "nanored_original_d",
+  "source_run_id": "nanored_original_d__type5_094__GHFULL__BRIKEV__twd__exec_10",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T04:32:59+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 7,
+  "best_runtime": 3.8576739958953112,
+  "best_score": 273810,
+  "best_seed": 1139571610,
+  "best_solution_path": "runs/nanored_original_f/type1_c_collaboration/exec_07/solution.txt",
+  "instance_id": "type1_c_collaboration",
+  "solver_id": "nanored_original_f",
+  "source_run_id": "nanored_original_f__type1_c_collaboration__exec_07",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T13:02:21+00:00"
+}

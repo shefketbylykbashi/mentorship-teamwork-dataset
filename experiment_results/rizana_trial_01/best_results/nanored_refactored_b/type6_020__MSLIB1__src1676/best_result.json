@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 2,
+  "best_runtime": 0.21921324892900884,
+  "best_score": 16377,
+  "best_seed": 1428488886,
+  "best_solution_path": "runs/nanored_refactored_b/type6_020__MSLIB1__src1676/exec_02/solution.txt",
+  "instance_id": "type6_020__MSLIB1__src1676",
+  "solver_id": "nanored_refactored_b",
+  "source_run_id": "nanored_refactored_b__type6_020__MSLIB1__src1676__exec_02",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T06:59:26+00:00"
+}

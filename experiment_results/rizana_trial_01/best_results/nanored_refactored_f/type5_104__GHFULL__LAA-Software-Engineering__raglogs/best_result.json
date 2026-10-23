@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 9,
+  "best_runtime": 0.05047709192149341,
+  "best_score": 89,
+  "best_seed": 2578639413,
+  "best_solution_path": "runs/nanored_refactored_f/type5_104__GHFULL__LAA-Software-Engineering__raglogs/exec_09/solution.txt",
+  "instance_id": "type5_104__GHFULL__LAA-Software-Engineering__raglogs",
+  "solver_id": "nanored_refactored_f",
+  "source_run_id": "nanored_refactored_f__type5_104__GHFULL__LAA-Software-Engineering__raglogs__exec_09",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-22T18:23:55+00:00"
+}

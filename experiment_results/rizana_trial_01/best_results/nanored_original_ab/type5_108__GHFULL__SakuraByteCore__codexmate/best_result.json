@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 4,
+  "best_runtime": 180.02652715099975,
+  "best_score": 362,
+  "best_seed": 628638301,
+  "best_solution_path": "runs/nanored_original_ab/type5_108__GHFULL__SakuraByteCore__codexmate/exec_04/solution.txt",
+  "instance_id": "type5_108__GHFULL__SakuraByteCore__codexmate",
+  "solver_id": "nanored_original_ab",
+  "source_run_id": "nanored_original_ab__type5_108__GHFULL__SakuraByteCore__codexmate__exec_04",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-18T19:46:34+00:00"
+}

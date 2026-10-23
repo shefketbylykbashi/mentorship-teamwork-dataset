@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 5,
+  "best_runtime": 0.9761004669126123,
+  "best_score": 1648976,
+  "best_seed": 1876870032,
+  "best_solution_path": "runs/nanored_original_e/type1_e_exceptional_skills/exec_05/solution.txt",
+  "instance_id": "type1_e_exceptional_skills",
+  "solver_id": "nanored_original_e",
+  "source_run_id": "nanored_original_e__type1_e_exceptional_skills__exec_05",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T05:43:03+00:00"
+}

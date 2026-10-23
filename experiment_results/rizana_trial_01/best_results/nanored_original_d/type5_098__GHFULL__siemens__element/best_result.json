@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 1,
+  "best_runtime": 17.000620062928647,
+  "best_score": 435,
+  "best_seed": 3825724918,
+  "best_solution_path": "runs/nanored_original_d/type5_098__GHFULL__siemens__element/exec_01/solution.txt",
+  "instance_id": "type5_098__GHFULL__siemens__element",
+  "solver_id": "nanored_original_d",
+  "source_run_id": "nanored_original_d__type5_098__GHFULL__siemens__element__exec_01",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-19T04:34:56+00:00"
+}

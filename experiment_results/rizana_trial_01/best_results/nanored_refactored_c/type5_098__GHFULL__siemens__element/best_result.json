@@ -1,0 +1,12 @@
+{
+  "best_execution_index": 5,
+  "best_runtime": 0.49631781596690416,
+  "best_score": 1555,
+  "best_seed": 3241878456,
+  "best_solution_path": "runs/nanored_refactored_c/type5_098__GHFULL__siemens__element/exec_05/solution.txt",
+  "instance_id": "type5_098__GHFULL__siemens__element",
+  "solver_id": "nanored_refactored_c",
+  "source_run_id": "nanored_refactored_c__type5_098__GHFULL__siemens__element__exec_05",
+  "status": "SUCCESS",
+  "updated_at": "2026-10-20T18:02:14+00:00"
+}
