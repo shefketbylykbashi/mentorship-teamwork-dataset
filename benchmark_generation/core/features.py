@@ -91,7 +91,9 @@ def _entropy_concentration(counts: Mapping[str, int | float]) -> float:
 
 
 def _cosine_similarity(a: Mapping[str, int | float], b: Mapping[str, int | float]) -> float:
-    keys = set(a) | set(b)
+    # Stable iteration order is needed for byte-reproducible floating sums
+    # across Python processes with different hash randomization seeds.
+    keys = sorted(set(a) | set(b))
     numerator = sum(float(a.get(key, 0.0)) * float(b.get(key, 0.0)) for key in keys)
     norm_a = math.sqrt(sum(float(a.get(key, 0.0)) ** 2 for key in keys))
     norm_b = math.sqrt(sum(float(b.get(key, 0.0)) ** 2 for key in keys))
@@ -204,12 +206,27 @@ def extract_features(instance: MTPInstance) -> Dict[str, float]:
         gap = _safe_mean(role_levels) - _safe_mean(supply_levels)
         level_gaps.extend([gap] * len(role_levels))
 
-    direct_roles = [role_directly_fillable(role, supply_index) for role in all_roles]
-    mentor_roles = [role_mentor_fillable(role, supply_index) for role in all_roles]
-    learning_roles = [role_learning_reachable(role, supply_index) for role in all_roles]
-    mentor_available = [role_mentor_fillable(role, supply_index) for role in all_roles]
+    # Many projects repeat the same (skill, required level). Cache these
+    # static role predicates once per distinct requirement. This preserves
+    # their existing definitions while avoiding repeated scans of the same
+    # contributor-level list on large benchmark instances.
+    role_predicates: Dict[tuple[str, int], tuple[bool, bool, bool]] = {}
+    for role in all_roles:
+        key = (role.skill, role.level)
+        if key not in role_predicates:
+            role_predicates[key] = (
+                role_directly_fillable(role, supply_index),
+                role_mentor_fillable(role, supply_index),
+                role_learning_reachable(role, supply_index),
+            )
+    direct_roles = [role_predicates[(role.skill, role.level)][0] for role in all_roles]
+    mentor_roles = [role_predicates[(role.skill, role.level)][1] for role in all_roles]
+    learning_roles = [role_predicates[(role.skill, role.level)][2] for role in all_roles]
+    mentor_available = mentor_roles
     project_mentorship = [
-        project_has_potential_mentorship(project, supply_index) for project in instance.projects
+        len(project.roles) >= 2
+        and any(role_predicates[(role.skill, role.level)][1] for role in project.roles)
+        for project in instance.projects
     ]
 
     score_density_values = [

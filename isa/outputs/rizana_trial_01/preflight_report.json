@@ -1,0 +1,544 @@
+{
+  "interpretation": "descriptive benchmark diagnostics; oracle uses observed same-instance outcomes and is unattainable at deployment",
+  "good_threshold": 0.95,
+  "portfolio_size": 7,
+  "pooled": {
+    "count": 611,
+    "number_good_distribution": {
+      "1": 131,
+      "2": 101,
+      "3": 51,
+      "4": 40,
+      "5": 57,
+      "6": 79,
+      "7": 152
+    },
+    "cobest_tie_count": 194,
+    "all_solvers_cobest_count": 106,
+    "easy_count_beta_0_55": 328,
+    "solver_metrics": {
+      "nanored_original_ab": {
+        "mean_ratio": 0.8557286003153177,
+        "median_ratio": 1.0,
+        "mean_normalized_regret": 0.14427139968468228,
+        "good_count": 427,
+        "good_fraction": 0.6988543371522095
+      },
+      "nanored_original_c": {
+        "mean_ratio": 0.9172381402804534,
+        "median_ratio": 0.9778506028228612,
+        "mean_normalized_regret": 0.0827618597195466,
+        "good_count": 392,
+        "good_fraction": 0.6415711947626841
+      },
+      "nanored_original_d": {
+        "mean_ratio": 0.663831690275448,
+        "median_ratio": 0.9351414735836354,
+        "mean_normalized_regret": 0.33616830972455203,
+        "good_count": 264,
+        "good_fraction": 0.4320785597381342
+      },
+      "nanored_original_e": {
+        "mean_ratio": 0.8563970570698014,
+        "median_ratio": 0.9878316847228764,
+        "mean_normalized_regret": 0.14360294293019857,
+        "good_count": 380,
+        "good_fraction": 0.6219312602291326
+      },
+      "nanored_original_f": {
+        "mean_ratio": 0.918555970193445,
+        "median_ratio": 0.9975063102514977,
+        "mean_normalized_regret": 0.08144402980655492,
+        "good_count": 461,
+        "good_fraction": 0.7545008183306056
+      },
+      "nanored_refactored_b": {
+        "mean_ratio": 0.6644331029546527,
+        "median_ratio": 0.9355488418932528,
+        "mean_normalized_regret": 0.3355668970453472,
+        "good_count": 265,
+        "good_fraction": 0.4337152209492635
+      },
+      "nanored_refactored_c": {
+        "mean_ratio": 0.8293037171999936,
+        "median_ratio": 0.9274895311633138,
+        "mean_normalized_regret": 0.1706962828000064,
+        "good_count": 280,
+        "good_fraction": 0.4582651391162029
+      }
+    }
+  },
+  "by_family": {
+    "type1": {
+      "count": 5,
+      "number_good_distribution": {
+        "1": 2,
+        "2": 2,
+        "3": 1
+      },
+      "cobest_tie_count": 0,
+      "all_solvers_cobest_count": 0,
+      "easy_count_beta_0_55": 0,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.5480022049983467,
+          "median_ratio": 0.7524323435959241,
+          "mean_normalized_regret": 0.4519977950016532,
+          "good_count": 0,
+          "good_fraction": 0.0
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.9254135485717261,
+          "median_ratio": 0.9684829645775024,
+          "mean_normalized_regret": 0.07458645142827396,
+          "good_count": 3,
+          "good_fraction": 0.6
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.484276932721754,
+          "median_ratio": 0.20912932325335085,
+          "mean_normalized_regret": 0.515723067278246,
+          "good_count": 1,
+          "good_fraction": 0.2
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.6577170332970903,
+          "median_ratio": 0.8546973465856619,
+          "mean_normalized_regret": 0.34228296670290975,
+          "good_count": 1,
+          "good_fraction": 0.2
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.6906827795885941,
+          "median_ratio": 0.8403785302546216,
+          "mean_normalized_regret": 0.30931722041140586,
+          "good_count": 2,
+          "good_fraction": 0.4
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.4871679904492574,
+          "median_ratio": 0.2092191665753625,
+          "mean_normalized_regret": 0.5128320095507426,
+          "good_count": 2,
+          "good_fraction": 0.4
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.7056282613521581,
+          "median_ratio": 0.8251219848770598,
+          "mean_normalized_regret": 0.29437173864784194,
+          "good_count": 0,
+          "good_fraction": 0.0
+        }
+      }
+    },
+    "type2": {
+      "count": 100,
+      "number_good_distribution": {
+        "1": 15,
+        "2": 20,
+        "3": 10,
+        "4": 3,
+        "5": 2,
+        "6": 16,
+        "7": 34
+      },
+      "cobest_tie_count": 48,
+      "all_solvers_cobest_count": 28,
+      "easy_count_beta_0_55": 55,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.744162887988651,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.2558371120113489,
+          "good_count": 61,
+          "good_fraction": 0.61
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.9492575425432112,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.05074245745678882,
+          "good_count": 75,
+          "good_fraction": 0.75
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.6828871403742884,
+          "median_ratio": 0.9781163619234309,
+          "mean_normalized_regret": 0.31711285962571156,
+          "good_count": 52,
+          "good_fraction": 0.52
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.9308895154999144,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.0691104845000856,
+          "good_count": 79,
+          "good_fraction": 0.79
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.911427759550449,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.088572240449551,
+          "good_count": 70,
+          "good_fraction": 0.7
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.6834945224285148,
+          "median_ratio": 0.9788971306495857,
+          "mean_normalized_regret": 0.31650547757148517,
+          "good_count": 52,
+          "good_fraction": 0.52
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.8707953247385345,
+          "median_ratio": 0.9589348198528116,
+          "mean_normalized_regret": 0.1292046752614655,
+          "good_count": 52,
+          "good_fraction": 0.52
+        }
+      }
+    },
+    "type3": {
+      "count": 98,
+      "number_good_distribution": {
+        "1": 15,
+        "2": 33,
+        "3": 7,
+        "4": 3,
+        "5": 5,
+        "6": 17,
+        "7": 18
+      },
+      "cobest_tie_count": 27,
+      "all_solvers_cobest_count": 8,
+      "easy_count_beta_0_55": 43,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.6443516589132592,
+          "median_ratio": 0.9930568652437975,
+          "mean_normalized_regret": 0.3556483410867408,
+          "good_count": 56,
+          "good_fraction": 0.5714285714285714
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.8549097961841112,
+          "median_ratio": 0.9880050322875924,
+          "mean_normalized_regret": 0.1450902038158888,
+          "good_count": 57,
+          "good_fraction": 0.5816326530612245
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.5720856331547973,
+          "median_ratio": 0.8109441591071749,
+          "mean_normalized_regret": 0.4279143668452026,
+          "good_count": 39,
+          "good_fraction": 0.3979591836734694
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.7858926705492946,
+          "median_ratio": 0.981116127379321,
+          "mean_normalized_regret": 0.21410732945070546,
+          "good_count": 57,
+          "good_fraction": 0.5816326530612245
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.9097708056280487,
+          "median_ratio": 0.996172664587283,
+          "mean_normalized_regret": 0.09022919437195129,
+          "good_count": 71,
+          "good_fraction": 0.7244897959183674
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.5718082191553042,
+          "median_ratio": 0.8007111450770561,
+          "mean_normalized_regret": 0.4281917808446958,
+          "good_count": 39,
+          "good_fraction": 0.3979591836734694
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.8553984988177075,
+          "median_ratio": 0.9392819437057172,
+          "mean_normalized_regret": 0.1446015011822926,
+          "good_count": 48,
+          "good_fraction": 0.4897959183673469
+        }
+      }
+    },
+    "type4": {
+      "count": 100,
+      "number_good_distribution": {
+        "1": 13,
+        "2": 10,
+        "3": 18,
+        "4": 5,
+        "5": 15,
+        "6": 6,
+        "7": 33
+      },
+      "cobest_tie_count": 40,
+      "all_solvers_cobest_count": 23,
+      "easy_count_beta_0_55": 59,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.9469155019409646,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.05308449805903531,
+          "good_count": 86,
+          "good_fraction": 0.86
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.9640708126433086,
+          "median_ratio": 0.9987835783559723,
+          "mean_normalized_regret": 0.0359291873566914,
+          "good_count": 80,
+          "good_fraction": 0.8
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.613789692934854,
+          "median_ratio": 0.8962949331026091,
+          "mean_normalized_regret": 0.38621030706514603,
+          "good_count": 45,
+          "good_fraction": 0.45
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.9253314636602241,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.07466853633977584,
+          "good_count": 74,
+          "good_fraction": 0.74
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.8207904598286047,
+          "median_ratio": 0.9852012897000472,
+          "mean_normalized_regret": 0.17920954017139534,
+          "good_count": 61,
+          "good_fraction": 0.61
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.6150713019133816,
+          "median_ratio": 0.8938239990496002,
+          "mean_normalized_regret": 0.38492869808661845,
+          "good_count": 44,
+          "good_fraction": 0.44
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.7903181366930745,
+          "median_ratio": 0.9763147348602782,
+          "mean_normalized_regret": 0.20968186330692554,
+          "good_count": 59,
+          "good_fraction": 0.59
+        }
+      }
+    },
+    "type5": {
+      "count": 108,
+      "number_good_distribution": {
+        "1": 76,
+        "2": 23,
+        "3": 8,
+        "4": 1
+      },
+      "cobest_tie_count": 0,
+      "all_solvers_cobest_count": 0,
+      "easy_count_beta_0_55": 1,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.8281882185888118,
+          "median_ratio": 0.8634588622229749,
+          "mean_normalized_regret": 0.17181178141118825,
+          "good_count": 33,
+          "good_fraction": 0.3055555555555556
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.8062805088023335,
+          "median_ratio": 0.83275459481154,
+          "mean_normalized_regret": 0.19371949119766657,
+          "good_count": 6,
+          "good_fraction": 0.05555555555555555
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.33026708052420456,
+          "median_ratio": 0.2888196407729966,
+          "mean_normalized_regret": 0.6697329194757955,
+          "good_count": 0,
+          "good_fraction": 0.0
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.6477852962871592,
+          "median_ratio": 0.6323537298164497,
+          "mean_normalized_regret": 0.3522147037128408,
+          "good_count": 16,
+          "good_fraction": 0.14814814814814814
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.9818970924338992,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.018102907566100782,
+          "good_count": 90,
+          "good_fraction": 0.8333333333333334
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.33063111638663895,
+          "median_ratio": 0.28727307769738253,
+          "mean_normalized_regret": 0.6693688836133611,
+          "good_count": 0,
+          "good_fraction": 0.0
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.7547644377171636,
+          "median_ratio": 0.7993453664578029,
+          "mean_normalized_regret": 0.24523556228283638,
+          "good_count": 5,
+          "good_fraction": 0.046296296296296294
+        }
+      }
+    },
+    "type6": {
+      "count": 100,
+      "number_good_distribution": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 22,
+        "5": 29,
+        "6": 25,
+        "7": 17
+      },
+      "cobest_tie_count": 6,
+      "all_solvers_cobest_count": 0,
+      "easy_count_beta_0_55": 93,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.9999899787607422,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 1.0021239257730352e-05,
+          "good_count": 100,
+          "good_fraction": 1.0
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.971356128248681,
+          "median_ratio": 0.9731594914154811,
+          "mean_normalized_regret": 0.02864387175131898,
+          "good_count": 91,
+          "good_fraction": 0.91
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.9547126111444162,
+          "median_ratio": 0.9528956696962901,
+          "mean_normalized_regret": 0.045287388855583824,
+          "good_count": 56,
+          "good_fraction": 0.56
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.9665081237664329,
+          "median_ratio": 0.9857107516476395,
+          "mean_normalized_regret": 0.03349187623356705,
+          "good_count": 82,
+          "good_fraction": 0.82
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.9618244769205821,
+          "median_ratio": 0.9772954137206098,
+          "mean_normalized_regret": 0.03817552307941786,
+          "good_count": 83,
+          "good_fraction": 0.83
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.9550401816220672,
+          "median_ratio": 0.9526597718315777,
+          "mean_normalized_regret": 0.04495981837793282,
+          "good_count": 57,
+          "good_fraction": 0.57
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.9006364757250779,
+          "median_ratio": 0.947382834960881,
+          "mean_normalized_regret": 0.09936352427492218,
+          "good_count": 49,
+          "good_fraction": 0.49
+        }
+      }
+    },
+    "type7": {
+      "count": 100,
+      "number_good_distribution": {
+        "1": 9,
+        "2": 10,
+        "3": 4,
+        "4": 6,
+        "5": 6,
+        "6": 15,
+        "7": 50
+      },
+      "cobest_tie_count": 73,
+      "all_solvers_cobest_count": 47,
+      "easy_count_beta_0_55": 77,
+      "solver_metrics": {
+        "nanored_original_ab": {
+          "mean_ratio": 0.9841253671754051,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.015874632824594885,
+          "good_count": 91,
+          "good_fraction": 0.91
+        },
+        "nanored_original_c": {
+          "mean_ratio": 0.964775326482834,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.03522467351716592,
+          "good_count": 80,
+          "good_fraction": 0.8
+        },
+        "nanored_original_d": {
+          "mean_ratio": 0.8630759690354987,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.13692403096450137,
+          "good_count": 71,
+          "good_fraction": 0.71
+        },
+        "nanored_original_e": {
+          "mean_ratio": 0.9071881269766201,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.09281187302337987,
+          "good_count": 71,
+          "good_fraction": 0.71
+        },
+        "nanored_original_f": {
+          "mean_ratio": 0.931775893258785,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.06822410674121498,
+          "good_count": 84,
+          "good_fraction": 0.84
+        },
+        "nanored_refactored_b": {
+          "mean_ratio": 0.864268193096734,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.135731806903266,
+          "good_count": 71,
+          "good_fraction": 0.71
+        },
+        "nanored_refactored_c": {
+          "mean_ratio": 0.8165782402917763,
+          "median_ratio": 1.0,
+          "mean_normalized_regret": 0.1834217597082237,
+          "good_count": 67,
+          "good_fraction": 0.67
+        }
+      }
+    }
+  },
+  "best_fixed_solver_pooled": "nanored_original_f",
+  "best_fixed_mean_ratio_pooled": 0.918555970193445,
+  "pooled_oracle_ratio": 1.0,
+  "pooled_oracle_headroom_vs_best_fixed": 0.08144402980655496,
+  "family_balanced_mean_ratio": {
+    "nanored_original_ab": 0.813676545480883,
+    "nanored_original_c": 0.9194376662108865,
+    "nanored_original_d": 0.643013579984259,
+    "nanored_original_e": 0.8316160328623908,
+    "nanored_original_f": 0.8868813238869947,
+    "nanored_refactored_b": 0.6439259321502712,
+    "nanored_refactored_c": 0.8134456250479275
+  },
+  "best_fixed_solver_family_balanced": "nanored_original_c",
+  "family_balanced_oracle_headroom_vs_best_fixed": 0.08056233378911348,
+  "caution": "The 611 designed instances are not a random population sample; these are descriptive scores, not confidence intervals or cross-validated selector accuracy."
+}

@@ -1,0 +1,160 @@
+{
+  "policy": "prespecified solver-independent domain shortlist; remove constants and |Spearman rho| >= threshold unless final group member",
+  "redundancy_threshold": 0.98,
+  "candidate_feature_count": 37,
+  "selected_count": 15,
+  "selected_columns": [
+    "feature_log1p_n_contributors",
+    "feature_log1p_n_projects",
+    "feature_roles_per_project_mean",
+    "feature_log1p_contention",
+    "feature_demand_supply_alignment",
+    "feature_unmet_skill_share",
+    "feature_contributor_level_mean",
+    "feature_level_gap_mean",
+    "feature_direct_fillability",
+    "feature_learning_reachable_demand",
+    "feature_deadline_tightness_mean",
+    "feature_log1p_schedule_pressure",
+    "feature_score_concentration",
+    "feature_log1p_score_density",
+    "feature_score_effort_correlation"
+  ],
+  "decisions": [
+    {
+      "raw_feature": "n_contributors",
+      "column": "feature_log1p_n_contributors",
+      "transform": "log1p",
+      "group": "size",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "n_projects",
+      "column": "feature_log1p_n_projects",
+      "transform": "log1p",
+      "group": "size",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "roles_per_project_mean",
+      "column": "feature_roles_per_project_mean",
+      "transform": "identity",
+      "group": "size",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "contention",
+      "column": "feature_log1p_contention",
+      "transform": "log1p",
+      "group": "supply_demand",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "demand_supply_alignment",
+      "column": "feature_demand_supply_alignment",
+      "transform": "identity",
+      "group": "supply_demand",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "unmet_skill_share",
+      "column": "feature_unmet_skill_share",
+      "transform": "identity",
+      "group": "supply_demand",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "contributor_level_mean",
+      "column": "feature_contributor_level_mean",
+      "transform": "identity",
+      "group": "levels",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "level_gap_mean",
+      "column": "feature_level_gap_mean",
+      "transform": "identity",
+      "group": "levels",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "direct_fillability",
+      "column": "feature_direct_fillability",
+      "transform": "identity",
+      "group": "mentorship",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "learning_reachable_demand",
+      "column": "feature_learning_reachable_demand",
+      "transform": "identity",
+      "group": "mentorship",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "deadline_tightness_mean",
+      "column": "feature_deadline_tightness_mean",
+      "transform": "identity",
+      "group": "time",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "schedule_pressure",
+      "column": "feature_log1p_schedule_pressure",
+      "transform": "log1p",
+      "group": "time",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "score_concentration",
+      "column": "feature_score_concentration",
+      "transform": "identity",
+      "group": "scores",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "score_density",
+      "column": "feature_log1p_score_density",
+      "transform": "log1p",
+      "group": "scores",
+      "status": "selected"
+    },
+    {
+      "raw_feature": "score_effort_correlation",
+      "column": "feature_score_effort_correlation",
+      "transform": "identity",
+      "group": "scores",
+      "status": "selected"
+    }
+  ],
+  "not_shortlisted": [
+    "n_skills",
+    "total_roles",
+    "roles_per_project_sd",
+    "skills_per_contributor_mean",
+    "skills_per_contributor_sd",
+    "workload_contention",
+    "demand_concentration",
+    "supply_concentration",
+    "contributor_level_sd",
+    "required_level_mean",
+    "required_level_sd",
+    "level_gap_sd",
+    "mentorship_fillability",
+    "mentor_availability",
+    "within_project_mentorship_feasibility",
+    "duration_mean",
+    "duration_sd",
+    "deadline_tightness_sd",
+    "infeasible_deadline_share",
+    "score_mean",
+    "score_sd",
+    "penalty_exposure"
+  ],
+  "excluded_legacy_features": {
+    "mentor_availability": "exact duplicate of mentorship_fillability in the current extractor",
+    "mentorship_fillability": "legacy role-level proxy misses zero-skill mentees for level-1 roles",
+    "within_project_mentorship_feasibility": "legacy proxy does not verify a distinct feasible team assignment"
+  },
+  "scaling": "Only explicit log1p transforms here; InstanceSpace PRELIM performs its configured normalization."
+}

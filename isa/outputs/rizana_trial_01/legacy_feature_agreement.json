@@ -1,0 +1,16 @@
+{
+  "meaning": "agreement of newly parsed/recomputed structural features with available frozen generation metadata",
+  "metadata_family_counts": {
+    "type1": 5,
+    "type2": 100,
+    "type4": 100,
+    "type5": 91,
+    "type6": 100,
+    "type7": 100
+  },
+  "instances_compared": 496,
+  "feature_values_compared": 18352,
+  "mismatch_count": 0,
+  "mismatches_first_20": [],
+  "excluded_from_comparison": "Type 3 has no final family metadata; Type 5 full-project extension files beyond the original type5_metadata.csv are not covered"
+}

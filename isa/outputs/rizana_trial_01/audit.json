@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "purpose": "exploratory first ISA; descriptive footprints, not validated prediction",
+  "campaign": "experiment_results\\rizana_trial_01",
+  "feature_extractor_sha256": "cc597f2cd5fdff62720d7837f9b0fbf6b167b9142e6c0981307b4b2340850902",
+  "isa_exporter_sha256": "dc494e9d8e4b14e51b7824ebbc4d4badf0559dadc99abcc99464832ce0181b7c",
+  "benchmark_manifest_sha256": "17d66b5f966c343a08aa620337a1724338c14992b2b9a0d1d4092ff6d9aa8d92",
+  "solver_manifest_sha256": "8a273fa6718db8ac5b9adb603d24116ea60efdd2db4139f9db95f1a1fc4f11ce",
+  "solver_instance_summary_sha256": "4bbfaefed26462e591a516a15bf34eea70acd41f270ef60bd0b86b3836a7ae7c",
+  "n_instances": 611,
+  "family_counts": {
+    "type1": 5,
+    "type2": 100,
+    "type3": 98,
+    "type4": 100,
+    "type5": 108,
+    "type6": 100,
+    "type7": 100
+  },
+  "n_solver_labels": 10,
+  "n_source_distinct_solvers": 7,
+  "primary_solver_ids": [
+    "nanored_original_ab",
+    "nanored_original_c",
+    "nanored_original_d",
+    "nanored_original_e",
+    "nanored_original_f",
+    "nanored_refactored_b",
+    "nanored_refactored_c"
+  ],
+  "source_groups": [
+    {
+      "source_sha256": "32c1583ade0c1346018f305c652705dfa01a983c7ebdba96a92284df5503c28e",
+      "representative": "nanored_original_ab",
+      "solver_ids": [
+        "nanored_original_ab"
+      ]
+    },
+    {
+      "source_sha256": "6f8dc4fdc7551728287a05a7eb1cc81cca9082869566da6faec39bc8d7b1a5cd",
+      "representative": "nanored_original_c",
+      "solver_ids": [
+        "nanored_original_c",
+        "nanored_refactored_d"
+      ]
+    },
+    {
+      "source_sha256": "e58087c2175b189ce2e2e2b53d627b6b73d7971dbd1b2676c5b313127a07affc",
+      "representative": "nanored_original_d",
+      "solver_ids": [
+        "nanored_original_d"
+      ]
+    },
+    {
+      "source_sha256": "6954a5ae1a0f8830a7e82631ce7e5cbdf7f7709da2808f3205d3ceccf4f78e80",
+      "representative": "nanored_original_e",
+      "solver_ids": [
+        "nanored_original_e",
+        "nanored_refactored_e"
+      ]
+    },
+    {
+      "source_sha256": "b36701654ce0901491d4016235a53ee3182b60d4ba796f2ba6cfdfae9207efa8",
+      "representative": "nanored_original_f",
+      "solver_ids": [
+        "nanored_original_f",
+        "nanored_refactored_f"
+      ]
+    },
+    {
+      "source_sha256": "346d6798ca02a5991c3b4dbd9002b7d8cf0a023f4c96b45cbf43c82f9b29d62e",
+      "representative": "nanored_refactored_b",
+      "solver_ids": [
+        "nanored_refactored_b"
+      ]
+    },
+    {
+      "source_sha256": "d17bd343373435e4543909975e50db73b5a6bbb420ecef45c7f500b6f8932794",
+      "representative": "nanored_refactored_c",
+      "solver_ids": [
+        "nanored_refactored_c"
+      ]
+    }
+  ],
+  "n_solver_instance_pairs": 6110,
+  "n_zero_success_pairs": 28,
+  "total_timeouts": 579,
+  "inputs_with_lf_normalized_for_manifest_hash": 611,
+  "primary_utility": "mean_success_score * successful_runs / planned_runs; timeout is zero",
+  "primary_normalization": "divide each solver utility by the maximum utility among seven source-distinct representatives for the same instance",
+  "good_threshold": 0.95,
+  "n_instances_with_cobest_tie": 194,
+  "n_instances_all_primary_solvers_equal": 106,
+  "n_instances_all_primary_solvers_within_one_percent": 116,
+  "feature_selection_file": "feature_selection.json",
+  "type3_caution": "98 campaign Type 3 inputs lack a finalized family metadata/report; do not call this a finalized benchmark",
+  "run_level_caution": "per_run_results.csv is not in this checkout; run-level uncertainty and seed-paired tests cannot be reconstructed from summary alone",
+  "toolkit_tie_caution": "InstanceSpace PRELIM randomly selects one of exact best solvers for P; use tie-aware co-best/good labels, not raw P alone",
+  "output_sha256": {
+    "metadata.csv": "7d80e2d049211500d558ff6b246ef03af9790b4fb8de6c96d233444369d46250",
+    "metadata_all_solvers.csv": "af2ebaba84376a8ef5ca0834df9321f4693c3132c9e3626293ab9191229f5a0c",
+    "metadata_best_of_ten.csv": "75a14fc765f329040d4cb22fa84ab41a79a6d7a8420a3f114f63055e02bea3aa",
+    "all_features.csv": "6e40a0dc42e79208a9e66a9a90fbaa3dc2b4c7a200dc1a6374847a9154474c1e",
+    "all_solvers.csv": "d161c46775c475adccf91d41841446bc73f4e7c696f1933b75f9680f4fd626eb",
+    "instance_audit.csv": "f9061145dda5e7f3a3172d621c4e22c2b3789996dc4be348b26a35a62645f4f7",
+    "feature_selection.json": "1f1b91438e984b83f0b5d356e422db14a77785d244400971371ddb22606334b8"
+  }
+}

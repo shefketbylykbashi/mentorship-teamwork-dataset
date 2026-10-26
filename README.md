@@ -247,6 +247,26 @@ python -m experiments.run_mtp_campaign \
 See `experiments/README.md` for PowerShell/Linux examples, campaign layout,
 resume behavior, and report files.
 
+## First Instance Space Analysis
+
+The executed `rizana_trial_01` campaign has a separate, audited ISA handoff.
+It prepares one row per executed instance, selects source-distinct solver
+representatives without looking at outcomes, and exports MATLAB
+InstanceSpace-compatible metadata with timeout-aware performance. From the
+repository root, run:
+
+```bash
+python -B -m isa.prepare_isa --campaign experiment_results/rizana_trial_01 --output isa/outputs/rizana_trial_01 --overwrite
+python -B -m isa.verify_legacy_features --input isa/outputs/rizana_trial_01
+python -B -m isa.summarize_export --input isa/outputs/rizana_trial_01 --overwrite
+```
+
+Then follow [`isa/README.md`](isa/README.md) to run the pinned MATLAB toolkit,
+inspect descriptive footprints, and perform 1%/5%/10% sensitivity analyses.
+The current checkout does not include MATLAB or the campaign's per-run result
+table, so this step prepares the data but does not claim to have completed the
+MATLAB projection or an out-of-sample algorithm-selection evaluation.
+
 ## Outputs
 
 Generated instances use deterministic sortable names:
