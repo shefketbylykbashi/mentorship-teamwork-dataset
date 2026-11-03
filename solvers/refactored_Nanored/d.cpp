@@ -3,28 +3,25 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 #include <algorithm>
-#include <chrono>
+#include <array>
 #include <iostream>
 #include <numeric>
 #include <random>
 #include <unordered_map>
 #include <vector>
 
-#include "../mtp_solver_common.hpp"
-
 using namespace std;
+const int NS = 800;
 
-int main(int argc, char **argv) {
+int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	const SolverOptions options = parse_solver_options(argc, argv);
-	const auto t0 = chrono::steady_clock::now();
 
 	int C, P;
 	cin >> C >> P;
 	vector<string> Cnames(C), Pnames(P);
 	unordered_map<string, int> s2i;
-	vector<vector<int>> skill(C);
+	vector<array<int, NS>> skill(C);
 	vector<int> ts(C, 0);
 	vector<vector<pair<int, int>>> req(P);
 	vector<int> D(P), S(P), B(P);
@@ -32,12 +29,12 @@ int main(int argc, char **argv) {
 	for(int c = 0; c < C; ++c) {
 		int n;
 		cin >> Cnames[c] >> n;
-		skill[c].assign(s2i.size(), 0);
+		skill[c].fill(0);
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			int sid = get_skill_id(s2i, skill, nullptr, s);
-			skill[c][sid] = l;
+			if(!s2i.count(s)) s2i[s] = s2i.size();
+			skill[c][s2i[s]] = l;
 			ts[c] += l;
 		}
 	}
@@ -47,7 +44,8 @@ int main(int argc, char **argv) {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			req[p].emplace_back(get_skill_id(s2i, skill, nullptr, s), l);
+			if(!s2i.count(s)) s2i[s] = s2i.size();
+			req[p].emplace_back(s2i[s], l);
 		}
 	}
 	cerr << C << ' ' << P << ' ' << s2i.size() << endl;
@@ -59,21 +57,20 @@ int main(int argc, char **argv) {
 	vector<int> order(P);
 	vector<bool> chosen(C, false);
 	iota(order.begin(), order.end(), 0);
-	mt19937 mt(options.seed);
+	mt19937 mt(42);
 	const auto ckey = [&](int c, int m, int s, int l) { return make_tuple(max(av[c], m), skill[c][s], ts[c]); };
-	while(!time_limit_reached(t0, options.time_limit_seconds)) {
+	while(true) {
 		bool bad = true;
 		vector<int> fail;
 		sort(order.begin(), order.end(), [&](int a, int b) { return (long long)S[b]*D[a]*req[a].size() < (long long)S[a]*D[b]*req[b].size(); });
 		for(int p : order) {
-			if(time_limit_reached(t0, options.time_limit_seconds)) break;
 			int beste = -1, besto = -1;
 			vector<int> cs(req[p].size(), 0), cs2, ro=cs;
 			iota(ro.begin(), ro.end(), 0);
-			vector<int> ms(s2i.size());
+			array<int, NS> ms;
 			for(int test = 0; test < 50; ++test) {
 				shuffle(ro.begin(), ro.end(), mt);
-				fill(ms.begin(), ms.end(), 0);
+				ms.fill(0);
 				int mav = 0, oo = 0, nr = req[p].size();
 				for(int o : ro) {
 					auto [s, l] = req[p][o];
