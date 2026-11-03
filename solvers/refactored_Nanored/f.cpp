@@ -12,8 +12,10 @@
 #include <unordered_map>
 #include <vector>
 
+#include "../mtp_runtime.hpp"
+
 using namespace std;
-const int NS = 500;
+constexpr int NS = mtp::NS;  // see ../mtp_runtime.hpp
 
 template<typename Scal>
 struct Hungarian {
@@ -88,7 +90,9 @@ protected:
 
 };
 
-int main() {
+int main(int argc, char **argv) {
+	mtp::start_timer();
+	mtp::parse_seed(argc, argv, false);  // deterministic: seed accepted, not used
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
@@ -111,7 +115,7 @@ int main() {
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			skill[c][s2i[s]] = l;
 			ts[c] += l;
 			s2c[s2i[s]].push_back(c);
@@ -125,18 +129,14 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			req[p].emplace_back(s2i[s], l);
 		}
 		set<pair<int, int>> sr(req[p].begin(), req[p].end());
 		sameR[p] = sr.size() == 1 && req[p][0].second > 1;
 	}
-	if(s2i.size() != NS) {
-		cerr << "Skill array too large: " << s2i.size() << endl;
-		assert(s2i.size() <= NS);
-	}
 
-	int score = 0;
+	long long score = 0;  // total score can exceed INT_MAX on some instances
 	vector<pair<int, vector<int>>> sol;
 
 	vector<int> ps(P);
@@ -173,6 +173,7 @@ int main() {
 		};
 
 		for(int p : ps) {
+			if(mtp::time_up()) { bestP = -1; break; }  // 590 s: stop, keep committed projects
 			int sav = 0, mav = 0;
 
 			if(sameR[p]) {

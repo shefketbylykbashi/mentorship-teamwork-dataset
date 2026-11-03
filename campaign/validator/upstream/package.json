@@ -1,0 +1,28 @@
+{
+  "name": "hash-code-2022-mentorship-and-teamwork-insights-reporter",
+  "version": "1.0.0",
+  "description": "Referee and insights reporter for Google Hash Code 2022 Qualification Round (Mentorship and Teamwork)",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "google",
+    "hashcode",
+    "hash code",
+    "qualification round",
+    "mentorship and teamwork",
+    "referee",
+    "insights",
+    "reporter"
+  ],
+  "homepage": "https://github.com/KristofHolecz/hash-code-2022-mentorship-and-teamwork-insights-reporter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KristofHolecz/hash-code-2022-mentorship-and-teamwork-insights-reporter.git"
+  },
+  "author": "Kristóf Holecz",
+  "license": "ISC"
+}

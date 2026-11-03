@@ -8,3 +8,5 @@ type6_source_data/
 **/__pycache__*/*
 experiments/bin/
 experiment_results/
+campaign/bin/
+campaign_results/

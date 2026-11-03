@@ -12,10 +12,14 @@
 #include <unordered_map>
 #include <vector>
 
-using namespace std;
-const int NS = 1024;
+#include "../mtp_runtime.hpp"
 
-int main() {
+using namespace std;
+constexpr int NS = mtp::NS;  // see ../mtp_runtime.hpp
+
+int main(int argc, char **argv) {
+	mtp::start_timer();
+	const unsigned seed = mtp::parse_seed(argc, argv, true);
 
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
@@ -41,7 +45,7 @@ int main() {
 
 
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 
 			skill[c][s2i[s]] = l;
 			ts[c] += l;
@@ -59,19 +63,13 @@ int main() {
 
 
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 
 			req[p].emplace_back(s2i[s], l);
 		}
 	}
 
-	int score = 0;
-	if((int)s2i.size() > NS) {
-
-		cerr << "ERROR: distinct skills (" << s2i.size() << ") exceeds NS=" << NS
-		     << "; increase NS and recompile." << endl;
-		return 1;
-	}
+	long long score = 0;  // total score can exceed INT_MAX on some instances
 	vector<pair<int, vector<int>>> sol;
 
 	vector<int> av(C, 0);
@@ -79,8 +77,6 @@ int main() {
 	vector<bool> chosen(C, false);
 	for(int p = 0; p < P; ++p) ps.insert(p);
 
-	mt19937 mt(42);
-	const auto t0 = chrono::steady_clock::now();
 	const auto ckey = [&](int c, int m, int s, int l) { return make_tuple(max(av[c], m), l - skill[c][s], ts[c]); };
 	while(true) {
 
@@ -90,7 +86,7 @@ int main() {
 		int bestP = -1, bestlvlup = -1, bestEnd = -1;
 		vector<int> bestCS;
 		for(int p : ps) {
-			if(chrono::duration<double>(chrono::steady_clock::now() - t0).count() >= 600.0) { bestP = -1; break; }
+			if(mtp::time_up()) { bestP = -1; break; }  // 590 s: stop, keep committed projects
 
 
 
@@ -100,10 +96,12 @@ int main() {
 			vector<int> cs(req[p].size(), 0), cs2;
 			vector<int> ro(req[p].size());
 			array<int, NS> ms;
-			mt19937 mt(p * 2654435761u + 1469598103u);
+			seed_seq mt_seq{seed, static_cast<unsigned>(p)};  // per-project stream derived from the run seed
+			mt19937 mt(mt_seq);
 			iota(ro.begin(), ro.end(), 0);
 			int ntest = req[p].size() <= 1 ? 1 : 12000;
 			for(int test = 0; test < ntest; ++test) {
+				if(mtp::time_up()) break;
 
 				shuffle(ro.begin(), ro.end(), mt);
 				ms.fill(0);

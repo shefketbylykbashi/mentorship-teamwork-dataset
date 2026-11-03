@@ -10,10 +10,14 @@
 #include <unordered_map>
 #include <vector>
 
-using namespace std;
-const int NS = 800;
+#include "../mtp_runtime.hpp"
 
-int main() {
+using namespace std;
+constexpr int NS = mtp::NS;  // see ../mtp_runtime.hpp
+
+int main(int argc, char **argv) {
+	mtp::start_timer();
+	const unsigned seed = mtp::parse_seed(argc, argv, true);
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
@@ -33,7 +37,7 @@ int main() {
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			skill[c][s2i[s]] = l;
 			ts[c] += l;
 		}
@@ -44,38 +48,39 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			req[p].emplace_back(s2i[s], l);
 		}
 	}
 	cerr << C << ' ' << P << ' ' << s2i.size() << endl;
 
-	int score = 0;
+	long long score = 0;  // total score can exceed INT_MAX on some instances
 	vector<pair<int, vector<int>>> sol;
 
 	vector<int> av(C, 0);
 	vector<int> order(P);
 	vector<bool> chosen(C, false);
 	iota(order.begin(), order.end(), 0);
-	mt19937 mt(12345);
+	mt19937 mt(seed);
 	int CKEYMODE = 0;
 	const auto ckey = [&](int c, int m, int s, int l) { return CKEYMODE==1 ? make_tuple(max(av[c], m), ts[c], skill[c][s]-l) : CKEYMODE==2 ? make_tuple(max(av[c], m), skill[c][s]-l, -ts[c]) : CKEYMODE==3 ? make_tuple(max(av[c], m), av[c], skill[c][s]-l) : CKEYMODE==4 ? make_tuple(max(av[c], m), -(skill[c][s]-l), ts[c]) : CKEYMODE==5 ? make_tuple(max(av[c], m), skill[c][s]-l, av[c]) : make_tuple(max(av[c], m), skill[c][s]-l, ts[c]); };
-	int bestscore = -1;
+	long long bestscore = -1;
 	vector<pair<int, vector<int>>> bestsol;
 	auto skill0 = skill;
 	auto ts0 = ts;
-	const unsigned seeds[] = {12345, 54321, 7, 100, 2022, 31337, 1, 2, 3, 99, 777, 2024, 42, 13, 8675309, 555, 9001, 314159, 11, 22, 33, 44, 66, 88, 123, 456, 789, 1011, 1213, 1415, 1617, 1819, 2021, 2223, 2425, 2627, 2829, 3031, 3233, 3435, 3637, 3839, 4041, 4243, 5051, 6061, 7071, 8081, 9091, 101010, 121212, 131313, 141414, 151515, 161616, 171717, 181818, 191919, 202020, 212121, 424242, 696969, 111222, 333444, 555666, 777888, 999000, 246810, 135791, 864209, 192837, 564738, 102938, 475869, 918273, 645382};
+	constexpr int NRESTARTS = 76;  // restart count unchanged; restart r uses seed_seq{seed, r}
 	const int latew[] = {4, 1, 8, 16, 2, 0, 3, 6, 12, 24, 1, 5};
 	const int mavw[] = {64, 16, 256, 8, 128, 32, 96, 48, 192, 24, 384, 512, 64, 1024, 4, 768, 12, 160, 2048, 6, 320, 80, 640, 20};
 	int sidx = 0;
-	for(unsigned sd : seeds) {
+	bool stop = false;
+	for(int restart = 0; restart < NRESTARTS && !stop; ++restart) {
 	int LATEW = latew[sidx % 12];
 	int MAVW = mavw[sidx % 24];
 	int LVLW = (sidx % 3 == 0) ? 0 : (sidx % 3 == 1) ? 1 : 4;
 	CKEYMODE = (sidx >> 3) % 6;
 	int NTEST = (sidx >= 60) ? 20 + (sidx % 25) : 30 + (sidx % 16);
 	sidx++;
-	mt.seed(sd);
+	{ seed_seq restart_seq{seed, static_cast<unsigned>(restart)}; mt.seed(restart_seq); }
 	skill = skill0; ts = ts0;
 	score = 0;
 	sol.clear();
@@ -99,7 +104,8 @@ int main() {
 			return (sidx&2) ? req[a].size() < req[b].size() : req[a].size() > req[b].size();
 		});
 		for(int p : order) {
-			int beste = -1, besto = -1;
+			if(mtp::time_up()) { stop = true; break; }  // 590 s: stop, keep committed projects
+			int beste = -1; long long besto = -1;  // oo/besto widened: MAVW*(1000000-mav) can overflow int
 			vector<int> cs(req[p].size(), 0), cs2, ro=cs;
 			iota(ro.begin(), ro.end(), 0);
 			array<int, NS> ms;
@@ -108,9 +114,10 @@ int main() {
 			sort(usk.begin(), usk.end());
 			usk.erase(unique(usk.begin(), usk.end()), usk.end());
 			for(int test = 0; test < NTEST; ++test) {
+				if(mtp::time_up()) break;
 				shuffle(ro.begin(), ro.end(), mt);
 				for(int si : usk) ms[si] = 0;
-				int mav = 0, oo = 0, nr = req[p].size();
+				int mav = 0, nr = req[p].size(); long long oo = 0;
 				for(int o : ro) {
 					auto [s, l] = req[p][o];
 					const int l0 = l;
@@ -144,7 +151,7 @@ int main() {
 							swap(cs[i], cs[j]);
 							oo += 2;
 						}
-				oo += MAVW*(1000000-mav);
+				oo += (long long)MAVW*(1000000-mav);
 				if(oo > besto) {
 					besto = oo;
 					beste = end;
@@ -170,7 +177,7 @@ int main() {
 			sol.emplace_back(p, cs);
 			bad = false;
 		}
-		if(bad) break;
+		if(stop || bad) break;
 		order = fail;
 	}
 	if(score > bestscore) { bestscore = score; bestsol = sol; }

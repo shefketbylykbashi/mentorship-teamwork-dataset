@@ -10,10 +10,14 @@
 #include <unordered_map>
 #include <vector>
 
-using namespace std;
-const int NS = 800;
+#include "../mtp_runtime.hpp"
 
-int main() {
+using namespace std;
+constexpr int NS = mtp::NS;  // see ../mtp_runtime.hpp
+
+int main(int argc, char **argv) {
+	mtp::start_timer();
+	const unsigned seed = mtp::parse_seed(argc, argv, true);
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
@@ -33,7 +37,7 @@ int main() {
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			skill[c][s2i[s]] = l;
 			ts[c] += l;
 		}
@@ -44,31 +48,34 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			req[p].emplace_back(s2i[s], l);
 		}
 	}
 	cerr << C << ' ' << P << ' ' << s2i.size() << endl;
 
-	int score = 0;
+	long long score = 0;  // total score can exceed INT_MAX on some instances
 	vector<pair<int, vector<int>>> sol;
 
 	vector<int> av(C, 0);
 	vector<int> order(P);
 	vector<bool> chosen(C, false);
 	iota(order.begin(), order.end(), 0);
-	mt19937 mt(42);
+	mt19937 mt(seed);
+	bool stop = false;
 	const auto ckey = [&](int c, int m, int s, int l) { return make_tuple(max(av[c], m), skill[c][s], ts[c]); };
 	while(true) {
 		bool bad = true;
 		vector<int> fail;
 		sort(order.begin(), order.end(), [&](int a, int b) { return (long long)S[b]*D[a]*req[a].size() < (long long)S[a]*D[b]*req[b].size(); });
 		for(int p : order) {
+			if(mtp::time_up()) { stop = true; break; }  // 590 s: stop, keep committed projects
 			int beste = -1, besto = -1;
 			vector<int> cs(req[p].size(), 0), cs2, ro=cs;
 			iota(ro.begin(), ro.end(), 0);
 			array<int, NS> ms;
 			for(int test = 0; test < 50; ++test) {
+				if(mtp::time_up()) break;
 				shuffle(ro.begin(), ro.end(), mt);
 				ms.fill(0);
 				int mav = 0, oo = 0, nr = req[p].size();
@@ -122,7 +129,7 @@ int main() {
 			sol.emplace_back(p, cs);
 			bad = false;
 		}
-		if(bad) break;
+		if(stop || bad) break;
 		order = fail;
 	}
 

@@ -11,9 +11,14 @@
 #include <unordered_set>
 #include <vector>
 
-using namespace std;
+#include "../mtp_runtime.hpp"
 
-int main() {
+using namespace std;
+constexpr int NS = mtp::NS;  // see ../mtp_runtime.hpp
+
+int main(int argc, char **argv) {
+	mtp::start_timer();
+	mtp::parse_seed(argc, argv, false);  // deterministic: seed accepted, not used
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
@@ -21,7 +26,7 @@ int main() {
 	cin >> C >> P;
 	vector<string> Cnames(C), Pnames(P);
 	unordered_map<string, int> s2i;
-	vector<array<int, 800>> skill(C);
+	vector<array<int, NS>> skill(C);
 	vector<int> ts(C, 0);
 	vector<vector<pair<int, int>>> req(P);
 	vector<int> D(P), S(P), B(P);
@@ -33,7 +38,7 @@ int main() {
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			skill[c][s2i[s]] = l;
 			ts[c] += l;
 		}
@@ -44,12 +49,12 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			req[p].emplace_back(s2i[s], l);
 		}
 	}
 
-	int score = 0;
+	long long score = 0;  // total score can exceed INT_MAX on some instances
 	vector<pair<int, vector<int>>> sol;
 
 	vector<int> av(C, 0);
@@ -59,15 +64,17 @@ int main() {
 	mt19937 mt;
 	const auto ckey = [&](int c, int m, int s) { return make_tuple(max(av[c], m), skill[c][s], ts[c]); };
 	bool need_lvl = false;
+	bool stop = false;
 	while(true) {
 		bool bad = true;
 		vector<int> fail;
 		if(need_lvl) sort(order.begin(), order.end(), [&](int a, int b) { return S[a]+B[a]-D[a] > S[b]+B[b]-D[b]; });
 		else sort(order.begin(), order.end(), [&](int a, int b) { return B[a]-D[a] < B[b]-D[b]; });
 		for(int p : order) {
+			if(mtp::time_up()) { stop = true; break; }  // 590 s: stop, keep committed projects
 			int mav = 0;
 			vector<int> cs;
-			array<int, 800> ms; ms.fill(0);
+			array<int, NS> ms; ms.fill(0);
 			for(auto [s, l] : req[p]) {
 				if(ms[s] >= l) --l;
 				int best = -1;
@@ -108,6 +115,7 @@ int main() {
 			sol.emplace_back(p, cs);
 			bad = false;
 		}
+		if(stop) break;
 		if(bad) {
 			if(need_lvl) break;
 			need_lvl = true;

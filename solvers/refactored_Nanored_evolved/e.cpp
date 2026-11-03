@@ -11,9 +11,14 @@
 #include <unordered_set>
 #include <vector>
 
-using namespace std;
+#include "../mtp_runtime.hpp"
 
-int main() {
+using namespace std;
+constexpr int NS = mtp::NS;  // see ../mtp_runtime.hpp
+
+int main(int argc, char **argv) {
+	mtp::start_timer();
+	const unsigned seed = mtp::parse_seed(argc, argv, true);
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
@@ -21,7 +26,7 @@ int main() {
 	cin >> C >> P;
 	vector<string> Cnames(C), Pnames(P);
 	unordered_map<string, int> s2i;
-	vector<array<int, 800>> skill(C);
+	vector<array<int, NS>> skill(C);
 	vector<int> ts(C, 0);
 	vector<vector<pair<int, int>>> req(P);
 	vector<int> D(P), S(P), B(P);
@@ -33,7 +38,7 @@ int main() {
 		while(n--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			skill[c][s2i[s]] = l;
 			ts[c] += l;
 		}
@@ -44,12 +49,12 @@ int main() {
 		while(r--) {
 			string s; int l;
 			cin >> s >> l;
-			if(!s2i.count(s)) s2i[s] = s2i.size();
+			mtp::skill_id(s2i, s);  // exits if > NS distinct skills
 			req[p].emplace_back(s2i[s], l);
 		}
 	}
 
-	int score = 0;
+	long long score = 0;  // total score can exceed INT_MAX on some instances
 	vector<pair<int, vector<int>>> sol;
 
 	vector<int> av(C, 0);
@@ -59,15 +64,15 @@ int main() {
 	mt19937 mt;
 	bool need_lvl = false;
 	const auto ckey = [&](int c, int m, int s, int l) { return make_tuple(max(av[c], m), skill[c][s] <= l ? 0 : 1, skill[c][s] <= l ? -skill[c][s] : skill[c][s]-l, ts[c], av[c], c); };
-	mt.seed(2654435761u);
 	const auto skill0 = skill;
 	const auto ts0 = ts;
-	int best_score = -1;
+	long long best_score = -1;
 	vector<pair<int, vector<int>>> best_sol;
-	mt.seed(12345);
+	mt.seed(seed);
 	vector<int> perturb(P, 0), best_perturb(P, 0);
 	const int NITER = 2200;
-	for(int iter = 0; iter < NITER; ++iter) {
+	bool stop = false;
+	for(int iter = 0; iter < NITER && !stop; ++iter) {
 	if(iter > 0) {
 		perturb = best_perturb;
 		for(int k = 0; k < P/10; ++k) { int p = mt() % P; perturb[p] = (int)(mt() % 13) - 6; }
@@ -84,9 +89,10 @@ int main() {
 		if(need_lvl) sort(order.begin(), order.end(), [&](int a, int b) { int ka=S[a]+5*perturb[a], kb=S[b]+5*perturb[b]; long long ra=(long long)ka*D[b], rb=(long long)kb*D[a]; if(ra != rb) return ra > rb; if(S[a] != S[b]) return S[a] > S[b]; if(B[a]-D[a] != B[b]-D[b]) return B[a]-D[a] > B[b]-D[b]; if(D[a] != D[b]) return D[a] < D[b]; return a < b; });
 		else sort(order.begin(), order.end(), [&](int a, int b) { int ka=B[a]-D[a]+6*perturb[a], kb=B[b]-D[b]+6*perturb[b]; if(ka != kb) return ka < kb; long long ra=(long long)(S[a]+perturb[a])*D[b], rb=(long long)(S[b]+perturb[b])*D[a]; if(ra != rb) return ra > rb; if(S[a] != S[b]) return S[a] > S[b]; if(D[a] != D[b]) return D[a] < D[b]; if(B[a] != B[b]) return B[a] < B[b]; return a < b; });
 		for(int p : order) {
+			if(mtp::time_up()) { stop = true; break; }  // 590 s: stop, keep committed projects
 			int mav = 0;
 			vector<int> cs(req[p].size(), -1);
-			static array<int, 800> ms; for(auto [s,l] : req[p]) ms[s] = 0;
+			static array<int, NS> ms; for(auto [s,l] : req[p]) ms[s] = 0;
 			vector<int> ridx(req[p].size());
 			iota(ridx.begin(), ridx.end(), 0);
 			sort(ridx.begin(), ridx.end(), [&](int a, int b){ int la=req[p][a].second, lb=req[p][b].second; if(la != lb) return la > lb; return a < b; });
@@ -134,6 +140,7 @@ int main() {
 			sol.emplace_back(p, cs);
 			bad = false;
 		}
+		if(stop) break;
 		if(bad) {
 			if(need_lvl) break;
 			need_lvl = true;
