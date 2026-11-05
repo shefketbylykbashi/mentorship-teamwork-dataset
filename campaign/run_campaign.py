@@ -314,6 +314,32 @@ def build_plan(cfg: argparse.Namespace) -> list[dict]:
     return plan
 
 
+def parse_shard(text: str) -> tuple[int, int]:
+    """'K/N' -> (K, N) with 1 <= K <= N."""
+    k, sep, n = text.partition("/")
+    if not sep or not k.isdigit() or not n.isdigit() or not 1 <= int(k) <= int(n):
+        raise ValueError(f"--shard must look like K/N with 1 <= K <= N, got {text!r}")
+    return int(k), int(n)
+
+
+def shard_plan(plan: list[dict], k: int, n: int) -> list[dict]:
+    """Deterministic, disjoint split of the plan over n machines.
+
+    Runs are numbered in a canonical order that does not depend on file sizes,
+    host or filesystem (family, instance, solver, seed) and run number j goes to
+    shard (j mod n) + 1. Consecutive runs of the same instance therefore land on
+    different machines, so every shard gets the same mix of large/small
+    instances and of seeded/deterministic solvers. The shards of 1/n..n/n are
+    pairwise disjoint and their union is exactly the full plan. Execution order
+    inside a shard stays largest-instance-first.
+    """
+    if n == 1:
+        return plan
+    canon = sorted(plan, key=lambda t: (t["family"], t["instance"], t["solver"], t["seed"]))
+    mine = {t["key"] for j, t in enumerate(canon) if j % n == k - 1}
+    return [t for t in plan if t["key"] in mine]
+
+
 def finished_keys(out: Path, retry_failed: bool) -> set[str]:
     done: dict[str, str] = {}
     p = out / "results.jsonl"
@@ -358,6 +384,8 @@ def main() -> int:
     ap.add_argument("--instances-per-family", type=int, default=0, help="smoke tests: first N per family")
     ap.add_argument("--keep-solutions", choices=("all", "none"), default="all",
                     help="all: gzip every solution; none: delete valid ones after scoring")
+    ap.add_argument("--shard", default="1/1",
+                    help="K/N: run only shard K of N disjoint parts of the plan (one per machine)")
     ap.add_argument("--retry-failed", action="store_true", help="rerun runs whose last status was not ok")
     ap.add_argument("--dry-run", action="store_true")
     cfg = ap.parse_args()
@@ -376,11 +404,16 @@ def main() -> int:
     if cfg.jobs is None:
         cfg.jobs = max(1, cpus - cfg.validators)
 
-    plan = build_plan(cfg)
+    try:
+        cfg.shard_k, cfg.shard_n = parse_shard(cfg.shard)
+    except ValueError as exc:
+        ap.error(str(exc))
+    full_plan = build_plan(cfg)
+    plan = shard_plan(full_plan, cfg.shard_k, cfg.shard_n)
     done = finished_keys(cfg.out, cfg.retry_failed)
     todo = [t for t in plan if t["key"] not in done]
     n_inst = len({(t["family"], t["instance"]) for t in plan})
-    summary = (f"instances={n_inst} solvers={len(cfg.solvers)} planned_runs={len(plan)} "
+    summary = (f"shard={cfg.shard_k}/{cfg.shard_n} full_plan_runs={len(full_plan)} instances={n_inst} solvers={len(cfg.solvers)} planned_runs={len(plan)} "
                f"already_done={len(plan) - len(todo)} to_run={len(todo)} jobs={cfg.jobs} "
                f"validators={cfg.validators} cpus={cpus} time_limit={cfg.time_limit}s")
     if cfg.dry_run:
@@ -413,6 +446,7 @@ def main() -> int:
         "binaries_sha256": {s: sha256(cfg.bin / (s + EXE)) for s in cfg.solvers},
         "validator_sha256": {p.name: sha256(p) for p in sorted((CAMPAIGN / "validator").rglob("*.js"))},
         "seeded": [s for s in cfg.solvers if s in SEEDED], "seeds": cfg.seeds,
+        "shard": f"{cfg.shard_k}/{cfg.shard_n}", "full_plan_runs": len(full_plan),
         "planned_runs": len(plan), "to_run_this_invocation": len(todo), "jobs": cfg.jobs,
         "validators": cfg.validators, "time_limit_s": cfg.time_limit,
     }

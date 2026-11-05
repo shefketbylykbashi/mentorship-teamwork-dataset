@@ -49,6 +49,34 @@ nohup python3 campaign/run_campaign.py --out campaign_results/main \
       > campaign_results/main.nohup.log 2>&1 &
 ```
 
+### Several machines (`--shard K/N`)
+
+`--shard K/N` runs only part K of N of the plan. Runs are numbered in a fixed
+order (family, instance, solver, seed) and run j goes to shard (j mod N)+1, so
+the N parts never overlap, together cover all 33,605 runs, and each one gets the
+same mix of instance sizes and solvers (6 shards: 5,601 runs each, the last one has 5,600).
+Every machine must use the **same git commit** and the same `--seeds`.
+
+```bash
+nohup python3 campaign/run_campaign.py --shard 1/6 --jobs 7 --validators 1 \
+      --out campaign_results/PARTINA > campaign_results/PARTINA.nohup.log 2>&1 &
+```
+
+After all machines finish, copy every `campaign_results/<SERVER>/` folder into
+one checkout and merge them into the ISA dataset:
+
+```bash
+python3 campaign/build_isa_dataset.py campaign_results/PARTINA campaign_results/DASTILA \
+    campaign_results/DIRISTA campaign_results/MANDETA campaign_results/LYDRA \
+    campaign_results/MIRGETA --out campaign_results/merged
+python3 campaign/summarize.py campaign_results/merged
+```
+
+The merge fails if a run appears in two shards or if planned runs are missing.
+It writes `campaign_results/merged/isa/metadata.csv` (`Instances`, `Source`,
+`feature_*`, `algo_*` = U/max U) plus `metadata_raw.csv`, `all_features.csv`,
+`solver_instance.csv` and `dataset_info.json`.
+
 Defaults: `--jobs` = available CPUs − validator workers (respects SLURM/cgroup
 CPU pinning), `--validators` = jobs/16. On a 64-core node that is 60 solver
 processes + 4 validators. Set `--jobs` explicitly to leave cores for others.
