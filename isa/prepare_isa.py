@@ -64,7 +64,17 @@ EXTENDED_FEATURES = (
     ("infeasible_deadline_share", "infeasible_deadline_share", "identity", "time"),
     ("score_mean", "log1p_score_mean", "log1p", "scores"),
 )
-FEATURE_POLICY_EXTENDED = FEATURE_POLICY + EXTENDED_FEATURES
+# Transform overrides for core features inside the extended pool only (the core
+# policy above is left unchanged so earlier exports reproduce).
+# deadline_tightness_mean: median 3.4, max ~24,868 over the 611 instances.
+EXTENDED_TRANSFORM_OVERRIDES = {
+    "deadline_tightness_mean": ("log1p_deadline_tightness_mean", "log1p"),
+}
+FEATURE_POLICY_EXTENDED = tuple(
+    (raw, *EXTENDED_TRANSFORM_OVERRIDES[raw], group) if raw in EXTENDED_TRANSFORM_OVERRIDES
+    else (raw, name, kind, group)
+    for raw, name, kind, group in FEATURE_POLICY
+) + EXTENDED_FEATURES
 NOT_IN_EXTENDED_POOL = {
     "total_roles": "= n_projects * roles_per_project_mean; Spearman 0.955 with n_projects",
     "penalty_exposure": "Spearman 0.996 with infeasible_deadline_share (identical zero pattern)",
