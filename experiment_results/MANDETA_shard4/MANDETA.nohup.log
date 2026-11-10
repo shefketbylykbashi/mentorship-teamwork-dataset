@@ -1,0 +1,2 @@
+2026-11-05T20:54:05+00:00 START shard=4/6 full_plan_runs=33605 instances=611 solvers=10 planned_runs=5601 already_done=4 to_run=5597 jobs=7 validators=1 cpus=8 time_limit=600.0s out=/home/hyjnesha6/Documents/repos/mentorship-teamwork-dataset/campaign_results/MANDETA
+2026-11-07T01:12:59+00:00 FINISHED after 28.31 h; see /home/hyjnesha6/Documents/repos/mentorship-teamwork-dataset/campaign_results/MANDETA/results.jsonl and errors.log; summarize with campaign/summarize.py

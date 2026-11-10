@@ -1,0 +1,9 @@
+2026-11-05T20:48:15+00:00 RUNNER_ERROR refactored_b|type2/type2_036|4 exit=0 wall=7.3592s :: RuntimeError: validator worker exited
+2026-11-05T20:48:15+00:00 RUNNER_ERROR refactored_b|type2/type2_036|10 exit=0 wall=7.36s :: RuntimeError: validator worker exited
+2026-11-05T20:48:18+00:00 RUNNER_ERROR refactored_e|type2/type2_036|1 exit=0 wall=2.0793s :: RuntimeError: validator worker exited
+2026-11-05T20:49:26+00:00 RUNNER_ERROR refactored_d|type2/type2_036|5 exit=0 wall=70.894s :: RuntimeError: validator worker exited
+2026-11-05T20:50:44+00:00 received signal 15: stopping; unfinished runs will be redone on resume
+2026-11-09T19:53:36+00:00 RUNNER_ERROR refactored_e|type2/type2_036|1 exit=0 wall=1.2899s :: RuntimeError: validator worker exited
+2026-11-09T19:53:42+00:00 RUNNER_ERROR refactored_b|type2/type2_036|10 exit=0 wall=6.985s :: RuntimeError: validator worker exited
+2026-11-09T19:53:42+00:00 RUNNER_ERROR refactored_b|type2/type2_036|4 exit=0 wall=7.0545s :: RuntimeError: validator worker exited
+2026-11-09T19:54:26+00:00 RUNNER_ERROR refactored_d|type2/type2_036|5 exit=0 wall=50.7021s :: RuntimeError: validator worker exited
