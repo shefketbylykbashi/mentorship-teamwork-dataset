@@ -1,0 +1,11 @@
+solver,status,runs
+evolved_b,ok,1018
+evolved_c,ok,102
+evolved_d,ok,1018
+evolved_e,ok,1019
+evolved_f,ok,101
+refactored_b,ok,1019
+refactored_c,ok,102
+refactored_d,ok,1018
+refactored_e,ok,102
+refactored_f,ok,102

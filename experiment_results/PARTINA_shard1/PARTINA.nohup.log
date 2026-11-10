@@ -1,0 +1,3 @@
+nohup: ignoring input
+2026-11-05T20:02:16+00:00 START shard=1/6 full_plan_runs=33605 instances=611 solvers=10 planned_runs=5601 already_done=0 to_run=5601 jobs=7 validators=1 cpus=8 time_limit=600.0s out=/home/arbnorhalili/Documents/repos/mentorship-teamwork-dataset/campaign_results/PARTINA
+2026-11-07T00:25:43+00:00 FINISHED after 28.39 h; see /home/arbnorhalili/Documents/repos/mentorship-teamwork-dataset/campaign_results/PARTINA/results.jsonl and errors.log; summarize with campaign/summarize.py
