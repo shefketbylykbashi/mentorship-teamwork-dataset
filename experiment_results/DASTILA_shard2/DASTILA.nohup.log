@@ -1,0 +1,3 @@
+nohup: ignoring input
+2026-11-07T11:07:57+00:00 START shard=2/6 full_plan_runs=33605 instances=611 solvers=10 planned_runs=5601 already_done=0 to_run=5601 jobs=7 validators=1 cpus=8 time_limit=600.0s out=/home/uranlajci/Documents/repos/mentorship-teamwork-dataset/campaign_results/DASTILA
+2026-11-08T15:18:20+00:00 FINISHED after 28.17 h; see /home/uranlajci/Documents/repos/mentorship-teamwork-dataset/campaign_results/DASTILA/results.jsonl and errors.log; summarize with campaign/summarize.py
