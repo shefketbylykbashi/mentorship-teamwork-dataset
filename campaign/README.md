@@ -77,6 +77,16 @@ It writes `campaign_results/merged/isa/metadata.csv` (`Instances`, `Source`,
 `feature_*`, `algo_*` = U/max U) plus `metadata_raw.csv`, `all_features.csv`,
 `solver_instance.csv` and `dataset_info.json`.
 
+Features: `--feature-set extended` (default) offers 31 candidates — the original
+15-feature shortlist plus 16 more (`EXTENDED_FEATURES` in `isa/prepare_isa.py`);
+`--feature-set core` gives the original 15. Constant columns and columns with
+|Spearman ρ| ≥ `--redundancy-threshold` (0.98) to an earlier kept one are dropped.
+Selection uses instance features only; InstanceSpace SIFTED (`K = 10`) picks the
+final features. Every keep/drop decision is in `dataset_info.json`.
+
+In this repository shards 1–4 live in `experiment_results/<HOST>_shardN/` and
+shards 5–6 in `campaign_results/<HOST>/`; pass those paths to the merge.
+
 Defaults: `--jobs` = available CPUs − validator workers (respects SLURM/cgroup
 CPU pinning), `--validators` = jobs/16. On a 64-core node that is 60 solver
 processes + 4 validators. Set `--jobs` explicitly to leave cores for others.

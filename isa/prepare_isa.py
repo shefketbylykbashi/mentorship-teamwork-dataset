@@ -40,6 +40,37 @@ FEATURE_POLICY = (
     ("score_density", "log1p_score_density", "log1p", "scores"),
     ("score_effort_correlation", "score_effort_correlation", "identity", "scores"),
 )
+# Extended candidate pool for the full 611-instance campaign (2026-11-10).
+# Chosen from the instance features alone (no solver outcome was inspected):
+# every extractor feature that is non-constant, not a legacy proxy below, and
+# not near-duplicated by a feature already in the pool (|Spearman rho| < 0.95
+# on the 611 instances).  log1p is used for nonnegative heavy-tailed scales.
+# InstanceSpace SIFTED (opts.sifted.K) then selects the final features.
+EXTENDED_FEATURES = (
+    ("n_skills", "log1p_n_skills", "log1p", "size"),
+    ("roles_per_project_sd", "roles_per_project_sd", "identity", "size"),
+    ("skills_per_contributor_mean", "skills_per_contributor_mean", "identity", "size"),
+    ("skills_per_contributor_sd", "skills_per_contributor_sd", "identity", "size"),
+    ("workload_contention", "log1p_workload_contention", "log1p", "supply_demand"),
+    ("demand_concentration", "demand_concentration", "identity", "supply_demand"),
+    ("supply_concentration", "supply_concentration", "identity", "supply_demand"),
+    ("contributor_level_sd", "contributor_level_sd", "identity", "levels"),
+    ("required_level_mean", "required_level_mean", "identity", "levels"),
+    ("required_level_sd", "required_level_sd", "identity", "levels"),
+    ("level_gap_sd", "level_gap_sd", "identity", "levels"),
+    ("duration_mean", "log1p_duration_mean", "log1p", "time"),
+    ("duration_sd", "log1p_duration_sd", "log1p", "time"),
+    ("deadline_tightness_sd", "log1p_deadline_tightness_sd", "log1p", "time"),
+    ("infeasible_deadline_share", "infeasible_deadline_share", "identity", "time"),
+    ("score_mean", "log1p_score_mean", "log1p", "scores"),
+)
+FEATURE_POLICY_EXTENDED = FEATURE_POLICY + EXTENDED_FEATURES
+NOT_IN_EXTENDED_POOL = {
+    "total_roles": "= n_projects * roles_per_project_mean; Spearman 0.955 with n_projects",
+    "penalty_exposure": "Spearman 0.996 with infeasible_deadline_share (identical zero pattern)",
+    "score_sd": "Spearman 0.981 with score_mean",
+}
+FEATURE_POLICIES = {"core": FEATURE_POLICY, "extended": FEATURE_POLICY_EXTENDED}
 EXCLUDED_FEATURES = {
     "mentor_availability": "exact duplicate of mentorship_fillability in the current extractor",
     "mentorship_fillability": "legacy role-level proxy misses zero-skill mentees for level-1 roles",
@@ -139,7 +170,9 @@ def _transform(value: float, kind: str) -> float:
 
 
 def select_features(
-    feature_rows: list[dict[str, float]], threshold: float = DEFAULT_REDUNDANCY_THRESHOLD
+    feature_rows: list[dict[str, float]],
+    threshold: float = DEFAULT_REDUNDANCY_THRESHOLD,
+    policy: tuple = FEATURE_POLICY,
 ) -> tuple[list[str], list[dict[str, Any]], dict[str, list[float]]]:
     """Domain shortlist, then variance and Spearman redundancy filtering.
 
@@ -154,7 +187,7 @@ def select_features(
     decisions: list[dict[str, Any]] = []
     selected: list[str] = []
     selected_groups: Counter[str] = Counter()
-    for raw, name, transform, group in FEATURE_POLICY:
+    for raw, name, transform, group in policy:
         column = [_transform(float(row[raw]), transform) for row in feature_rows]
         if not all(math.isfinite(x) for x in column):
             raise ValueError(f"Nonfinite feature: {raw}")

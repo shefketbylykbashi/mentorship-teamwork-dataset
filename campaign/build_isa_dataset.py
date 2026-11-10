@@ -14,8 +14,10 @@ Steps
      wins) so campaign/summarize.py works on the merged directory, plus
      coverage.json.
   4. Write the ISA inputs into <out>/isa/:
-       metadata.csv       Instances, Source, feature_* (declared shortlist of
-                          isa/prepare_isa.py), algo_* = R_ia = U_ia / max_a U_ia
+       metadata.csv       Instances, Source, feature_* (--feature-set pool of
+                          isa/prepare_isa.py, default 'extended' = 31 candidates,
+                          minus constant / |Spearman| >= threshold columns),
+                          algo_* = R_ia = U_ia / max_a U_ia
        metadata_raw.csv   same, algo_* = U_ia (absolute expected score)
        all_features.csv   every raw feature of the extractor
        solver_instance.csv  U_ia, ok/timeout/failed counts, best score
@@ -35,7 +37,6 @@ import argparse
 import csv
 import hashlib
 import json
-import math
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -46,7 +47,9 @@ sys.path.insert(0, str(HERE.parent))
 import run_campaign as rc  # noqa: E402
 from benchmark_generation.core.features import FEATURE_NAMES, extract_features  # noqa: E402
 from benchmark_generation.core.parser import parse_file  # noqa: E402
-from isa.prepare_isa import FEATURE_POLICY, _transform  # noqa: E402
+from isa.prepare_isa import (  # noqa: E402
+    DEFAULT_REDUNDANCY_THRESHOLD, EXCLUDED_FEATURES, FEATURE_POLICIES, NOT_IN_EXTENDED_POOL, select_features,
+)
 
 
 def read_shard(d: Path) -> dict[str, dict]:
@@ -84,7 +87,14 @@ def main() -> int:
     ap.add_argument("--seeds", default="1-10")
     ap.add_argument("--allow-missing", action="store_true", help="build even if some planned runs are missing")
     ap.add_argument("--overwrite", action="store_true")
+    ap.add_argument("--feature-set", choices=sorted(FEATURE_POLICIES), default="extended",
+                    help="candidate feature pool: 'core' = original 15-feature shortlist, "
+                         "'extended' = core + 16 (default); see isa/prepare_isa.py")
+    ap.add_argument("--redundancy-threshold", type=float, default=DEFAULT_REDUNDANCY_THRESHOLD,
+                    help="drop a candidate whose |Spearman rho| with an earlier kept one reaches this "
+                         "(features only, never solver results)")
     cfg = ap.parse_args()
+    policy = FEATURE_POLICIES[cfg.feature_set]
 
     # ---------------------------------------------------------------- merge
     merged: dict[str, dict] = {}
@@ -163,18 +173,27 @@ def main() -> int:
                "expected_score_U", "best_score"], si_rows)
 
     # ---------------------------------------------------------------- features
-    feat_cols = [f"feature_{suffix}" for _, suffix, _, _ in FEATURE_POLICY]
+    order = sorted(insts)
+    feat_rows = []
+    for n, (fam, iid) in enumerate(order, 1):
+        feat_rows.append(extract_features(parse_file(insts[(fam, iid)])))
+        if n % 50 == 0:
+            print(f"features {n}/{len(insts)}")
+    # Candidate pool -> drop constant / near-duplicate columns (instance features only).
+    selected, decisions, transformed = select_features(feat_rows, cfg.redundancy_threshold, policy)
+    for d in decisions:
+        if d["status"] != "selected":
+            print(f"feature {d['column']}: {d['status']} {d.get('with_column', '')} {d.get('spearman', '')}")
+    print(f"feature set '{cfg.feature_set}': {len(selected)} of {len(policy)} candidates kept")
+
+    feat_cols = [f"feature_{name}" for name in selected]
     algo_cols = [f"algo_{s}" for s in solvers]
     rel_rows, raw_rows, all_rows, excluded = [], [], [], []
-    for n, (fam, iid) in enumerate(sorted(insts), 1):
-        path = insts[(fam, iid)]
-        feats = extract_features(parse_file(path))
+    for n, (fam, iid) in enumerate(order):
+        feats = feat_rows[n]
         name = f"{fam}/{iid}"
         all_rows.append([name, fam] + [feats.get(f) for f in FEATURE_NAMES])
-        fvals = []
-        for raw, _, kind, _ in FEATURE_POLICY:
-            v = float(feats[raw])
-            fvals.append(_transform(v, kind) if math.isfinite(v) else "")
+        fvals = [transformed[col][n] for col in selected]
         u = U[(fam, iid)]
         best = max(u.values())
         raw_rows.append([name, fam] + fvals + [round(u[s], 4) for s in solvers])
@@ -182,8 +201,6 @@ def main() -> int:
             excluded.append([name, fam, "max expected score is 0 for every solver (relative performance undefined)"])
         else:
             rel_rows.append([name, fam] + fvals + [round(u[s] / best, 6) for s in solvers])
-        if n % 50 == 0:
-            print(f"features {n}/{len(insts)}")
     write_csv(isa_dir / "metadata.csv", ["Instances", "Source"] + feat_cols + algo_cols, rel_rows)
     write_csv(isa_dir / "metadata_raw.csv", ["Instances", "Source"] + feat_cols + algo_cols, raw_rows)
     write_csv(isa_dir / "all_features.csv", ["instance", "family"] + list(FEATURE_NAMES), all_rows)
@@ -194,9 +211,15 @@ def main() -> int:
                                   "(non-ok and missing runs count 0); metadata_raw.csv holds U_ia",
         "planned_runs_per_solver": planned_n,
         "seeded_solvers": list(rc.SEEDED), "deterministic_solvers": list(rc.DETERMINISTIC),
+        "feature_set": cfg.feature_set,
+        "redundancy_threshold": cfg.redundancy_threshold,
         "features": [{"column": f"feature_{suf}", "raw": raw, "transform": kind, "group": grp}
-                     for raw, suf, kind, grp in FEATURE_POLICY],
-        "feature_note": "computed from instance files only; solver outcomes never used",
+                     for raw, suf, kind, grp in policy if suf in selected],
+        "feature_selection_decisions": decisions,
+        "features_not_in_pool": {**EXCLUDED_FEATURES,
+                                 **(NOT_IN_EXTENDED_POOL if cfg.feature_set == "extended" else {})},
+        "feature_note": "computed and selected from instance files only; solver outcomes never used. "
+                        "InstanceSpace SIFTED makes the final selection from these columns.",
         "instances_total": len(insts), "instances_in_metadata": len(rel_rows), "instances_excluded": len(excluded),
         "coverage": {k: v for k, v in coverage.items() if k != "missing_first_50"},
         "results_jsonl_sha256": sha256(out / "results.jsonl"),
