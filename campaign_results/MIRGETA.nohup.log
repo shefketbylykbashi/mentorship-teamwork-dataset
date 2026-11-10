@@ -1,0 +1,3 @@
+nohup: ignoring input
+2026-11-07T12:24:33+00:00 START shard=6/6 full_plan_runs=33605 instances=611 solvers=10 planned_runs=5600 already_done=0 to_run=5600 jobs=7 validators=1 cpus=8 time_limit=600.0s out=/home/hyjnesha3/Documents/repos/mentorship-teamwork-dataset/campaign_results/MIRGETA
+2026-11-08T16:38:45+00:00 FINISHED after 28.24 h; see /home/hyjnesha3/Documents/repos/mentorship-teamwork-dataset/campaign_results/MIRGETA/results.jsonl and errors.log; summarize with campaign/summarize.py
