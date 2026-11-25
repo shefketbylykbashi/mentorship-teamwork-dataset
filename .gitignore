@@ -1,12 +1,19 @@
-/.agents
-/.pytest_cache
 __pycache__/
 *.pyc
+/.agents
+/.pytest_cache
+
+# generator caches (downloaded source data)
 type5_source_cache/
 type5_full_project_source_cache/
 type6_source_data/
-**/__pycache__*/*
-experiments/bin/
-experiment_results/
+
+# local builds and new campaign runs
 campaign/bin/
 campaign_results/
+
+# intermediate file of isa/extract_features.py
+isa/features.csv
+
+# regenerated generator output (see benchmark_generation/README.md)
+regenerated/

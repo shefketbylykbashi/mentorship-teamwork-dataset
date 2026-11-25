@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Summarize a campaign: python campaign/summarize.py [results_dir]
+"""Summarize a campaign: python campaign/summarize.py [results_dir]   (default: results/)
 
 Writes into the results dir:
   runs.csv                  one row per run (latest record per run key)
@@ -38,7 +38,7 @@ def load(out: Path) -> dict[str, dict]:
 
 
 def main() -> int:
-    out = Path(sys.argv[1]) if len(sys.argv) > 1 else REPO / "campaign_results" / "main"
+    out = Path(sys.argv[1]) if len(sys.argv) > 1 else REPO / "results"
     runs = load(out)
     rows = sorted(runs.values(), key=lambda r: (r["solver"], r["family"], r["instance"], r["seed"]))
     with open(out / "runs.csv", "w", newline="", encoding="utf-8") as fh:
