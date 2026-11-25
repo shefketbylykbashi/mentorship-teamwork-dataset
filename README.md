@@ -80,3 +80,7 @@ Both scripts use only the Python standard library and reproduce `isa/metadata.cs
 - Generators: Python 3.10 or later (standard library); see [benchmark_generation/README.md](benchmark_generation/README.md). `pytest benchmark_generation/tests` runs the tests.
 - Campaign: Python 3.9 or later (standard library), g++ with C++20, Node 16 or later for the validator.
 - ISA scripts: Python 3 (standard library).
+
+## Licence
+
+The code, the generated instances and the results are released under the MIT licence ([LICENSE](LICENSE)). The solvers derive from Yoann Coudert-Osmont's MIT-licensed solution and keep his copyright notice. The validator in `campaign/validator/upstream/` is by Kristóf Holecz and has its own licence (ISC). The five files in `google_instances/` are the original Hash Code 2022 inputs published by Google and are not covered by this licence.
