@@ -1,0 +1,63 @@
+{
+  "outputs": {
+    "web": 1,
+    "csv": 1,
+    "png": 1
+  },
+  "auto": {
+    "preproc": 1
+  },
+  "webParams": {
+    "problemName": "mentorship_and_teamwork",
+    "performanceMetricLabel": "score"
+  },
+  "pilot": {
+    "ntries": 30,
+    "analytic": 0
+  },
+  "bound": {
+    "flag": 0
+  },
+  "selvars": {
+    "smallscaleflag": 0,
+    "fileidxflag": 0
+  },
+  "pythia": {
+    "ispolykrnl": 1,
+    "useweights": 0,
+    "uselibsvm": 1,
+    "cvfolds": 10
+  },
+  "cloister": {
+    "pval": 0.05,
+    "cthres": 0.7
+  },
+  "norm": {
+    "flag": 1
+  },
+  "trace": {
+    "PI": 0.75,
+    "usesim": 0
+  },
+  "webproc": {
+    "flag": 1
+  },
+  "parallel": {
+    "flag": 1,
+    "ncores": 2
+  },
+  "sifted": {
+    "Replicates": 100,
+    "flag": 1,
+    "NTREES": 50,
+    "rho": 0.3,
+    "K": 10,
+    "MaxIter": 1000
+  },
+  "perf": {
+    "epsilon": 0.05,
+    "AbsPerf": 0,
+    "MaxPerf": 1,
+    "betaThreshold": 0.55
+  }
+}
