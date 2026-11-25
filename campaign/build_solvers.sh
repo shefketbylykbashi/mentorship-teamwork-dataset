@@ -11,12 +11,12 @@ FLAGS=(-O2 -std=c++20)
 mkdir -p "$BIN"
 
 declare -A SRC=(
-  [refactored]="solvers/refactored_Nanored"
-  [evolved]="solvers/refactored_Nanored_evolved"
+  [original]="solvers/original"
+  [evolved]="solvers/evolved"
 )
 
 json_rows=()
-for set in refactored evolved; do
+for set in original evolved; do
   for s in b c d e f; do
     src="${SRC[$set]}/$s.cpp"
     out="$BIN/${set}_$s"
@@ -28,7 +28,7 @@ for set in refactored evolved; do
 done
 
 # Sanity: the solvers must not be threaded.
-if grep -nE 'std::thread|std::async|#pragma omp|<thread>|<future>|<omp.h>' "$REPO"/solvers/refactored_Nanored*/*.cpp "$REPO"/solvers/mtp_runtime.hpp; then
+if grep -nE 'std::thread|std::async|#pragma omp|<thread>|<future>|<omp.h>' "$REPO"/solvers/original/*.cpp "$REPO"/solvers/evolved/*.cpp "$REPO"/solvers/mtp_runtime.hpp; then
   echo "ERROR: threading construct found in solver sources" >&2
   exit 1
 fi

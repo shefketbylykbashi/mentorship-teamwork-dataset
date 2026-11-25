@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fault-tolerant runner for the 10-solver x 611-instance MTP campaign.
+"""Fault-tolerant runner for the MTP solver campaign (10 solvers x 131 instances).
 
 Every run:  campaign/bin/<solver> SEED < instance > solution
   * killed at --time-limit (default 600 s) wall clock -> status "timeout" (failed);
@@ -40,8 +40,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from instances import REPO, discover  # noqa: E402
 
 CAMPAIGN = REPO / "campaign"
-SEEDED = ("refactored_b", "refactored_d", "evolved_b", "evolved_d", "evolved_e")
-DETERMINISTIC = ("refactored_c", "refactored_e", "refactored_f", "evolved_c", "evolved_f")
+SEEDED = ("original_b", "original_d", "evolved_b", "evolved_d", "evolved_e")
+DETERMINISTIC = ("original_c", "original_e", "original_f", "evolved_c", "evolved_f")
 ALL_SOLVERS = tuple(sorted(SEEDED + DETERMINISTIC))
 STDERR_TAIL_BYTES = 2000
 EXE = ".exe" if os.name == "nt" else ""
