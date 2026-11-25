@@ -1,0 +1,132 @@
+instance,family,file,contributors,projects,skills,roles,bytes,sha256,source
+google/b_better_start_small,Type 1,google_instances/b_better_start_small.txt,50,100,36,531,11911,63bfda88f33a92595bcb31ce81124a9f50fe1ba71b7312f3cc3027ca0ff1d200,Google Hash Code 2022 qualification round
+google/c_collaboration,Type 1,google_instances/c_collaboration.txt,1500,1000,200,39315,664693,4ed27d670d761bb50eb83d3569f736c061f1149b069ad4869e2db885d5f4ecff,Google Hash Code 2022 qualification round
+google/d_dense_schedule,Type 1,google_instances/d_dense_schedule.txt,500,1000,188,12868,216744,aada14009c04ecf8826aa6cb893c21065ac1c66533f31eb05967eb6b7cbeba50,Google Hash Code 2022 qualification round
+google/e_exceptional_skills,Type 1,google_instances/e_exceptional_skills.txt,800,10000,800,76749,772039,13b4dc1a2c94d1a7e4b6cfde2732068ff867344cdf8b1bcffc0f8e7417fcb1c0,Google Hash Code 2022 qualification round
+google/f_find_great_mentors,Type 1,google_instances/f_find_great_mentors.txt,1000,19413,500,480749,3772287,eb73727f2a3a69686257f979ba0d2ab1b92d262a616b60af1dec6b380c4574c1,Google Hash Code 2022 qualification round
+type2/type2_008,Type 2,generated_instances/type2/type2_008.txt,92,247,16,3462,35456,51b08f6b8cd0ceadd4da7bc667911d09d9942f842ce879dad2a3b120d2888839,
+type2/type2_010,Type 2,generated_instances/type2/type2_010.txt,1050,6811,236,196200,1794274,c349af7812e84247ed2347ec1c84d90a8ae8758d146273d95cc826449402066f,
+type2/type2_012,Type 2,generated_instances/type2/type2_012.txt,493,3968,86,17866,237946,d8365a7c62ce8785d390b081d9e308712d43cb9784d2b758f42d261a2dae4717,
+type2/type2_019,Type 2,generated_instances/type2/type2_019.txt,96,4544,86,45808,484002,c0837c768e5a7444f4541be26eff0b6445e877f9ffb513235f2ae663a64eb7bd,
+type2/type2_037,Type 2,generated_instances/type2/type2_037.txt,1345,6717,293,221742,2006525,14f3cb54a9d4b2b127b1bc2287814a65ea40a32e272df7f7fa881f6721cc3f92,
+type2/type2_040,Type 2,generated_instances/type2/type2_040.txt,1217,6014,533,173407,1621694,13a9b0ad441df581121235e8bc2b3530ba0d6c6ce77a41812341a7827639a04a,
+type2/type2_068,Type 2,generated_instances/type2/type2_068.txt,1251,10160,349,326274,2951843,c0a545c60127bf10af4a3ff6bf23b3d201fb16142ae013e8d9f4057ddea61f45,
+type2/type2_073,Type 2,generated_instances/type2/type2_073.txt,1048,7992,532,223979,2081320,6e4652f0d4fdd93110df5f1b95eeb918b6a35b67d4678de400740fe0c47a13b4,
+type2/type2_091,Type 2,generated_instances/type2/type2_091.txt,1254,5653,262,167430,1521754,4ea70c1e344b8a48e7fc019d652d788efbf6eb621a8ab06baa38b73e890a7df5,
+type2/type2_094,Type 2,generated_instances/type2/type2_094.txt,362,831,58,6612,78826,ab76e25f709c345d8d8a8215f4d15502138d42fd15cad881d5a2b83f627c6122,
+type2/type2_097,Type 2,generated_instances/type2/type2_097.txt,845,11800,530,217833,2027929,64e0f2427ec4e94ea00d2c2726a89130a6e2d44b36dc296d53ba712349911888,
+type2/type2_098,Type 2,generated_instances/type2/type2_098.txt,29,1241,23,11326,117827,38d0af312ec2e93e0d6425fe07d321fdef1325a70e862641a277c50e9076497a,
+type3/type3_005,Type 3,generated_instances/type3/type3_005.txt,1500,1000,200,28600,298901,6ee2fdf68b40b323a2d395392f0ab7974ca938f39eae7f7b7aaa58c1d154c1b0,neighbourhood of c_collaboration
+type3/type3_012,Type 3,generated_instances/type3/type3_012.txt,1000,19413,500,559903,5124310,0d80de3107724ea4309fdb83c566808f5de6bfddc801fb4a192197d1c1e2f102,neighbourhood of f_find_great_mentors
+type3/type3_042,Type 3,generated_instances/type3/type3_042.txt,1000,19413,500,562543,5102499,37240019b83905a9ba9e61b54b21646bab0f14bb4937ae2888a67734df1ada4f,neighbourhood of f_find_great_mentors
+type3/type3_045,Type 3,generated_instances/type3/type3_045.txt,1000,19413,500,561969,5104660,ad9d589e67411ce7e892d9aede04804b961a65f6a76dba8936c16d46d62b5669,neighbourhood of f_find_great_mentors
+type3/type3_053,Type 3,generated_instances/type3/type3_053.txt,1000,19413,500,573446,5213058,9edc19d14ab4a0a6a1562500e5e08a74b821513690c7e191c0a9afae79591b02,neighbourhood of f_find_great_mentors
+type3/type3_054,Type 3,generated_instances/type3/type3_054.txt,1000,19413,500,562256,5107871,1bddc69e60b59ebf62a01bc07f9ba1a1027c13f131455f4664457f79f4c83135,neighbourhood of f_find_great_mentors
+type3/type3_063,Type 3,generated_instances/type3/type3_063.txt,1500,1000,200,34303,350808,c3f796f4e56726838b1ebc7da59e7c2001872ccda808bac9602a199097bb3334,neighbourhood of c_collaboration
+type3/type3_069,Type 3,generated_instances/type3/type3_069.txt,1000,19413,500,561700,5092725,42cfe5c0b597ce1a787b2432ae4213e0b016fb3c384c61bb30d78b3ef02405b1,neighbourhood of f_find_great_mentors
+type3/type3_074,Type 3,generated_instances/type3/type3_074.txt,1000,19413,500,573140,5209150,3eccf846bc37fec877128a9471962d8b278a990560b2d76e80f3525582e875d7,neighbourhood of f_find_great_mentors
+type3/type3_077,Type 3,generated_instances/type3/type3_077.txt,1500,1000,200,35139,351338,ef167db2c47e09332996106b9e13a16ba05cf47ce8286d728afa7459513accad,neighbourhood of c_collaboration
+type3/type3_079,Type 3,generated_instances/type3/type3_079.txt,1000,19413,500,564575,5121430,ff1d514ced9ae91ae6dbe97d870a3b17cf9994475ba98b22c818e4bdc0ddedf1,neighbourhood of f_find_great_mentors
+type3/type3_081,Type 3,generated_instances/type3/type3_081.txt,1000,19413,500,570925,5190421,1514cfe4c69d8180794b1eab22df4761a2be577b5477a1e8aa6a33e0cef45539,neighbourhood of f_find_great_mentors
+type3/type3_084,Type 3,generated_instances/type3/type3_084.txt,1500,1000,200,21551,248886,84fecab7d8fea89249f6a8f61593bc3beb8d21d9670a1c5cdf57a2a81a3e8f2a,neighbourhood of c_collaboration
+type3/type3_090,Type 3,generated_instances/type3/type3_090.txt,1000,19413,500,563103,5101549,e341e51e1b2f845adfd524c8b73d86f73046987867d9e6b29cb3a0597316a670,neighbourhood of f_find_great_mentors
+type3/type3_096,Type 3,generated_instances/type3/type3_096.txt,1500,1000,200,35154,351664,03bf1c8555858dcc26b1efa42450ba0f3482d6a71e7f6af99ee9d2729e844bc6,neighbourhood of c_collaboration
+type4/type4_003,Type 4,generated_instances/type4/type4_003.txt,667,2474,54,39584,443235,b9d73ac4d7090d43c463c2d271503a5c1a0e65371386f417be2fd7c36186e93b,
+type4/type4_004,Type 4,generated_instances/type4/type4_004.txt,2603,8060,171,116364,1547611,cfea0b69e7eb7cfd3668cc818c48ca38228840f1dc711ae688a9b981957b9375,
+type4/type4_011,Type 4,generated_instances/type4/type4_011.txt,5778,10000,94,44949,1111552,9780355b93da0a8442688d696874be7c61f4f895a563c6751b2cfbd7494b09b6,
+type4/type4_018,Type 4,generated_instances/type4/type4_018.txt,813,2834,82,32575,378650,c2d31fa0e49f71390160bd74af98e545c6486e16425c752129ee68588408638b,
+type4/type4_019,Type 4,generated_instances/type4/type4_019.txt,554,511,35,6319,135588,be1ff6c7c689b61ab3dc2b6352bc2dae9b76e290a7b57de95f319c332a891d1b,
+type4/type4_023,Type 4,generated_instances/type4/type4_023.txt,1723,730,20,5794,278553,ec77aea99efd9b892447a5fdeeb6a359cd08f1ac899fbdf14cee891d82ebc3df,
+type4/type4_032,Type 4,generated_instances/type4/type4_032.txt,5218,8664,198,121218,1735533,6627e7ff810479667003fd437f860a7c73852b8fe7bcc5f8b0e1df5b7e895dc1,
+type4/type4_036,Type 4,generated_instances/type4/type4_036.txt,600,6575,81,55799,655726,2a5e720a7ae12d182eee0181a3bd28ea919fb91afdee7e5ec8c6f28a557ecac2,
+type4/type4_037,Type 4,generated_instances/type4/type4_037.txt,946,754,22,9746,154393,c3ac59ef4df477a05fba31f1a61ae580396c7d6c02f1269ab3116c9b22ced235,
+type4/type4_042,Type 4,generated_instances/type4/type4_042.txt,1750,1766,47,8830,282671,ec60a8137ac22635c6418c830a4049a520e15eef7593c678e31317d4f028af77,
+type4/type4_048,Type 4,generated_instances/type4/type4_048.txt,886,1906,6,25716,299112,548b6ed66ab3ace4393cca32ac2d5c8afe5ac563b58cab8f3488759b5d17447f,
+type4/type4_051,Type 4,generated_instances/type4/type4_051.txt,723,1273,66,18547,238328,d27ff70661c203bb1a5ade25ec9135c9fc2cf8b6ea950895aaaeb1af584ad849,
+type4/type4_055,Type 4,generated_instances/type4/type4_055.txt,2823,5459,60,79127,976319,6ab704208c4c1789c65a6d5a32db0c93eccb8616212274a5b063dada93eb8546,
+type4/type4_057,Type 4,generated_instances/type4/type4_057.txt,5281,10000,35,109497,1456081,c6404c0cb8628b791650d4cc1d52cadd63749624b8a8d837d83521c4056d38a0,
+type4/type4_067,Type 4,generated_instances/type4/type4_067.txt,941,6874,75,65303,801380,40b0b079831b362d60da14c5c775f39c25d3cb76258261edb7aeb466ea81d3f6,
+type4/type4_074,Type 4,generated_instances/type4/type4_074.txt,728,2723,68,29925,364594,cb21e9af5a0eb026d86c970fb964de357488de72eadeb81e104934ac31e6aabf,
+type4/type4_075,Type 4,generated_instances/type4/type4_075.txt,3142,870,108,8351,356164,997203dcb43c11572f848fa2f9124618fd4e0e6950f73a2ac650ccf5241f61fe,
+type4/type4_082,Type 4,generated_instances/type4/type4_082.txt,6122,2086,34,18723,634559,174eab5ac99108f45cb00ff249e41813887dec973e1a1d3f89c2a4aadcd52308,
+type4/type4_089,Type 4,generated_instances/type4/type4_089.txt,8037,10000,86,184928,2610765,4dcb51cf9e02b7d55147759e29d91c77097e1ceaf35e1b7602fe65634556973f,
+type4/type4_091,Type 4,generated_instances/type4/type4_091.txt,4723,4958,32,37183,1028769,61270006e8c667f6bc4d446617444292839fbc232e2446499aec8327911bb99e,
+type4/type4_092,Type 4,generated_instances/type4/type4_092.txt,3944,4168,94,48008,1034909,26b4428e98d2acffaa700315b709bb5533e7ed16fa7d031fb3c9aa0c727e866d,
+type4/type4_096,Type 4,generated_instances/type4/type4_096.txt,510,4044,134,64704,658226,36f2d9292b37575b6698c74e683b21292627694998754a652eabcdd1fc57d942,
+type5/type5_002,Type 5,generated_instances/type5/type5_002.txt,13,485,5,710,14035,8ecbba1c0ded9ad908f6785f85e85b11b735f699b1ed048d1fa08f3e5e39f85d,github.com/ansible/ansible (window W2)
+type5/type5_010,Type 5,generated_instances/type5/type5_010.txt,21,245,5,245,6459,802575f5b25cc4e71bb3a160710a8c2f432178e7c9c5c25696dee304695588e2,github.com/redis/redis (window W3)
+type5/type5_021,Type 5,generated_instances/type5/type5_021.txt,17,786,7,1174,22986,15ec18595f0ba136ea4603bb6c9b53ff4f337f3c9431425247f5b19aa2035cd7,github.com/numpy/numpy (window W3)
+type5/type5_024,Type 5,generated_instances/type5/type5_024.txt,28,425,5,629,12667,cc240aa9f5b45c24b6cc7de934e738b2b3d9f47e4e269547e7483eea92323212,github.com/pandas-dev/pandas (window W2)
+type5/type5_025,Type 5,generated_instances/type5/type5_025.txt,25,957,8,1452,27737,27992d100505a64b681ba5aeebff82c3fc5354f01ab2c250a89ee845ed583454,github.com/pandas-dev/pandas (window W3)
+type5/type5_026,Type 5,generated_instances/type5/type5_026.txt,19,1528,8,2312,44617,32ee38d2b9c34a44c678bd6c79945298707cfae4e4329acb3a8e79da16f5ada8,github.com/pandas-dev/pandas (window W4)
+type5/type5_036,Type 5,generated_instances/type5/type5_036.txt,38,1169,18,2341,39678,7e19b3b5f6a810cc3952f685b8970ae4da4d5bb63e39c377388151e5c8068714,github.com/apache/kafka (window W4)
+type5/type5_038,Type 5,generated_instances/type5/type5_038.txt,25,3043,14,6089,99551,ea2e1711ffc36e669e1c89c8b85eb9dbe76b03e686b4dc58b44862ed91990c14,github.com/apache/airflow (window W1)
+type5/type5_039,Type 5,generated_instances/type5/type5_039.txt,30,4693,17,9439,153502,c5da4ec89ed364068baf23a81ca4d473dd1b12490310afad5525a5e313011fe8,github.com/apache/airflow (window W2)
+type5/type5_040,Type 5,generated_instances/type5/type5_040.txt,39,4490,17,9071,148820,95a4653f9731f86597b92056c862c5194a3ec60cbf8b093ae366689571496dc4,github.com/apache/airflow (window W3)
+type5/type5_041,Type 5,generated_instances/type5/type5_041.txt,32,5931,13,11875,194619,67ed1593be96c041cb4837c5ce4a0b5e24535d038af5f0ccad20bbb18b7fc7cb,github.com/apache/airflow (window W4)
+type5/type5_042,Type 5,generated_instances/type5/type5_042.txt,32,7455,6,15003,242657,cc28c244d8b6f0e443a61fc3495b9e44c93fb73066f75a329562c7312aab85c0,github.com/elastic/elasticsearch (window W1)
+type5/type5_043,Type 5,generated_instances/type5/type5_043.txt,32,7139,7,10769,201193,6b3ffc77489b724bee586c7d8de1d093aa22ffb05f1edcc56140742c70c4f53c,github.com/elastic/elasticsearch (window W2)
+type5/type5_044,Type 5,generated_instances/type5/type5_044.txt,34,6368,8,9516,180895,8239487124afc685f11dd1b3cd430fe36599bd8670382ab14f400381cd8287ed,github.com/elastic/elasticsearch (window W3)
+type5/type5_045,Type 5,generated_instances/type5/type5_045.txt,41,8630,8,12973,246589,1b7c862eef6e94809690a9e3b41633251f24a1e1494f3b3ca119e60fa81c25f7,github.com/elastic/elasticsearch (window W4)
+type5/type5_050,Type 5,generated_instances/type5/type5_050.txt,20,6818,7,10295,198474,a71bcc7dfc7c6cc076434950499dce962da7ae71dfcf3888f7d2caacbef383fd,github.com/tensorflow/tensorflow (window W1)
+type5/type5_067,Type 5,generated_instances/type5/type5_067.txt,28,1403,15,3480,53154,2d25b592dc619c8e7620c2eda240d46bf9a8b304e1601b117c479f9e9ad5696c,github.com/nodejs/node (window W4)
+type5/type5_068,Type 5,generated_instances/type5/type5_068.txt,18,4406,5,6576,123413,1271a13de44f4aa9142569a58013b14ff9f68351ce6cdcc5a767936b98ffd7ae,github.com/microsoft/vscode (window W1)
+type5/type5_069,Type 5,generated_instances/type5/type5_069.txt,27,4963,6,4963,118125,76416db8948d3bb103ab1651ed1460cd0334385c45d4ca7bbf1ddc7136cf90b1,github.com/microsoft/vscode (window W2)
+type5/type5_070,Type 5,generated_instances/type5/type5_070.txt,25,6196,5,6196,146719,1a4ebd0e1607f276bdecba616cbeae32a8cf9e317d7595408b0f0b5a0a6786b3,github.com/microsoft/vscode (window W3)
+type5/type5_071,Type 5,generated_instances/type5/type5_071.txt,30,9755,7,14649,273533,d4b1b54509bbf672014380ad2c60a6ddbbc966570b50546dc622a442815cf754,github.com/microsoft/vscode (window W4)
+type5/type5_074,Type 5,generated_instances/type5/type5_074.txt,37,1580,20,3160,54201,a782f3717c78f60db6c505160e935773a1905a4227c5818c980a4b384f14c2a6,github.com/kubernetes/kubernetes (window W3)
+type5/type5_075,Type 5,generated_instances/type5/type5_075.txt,40,1836,14,3699,62228,6f386b6861682ba0422ebcc414fdf78256bc5f2d06b01393d6a4a08bb9ea1103,github.com/kubernetes/kubernetes (window W4)
+type5/type5_084,Type 5,generated_instances/type5/type5_084.txt,29,2645,11,5257,87175,38e9ef96f6ace79a70cbb7a1fde9d48fa3bd21aa9cfe4a824c8071d6d59aae72,github.com/dotnet/runtime (window W1)
+type5/type5_085,Type 5,generated_instances/type5/type5_085.txt,33,2946,12,7360,109672,25dda8f5d9cf9d58361287cac32b43dcc55a78ac1bae731065d32b5b5ee085e6,github.com/dotnet/runtime (window W2)
+type5/type5_086,Type 5,generated_instances/type5/type5_086.txt,24,2722,11,4133,79278,90c4d0716cb530cab2d2b3941bc5ec909701ebdfe88082fadd2a30bba2aa0913,github.com/dotnet/runtime (window W3)
+type5/type5_087,Type 5,generated_instances/type5/type5_087.txt,27,4033,14,10229,151247,768d7ffdcf1b92f9765228d103be2a3100d06713884b95b2190a87a26814eb00,github.com/dotnet/runtime (window W4)
+type5/type5_088,Type 5,generated_instances/type5/type5_088.txt,39,4100,8,8198,134709,1861d0c43702031e387d5ce6b1acafa323992f70622e6cba5a3cf2ef15adcfbd,github.com/rust-lang/rust (window W1)
+type5/type5_090,Type 5,generated_instances/type5/type5_090.txt,52,3656,7,7302,123397,f708c57a84b268bbe59214c43d9d9e58712eee371ad6e444822d06d9fa04c6ce,github.com/rust-lang/rust (window W3)
+type5/type5_091,Type 5,generated_instances/type5/type5_091.txt,43,4311,10,8626,143073,a20dfedd61210c30de509b8659cd5ad32926f56faa5f83f664bebd13736ddc28,github.com/rust-lang/rust (window W4)
+type5/type5_099__GHFULL__strands-labs__robots,Type 5,generated_instances/type5/type5_099__GHFULL__strands-labs__robots.txt,10,2574,7,4403,77980,48d3739efac42f095830a97b54dff0201de687c44fb9039de479450f2772f19a,github.com/strands-labs/robots (complete history)
+type6/type6_001__MSLIB1__src2322,Type 6,generated_instances/type6/type6_001__MSLIB1__src2322.txt,14,30,4,287,3124,b2bf080837e5d03916dc12c2ac1cc80df7c5760642c953b6b7d63b4e215db9cb,MSLIB_Set1_2322.msrcp
+type6/type6_003__MSLIB1__src673,Type 6,generated_instances/type6/type6_003__MSLIB1__src673.txt,14,30,4,199,2401,6cf0c72a5bf78b86b04a0f7e7ae328a1af5b83f88f784b795c61593d2403b9f7,MSLIB_Set1_673.msrcp
+type6/type6_004__MSLIB1__src4308,Type 6,generated_instances/type6/type6_004__MSLIB1__src4308.txt,14,30,4,144,1950,ac85f3c5993f2fe66faa1e12b08b31a8e26465adf7aad829d40b5eee6ceb227b,MSLIB_Set1_4308.msrcp
+type6/type6_005__MSLIB1__src5628,Type 6,generated_instances/type6/type6_005__MSLIB1__src5628.txt,14,30,4,153,2020,1f6030da5b94a4062e1a73f196f2791e226de3f0fc87c117f0b7666f0966259f,MSLIB_Set1_5628.msrcp
+type6/type6_008__MSLIB1__src5649,Type 6,generated_instances/type6/type6_008__MSLIB1__src5649.txt,12,30,4,141,2003,69372ae0aef9a87b2b60534ca6cba3d82fd671f6ce4717f74e7b9570099aa08e,MSLIB_Set1_5649.msrcp
+type6/type6_009__MSLIB1__src5963,Type 6,generated_instances/type6/type6_009__MSLIB1__src5963.txt,15,30,4,227,2635,9a34a0bfcff45dae77e9f0daa51013a4cab5561c670af05136d226a8e82ca065,MSLIB_Set1_5963.msrcp
+type6/type6_014__MSLIB1__src3508,Type 6,generated_instances/type6/type6_014__MSLIB1__src3508.txt,145,30,4,233,4884,32b5241b41760f9dfd1fc9f546a82020f293c66be90bdf751be5b7858820c2e9,MSLIB_Set1_3508.msrcp
+type6/type6_021__MSLIB1__src2289,Type 6,generated_instances/type6/type6_021__MSLIB1__src2289.txt,102,30,4,239,5307,32cadbb02d858e77f35c759e7f41bd633a873f4d273f0ec32c38891a20fea9d6,MSLIB_Set1_2289.msrcp
+type6/type6_024__MSLIB1__src298,Type 6,generated_instances/type6/type6_024__MSLIB1__src298.txt,68,30,4,74,2265,550585416eb71711d932c7bc2e603d786f0480d9845e45a26bb067455851b113,MSLIB_Set1_298.msrcp
+type6/type6_025__MSLIB1__src2495,Type 6,generated_instances/type6/type6_025__MSLIB1__src2495.txt,75,30,4,290,4996,cabe56432b59af30ea06b426999e8415883f30b7431a2d379fda6394736d415b,MSLIB_Set1_2495.msrcp
+type6/type6_026__MSLIB2__src2553,Type 6,generated_instances/type6/type6_026__MSLIB2__src2553.txt,12,30,4,151,2087,8c89b45bcf882a52c927e21f6176d3d1cfc349b409c29d2c25fe5ffba40cd826,MSLIB_Set2_2553.msrcp
+type6/type6_027__MSLIB2__src312,Type 6,generated_instances/type6/type6_027__MSLIB2__src312.txt,22,30,4,222,2814,2d8a25827fad7e2b881c0310990e3f2c00f41a713716a8605e71d358d7b64c19,MSLIB_Set2_312.msrcp
+type6/type6_028__MSLIB2__src1066,Type 6,generated_instances/type6/type6_028__MSLIB2__src1066.txt,32,30,4,300,3602,8a47c53196a451f67d0817c53f1cc95c19fa01c5138773855f0f6c4d17a1e915,MSLIB_Set2_1066.msrcp
+type6/type6_032__MSLIB2__src319,Type 6,generated_instances/type6/type6_032__MSLIB2__src319.txt,26,30,4,215,2790,eb911db9cceb2f7d5dffbc94e1aec72e26a5d9b6d66b31d6d64ae25afad5e11b,MSLIB_Set2_319.msrcp
+type6/type6_033__MSLIB2__src79,Type 6,generated_instances/type6/type6_033__MSLIB2__src79.txt,33,30,4,74,1774,3f6cd31f2550da7931873294d69d034c35b37b77661f2f72754d7c5e902a0512,MSLIB_Set2_79.msrcp
+type6/type6_039__MSLIB2__src1347,Type 6,generated_instances/type6/type6_039__MSLIB2__src1347.txt,72,30,4,78,2382,a05a51ab52a70606bf80416595af35d7663c39a448a80b1c33dd9272f2545f8f,MSLIB_Set2_1347.msrcp
+type6/type6_042__MSLIB2__src617,Type 6,generated_instances/type6/type6_042__MSLIB2__src617.txt,15,30,4,72,1389,f9fab43bd7a3716c2d8714b0ec97fc9a4d5563b25450964cd176f2d39f01265c,MSLIB_Set2_617.msrcp
+type6/type6_043__MSLIB2__src6536,Type 6,generated_instances/type6/type6_043__MSLIB2__src6536.txt,451,90,4,886,16441,ef9883fe61d508321e42a3ff6acaca0dd08d27ba50433d18f95b5c8e48f8e980,MSLIB_Set2_6536.msrcp
+type6/type6_047__MSLIB2__src8,Type 6,generated_instances/type6/type6_047__MSLIB2__src8.txt,10,30,4,76,1387,f88e935f1fa7e8ea79fe207e76a823a83345d8a923d5bf452bf4816f82eb4788,MSLIB_Set2_8.msrcp
+type6/type6_049__MSLIB2__src41,Type 6,generated_instances/type6/type6_049__MSLIB2__src41.txt,20,30,4,68,1491,554623703867ee6f9a691d94078259f9b9078166495196db1e49127e249cc68a,MSLIB_Set2_41.msrcp
+type6/type6_051__MSLIB3__src5371,Type 6,generated_instances/type6/type6_051__MSLIB3__src5371.txt,14,30,4,150,1993,061713d671fc3ad8a9ae0121cf88111d6dc7e166038cad96684f1ca3c9b6f94c,MSLIB_Set3_5371.msrcp
+type6/type6_055__MSLIB3__src10720,Type 6,generated_instances/type6/type6_055__MSLIB3__src10720.txt,14,30,4,203,2425,bce09972048918c19a54ace351d82c4752c7c8c35ff007b2be48aed85f92dbac,MSLIB_Set3_10720.msrcp
+type6/type6_056__MSLIB3__src3006,Type 6,generated_instances/type6/type6_056__MSLIB3__src3006.txt,16,30,4,147,1986,e33ae8680bbc38152a0105ca75b9032d63f50e0e9a0c559e76dec58715a27004,MSLIB_Set3_3006.msrcp
+type6/type6_058__MSLIB3__src5400,Type 6,generated_instances/type6/type6_058__MSLIB3__src5400.txt,16,30,4,159,2087,789e09da843f5411d88521338ed07fcd18d15131917db3560f98bc775dd20928,MSLIB_Set3_5400.msrcp
+type6/type6_059__MSLIB3__src598,Type 6,generated_instances/type6/type6_059__MSLIB3__src598.txt,13,30,4,135,1866,ef70e6040070c0c897d652663836bf2fb397249008427775da0b69089b981f5f,MSLIB_Set3_598.msrcp
+type6/type6_061__MSLIB3__src2996,Type 6,generated_instances/type6/type6_061__MSLIB3__src2996.txt,13,30,4,158,2043,7e755271af684a4d642d812f8b0c3c63e10aa589b159cda67f757f058e84defc,MSLIB_Set3_2996.msrcp
+type6/type6_064__MSLIB3__src6679,Type 6,generated_instances/type6/type6_064__MSLIB3__src6679.txt,61,30,4,306,4160,808b9f8a63499e3b274d806f82a4c813c290508f625c22fd540c64b515ab1243,MSLIB_Set3_6679.msrcp
+type6/type6_065__MSLIB3__src4425,Type 6,generated_instances/type6/type6_065__MSLIB3__src4425.txt,117,30,4,295,4989,4ad4bb68e7a6c49c64a9ba41d7fad56feb160d85b37606f0d8690b1bb82fd1b7,MSLIB_Set3_4425.msrcp
+type6/type6_069__MSLIB3__src2641,Type 6,generated_instances/type6/type6_069__MSLIB3__src2641.txt,36,30,4,79,1824,a9a1af52bb1d983b397c48d4ede2d76cd41f9b3f0597d83ee38ae3ebdd9cd19f,MSLIB_Set3_2641.msrcp
+type6/type6_072__MSLIB3__src533,Type 6,generated_instances/type6/type6_072__MSLIB3__src533.txt,48,30,4,72,2049,20341f742d41ca7002aaf9979e86f66377312c1884c259b17d13aa820e595946,MSLIB_Set3_533.msrcp
+type6/type6_077__MSLIB4__src1126,Type 6,generated_instances/type6/type6_077__MSLIB4__src1126.txt,12,30,4,205,2431,6d7c157138c924c1b57ab80cc1d0c4614ae540d4bffba9cdb15d771eea20a238,MSLIB_Set4_1126.msrcp
+type6/type6_078__MSLIB4__src953,Type 6,generated_instances/type6/type6_078__MSLIB4__src953.txt,13,30,4,213,2487,281105b85bd65e59d91c68c44313fab9005c7817d895fd2bc20899dcd7581495,MSLIB_Set4_953.msrcp
+type6/type6_079__MSLIB4__src1009,Type 6,generated_instances/type6/type6_079__MSLIB4__src1009.txt,16,30,4,234,2695,9c2308a40ee53a50acfb1b201ecd7c728c7c95eaf58dc60b3b3e0a2ba9d40124,MSLIB_Set4_1009.msrcp
+type6/type6_082__MSLIB4__src1346,Type 6,generated_instances/type6/type6_082__MSLIB4__src1346.txt,27,30,4,219,2833,9f598f27f826a74a821875da22ee905f4a40daa2fc6082e317eae8b7f2a6195d,MSLIB_Set4_1346.msrcp
+type6/type6_084__MSLIB4__src1576,Type 6,generated_instances/type6/type6_084__MSLIB4__src1576.txt,32,30,4,223,3077,87577f854cdd9c7051379d3f690c96938980da265a03284164f9dc6c863f97ba,MSLIB_Set4_1576.msrcp
+type6/type6_086__MSLIB4__src1452,Type 6,generated_instances/type6/type6_086__MSLIB4__src1452.txt,34,30,4,230,2992,5368a3dd0a6317a662be38f559568157dfd078890ae491a76a772b7a09feabbe,MSLIB_Set4_1452.msrcp
+type6/type6_087__MSLIB4__src1506,Type 6,generated_instances/type6/type6_087__MSLIB4__src1506.txt,36,30,4,233,3217,39b65a81ee2569c3fd3979975e31188465070bc61a818b420f20d8c93491d3e2,MSLIB_Set4_1506.msrcp
+type6/type6_088__MSLIB4__src139,Type 6,generated_instances/type6/type6_088__MSLIB4__src139.txt,8,30,4,90,1510,b9ede4c04f34637a9c66a4025cb79352c5af47570eb33fb7bdf615d8744baf2f,MSLIB_Set4_139.msrcp
+type6/type6_094__MSLIB4__src916,Type 6,generated_instances/type6/type6_094__MSLIB4__src916.txt,34,30,4,157,3007,f66b9ad8273160f31175dbf2605480779cba4030e7cf9905c62f809b1da721cc,MSLIB_Set4_916.msrcp
+type6/type6_098__MSLIB4__src136,Type 6,generated_instances/type6/type6_098__MSLIB4__src136.txt,13,30,4,77,1445,de80b884607fa7b7d6e595fe1e54ebdc962b24afaef6a01aa63e76e17c14f6bc,MSLIB_Set4_136.msrcp
+type7/type7_017,Type 7,generated_instances/type7/type7_017.txt,888,2000,25,17943,213785,f2ec267548cc5c49548e987a17a8b3982220701638d399f6c47f33bb12b4597b,
+type7/type7_039,Type 7,generated_instances/type7/type7_039.txt,317,5,200,30,49305,8a1818a34e09df63e32f66938b934068adf8d208109e3d3c1461dc4e15e88b32,
+type7/type7_057,Type 7,generated_instances/type7/type7_057.txt,1319,1683,24,9373,241257,2ea60db086936799763e913cabcfa71e1e262d2ec78a933f3934d4c25cb2def7,
+type7/type7_061,Type 7,generated_instances/type7/type7_061.txt,80,8,135,50,7193,782fd7d83d74f495d57444c8c63cc00296796a923cddca1de3a71b8bd142a42a,
+type7/type7_064,Type 7,generated_instances/type7/type7_064.txt,214,500,80,6803,95913,3fdcae300e0e5b6feb5487747d2951b4182909894abaeaac1aaa8ab841e6b0c2,
+type7/type7_069,Type 7,generated_instances/type7/type7_069.txt,234,1224,28,23256,243713,4e0e54bce21b8fb06ced7de555269fde5e5b24171432b291eee6c4caa4eca225,

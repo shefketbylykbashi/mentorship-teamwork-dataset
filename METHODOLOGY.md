@@ -1,8 +1,14 @@
 # MTP Benchmark Generation Methodology
 
-This document describes the reproducible generation pipeline for Benchmark
-Types 2, 3 and 4 for the Mentorship and Teamwork Problem (MTP), originally
-introduced in the Google Hash Code 2022 qualification round.
+This document describes the generators of the instance families of the
+Mentorship and Teamwork Problem (MTP), originally introduced in the Google Hash
+Code 2022 qualification round: the shared forward generator, the features used
+to steer it, and Types 2, 3, 4, 5 and 7. Type 6, which is converted from the
+MSLIB library, is described in `benchmark_generation/type6/TYPE6_SPEC.md` and
+`benchmark_metadata/type6_methodology_draft.md`.
+
+The benchmark in `google_instances/` and `generated_instances/` holds 131
+instances; `benchmark_instances.csv` lists them.
 
 ## Immutable Anchors
 
